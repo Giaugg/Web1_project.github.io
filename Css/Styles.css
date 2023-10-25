@@ -1,0 +1,215 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 69%;
+}
+
+.header{
+    background-color: #6499E9;
+    height: 120px;
+    font-size: 3rem;
+    padding: 10px;
+}
+
+
+
+.header_my{
+    display: flex;
+    justify-self: end;
+    margin-bottom: -50px;
+    margin-top: 40px;
+}
+.header_my *{
+    height: 40px;
+    width: 40px;
+    margin: 5px;
+}
+
+.header_top{
+    display: flex;
+    justify-content: space-between;
+}
+
+.main_header{
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+}
+
+
+
+.search-box{
+    display: flex;
+    font-size: 2.1rem;
+    margin-bottom: -50px;
+    margin-top: 40px;
+}
+
+.search-box input{
+    width: 500px;
+}
+.home{
+    margin-bottom: 30px;
+}
+#home-logo {
+    width: 350px;
+    margin-top: -13px;
+}
+.search-box .search-btn{
+    width: 120px;
+    background-color: #01579b;
+    color: #fff;
+    cursor: pointer;
+    padding: 6px 8px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 0 0.4rem 0.4rem 0;
+    transition: all 0.3s ease;
+}
+
+.search-box .search-btn:hover{
+    background-color: #6499E9;
+    color: aquamarine;
+}
+
+.more_menu{
+    display: block;
+}
+
+.subnav{
+    display: none;
+    margin: -70px;
+    background-color:#6499E9;
+    position: absolute;
+    min-height: 10px;
+    font-size: 3rem;
+    
+}
+
+
+
+
+
+.slider{
+    height: 100%;
+}
+
+.gallery {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    overflow-x: scroll;
+    scroll-snap-type:mandatory;
+    margin: 10px 0 10px 0;
+}
+.gallery_item{
+    scroll-snap-align: center;
+    min-width: 75%;
+}
+.gallery_image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+.content{
+    background-color: #9EDDFF;
+    height: 100%;
+}
+
+.main-content{
+    width: 70%;
+    padding: 20px;
+    border: solid 2px #6499E9;
+    margin: auto;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.flex-container{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+
+
+.flex-container .flex-item{
+    height: 350px;
+    width: auto;
+    border: solid 1px;
+    flex: 1;
+    margin: 5px;
+    padding: 5px;
+    max-height: 100%;
+    position: relative;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.item_img{
+    height: 280px;
+    margin: 9px 10px 5px 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s; /* Tạo hiệu ứng transition cho thuộc tính transform */
+    
+}
+
+
+
+.item_img:hover{
+    transform: scale(1.1);
+}
+
+.flex-item:hover{
+   
+}
+
+.add-to-cart-button {
+    position: absolute; /* Để tạo vị trí tuyệt đối cho nút */
+    top: 50%; /* Đưa nút lên trung tâm theo chiều dọc */
+    left: 50%; /* Đưa nút lên trung tâm theo chiều ngang */
+    transform: translate(-50%, -50%); /* Để căn giữa nút hoàn toàn */
+    background-color: #A6F6FF; /* Màu nền cho nút */
+    color:#6499E9; /* Màu chữ cho nút */
+    border: none; /* Loại bỏ viền */
+    padding: 10px 20px; /* Điều chỉnh khoảng cách và kích thước nút */
+    opacity: 0; /* Ẩn nút ban đầu */
+    transition: opacity 0.3s; /* Tạo hiệu ứng transition cho thuộc tính opacity */
+    border: solid 1px;
+    border-radius: 15px;
+}
+.flex-container .flex-item:hover .add-to-cart-button {
+    opacity: 1; /* Hiện nút khi hover vào khung chứa ảnh */
+}
+.add-to-cart-button:hover {
+    background-color: antiquewhite;
+    color: tomato;
+}
+.footer{
+    height: 150px;
+    background-color: #BEFFF7;
+    font-size: 5rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 15px 5px 15px;
+}
+
+.my_infor{
+    border: solid 1px tomato;
+    list-style-position: inside;
+}
+
+.my_infor .head{
+    background-color: aquamarine;
+}
+
+.more_infor{
+    border: solid 1px tomato;
+    list-style-position: inside;
+
+}
+.more_infor .head{
+    background-color: aquamarine;
+}
