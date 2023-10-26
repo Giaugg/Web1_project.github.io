@@ -1,1 +1,1 @@
-1 asd 3 5
+productId: 10074 brand: 'mash' img: 'images/product/10074.jpg' name: '' price: 42000
