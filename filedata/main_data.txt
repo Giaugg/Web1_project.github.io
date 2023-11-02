@@ -1,160 +1,54 @@
-productId: 10057 brand: '7ball' img: 'images/product/10057.jpg' name: '' price: 46000
-productId: 10076 brand: '7ball' img: 'images/product/10076.jpg' name: '' price: 36000
-productId: 10074 brand: 'mash' img: 'images/product/10074.jpg' name: '' price: 42000
-productId: 10058 brand: '7ball' img: 'images/product/10058.jpg' name: '' price: 57000
-productId: 10052 brand: 'naruto' img: 'images/product/10052.jpg' name: '' price: 54000
-productId: 10066 brand: 'insland' img: 'images/product/10066.jpg' name: '' price: 47000
-productId: 10074 brand: 'insland' img: 'images/product/10074.jpg' name: '' price: 78000
-productId: 10014 brand: 'insland' img: 'images/product/10014.jpg' name: '' price: 23000
-productId: 10092 brand: 'naruto' img: 'images/product/10092.jpg' name: '' price: 41000
-productId: 10069 brand: 'insland' img: 'images/product/10069.jpg' name: '' price: 21000
-productId: 10052 brand: 'insland' img: 'images/product/10052.jpg' name: '' price: 51000
-productId: 10083 brand: 'insland' img: 'images/product/10083.jpg' name: '' price: 49000
-productId: 10034 brand: 'naruto' img: 'images/product/10034.jpg' name: '' price: 50000
-productId: 10020 brand: '7ball' img: 'images/product/10020.jpg' name: '' price: 13000
-productId: 10081 brand: 'naruto' img: 'images/product/10081.jpg' name: '' price: 88000
-productId: 10015 brand: 'mash' img: 'images/product/10015.jpg' name: '' price: 39000
-productId: 10063 brand: '7ball' img: 'images/product/10063.jpg' name: '' price: 70000
-productId: 10068 brand: '7ball' img: 'images/product/10068.jpg' name: '' price: 50000
-productId: 10068 brand: '7ball' img: 'images/product/10068.jpg' name: '' price: 50000
-productId: 10014 brand: 'mash' img: 'images/product/10014.jpg' name: '' price: 47000
-productId: 10084 brand: 'insland' img: 'images/product/10084.jpg' name: '' price: 67000
-productId: 10042 brand: '7ball' img: 'images/product/10042.jpg' name: '' price: 11000
-productId: 10045 brand: 'insland' img: 'images/product/10045.jpg' name: '' price: 91000
-productId: 10056 brand: 'naruto' img: 'images/product/10056.jpg' name: '' price: 53000
-productId: 10064 brand: 'insland' img: 'images/product/10064.jpg' name: '' price: 35000
-productId: 10095 brand: '7ball' img: 'images/product/10095.jpg' name: '' price: 85000
-productId: 10045 brand: '7ball' img: 'images/product/10045.jpg' name: '' price: 34000
-productId: 10058 brand: 'mash' img: 'images/product/10058.jpg' name: '' price: 71000
-productId: 10071 brand: 'mash' img: 'images/product/10071.jpg' name: '' price: 97000
-productId: 10094 brand: '7ball' img: 'images/product/10094.jpg' name: '' price: 31000
-productId: 10087 brand: 'naruto' img: 'images/product/10087.jpg' name: '' price: 39000
-productId: 10049 brand: 'insland' img: 'images/product/10049.jpg' name: '' price: 87000
-productId: 10024 brand: 'naruto' img: 'images/product/10024.jpg' name: '' price: 69000
-productId: 10029 brand: 'insland' img: 'images/product/10029.jpg' name: '' price: 50000
-productId: 10081 brand: 'naruto' img: 'images/product/10081.jpg' name: '' price: 77000
-productId: 10025 brand: 'naruto' img: 'images/product/10025.jpg' name: '' price: 97000
-productId: 10081 brand: 'naruto' img: 'images/product/10081.jpg' name: '' price: 53000
-productId: 10087 brand: 'insland' img: 'images/product/10087.jpg' name: '' price: 14000
-productId: 10026 brand: 'naruto' img: 'images/product/10026.jpg' name: '' price: 90000
-productId: 10048 brand: '7ball' img: 'images/product/10048.jpg' name: '' price: 38000
-productId: 10080 brand: 'mash' img: 'images/product/10080.jpg' name: '' price: 73000
-productId: 10027 brand: 'mash' img: 'images/product/10027.jpg' name: '' price: 93000
-productId: 10039 brand: 'mash' img: 'images/product/10039.jpg' name: '' price: 90000
-productId: 10078 brand: 'naruto' img: 'images/product/10078.jpg' name: '' price: 80000
-productId: 10045 brand: '7ball' img: 'images/product/10045.jpg' name: '' price: 15000
-productId: 10085 brand: 'insland' img: 'images/product/10085.jpg' name: '' price: 90000
-productId: 10027 brand: 'mash' img: 'images/product/10027.jpg' name: '' price: 39000
-productId: 10012 brand: '7ball' img: 'images/product/10012.jpg' name: '' price: 90000
-productId: 10064 brand: '7ball' img: 'images/product/10064.jpg' name: '' price: 79000
-productId: 10082 brand: 'mash' img: 'images/product/10082.jpg' name: '' price: 46000
-productId: 10071 brand: 'naruto' img: 'images/product/10071.jpg' name: '' price: 63000
-productId: 10067 brand: 'insland' img: 'images/product/10067.jpg' name: '' price: 97000
-productId: 10061 brand: 'mash' img: 'images/product/10061.jpg' name: '' price: 81000
-productId: 10019 brand: 'naruto' img: 'images/product/10019.jpg' name: '' price: 32000
-productId: 10047 brand: 'mash' img: 'images/product/10047.jpg' name: '' price: 92000
-productId: 10031 brand: '7ball' img: 'images/product/10031.jpg' name: '' price: 87000
-productId: 10062 brand: 'naruto' img: 'images/product/10062.jpg' name: '' price: 59000
-productId: 10075 brand: 'mash' img: 'images/product/10075.jpg' name: '' price: 12000
-productId: 10041 brand: 'mash' img: 'images/product/10041.jpg' name: '' price: 42000
-productId: 10092 brand: 'insland' img: 'images/product/10092.jpg' name: '' price: 98000
-productId: 10026 brand: 'naruto' img: 'images/product/10026.jpg' name: '' price: 23000
-productId: 10093 brand: '7ball' img: 'images/product/10093.jpg' name: '' price: 34000
-productId: 10091 brand: '7ball' img: 'images/product/10091.jpg' name: '' price: 71000
-productId: 10094 brand: 'mash' img: 'images/product/10094.jpg' name: '' price: 14000
-productId: 10088 brand: '7ball' img: 'images/product/10088.jpg' name: '' price: 97000
-productId: 10015 brand: 'naruto' img: 'images/product/10015.jpg' name: '' price: 78000
-productId: 10059 brand: 'naruto' img: 'images/product/10059.jpg' name: '' price: 38000
-productId: 10056 brand: 'naruto' img: 'images/product/10056.jpg' name: '' price: 33000
-productId: 10016 brand: 'mash' img: 'images/product/10016.jpg' name: '' price: 69000
-productId: 10030 brand: 'naruto' img: 'images/product/10030.jpg' name: '' price: 61000
-productId: 10097 brand: 'naruto' img: 'images/product/10097.jpg' name: '' price: 86000
-productId: 10026 brand: '7ball' img: 'images/product/10026.jpg' name: '' price: 16000
-productId: 10043 brand: '7ball' img: 'images/product/10043.jpg' name: '' price: 76000
-productId: 10036 brand: 'naruto' img: 'images/product/10036.jpg' name: '' price: 50000
-productId: 10039 brand: '7ball' img: 'images/product/10039.jpg' name: '' price: 32000
-productId: 10067 brand: '7ball' img: 'images/product/10067.jpg' name: '' price: 63000
-productId: 10018 brand: 'naruto' img: 'images/product/10018.jpg' name: '' price: 16000
-productId: 10050 brand: 'insland' img: 'images/product/10050.jpg' name: '' price: 88000
-productId: 10092 brand: 'insland' img: 'images/product/10092.jpg' name: '' price: 56000
-productId: 10042 brand: 'mash' img: 'images/product/10042.jpg' name: '' price: 45000
-productId: 10044 brand: '7ball' img: 'images/product/10044.jpg' name: '' price: 30000
-productId: 10037 brand: 'mash' img: 'images/product/10037.jpg' name: '' price: 41000
-productId: 10020 brand: 'naruto' img: 'images/product/10020.jpg' name: '' price: 67000
-productId: 10078 brand: 'naruto' img: 'images/product/10078.jpg' name: '' price: 30000
-productId: 10046 brand: 'naruto' img: 'images/product/10046.jpg' name: '' price: 11000
-productId: 10042 brand: 'naruto' img: 'images/product/10042.jpg' name: '' price: 80000
-productId: 10052 brand: 'naruto' img: 'images/product/10052.jpg' name: '' price: 42000
-productId: 10070 brand: 'naruto' img: 'images/product/10070.jpg' name: '' price: 58000
-productId: 10020 brand: 'insland' img: 'images/product/10020.jpg' name: '' price: 52000
-productId: 10098 brand: '7ball' img: 'images/product/10098.jpg' name: '' price: 73000
-productId: 10032 brand: 'naruto' img: 'images/product/10032.jpg' name: '' price: 96000
-productId: 10013 brand: 'naruto' img: 'images/product/10013.jpg' name: '' price: 52000
-productId: 10096 brand: 'insland' img: 'images/product/10096.jpg' name: '' price: 83000
-productId: 10095 brand: '7ball' img: 'images/product/10095.jpg' name: '' price: 57000
-productId: 10043 brand: 'mash' img: 'images/product/10043.jpg' name: '' price: 49000
-productId: 10069 brand: 'mash' img: 'images/product/10069.jpg' name: '' price: 66000
-productId: 10059 brand: 'mash' img: 'images/product/10059.jpg' name: '' price: 42000
-productId: 10051 brand: '7ball' img: 'images/product/10051.jpg' name: '' price: 23000
-productId: 10042 brand: 'mash' img: 'images/product/10042.jpg' name: '' price: 83000
-productId: 10015 brand: 'mash' img: 'images/product/10015.jpg' name: '' price: 92000
-productId: 10020 brand: 'mash' img: 'images/product/10020.jpg' name: '' price: 95000
-productId: 10077 brand: 'mash' img: 'images/product/10077.jpg' name: '' price: 62000
-productId: 10099 brand: 'naruto' img: 'images/product/10099.jpg' name: '' price: 13000
-productId: 10072 brand: 'mash' img: 'images/product/10072.jpg' name: '' price: 84000
-productId: 10064 brand: 'naruto' img: 'images/product/10064.jpg' name: '' price: 12000
-productId: 10021 brand: 'naruto' img: 'images/product/10021.jpg' name: '' price: 35000
-productId: 10086 brand: 'insland' img: 'images/product/10086.jpg' name: '' price: 15000
-productId: 10011 brand: 'mash' img: 'images/product/10011.jpg' name: '' price: 49000
-productId: 10081 brand: 'naruto' img: 'images/product/10081.jpg' name: '' price: 84000
-productId: 10064 brand: '7ball' img: 'images/product/10064.jpg' name: '' price: 66000
-productId: 10020 brand: '7ball' img: 'images/product/10020.jpg' name: '' price: 57000
-productId: 10086 brand: '7ball' img: 'images/product/10086.jpg' name: '' price: 73000
-productId: 10067 brand: 'insland' img: 'images/product/10067.jpg' name: '' price: 35000
-productId: 10073 brand: 'mash' img: 'images/product/10073.jpg' name: '' price: 76000
-productId: 10019 brand: '7ball' img: 'images/product/10019.jpg' name: '' price: 54000
-productId: 10054 brand: '7ball' img: 'images/product/10054.jpg' name: '' price: 18000
-productId: 10080 brand: 'insland' img: 'images/product/10080.jpg' name: '' price: 10000
-productId: 10088 brand: 'insland' img: 'images/product/10088.jpg' name: '' price: 45000
-productId: 10046 brand: 'mash' img: 'images/product/10046.jpg' name: '' price: 23000
-productId: 10013 brand: '7ball' img: 'images/product/10013.jpg' name: '' price: 72000
-productId: 10054 brand: 'mash' img: 'images/product/10054.jpg' name: '' price: 63000
-productId: 10016 brand: 'naruto' img: 'images/product/10016.jpg' name: '' price: 72000
-productId: 10054 brand: 'naruto' img: 'images/product/10054.jpg' name: '' price: 58000
-productId: 10058 brand: 'insland' img: 'images/product/10058.jpg' name: '' price: 93000
-productId: 10063 brand: 'insland' img: 'images/product/10063.jpg' name: '' price: 36000
-productId: 10096 brand: 'mash' img: 'images/product/10096.jpg' name: '' price: 50000
-productId: 10040 brand: 'insland' img: 'images/product/10040.jpg' name: '' price: 63000
-productId: 10082 brand: 'insland' img: 'images/product/10082.jpg' name: '' price: 47000
-productId: 10010 brand: 'naruto' img: 'images/product/10010.jpg' name: '' price: 34000
-productId: 10083 brand: 'naruto' img: 'images/product/10083.jpg' name: '' price: 12000
-productId: 10096 brand: 'mash' img: 'images/product/10096.jpg' name: '' price: 64000
-productId: 10032 brand: '7ball' img: 'images/product/10032.jpg' name: '' price: 83000
-productId: 10097 brand: '7ball' img: 'images/product/10097.jpg' name: '' price: 44000
-productId: 10037 brand: 'insland' img: 'images/product/10037.jpg' name: '' price: 98000
-productId: 10078 brand: 'naruto' img: 'images/product/10078.jpg' name: '' price: 95000
-productId: 10047 brand: 'naruto' img: 'images/product/10047.jpg' name: '' price: 91000
-productId: 10062 brand: 'insland' img: 'images/product/10062.jpg' name: '' price: 26000
-productId: 10020 brand: '7ball' img: 'images/product/10020.jpg' name: '' price: 97000
-productId: 10092 brand: 'naruto' img: 'images/product/10092.jpg' name: '' price: 88000
-productId: 10036 brand: '7ball' img: 'images/product/10036.jpg' name: '' price: 96000
-productId: 10059 brand: 'insland' img: 'images/product/10059.jpg' name: '' price: 61000
-productId: 10035 brand: '7ball' img: 'images/product/10035.jpg' name: '' price: 65000
-productId: 10066 brand: '7ball' img: 'images/product/10066.jpg' name: '' price: 90000
-productId: 10098 brand: 'insland' img: 'images/product/10098.jpg' name: '' price: 66000
-productId: 10068 brand: 'insland' img: 'images/product/10068.jpg' name: '' price: 60000
-productId: 10021 brand: 'insland' img: 'images/product/10021.jpg' name: '' price: 14000
-productId: 10016 brand: '7ball' img: 'images/product/10016.jpg' name: '' price: 46000
-productId: 10040 brand: 'naruto' img: 'images/product/10040.jpg' name: '' price: 25000
-productId: 10092 brand: 'mash' img: 'images/product/10092.jpg' name: '' price: 82000
-productId: 10087 brand: 'insland' img: 'images/product/10087.jpg' name: '' price: 39000
-productId: 10095 brand: '7ball' img: 'images/product/10095.jpg' name: '' price: 20000
-productId: 10063 brand: 'insland' img: 'images/product/10063.jpg' name: '' price: 34000
-productId: 10094 brand: 'naruto' img: 'images/product/10094.jpg' name: '' price: 11000
-productId: 10042 brand: 'insland' img: 'images/product/10042.jpg' name: '' price: 63000
-productId: 10081 brand: 'insland' img: 'images/product/10081.jpg' name: '' price: 37000
-productId: 10029 brand: 'mash' img: 'images/product/10029.jpg' name: '' price: 63000
-productId: 10070 brand: '7ball' img: 'images/product/10070.jpg' name: '' price: 17000
-productId: 10035 brand: 'naruto' img: 'images/product/10035.jpg' name: '' price: 68000
-productId: 10014 brand: '7ball' img: 'images/product/10014.jpg' name: '' price: 73000
-productId: 10091 brand: '7ball' img: 'images/product/10091.jpg' name: '' price: 41000
+productId: 10001 brand: 1 name: "Song Goku" price: 77000
+productId: 10002 brand: 1 name: "Trunk" price: 39000
+productId: 10003 brand: 1 name: "Freiza" price: 98000
+productId: 10004 brand: 1 name: "Song Goku ss4" price: 20000
+productId: 10005 brand: 1 name: "Broly" price: 72000
+productId: 10006 brand: 1 name: "Magic Gohan" price: 15000
+productId: 10007 brand: 1 name: "Song Goku ssj" price: 79000
+productId: 10008 brand: 1 name: "Picolo Giant" price: 54000
+productId: 10009 brand: 1 name: "Shaco Ha" price: 80000
+productId: 10010 brand: 1 name: "Song Goku ssk" price: 88000
+productId: 10011 brand: 1 name: "Vegeta ssj" price: 12000
+productId: 10012 brand: 2 name: "Aki Hayakawa" price: 45000
+productId: 10013 brand: 2 name: "Denji" price: 22000
+productId: 10014 brand: 2 name: "Himeno" price: 98000
+productId: 10015 brand: 2 name: "Kobeni Higashiyama" price: 90000
+productId: 10016 brand: 2 name: "Makima" price: 77000
+productId: 10017 brand: 2 name: "Power" price: 81000
+productId: 10018 brand: 3 name: "Yukimi" price: 49000
+productId: 10019 brand: 3 name: "Jack" price: 82000
+productId: 10020 brand: 4 name: "Kanroji Mitsuri" price: 65000
+productId: 10021 brand: 4 name: "Makomo" price: 31000
+productId: 10022 brand: 4 name: "Sabito" price: 59000
+productId: 10023 brand: 4 name: "Kochou Shinobu" price: 91000
+productId: 10024 brand: 4 name: "Tomioka Giyuu" price: 72000
+productId: 10025 brand: 4 name: "Kamado Tanjirou" price: 59000
+productId: 10026 brand: 4 name: "Rengoku Kyoujurou" price: 66000
+productId: 10027 brand: 4 name: "Himejima Gyoumei" price: 69000
+productId: 10028 brand: 4 name: "Akaza" price: 53000
+productId: 10029 brand: 4 name: "Kamado Nezuko" price: 32000
+productId: 10032 brand: 5 name: "Uchiha Madara" price: 35000
+productId: 10033 brand: 5 name: "Uchiha Sasuke" price: 61000
+productId: 10034 brand: 5 name: "Uzumaki Naruto" price: 65000
+productId: 10035 brand: 5 name: "Sakura" price: 90000
+productId: 10036 brand: 5 name: "Ino" price: 65000
+productId: 10037 brand: 5 name: "Orochimaru" price: 87000
+productId: 10038 brand: 5 name: "Naruto Senin" price: 83000
+productId: 10039 brand: 5 name: "Garraa" price: 97000
+productId: 10040 brand: 5 name: "Shikamaru" price: 63000
+productId: 10041 brand: 5 name: "Hinata" price: 93000
+productId: 10042 brand: 5 name: "Temari" price: 72000
+productId: 10043 brand: 5 name: "Sakura Super" price: 25000
+productId: 10044 brand: 5 name: "Temari ssj" price: 17000
+productId: 10045 brand: 5 name: "Tenten ssj" price: 40000
+productId: 10046 brand: 5 name: "Tsunade" price: 59000
+productId: 10047 brand: 5 name: "Garraa S" price: 57000
+productId: 10048 brand: 5 name: "Deidara" price: 19000
+productId: 10049 brand: 5 name: "Uchiha Obito" price: 58000
+productId: 10050 brand: 5 name: "Sasori" price: 20000
+productId: 10051 brand: 6 name: "Yor" price: 92000
+productId: 10052 brand: 6 name: "Loir" price: 50000
+productId: 10053 brand: 6 name: "Aya" price: 96000
+productId: 10054 brand: 6 name: "Loir s" price: 87000
+productId: 10055 brand: 6 name: "Aya Wi" price: 11000
+productId: 10056 brand: 6 name: "Aya & Bond" price: 81000

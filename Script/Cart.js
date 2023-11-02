@@ -32,5 +32,25 @@ var getObjects = function () {
     // console.log(objects[1]);
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+    // Lấy các phần tử HTML
+    const toggleSticketButton = document.getElementById("show-cart");
+    const sticket = document.getElementById("cart-user-modal");
+    const closeButtons = document.getElementById("close-logo");
+
+    console.log(closeButtons)
+
+    // Sự kiện khi nhấn nút "Hiển thị Sticket" hoặc dấu x
+    toggleSticketButton.addEventListener("click", function() {
+        sticket.style.display = "flex"; // Hiển thị Sticket
+    });
+
+    closeButtons.addEventListener("click", function() {
+            sticket.style.display = "none"; // Ẩn Sticket
+        });
+    
+});
+
+
 Read_file_user();
 console.log(objects); // Đây là nơi bạn có thể truy cập biến objects

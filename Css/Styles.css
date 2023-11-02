@@ -1,9 +1,14 @@
+
+/* ///////////////////////////////// */
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-size: 69%;
 }
+/* ///////////////////////////////// */
+
+/* ///////////// HEADER ////////////// */
 
 .header{
     background-color: #6499E9;
@@ -85,10 +90,12 @@
     font-size: 3rem;
     
 }
+/* ///////////////////////////////// */
 
 
 
 
+/* ///////////// SlIDER ////////////// */
 
 .slider{
     height: 100%;
@@ -112,7 +119,10 @@
     object-fit: cover;
 }
 
+/* ///////////////////////////////// */
 
+
+/* /////////// CONTENT ////////////// */
 
 .content{
     background-color: #9EDDFF;
@@ -187,6 +197,12 @@
     background-color: antiquewhite;
     color: tomato;
 }
+
+/* ///////////////////////////////// */
+
+/* ///////////// FOOTER ////////////// */
+
+
 .footer{
     height: 150px;
     background-color: #BEFFF7;
@@ -213,3 +229,77 @@
 .more_infor .head{
     background-color: aquamarine;
 }
+/* //////////////////////////// */
+
+/* ///////////// CART ///////////////// */
+
+#cart-user-modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.modal-container{
+    background-color: #ebe7e7;
+    /* padding: 5px; */
+    width: 900px;
+    font-size: 3rem;
+    position: relative;
+}
+
+.modal-header{
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    background-color: aquamarine;
+    align-items: center;
+    margin-bottom: 10px;
+}
+#cart-logo{
+    height: 30px;
+    margin: 10px;
+}
+.close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+}
+.close:hover{
+    background-color: #ebe7e7;
+}
+
+.modal-items{
+    padding: 10px;
+}
+
+.item-list{
+    display: flex;
+    max-height: 200px;
+    justify-content: space-between;
+    position: relative;
+}
+
+.item-list:hover {
+    border: solid 1px ;
+}
+.item-list img{
+    height: 100px;
+}
+.item-list input{
+    height: 30px;
+}
+.item-list *{
+    font-size: 1.3rem;
+}
+.item-list p{
+    word-wrap: break-word; 
+    max-width: 100px;
+    width: 100px;
+}
+/* ////////////////////////////// */
