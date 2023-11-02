@@ -1,54 +1,54 @@
-productId: 10001 brand: 1 name: "Song Goku" price: 77000
-productId: 10002 brand: 1 name: "Trunk" price: 39000
-productId: 10003 brand: 1 name: "Freiza" price: 98000
-productId: 10004 brand: 1 name: "Song Goku ss4" price: 20000
-productId: 10005 brand: 1 name: "Broly" price: 72000
-productId: 10006 brand: 1 name: "Magic Gohan" price: 15000
-productId: 10007 brand: 1 name: "Song Goku ssj" price: 79000
-productId: 10008 brand: 1 name: "Picolo Giant" price: 54000
-productId: 10009 brand: 1 name: "Shaco Ha" price: 80000
-productId: 10010 brand: 1 name: "Song Goku ssk" price: 88000
-productId: 10011 brand: 1 name: "Vegeta ssj" price: 12000
-productId: 10012 brand: 2 name: "Aki Hayakawa" price: 45000
-productId: 10013 brand: 2 name: "Denji" price: 22000
-productId: 10014 brand: 2 name: "Himeno" price: 98000
-productId: 10015 brand: 2 name: "Kobeni Higashiyama" price: 90000
-productId: 10016 brand: 2 name: "Makima" price: 77000
-productId: 10017 brand: 2 name: "Power" price: 81000
-productId: 10018 brand: 3 name: "Yukimi" price: 49000
-productId: 10019 brand: 3 name: "Jack" price: 82000
-productId: 10020 brand: 4 name: "Kanroji Mitsuri" price: 65000
-productId: 10021 brand: 4 name: "Makomo" price: 31000
-productId: 10022 brand: 4 name: "Sabito" price: 59000
-productId: 10023 brand: 4 name: "Kochou Shinobu" price: 91000
-productId: 10024 brand: 4 name: "Tomioka Giyuu" price: 72000
-productId: 10025 brand: 4 name: "Kamado Tanjirou" price: 59000
-productId: 10026 brand: 4 name: "Rengoku Kyoujurou" price: 66000
-productId: 10027 brand: 4 name: "Himejima Gyoumei" price: 69000
-productId: 10028 brand: 4 name: "Akaza" price: 53000
-productId: 10029 brand: 4 name: "Kamado Nezuko" price: 32000
-productId: 10032 brand: 5 name: "Uchiha Madara" price: 35000
-productId: 10033 brand: 5 name: "Uchiha Sasuke" price: 61000
-productId: 10034 brand: 5 name: "Uzumaki Naruto" price: 65000
-productId: 10035 brand: 5 name: "Sakura" price: 90000
-productId: 10036 brand: 5 name: "Ino" price: 65000
-productId: 10037 brand: 5 name: "Orochimaru" price: 87000
-productId: 10038 brand: 5 name: "Naruto Senin" price: 83000
-productId: 10039 brand: 5 name: "Garraa" price: 97000
-productId: 10040 brand: 5 name: "Shikamaru" price: 63000
-productId: 10041 brand: 5 name: "Hinata" price: 93000
-productId: 10042 brand: 5 name: "Temari" price: 72000
-productId: 10043 brand: 5 name: "Sakura Super" price: 25000
-productId: 10044 brand: 5 name: "Temari ssj" price: 17000
-productId: 10045 brand: 5 name: "Tenten ssj" price: 40000
-productId: 10046 brand: 5 name: "Tsunade" price: 59000
-productId: 10047 brand: 5 name: "Garraa S" price: 57000
-productId: 10048 brand: 5 name: "Deidara" price: 19000
-productId: 10049 brand: 5 name: "Uchiha Obito" price: 58000
-productId: 10050 brand: 5 name: "Sasori" price: 20000
-productId: 10051 brand: 6 name: "Yor" price: 92000
-productId: 10052 brand: 6 name: "Loir" price: 50000
-productId: 10053 brand: 6 name: "Aya" price: 96000
-productId: 10054 brand: 6 name: "Loir s" price: 87000
-productId: 10055 brand: 6 name: "Aya Wi" price: 11000
-productId: 10056 brand: 6 name: "Aya & Bond" price: 81000
+01 1 'Song Goku' 77000
+02 1 'Trunk' 39000
+03 1 'Freiza' 98000
+04 1 'Song Goku ss4' 20000
+05 1 'Broly' 72000
+06 1 'Magic Gohan' 15000
+07 1 'Song Goku ssj' 79000
+08 1 'Picolo Giant' 54000
+09 1 'Shaco Ha' 80000
+10 1 'Song Goku ssk' 88000
+11 1 'Vegeta ssj' 12000
+12 2 'Aki Hayakawa' 45000
+13 2 'Denji' 22000
+14 2 'Himeno' 98000
+15 2 'Kobeni Higashiyama' 90000
+16 2 'Makima' 77000
+17 2 'Power' 81000
+18 3 'Yukimi' 49000
+19 3 'Jack' 82000
+20 4 'Kanroji Mitsuri' 65000
+21 4 'Makomo' 31000
+22 4 'Sabito' 59000
+23 4 'Kochou Shinobu' 91000
+24 4 'Tomioka Giyuu' 72000
+25 4 'Kamado Tanjirou' 59000
+26 4 'Rengoku Kyoujurou' 66000
+27 4 'Himejima Gyoumei' 69000
+28 4 'Akaza' 53000
+29 4 'Kamado Nezuko' 32000
+32 5 'Uchiha Madara' 35000
+33 5 'Uchiha Sasuke' 61000
+34 5 'Uzumaki Naruto' 65000
+35 5 'Sakura' 90000
+36 5 'Ino' 65000
+37 5 'Orochimaru' 87000
+38 5 'Naruto Senin' 83000
+39 5 'Garraa' 97000
+40 5 'Shikamaru' 63000
+41 5 'Hinata' 93000
+42 5 'Temari' 72000
+43 5 'Sakura Super' 25000
+44 5 'Temari ssj' 17000
+45 5 'Tenten ssj' 40000
+46 5 'Tsunade' 59000
+47 5 'Garraa S' 57000
+48 5 'dara' 19000
+49 5 'Uchiha Obito' 58000
+50 5 'Sasori' 20000
+51 6 'Yor' 92000
+52 6 'Loir' 50000
+53 6 'Aya' 96000
+54 6 'Loir s' 87000
+55 6 'Aya Wi' 11000
+56 6 'Aya & Bond' 81000
