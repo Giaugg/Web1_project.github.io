@@ -313,6 +313,7 @@
     word-wrap: break-word; 
     max-width: 100px;
     width: 100px;
+    text-align: center;
 }
 .modal-footer{
     position: absolute;

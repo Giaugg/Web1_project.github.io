@@ -81,3 +81,4 @@ var create_user_cart = function(){
 }
 
 Read_file_user();
+// console.log(1)

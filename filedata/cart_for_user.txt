@@ -1,6 +1,4 @@
 01 1 Song%Goku 77000
-02 1 Trunk 39000
-03 1 Freiza 98000
-04 1 Song Goku ss4 20000
-05 1 Broly 72000
-06 1 Magic Gohan 15000
+02 1 Trunk%39000
+03 1 Freiza%98000
+04 1 Song%Goku%ss4 20000

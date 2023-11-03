@@ -1,19 +1,19 @@
 01 1 Song%Goku 77000
-02 1 Trunk%39000
-03 1 Freiza%98000
+02 1 Trunk% 39000
+03 1 Freiza% 98000
 04 1 Song%Goku%ss4 20000
-05 1 Broly%72000
+05 1 Broly% 72000
 06 1 Magic%Gohan 15000
 07 1 Song%Goku%ssj 79000
 08 1 Picolo%Giant 54000
-09 1 Shaco%Ha%80000
+09 1 Shaco%Ha% 80000
 10 1 Song%Goku%ssk 88000
 11 1 Vegeta%ssj 12000
 12 2 Aki%Hayakawa 45000
-13 2 Denji%22000
+13 2 Denji% 22000
 14 2 Himeno%98000
 15 2 Kobeni%Higashiyama 90000
-16 2 Makima%77000
+16 2 Makima% 77000
 17 2 Power 81000
 18 3 Yukimi 49000
 19 3 Jack 82000
