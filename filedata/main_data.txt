@@ -1,4 +1,4 @@
-01 1 Song%Goku 77000
+01 1 Song%Goku 77000 
 02 1 Trunk% 39000
 03 1 Freiza% 98000
 04 1 Song%Goku%ss4 20000
