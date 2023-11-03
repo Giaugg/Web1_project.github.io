@@ -324,4 +324,10 @@
     height: 40px;
     align-items: center;
 }
+#total-item{
+    font-size: 1.5rem;
+}
+#total-cost{
+    font-size: 1.5rem;
+}
 /* ////////////////////////////// */

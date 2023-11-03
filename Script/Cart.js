@@ -19,12 +19,13 @@ var getobjects = function () {
     const lines = main_data.split('\n'); // Tách tệp thành từng dòng
 
     objects = lines.map(line => {
-        const [productId, brand, name, price] = line.split(' '); // Tách dấu cách
+        const [productId, brand, name, price, sl] = line.split(' '); // Tách dấu cách
         return {
             productId,
             brand,
             name,
-            price
+            price,
+            sl
         };
     });
     console.log(objects)
@@ -60,25 +61,74 @@ var create_user_cart = function(){
         const modifiedString = originalString.replace(/001/g, (index+1).toString().padStart(3, "0"));
 
         const charname = objects.name;
-        const name = charname.replace('%', ' ');
+        const name = charname.replace(/%/g, ' ');
         console.log(name);
+
+        const total_price = parseInt(objects.price)*parseInt(objects.sl)
         // Tạo các phần tử con và đặt giá trị từ đối tượng sản phẩm
+
+
+
         itemElement.innerHTML = `
-            <input type="checkbox">
+            <input type="checkbox" >
             <img src=".\\Images\\products\\main_products\\${modifiedString}" alt="">
-            <p>${name}</p>
-            <p>${objects.price}</p>
             <div>
-                <div> số lượng</div>
-                <input type="number" id="myNumber" value= 1>
+                <p> Tên sản phẩm </p>
+                <p>${name}</p>
             </div>
-            <p>${objects.total_price}</p>
+            <div>
+                <p> Giá sản phẩm </p>
+                <p id="price">${objects.price}</p>
+            </div>
+            <div>
+                <p>Số lượng</p>
+                <p id="n">${objects.sl}</p>
+            </div>
+            <div>
+                <p> Tổng tiền </p> 
+                <p id="total-price">${total_price}</p>
+            </div>
         `;
 
+ 
         // Thêm phần tử .item vào phần tử gốc
         itemContainer.appendChild(itemElement);
     });
+
+    const allcheckbox = document.querySelectorAll('.item');
+    // console.log(allcheckbox)
+    allcheckbox.forEach(div => {
+        // console.log(div)
+        div.addEventListener('click', function(){
+            const element = div.querySelector('input[type="checkbox"]'); // Lấy phần tử input có type là "text"
+            element.checked = !element.checked;
+            
+            let price = (div.querySelector('#price'))
+            let num = (div.querySelector('#n'))
+            calc(price, num, element);
+        })
+    
+    })
 }
 
 Read_file_user();
-// console.log(1)
+
+var calc = function(price, num, check){
+    var total = document.getElementById('total-item');
+    var total_cost = document.getElementById('total-cost')
+
+    // console.log(price)
+    if(check.checked){
+        // alert(total.textContent)
+        total.textContent = parseInt(total.textContent) + 1; 
+        total_cost.textContent = parseInt(total_cost.textContent)+ parseInt(price.textContent);
+    } 
+    else {
+        total.textContent = parseInt(total.textContent) - 1;
+        total_cost.textContent = parseInt(total_cost.textContent)- parseInt(price.textContent);
+    }
+}
+
+
+
+
