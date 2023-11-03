@@ -6,11 +6,11 @@
 06 1 Magic%Gohan 15000
 07 1 Song%Goku%ssj 79000
 08 1 Picolo%Giant 54000
-09 1 Shaco%Ha% 80000
+09 1 Shaco%Ha 80000
 10 1 Song%Goku%ssk 88000
 11 1 Vegeta%ssj 12000
 12 2 Aki%Hayakawa 45000
-13 2 Denji% 22000
+13 2 Denji 22000
 14 2 Himeno%98000
 15 2 Kobeni%Higashiyama 90000
 16 2 Makima% 77000
