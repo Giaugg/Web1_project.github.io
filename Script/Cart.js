@@ -7,7 +7,7 @@ var Read_file_user = function () {
         .then(response => response.text())
         .then(data => {
             main_data = data; // Lưu dữ liệu vào biến main_data
-            console.log(main_data);
+            // console.log(main_data);
             getobjects();
         })
         .catch(error => {
@@ -28,7 +28,7 @@ var getobjects = function () {
             sl
         };
     });
-    console.log(objects)
+    // console.log(objects)
     create_user_cart();
 }
 
@@ -62,7 +62,7 @@ var create_user_cart = function(){
 
         const charname = objects.name;
         const name = charname.replace(/%/g, ' ');
-        console.log(name);
+        // console.log(name);
 
         const total_price = parseInt(objects.price)*parseInt(objects.sl)
         // Tạo các phần tử con và đặt giá trị từ đối tượng sản phẩm

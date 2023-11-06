@@ -138,7 +138,7 @@
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
-.flex-container{
+#flex-container{
     display: flex;
     flex-wrap: wrap;
     padding: 10px;
@@ -146,28 +146,35 @@
 
 
 
-.flex-container .flex-item{
-    height: 300px;
-    width: auto;
+.flex-item {
     border: solid 1px;
     flex: 1;
-    margin: 5px;
-    padding: 5px;
-    max-height: 100%;
-    position: relative;
-    font-size: 2rem;
     text-align: center;
+    position: relative;
+    margin: 5px;
 }
 
+
 .item_img{
+    margin: 5px;
     height: 280px;
     margin: 9px 10px 5px 10px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s; /* Tạo hiệu ứng transition cho thuộc tính transform */
-    
+    /* font-size: 2rem; */
 }
 
+#flex-image{
+    height: 250px;
+    width: 190px;
+}
 
+#name{
+    font-size: 1.1rem;
+}
+#price{
+    font-size: 1.1rem;
+}
 
 .item_img:hover{
     transform: scale(1.1);
@@ -178,15 +185,15 @@
 }
 
 .add-to-cart-button {
-    position: absolute; /* Để tạo vị trí tuyệt đối cho nút */
-    top: 50%; /* Đưa nút lên trung tâm theo chiều dọc */
+    position: absolute;
+    top: 70%; 
     left: 50%; /* Đưa nút lên trung tâm theo chiều ngang */
     transform: translate(-50%, -50%); /* Để căn giữa nút hoàn toàn */
     background-color: #A6F6FF; /* Màu nền cho nút */
     color:#6499E9; /* Màu chữ cho nút */
     border: none; /* Loại bỏ viền */
     padding: 10px 20px; /* Điều chỉnh khoảng cách và kích thước nút */
-    opacity: 0; /* Ẩn nút ban đầu */
+    /* opacity: 0; Ẩn nút ban đầu */
     transition: opacity 0.3s; /* Tạo hiệu ứng transition cho thuộc tính opacity */
     border: solid 1px;
     border-radius: 15px;
@@ -346,6 +353,7 @@
     border-radius : 12px;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.1);
+    display: none;
 }
 .register-form{
     position: fixed;
@@ -359,6 +367,7 @@
     border-radius : 12px;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.1);
+    display: none;
 }
 .form_register {
     display: flex;
