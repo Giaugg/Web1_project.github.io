@@ -1,6 +1,7 @@
 var objects;
 var main_data;
-var api="http://localhost:3000/courses";
+var api="http://localhost:3000/Item";
+
 function scrollSnapAutoScroll() {
     const container = document.querySelector('.gallery');
     const scrollItems = document.querySelectorAll('.gallery_item');
@@ -37,14 +38,17 @@ var Read_file_maindata = function () {
 function render(courses){
     var itemContainer = document.getElementById("flex-container");
 
-      var html=  courses.map(function(course){
-        console.log(course.name)
+      var html =  courses.map(function(course){
+            // console.log(course.name)
             return `<div class="flex-item">
+            <div class="div-img"> 
+            
             <img src="${course.imgage}" alt="" id="flex-image">
-      <button class="add-to-cart-button" onclick="themvaogiohang(${course.id},'${course.name}',${course.price},'${course.imgage}')">add to cart</button>
-      <p id="name">${course.name}</p>
-      <p id="price">$${course.price}</p>
-      </div>`
+            </div>
+            <button class="add-to-cart-button" onclick="themvaogiohang(${course.id},'${course.name}',${course.price},'${course.imgage}')">add to cart</button>
+            <p id="name">${course.name}</p>
+            <p id="price">$${course.price}</p>
+            </div>`
          })
 
          itemContainer.innerHTML+=html.join('');    

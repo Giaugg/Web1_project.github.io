@@ -151,21 +151,38 @@
     flex: 1;
     text-align: center;
     position: relative;
-    margin: 5px;
 }
 
 
-.item_img{
-    margin: 5px;
+.flex-item{
     height: 280px;
-    margin: 9px 10px 5px 10px;
+    width: 200px;
+    margin: 5px 10px 5px 10px;
+    padding: 5px 3px 10px 3px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s; /* Tạo hiệu ứng transition cho thuộc tính transform */
     /* font-size: 2rem; */
 }
 
+.flex-item:hover{
+    border-color: rgb(255, 34, 0);
+}
+
+.flex-item:hover #flex-image{
+    transform: scale(1.2);
+}
+
+.flex-item:hover .add-to-cart-button{
+    opacity: 1;
+}
+
+.div-img{
+    overflow: hidden;
+    
+}
+
 #flex-image{
-    height: 250px;
+    transition: transform 0.3s ease-in-out;
+    height: 240px;
     width: 190px;
 }
 
@@ -176,34 +193,29 @@
     font-size: 1.1rem;
 }
 
-.item_img:hover{
-    transform: scale(1.1);
-}
 
-.flex-item:hover{
-   
-}
+
+
 
 .add-to-cart-button {
     position: absolute;
-    top: 70%; 
-    left: 50%; /* Đưa nút lên trung tâm theo chiều ngang */
-    transform: translate(-50%, -50%); /* Để căn giữa nút hoàn toàn */
-    background-color: #A6F6FF; /* Màu nền cho nút */
-    color:#6499E9; /* Màu chữ cho nút */
+    bottom: 5%;
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    background-color: #0551cc; /* Màu nền cho nút */
+    color:#f3f4f5; /* Màu chữ cho nút */
     border: none; /* Loại bỏ viền */
     padding: 10px 20px; /* Điều chỉnh khoảng cách và kích thước nút */
-    /* opacity: 0; Ẩn nút ban đầu */
+    opacity: 0; 
     transition: opacity 0.3s; /* Tạo hiệu ứng transition cho thuộc tính opacity */
     border: solid 1px;
-    border-radius: 15px;
+    font-size: 1.1rem;
+    width: 99%;
 }
-.flex-container .flex-item:hover .add-to-cart-button {
-    opacity: 1; /* Hiện nút khi hover vào khung chứa ảnh */
-}
+
 .add-to-cart-button:hover {
-    background-color: antiquewhite;
-    color: tomato;
+    background-color: rgb(249, 36, 36);
+    color: white;
 }
 
 /* ///////////////////////////////// */
