@@ -176,6 +176,11 @@
     opacity: 1;
 }
 
+.add-to-cart-button :active{
+    background-color: #2515d5;
+    color: #2515d5;
+}
+
 .div-img{
     overflow: hidden;
     

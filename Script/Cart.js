@@ -185,7 +185,7 @@ var empty_cart = function(){
     itemContainer.appendChild(itemElementEmty);
     
     }
-
+ 
 
 
 
