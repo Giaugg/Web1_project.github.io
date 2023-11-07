@@ -70,7 +70,7 @@ function render(courses){
     }
 
 
-Read_file_maindata();
+// Read_file_maindata();
 
 // // Form Login & Register
     const registerForm=document.getElementById('register-form');
