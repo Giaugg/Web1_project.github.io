@@ -7,6 +7,7 @@
     <link rel="stylesheet" href=".\Css\styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
 </head>
+    <div class="homeshow" id="homeshow"></div>
 <body>
 
     <div class="header">
@@ -61,71 +62,85 @@
             </div>
         </div>
     </div>
-    <!-- Form_container -->
+   <!-- Form_container -->
 <div class="form_container">
     <form action="" class="login-form" id="login-form">
-        <i class="fa-solid fa-xmark form_close" ></i>
+        <div class="form_close" id="formclose1">
+            <i class="fa-solid fa-xmark" ></i>
+        </div>
         <!-- Login form -->
             <div class="form_login">
                     <h2>Login</h2>
                     <div class="input_box">
-                            <input type="text"  placeholder="Enter your username">    
-                            <i class="fa-regular fa-file-lines"></i>                   
+                        <i class="fa-regular fa-file-lines" ></i>
+                            <input type="text" class="input-field" id="username1" placeholder="Enter your username"><br>        
+                            <span class="form-message"></span>               
                     </div> 
                     <div class="input_box">
-                        <input type="password"  placeholder="Enter your password">
                         <i class="fa-solid fa-lock"></i>
+                        <input type="password" class="input-field" id="password1" placeholder="Enter your password"><br>
+                        <span class="form-message"></span>
                     </div>
 
-                        <button class="button" >Login</button>
+                        <button class="loginButton" id="loginButtonn" >Login</button>
 
-                    <div class="login_signup"> Don't have an account? <a href="#" id="register"> Register </a></div>
+                    <div class="login_signup"> Don't have an account? <a href="#" id="register-btn"> Register </a></div>
             </div> 
     </form>
             
     <form action="" class="register-form" id="register-form">
-        <i class="fa-solid fa-xmark form_close" ></i>
+        <div class="form_close" id="formclose2">
+            <i class="fa-solid fa-xmark" ></i>
+        </div>
         <!-- Register form -->
         <h2>Registation</h2>
         <div class="form_register"> 
             <div class="input_box">
-                <input type="text"  placeholder="Create your fullname">    
-                <i class="fa-regular fa-file-lines"></i>                   
+                <i class="fa-regular fa-file-lines"></i>  
+                <input type="text" class="input-field" id="fullname" placeholder="Create your fullname"><br>   
+                <span class="form-message"></span>                 
             </div> 
             <div class="input_box">
-                    <input type="text"  placeholder="Create your username">    
-                    <i class="fa-regular fa-file-lines"></i>                   
+                <i class="fa-regular fa-file-lines"></i>
+                <input type="text" class="input-field" id="username"  placeholder="Create your username"><br>    
+                    <span class="form-message"></span>                   
             </div> 
             <div class="input_box">
-                <input type="email"  placeholder="Create your email">    
-                <i class="fa-regular fa-envelope"></i>                   
+                <i class="fa-regular fa-envelope"></i>
+                <input type="email" class="input-field" id="email" placeholder="Create your email"><br>    
+                <span class="form-message"></span>                   
             </div> 
             <div class="input_box">
-                <input type="password"  placeholder="Create your password">
                 <i class="fa-solid fa-lock"></i>
+                <input type="password" class="input-field" id="password"  placeholder="Create your password"><br>
+                <span class="form-message"></span>
             </div>
             <div class="input_box">
-                <input type="tel"  placeholder="Create your phone">    
                 <i class="fa-solid fa-phone"></i>
+                <input type="tel" class="input-field" id="phonenumber" placeholder="Create your phone"><br>    
+                <span class="form-message"></span>
             </div>
             <div class="input_box">
-                <input type="password"  placeholder="Confirm your password">    
-                <i class="fa-solid fa-lock"></i>                   
+                <i class="fa-solid fa-lock"></i>  
+                <input type="password" class="input-field" id="confirm"  placeholder="Confirm your password"><br>    
+                <span class="form-message"></span>                 
             </div>
         </div>    
-        <div class="gender">
+        <div class="gender" >
             <p>Gender</p>
-            <input type="radio" name="gender" id="gender-male">
+            <input type="radio" name="gender" id="gender">
             <label for="">Male</label>
-            <input type="radio" name="gender" id="gender-female">
-            <label for="">Female</label>
+            <input type="radio" name="gender" id="gender">
+            <label for="">Female</label><br>
+            <span class="form-message"></span>
         </div>
 
-        <button class="button" >Register</button>
+        <button class="registerButton" id="registerButton" >Register</button>
 
-            <div class="login_signup"> Already have an account? <a href="#" id="signup"> Login </a></div>
+            <div class="login_signup"> Already have an account? <a href="#" id="login-btn"> Login </a></div>
     </form>
 </div>
+
 
 
     <div class="slider">
@@ -213,6 +228,30 @@
 
 
     <script src=".\Script\Script.js"></script>
+         Validator({
+            form1: '#register-form',
+            rules: [
+                Validator.isRequired('#fullname'),
+                Validator.isRequired('#username'),
+                Validator.isEmail('#email'),
+                Validator.isPhoneNumber('#phonenumber'),
+                Validator.isMinlength('#password',8),
+                Validator.isConfirm('#confirm', function () {
+                    return document.querySelector('#register-form #password').value
+                }),
+                Validator.isGenderSelected('#gender'),
+                
+            ]
+        });
+        Validator({
+            form2: '#login-form',
+            rules: [
+                    Validator.isEmail('#username1'),
+                    Validator.isMinlength('#password1',8),
+                ]
+            });
+    </script>
+
     <script src=".\Script\Cart.js"></script> 
 </body>
 </html>
