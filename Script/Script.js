@@ -1,5 +1,6 @@
 var objects;
 var main_data;
+var api="http://localhost:3000/courses";
 function scrollSnapAutoScroll() {
     const container = document.querySelector('.gallery');
     const scrollItems = document.querySelectorAll('.gallery_item');
@@ -18,69 +19,51 @@ function scrollSnapAutoScroll() {
 
 scrollSnapAutoScroll();
 ////////////// CREATE MAIN DATA////////////
+
+
 var Read_file_maindata = function () {
-    // Đọc nội dung của file1.txt
-    fetch('../filedata/main_data.txt')
-        .then(response => response.text())
-        .then(data => {
-            main_data = data; // Lưu dữ liệu vào biến main_data
-            // console.log(main_data);
-            get_main_objects();
-        })
-        .catch(error => {
-            console.error(error);
+
+    fetch(api)
+        .then(response => response.json())
+        .then(function(data){
+                  render(data);
         });
-}
-
-var get_main_objects = function () {
-    const lines = main_data.split('\n'); // Tách tệp thành từng dòng
-
-    objects = lines.map(line => {
-        const [productId, brand, name, price, sl] = line.split(' '); // Tách dấu cách
-        return {
-            productId,
-            brand,
-            name,
-            price,
-            sl
-        };
-    });
-    console.log(objects)
-    create_main_data();
-}
-
-
-var create_main_data = function(){
-    const itemContainer = document.getElementById("flex-container");
-
-    objects.forEach(function(objects,index) {
-        // Tạo một phần tử .item
-        const itemElement = document.createElement("div");
-        itemElement.classList.add("flex-item");
-
-        const originalString = "ID_Products001.jpg";
-        const modifiedString = originalString.replace(/001/g, (index+1).toString().padStart(3, "0"));
-
-        const charname = objects.name;
-        const name = charname.replace(/%/g, ' ');
-        // console.log(name);
-
-        // Tạo các phần tử con và đặt giá trị từ đối tượng sản phẩm
+        
+      
+    }
 
 
 
-        itemElement.innerHTML = `
-            <img src=".\\Images\\products\\main_products\\${modifiedString}" alt="" id="flex-image">
-            <button class="add-to-cart-button">add to cart</button>
-            <p id="name">${name}</p>
-            <p id="price">$${objects.price}</p>
+function render(courses){
+    var itemContainer = document.getElementById("flex-container");
 
-        `;
+      var html=  courses.map(function(course){
+        console.log(course.name)
+            return `<div class="flex-item">
+            <img src="${course.imgage}" alt="" id="flex-image">
+      <button class="add-to-cart-button" onclick="themvaogiohang(${course.id},'${course.name}',${course.price},'${course.imgage}')">add to cart</button>
+      <p id="name">${course.name}</p>
+      <p id="price">$${course.price}</p>
+      </div>`
+         })
 
+         itemContainer.innerHTML+=html.join('');    
+    }
+    function themvaogiohang(id,ten,gia,hinh){
+        var cart=JSON.parse(localStorage.getItem("cart"));
+        if(cart==null){
+            console.log(1);
+            cart=[];
+            cart.push({id:id,name:ten,price:gia,imgage:hinh,quality:1});
+        }
+        else{
+            let item=cart.find(item=> item.id===id);
+            if(item) item.quality++;
+            else  cart.push({id:id,name:ten,price:gia,imgage:hinh,quality:1});
+        }
+        
+        localStorage.setItem("cart",JSON.stringify(cart));
+    }
 
-        // Thêm phần tử .item vào phần tử gốc
-        itemContainer.appendChild(itemElement);
-    });
-}
 
 Read_file_maindata();
