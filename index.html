@@ -10,6 +10,9 @@
     <div class="homeshow" id="homeshow"></div>
 <body>
 
+    <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
     <div class="header">
         <!-- <div class="header_top">
             <div class="header_infor">
@@ -41,7 +44,7 @@
                     <img src=".\images\icon\cart-shopping-solid.svg" id="show-cart">
                 </a>
                  <a href="#"> 
-                    <img src=".\images\icon\user-solid.svg" >
+                    <img src=".\images\icon\user-solid.svg" id="show-conntainer">
                 </a> 
                 
                 <div class="more_menu"> 
@@ -62,6 +65,10 @@
             </div>
         </div>
     </div>
+
+    <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
    <!-- Form_container -->
 <div class="form_container">
     <form action="" class="login-form" id="login-form">
@@ -92,6 +99,7 @@
         <div class="form_close" id="formclose2">
             <i class="fa-solid fa-xmark" ></i>
         </div>
+        
         <!-- Register form -->
         <h2>Registation</h2>
         <div class="form_register"> 
@@ -141,6 +149,7 @@
     </form>
 </div>
 
+    <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
 
     <div class="slider">
@@ -168,6 +177,10 @@
             </div>
         </div>
     </div>
+
+    <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
     <div class="footer">
         <div class="my_infor">
             <div class="head">
@@ -200,6 +213,8 @@
 
     </div>
 
+    <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
     <div id="cart-user-modal" >
         <div class="modal-container">
             <div class="close" id="close-logo">
@@ -227,8 +242,11 @@
     </div>
 
 
-    <script src=".\Script\Script.js"></script>
-         Validator({
+    <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+    <script src=".\Script\Script.js">
+            Validator({
             form1: '#register-form',
             rules: [
                 Validator.isRequired('#fullname'),
@@ -251,6 +269,7 @@
                 ]
             });
     </script>
+
 
     <script src=".\Script\Cart.js"></script> 
 </body>

@@ -70,11 +70,11 @@ function render(courses){
     }
 
 
-// Read_file_maindata();
+Read_file_maindata();
 
 // // Form Login & Register
-    const registerForm=document.getElementById('register-form');
-    const loginForm=document.getElementById('login-form');
+    const registerForm = document.getElementById('register-form');
+    const loginForm = document.getElementById('login-form');
 
     const showContainer = document.getElementById('show-conntainer')
 
