@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
         while (divElement.firstChild) {
             divElement.removeChild(divElement.firstChild);
         }
+        reset_price();
     });
 });
 
@@ -160,7 +161,12 @@ var calc = function(price, num, check){
         total_cost.textContent = parseInt(total_cost.textContent)- parseInt(price.textContent);
     }
 }
-
+var reset_price = function(){
+    var total = document.getElementById('total-item');
+    var total_cost = document.getElementById('total-cost')
+    total.textContent = 0;
+    total_cost.textContent = 0;
+}
 
 
 
