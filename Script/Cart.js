@@ -39,14 +39,8 @@ var Read_data_cart = function(){
 
 var create_user_cart = function(){
     const itemContainer = document.getElementById("item-list");
-    if(objects.length===0) {
-        var itemElementEmty = document.createElement("div");
-        itemElementEmty.innerHTML = `
-        <p id="empty"> Giỏ hàng trống xin vui lòng lựa chọn sản phẩm cần mua! </p> 
-        `
-        itemContainer.appendChild(itemElementEmty);
-
-    }
+    if(objects.length===0) 
+        empty_cart();
     else {
 
         objects.forEach(function(objects,index) {
@@ -104,21 +98,14 @@ var create_user_cart = function(){
 // Read_file_user();
 
 var delete_item = function(){
-    const alldeleteitem = document.querySelectorAll(".item")
+    delete_HTML_item();
+    delete_data_item();
+}
+
+var delete_HTML_item = function(){
+
     const alldeletebutton = document.querySelectorAll(".delete-item")
-    alldeleteitem.forEach(item =>{
-        btn = item.querySelector(".delete-item")
-        // console.log(btn);
-        btn.addEventListener('click', function(){
-            var cart = JSON.parse(localStorage.getItem("cart"));
-            const target = item.querySelector('#item-ID');
-            const newcart = cart.filter(function(cart){
-                return parseInt(cart.id)!==parseInt(target.textContent);
-            })
-            console.log(target.textContent, newcart);
-            localStorage.setItem("cart",JSON.stringify(newcart)); 
-        })
-    })
+
     alldeletebutton.forEach(function(btn){
         btn.addEventListener('click', function(){
             btn.parentElement.remove();
@@ -126,7 +113,28 @@ var delete_item = function(){
     })
 }
 
+var delete_data_item = function(){
+    const alldeleteitem = document.querySelectorAll(".item")
+    alldeleteitem.forEach(item =>{
+        btn = item.querySelector(".delete-item")
+        // console.log(btn);
+        btn.addEventListener('click', function(){
 
+            var cart = JSON.parse(localStorage.getItem("cart"));
+
+            const target = item.querySelector('#item-ID');
+
+            const newcart = cart.filter(function(cart){
+                return parseInt(cart.id)!==parseInt(target.textContent);
+            })
+
+            if(newcart.length===0) empty_cart();
+
+            // console.log(target.textContent, newcart);
+            localStorage.setItem("cart",JSON.stringify(newcart)); 
+        })
+    })
+}
 
 var calc_money = function(){
 
@@ -167,6 +175,18 @@ var reset_price = function(){
     total.textContent = 0;
     total_cost.textContent = 0;
 }
+
+var empty_cart = function(){
+    const itemContainer = document.getElementById("item-list");
+    var itemElementEmty = document.createElement("div");
+    itemElementEmty.innerHTML = `
+    <p id="empty"> Giỏ hàng trống xin vui lòng lựa chọn sản phẩm cần mua! </p> 
+    `
+    itemContainer.appendChild(itemElementEmty);
+    
+    }
+
+
 
 
 
