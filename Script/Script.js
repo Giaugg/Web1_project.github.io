@@ -31,7 +31,7 @@ var Read_file_maindata = function () {
         });
         
       
-    }
+}
 
 
 
@@ -47,7 +47,7 @@ function render(courses){
             </div>
             <button class="add-to-cart-button" onclick="themvaogiohang(${course.id},'${course.name}',${course.price},'${course.imgage}')">add to cart</button>
             <p id="name">${course.name}</p>
-            <p id="price">$${course.price}</p>
+            <p class="price">$${course.price}</p>
             </div>`
          })
 

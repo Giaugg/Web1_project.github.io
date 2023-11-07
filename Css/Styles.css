@@ -165,6 +165,7 @@
 
 .flex-item:hover{
     border-color: rgb(255, 34, 0);
+    color: rgb(242, 0, 0);
 }
 
 .flex-item:hover #flex-image{
@@ -189,8 +190,11 @@
 #name{
     font-size: 1.1rem;
 }
-#price{
-    font-size: 1.1rem;
+.price{
+    font-size: 1.2rem;
+}
+#item-ID{
+    display: none;
 }
 
 
@@ -265,12 +269,13 @@
     padding-top: 10px;
 }
 .modal-container{
-    background-color: #fbeaea;
+    background-color: #ffffff;
     /* padding: 5px; */
     width: 900px;
     max-height: 95%;
     font-size: 3rem;
     position: relative;
+    border: solid 2px ;
 }
 
 .modal-header{
@@ -279,7 +284,9 @@
     justify-content: center;
     background-color: aquamarine;
     align-items: center;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     margin-bottom: 10px;
+    
 }
 #cart-logo{
     height: 30px;
@@ -303,9 +310,15 @@
 }
 
 #item-list{
-    max-height: 200px;
+    max-height: 100%;
+    min-height: 470px;
     position: relative;
-    padding: 5px;
+    padding: 10px;
+    border: solid 1px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+
     
 }
 .item{
@@ -315,10 +328,15 @@
     align-items: center;
     background-color: #fff;
     padding-left: 10px ;
+    padding-right: 3px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+
+
 }
 
 .item:hover {
     border: solid 1px ;
+    color: red;
 }
 .item img{
     height: 100px;
@@ -335,6 +353,15 @@
     width: 100px;
     text-align: center;
 }
+
+.delete-item{
+    padding: 5px;
+    background-color:#f3f4f5;
+}
+.delete-item:hover{
+    color: red;
+}
+
 .modal-footer{
     position: absolute;
     display: flex;
@@ -349,6 +376,11 @@
 }
 #total-cost{
     font-size: 1.5rem;
+}
+
+#empty{
+    font-size: 1.5rem;
+    font-style: italic;
 }
 /* ////////////////////////////// */
 /* Login & Register */

@@ -24,19 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-// var Read_file_user = function () {
-//     // Đọc nội dung của file1.txt
-//     fetch('../filedata/cart_for_user.txt')
-//         .then(response => response.text())
-//         .then(data => {
-//             main_data = data; // Lưu dữ liệu vào biến main_data
-//             // console.log(main_data);
-//             getobjects();
-//         })
-//         .catch(error => {
-//             console.error(error);
-//         });
-// }
+
 
 var Read_data_cart = function(){
     var cart = JSON.parse(localStorage.getItem("cart"));
@@ -50,49 +38,96 @@ var Read_data_cart = function(){
 
 var create_user_cart = function(){
     const itemContainer = document.getElementById("item-list");
+    if(objects.length===0) {
+        var itemElementEmty = document.createElement("div");
+        itemElementEmty.innerHTML = `
+        <p id="empty"> Giỏ hàng trống xin vui lòng lựa chọn sản phẩm cần mua! </p> 
+        `
+        itemContainer.appendChild(itemElementEmty);
 
-    objects.forEach(function(objects,index) {
-        // Tạo một phần tử .item
-        const itemElement = document.createElement("div");
-        itemElement.classList.add("item");
+    }
+    else {
 
-        const originalString = "ID_Products001.jpg";
-        const modifiedString = originalString.replace(/001/g, (index+1).toString().padStart(3, "0"));
+        objects.forEach(function(objects,index) {
+            // Tạo một phần tử .item
+            const itemElement = document.createElement("div");
+            itemElement.classList.add("item");
+            const id = objects.id;
+            const originalString = "ID_Products001.jpg";
+            const modifiedString = originalString.replace(/001/g, id.toString().padStart(3, "0"));
+    
+            const charname = objects.name;
+            const name = charname.replace(/%/g, ' ');
+            // console.log(name);
+    
+            const total_price = parseInt(objects.price)*parseInt(objects.quality)
+            // Tạo các phần tử con và đặt giá trị từ đối tượng sản phẩm
+    
+            // console.log(objects)
+    
+            itemElement.innerHTML = `
+                <input type="checkbox" >
+                <img src=".\\Images\\products\\${modifiedString}" alt="" class="item_img">
+                <div>
+                    <p> Tên sản phẩm </p>
+                    <p>${name}</p>
+                </div>
+                <div id="item-ID" > ${objects.id} </div>
+                <div>
+                    <p> Giá sản phẩm </p>
+                    <p id="price">${objects.price}</p>
+                </div>
+                <div>
+                    <p>Số lượng</p>
+                    <p id="n" class="price">${objects.quality}</p>
+                </div>
+                <div>
+                    <p> Tổng tiền </p> 
+                    <p id="total-price" class="price">${total_price}</p>
+                </div>
+                <div  class="delete-item"> 
+                    <button>x</button>
+                </div>
+            `;
+    
+     
+            // Thêm phần tử .item vào phần tử gốc
+            itemContainer.appendChild(itemElement);
+        });
+    }
+    delete_item();
+    calc_money();
 
-        const charname = objects.name;
-        const name = charname.replace(/%/g, ' ');
-        // console.log(name);
+}
 
-        const total_price = parseInt(objects.price)*parseInt(objects.quality)
-        // Tạo các phần tử con và đặt giá trị từ đối tượng sản phẩm
+// Read_file_user();
 
-        // console.log(objects)
+var delete_item = function(){
+    const alldeleteitem = document.querySelectorAll(".item")
+    const alldeletebutton = document.querySelectorAll(".delete-item")
+    alldeleteitem.forEach(item =>{
+        btn = item.querySelector(".delete-item")
+        // console.log(btn);
+        btn.addEventListener('click', function(){
+            var cart = JSON.parse(localStorage.getItem("cart"));
+            const target = item.querySelector('#item-ID');
+            const newcart = cart.filter(function(cart){
+                return parseInt(cart.id)!==parseInt(target.textContent);
+            })
+            console.log(target.textContent, newcart);
+            localStorage.setItem("cart",JSON.stringify(newcart)); 
+        })
+    })
+    alldeletebutton.forEach(function(btn){
+        btn.addEventListener('click', function(){
+            btn.parentElement.remove();
+        })
+    })
+}
 
-        itemElement.innerHTML = `
-            <input type="checkbox" >
-            <img src=".\\Images\\products\\${modifiedString}" alt="" class="item_img">
-            <div>
-                <p> Tên sản phẩm </p>
-                <p>${name}</p>
-            </div>
-            <div>
-                <p> Giá sản phẩm </p>
-                <p id="price">${objects.price}</p>
-            </div>
-            <div>
-                <p>Số lượng</p>
-                <p id="n">${objects.quality}</p>
-            </div>
-            <div>
-                <p> Tổng tiền </p> 
-                <p id="total-price">${total_price}</p>
-            </div>
-        `;
 
- 
-        // Thêm phần tử .item vào phần tử gốc
-        itemContainer.appendChild(itemElement);
-    });
+
+var calc_money = function(){
 
     const allcheckbox = document.querySelectorAll('.item');
     // console.log(allcheckbox)
@@ -109,8 +144,6 @@ var create_user_cart = function(){
     
     })
 }
-
-// Read_file_user();
 
 var calc = function(price, num, check){
     var total = document.getElementById('total-item');
