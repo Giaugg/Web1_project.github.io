@@ -4,11 +4,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-<<<<<<< HEAD
-    font-size: 69%;
-=======
     
->>>>>>> f3ce1376949ee80872e32e994ce70391b27e4450
     font-family: "Poppins", sans-serif;
 }
 /* ///////////////////////////////// */
@@ -246,8 +242,6 @@
 /* ///////////// CART ///////////////// */
 
 #cart-user-modal{
-<<<<<<< HEAD
-=======
     position: fixed;
     top: 0;
     left: 0;
@@ -539,7 +533,6 @@
 
 
 .chi-tiet-modal{
->>>>>>> f3ce1376949ee80872e32e994ce70391b27e4450
     position: fixed;
     top: 0;
     left: 0;

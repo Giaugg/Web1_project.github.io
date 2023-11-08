@@ -34,37 +34,18 @@ var Read_file_maindata = function () {
     }
 
 
-<<<<<<< HEAD
-
-function render(courses){
-    var itemContainer = document.getElementById("flex-container");
-
-      var html=  courses.map(function(course){
-        console.log(course.name)
-=======
 function render(courses){
     var itemContainer = document.getElementById("flex-container");
        
       var html=  courses.map(function(course){
                   console.log(course.imgage)
                  
->>>>>>> f3ce1376949ee80872e32e994ce70391b27e4450
             return `<div class="flex-item">
             <img src="${course.imgage}" alt="" id="flex-image">
       <button class="add-to-cart-button" onclick="themvaogiohang(${course.id},'${course.name}',${course.price},'${course.imgage}')">add to cart</button>
       <p id="name">${course.name}</p>
       <p id="price">$${course.price}</p>
       </div>`
-<<<<<<< HEAD
-         })
-
-         itemContainer.innerHTML+=html.join('');    
-    }
-    function themvaogiohang(id,ten,gia,hinh){
-        var cart=JSON.parse(localStorage.getItem("cart"));
-        if(cart==null){
-            console.log(1);
-=======
     
          })
 
@@ -77,7 +58,6 @@ function render(courses){
         var cart=JSON.parse(localStorage.getItem("cart"));
         if(cart==null){
           
->>>>>>> f3ce1376949ee80872e32e994ce70391b27e4450
             cart=[];
             cart.push({id:id,name:ten,price:gia,imgage:hinh,quality:1});
         }
@@ -89,11 +69,6 @@ function render(courses){
         
         localStorage.setItem("cart",JSON.stringify(cart));
     }
-<<<<<<< HEAD
-
-
-Read_file_maindata();
-=======
     function chitiet(id, ten, gia, hinh) {
         console.log(hinh)
        hinh= convertImagePath(hinh)
@@ -215,4 +190,3 @@ function convertImagePath(inputPath) {
 Read_file_maindata();
 
 
->>>>>>> f3ce1376949ee80872e32e994ce70391b27e4450
