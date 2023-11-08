@@ -4,7 +4,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-size: 69%;
+    
     font-family: "Poppins", sans-serif;
 }
 /* ///////////////////////////////// */
@@ -151,80 +151,59 @@
     flex: 1;
     text-align: center;
     position: relative;
+    margin: 5px;
 }
 
 
-.flex-item{
+.item_img{
+    margin: 5px;
     height: 280px;
-    width: 200px;
-    margin: 5px 10px 5px 10px;
-    padding: 5px 3px 10px 3px;
+    margin: 9px 10px 5px 10px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s; /* Tạo hiệu ứng transition cho thuộc tính transform */
     /* font-size: 2rem; */
 }
 
-.flex-item:hover{
-    border-color: rgb(255, 34, 0);
-    color: rgb(242, 0, 0);
-}
-
-.flex-item:hover #flex-image{
-    transform: scale(1.2);
-}
-
-.flex-item:hover .add-to-cart-button{
-    opacity: 1;
-}
-
-.add-to-cart-button :active{
-    background-color: #2515d5;
-    color: #2515d5;
-}
-
-.div-img{
-    overflow: hidden;
-    
-}
-
 #flex-image{
-    transition: transform 0.3s ease-in-out;
-    height: 240px;
+    height: 250px;
     width: 190px;
 }
 
 #name{
     font-size: 1.1rem;
 }
-.price{
-    font-size: 1.2rem;
-}
-#item-ID{
-    display: none;
+#price{
+    font-size: 1.1rem;
 }
 
+.item_img:hover{
+    transform: scale(1.1);
+}
 
-
-
+.flex-item:hover{
+   
+}
 
 .add-to-cart-button {
     position: absolute;
-    bottom: 5%;
-    left: 50%; 
-    transform: translate(-50%, -50%); 
-    background-color: #0551cc; /* Màu nền cho nút */
-    color:#f3f4f5; /* Màu chữ cho nút */
+    top: 70%; 
+    left: 50%; /* Đưa nút lên trung tâm theo chiều ngang */
+    transform: translate(-50%, -50%); /* Để căn giữa nút hoàn toàn */
+    background-color: #A6F6FF; /* Màu nền cho nút */
+    color:#6499E9; /* Màu chữ cho nút */
     border: none; /* Loại bỏ viền */
     padding: 10px 20px; /* Điều chỉnh khoảng cách và kích thước nút */
-    opacity: 0; 
+    /* opacity: 0; Ẩn nút ban đầu */
     transition: opacity 0.3s; /* Tạo hiệu ứng transition cho thuộc tính opacity */
     border: solid 1px;
-    font-size: 1.1rem;
-    width: 99%;
+    border-radius: 15px;
 }
-
+.flex-container .flex-item:hover .add-to-cart-button {
+    opacity: 1; /* Hiện nút khi hover vào khung chứa ảnh */
+}
 .add-to-cart-button:hover {
-    background-color: rgb(249, 36, 36);
-    color: white;
+    background-color: antiquewhite;
+    color: tomato;
 }
 
 /* ///////////////////////////////// */
@@ -274,13 +253,12 @@
     padding-top: 10px;
 }
 .modal-container{
-    background-color: #ffffff;
+    background-color: #fbeaea;
     /* padding: 5px; */
     width: 900px;
     max-height: 95%;
     font-size: 3rem;
     position: relative;
-    border: solid 2px ;
 }
 
 .modal-header{
@@ -289,8 +267,7 @@
     justify-content: center;
     background-color: aquamarine;
     align-items: center;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-    
+    margin-bottom: 10px;
 }
 #cart-logo{
     height: 30px;
@@ -314,13 +291,9 @@
 }
 
 #item-list{
-    max-height: 100%;
-    min-height: 475px;
+    max-height: 200px;
     position: relative;
-    padding: 20px 10px 10px 10px;
-    border: solid 1px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-
+    padding: 5px;
     
 }
 .item{
@@ -330,15 +303,10 @@
     align-items: center;
     background-color: #fff;
     padding-left: 10px ;
-    padding-right: 3px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-
-
 }
 
 .item:hover {
     border: solid 1px ;
-    color: red;
 }
 .item img{
     height: 100px;
@@ -355,15 +323,6 @@
     width: 100px;
     text-align: center;
 }
-
-.delete-item{
-    padding: 5px;
-    background-color:#f3f4f5;
-}
-.delete-item:hover button{
-    color: red;
-}
-
 .modal-footer{
     position: absolute;
     display: flex;
@@ -379,13 +338,6 @@
 #total-cost{
     font-size: 1.5rem;
 }
-
-#empty{
-    font-size: 1.5rem;
-    font-style: italic;
-    position: absolute;
-    left: 24%;
-}
 /* ////////////////////////////// */
 /* Login & Register */
 
@@ -396,37 +348,25 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index:100;    
-    padding: 20px;
-    border-radius : 12px;
-    background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.1);
-    display: none ;
-}
-
-.register-form{
-    position: fixed;
-    max-width: 700px;
-    width: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     z-index:101;    
     padding: 20px;
     border-radius : 12px;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.1);
-    display: none ;
+    display: none;
 }
-.homeshow {
-    opacity: 1;
-    transition: all 0.5s ease-out;
-    background-color: rgba(0, 0, 0, 0.6);
-    height:100%;
-    width: 100%;
+.register-form{
     position: fixed;
-    z-index: 100;
-    background-size: cover;
+    max-width: 700px;
+    width: 100%;
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    z-index:101;    
+    padding: 20px;
+    border-radius : 12px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1);
     display: none;
 }
 .form_register {
@@ -441,42 +381,58 @@
     top: 10px;
     right: 20px;
     color: rgb(31, 30, 30);
-    font-size: 40px;
+    font-size: 22px;
     opacity: 0.7;
     cursor: pointer;
 }
-
+.form_register .form_close{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: rgb(31, 30, 30);
+    font-size: 22px;
+    opacity: 0.7;
+    cursor: pointer;
+}
 .form_close:hover{
     position: absolute;
     top: 10px;
     right: 20px;
     color: rgb(232, 16, 16);
-    font-size: 50px;
+    font-size: 22px;
+    opacity: 0.7;
+    cursor: pointer;
+}
+.form_register .form_close:hover{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: rgb(232, 16, 16);
+    font-size: 22px;
     opacity: 0.7;
     cursor: pointer;
 }
 .login-form h2{
-    font-size: 30px;
-    font-weight: bold;
+    font-size: 25px;
     color: rgb(13, 13, 12);
     text-align: center;
 }
 .register-form h2{
-    font-size: 30px;
+    font-size: 25px;
     color: rgb(13, 13, 12);
     text-align: center;
     font-weight: bold;
 }
 .input_box {
     position: relative;
-    margin-top: 40px;
+    margin-top: 30px;
     width: 100%;
-    height: 40px;  
+    height: 40px;   
 }
 
 .register-form .input_box {
     position: relative;
-    margin-top: 40px;
+    margin-top: 30px;
     width: 50%;
     height: 40px;   
 }
@@ -488,15 +444,11 @@
     outline: none;
     padding: 0 20px;
     transition: all 0.2s ease;
-    padding-left: 25px;
     border-bottom: 1.5px solid gray;
-    text-align: center;
-    
 }
 
 .input_box input:focus {
     border-color:red;
-    text-align: center;
 }
 .input_box i {
     position: absolute;
@@ -506,65 +458,51 @@
     color: rgb(81, 80, 80)
 }
 
-.form_container .loginButton {
-    background: blue;
-    color: #ffffff;
-    margin-top: 40px;
-    width: 100%;
-    padding: 10px 0;
-    border-radius: 10px;
-    font-size: 25px;
-}
-.form_container .loginButton:hover {
-    background-color:orangered;
-	color: white;
-}
-
-.form_container .registerButton {
+.form_container .button {
     background: blue;
     color: #ffffff;
     margin-top: 30px;
     width: 100%;
     padding: 10px 0;
     border-radius: 10px;
-    font-size: 25px;
+    font-size: 22px;
 }
-.form_container .registerButton:hover {
+.form_container .button:hover {
     background-color:orangered;
 	color: white;
-} 
+}
 .login_signup{
-    font-size: 18px;
+    font-size: 15px;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 15px;
 
 }
 .form_container a{
     text-decoration: none;
     color: #2515d5;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
 }
 
 .form_container a:hover{
     text-decoration: none;
 	color: red;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
 }
 .gender{
     margin-left: 1.5rem;
-    margin-top:35px;
+    margin-top:0;
 }
 .gender p{
     font-weight: bold;
-    font-size: 20px;
+    font-size: 16px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 .gender label{
     margin-top: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     margin-right: 2rem;
     font-size: 16px;
 
@@ -590,44 +528,295 @@
     .input_box input {
         width: 100%;
     }
-    .login-form{
-        position: fixed;
-        max-width: 350px;
-        width: 100%;
-        transform: translate(-50%, -50%);
-        z-index:101;    
-        padding: 20px;
-        border-radius : 12px;
-        background-color: white;
-        box-shadow: rgba(0, 0, 0, 0.1);
+}
+
+
+
+.chi-tiet-modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+    justify-content: center;
+    padding-top: 10px;
+}
+.modal-container{
+    background-color: #fbeaea;
+    /* padding: 5px; */
+    width: 900px;
+    max-height: 95%;
+    font-size: 3rem;
+    position: relative;
+}
+
+.modal-header{
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    background-color: aquamarine;
+    align-items: center;
+    margin-bottom: 10px;
+}
+#cart-logo{
+    height: 30px;
+    margin: 10px;
+}
+.close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+}
+.close:hover{
+    background-color: #ebe7e7;
+}
+
+.modal-items{
+    padding: 10px;
+    overflow: auto;
+    height: 80%;
+
+}
+
+#item-list{
+    max-height: 200px;
+    position: relative;
+    padding: 5px;
+    
+}
+.item{
+    display: flex;
+    margin-bottom: 5px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding-left: 10px ;
+}
+
+.item:hover {
+    border: solid 1px ;
+}
+.item img{
+    height: 100px;
+}
+.item input{
+    height: 30px;
+}
+.item *{
+    font-size: 1.3rem;
+}
+.item p{   
+    word-wrap: break-word; 
+    max-width: 100px;
+    width: 100px;
+    text-align: center;
+}
+.modal-footer{
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    background-color: aqua;
+    width: 100%;
+    height: 40px;
+    align-items: center;
+}
+#total-item{
+    font-size: 1.5rem;
+}
+#total-cost{
+    font-size: 1.5rem;
+}
+/* ////////////////////////////// */
+/* Login & Register */
+
+.login-form{
+    position: fixed;
+    max-width: 350px;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index:101;    
+    padding: 20px;
+    border-radius : 12px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1);
+    display: none;
+}
+.register-form{
+    position: fixed;
+    max-width: 700px;
+    width: 100%;
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    z-index:101;    
+    padding: 20px;
+    border-radius : 12px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1);
+    display: none;
+}
+.form_register {
+    display: flex;
+    width: 100%;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.form_close{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: rgb(31, 30, 30);
+    font-size: 22px;
+    opacity: 0.7;
+    cursor: pointer;
+}
+.form_register .form_close{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: rgb(31, 30, 30);
+    font-size: 22px;
+    opacity: 0.7;
+    cursor: pointer;
+}
+.form_close:hover{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: rgb(232, 16, 16);
+    font-size: 22px;
+    opacity: 0.7;
+    cursor: pointer;
+}
+.form_register .form_close:hover{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: rgb(232, 16, 16);
+    font-size: 22px;
+    opacity: 0.7;
+    cursor: pointer;
+}
+.login-form h2{
+    font-size: 25px;
+    color: rgb(13, 13, 12);
+    text-align: center;
+}
+.register-form h2{
+    font-size: 25px;
+    color: rgb(13, 13, 12);
+    text-align: center;
+    font-weight: bold;
+}
+.input_box {
+    position: relative;
+    margin-top: 30px;
+    width: 100%;
+    height: 40px;   
+}
+
+.register-form .input_box {
+    position: relative;
+    margin-top: 30px;
+    width: 50%;
+    height: 40px;   
+}
+.input_box input {
+    font-size: 16px;
+    height: 100%;
+    width: 80%;
+    border: none;
+    outline: none;
+    padding: 0 20px;
+    transition: all 0.2s ease;
+    border-bottom: 1.5px solid gray;
+}
+
+.input_box input:focus {
+    border-color:red;
+}
+.input_box i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: rgb(81, 80, 80)
+}
+
+.form_container .button {
+    background: blue;
+    color: #ffffff;
+    margin-top: 30px;
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 10px;
+    font-size: 22px;
+}
+.form_container .button:hover {
+    background-color:orangered;
+	color: white;
+}
+.login_signup{
+    font-size: 15px;
+    text-align: center;
+    margin-top: 15px;
+
+}
+.form_container a{
+    text-decoration: none;
+    color: #2515d5;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.form_container a:hover{
+    text-decoration: none;
+	color: red;
+    font-size: 16px;
+    font-weight: bold;
+}
+.gender{
+    margin-left: 1.5rem;
+    margin-top:0;
+}
+.gender p{
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.gender label{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-right: 2rem;
+    font-size: 16px;
+
+}
+@media only screen and ( max-width : 1000px)
+{
+    .register-form{
+    max-width: 350px;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    z-index:101;    
+    padding: 20px;
+    border-radius : 12px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1);
     }
-    .input_box {
+    .form_register{
+        display:inline-block;  
+    }
+    .register-form .input_box{
         width: 80%;
     }
-    
-    .input_box i {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 20px;
-        color: rgb(81, 80, 80)
+    .input_box input {
+        width: 100%;
     }
 }
-.invalid .input_box {
-    border-bottom-color: #f33a58;
-}
-
-.invalid .register-form .input_box {
-    border-color: #f33a58;
-}
-
-.invalid .form-message {
-    color: #f33a58;
-}
-
-.form-message {
-    font-size: 15px;
-    line-height: 30px;
-    position: absolute;
-}
-
