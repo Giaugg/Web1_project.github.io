@@ -7,7 +7,7 @@
     <link rel="stylesheet" href=".\Css\styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
 </head>
-<body>
+<body id="body">
 
     <div class="header">
         <!-- <div class="header_top">
@@ -198,7 +198,7 @@
             <div class="modal-items">
                 <div class="cart-items">
                     <div id="item-list">
-                        
+                        <!-- item cua cart -->
                     </div>
                 </div>
             </div>
@@ -211,10 +211,50 @@
         </div>
     </div>
 
-    //huu giau dep trais
+    <div class="chi-tiet-modal" >
+        
+        <div class="chi-tiet-modal-container">
+         <div class="modal-close" >
+           <button class="annutclose">  <i class="fa-solid fa-xmark"></i></button>
+         </div>
+         <div class="chi-tiet-header">
+             <div class="item">
+                 <img src="..\\Images\\products\\ID_Products026.jpg" alt="" >
+             </div>
+             <div class="header1" style="font-size: 100%;">
+         <div class="fornt-write"><h2>goku</h2></div>
+         <div>GIA:1000000đ</div>
+         <div>
+             SIZE
+             <select name="" id=""></select>
+         </div>
+         <div>so luong
+             <div class="fornt-sl" >
+                     <div class="button">          
+                             <button id="handel-minus" ><i class="fa-solid fa-minus"></i></button>
+                 </div>
+                 <input type="text" id="input" style="width: 50px;" value="0">
+                 <div class="button">
+                 <button id="handel-plus"><i class="fa-solid fa-plus"></i></button>
+             </div>
+                    
+           
+             </div>
+         </div>
+         <div>
+             <button><a href="https://fullstack.edu.vn/"><i class="fa-sharp fa-solid fa-cart-plus"></i>THEM VAO GIO</a></button>
+          </div>
+             </div>
+             
+         </div>
+        </div>
+     </div>
+     
 
+    <!-- //huu giau dep trais -->
+   
     <script src=".\Script\Script.js"></script>
-    <script src=".\Script\Cart.js"></script> 
+    <!-- //<script src=".\Script\Cart.js"></script>  -->
 </body>
 </html>
 <!-- @nmedia only screeb and (max-width: 750) -->
