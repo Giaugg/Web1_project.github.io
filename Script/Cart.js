@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var main_data;
 var objects; // Khai báo biến objects ở ngoài để truy cập sau này
 
@@ -102,3 +103,5 @@ var calc = function(price, num, check){
 
 
 
+=======
+>>>>>>> f3ce1376949ee80872e32e994ce70391b27e4450
