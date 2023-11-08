@@ -1,7 +1,7 @@
 var objects;
 var main_data;
 
-var api="http://localhost:3000/Item";
+var api="http://localhost:3000/courses";
 function scrollSnapAutoScroll() {
     const container = document.querySelector('.gallery');
     const scrollItems = document.querySelectorAll('.gallery_item');
@@ -134,7 +134,7 @@ function render(courses){
             let item=cart.find(item=> item.id===id);
 
             if(item&&inputElement1.value>=1) item.quality=inputElement1.value;
-              else cart.push({id:id,name:ten,price:gia,imgage:hinh,quality:inputElement1.value})
+              else  cart.push({id:id,name:ten,price:gia,imgage:hinh,quality:inputElement1.value})
            }
            
         
@@ -172,7 +172,7 @@ function render(courses){
                     chitetElement1.style.display="flex"
       
                    
-
+                 
              
            
       
