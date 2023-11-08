@@ -45,7 +45,7 @@ function render(courses){
             
             <img src="${course.imgage}" alt="" id="flex-image">
             </div>
-            <button class="add-to-cart-button" onclick="themvaogiohang(${course.id},'${course.name}',${course.price},'${course.imgage}')">add to cart</button>
+            <button class="add-to-cart-button" onclick="themvaogiohang(${course.id},'${course.name}',${course.price},'${course.imgage}')">Add to cart</button>
             <p id="name">${course.name}</p>
             <p class="price">$${course.price}</p>
             </div>`
