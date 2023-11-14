@@ -1,0 +1,243 @@
+/* Login & Register */
+
+.login-form{
+    position: fixed;
+    max-width: 350px;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index:100;    
+    padding: 20px;
+    border-radius : 12px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1);
+    display: none ;
+}
+
+.register-form{
+    position: fixed;
+    max-width: 700px;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index:101;    
+    padding: 20px;
+    border-radius : 12px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1);
+    display: none ;
+}
+.homeshow {
+    opacity: 1;
+    transition: all 0.5s ease-out;
+    background-color: rgba(0, 0, 0, 0.6);
+    height:100%;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    background-size: cover;
+    display: none;
+}
+.form_register {
+    display: flex;
+    width: 100%;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.form_close{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: rgb(31, 30, 30);
+    font-size: 40px;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.form_close:hover{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: rgb(232, 16, 16);
+    font-size: 50px;
+    opacity: 0.7;
+    cursor: pointer;
+}
+.login-form h2{
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(13, 13, 12);
+    text-align: center;
+}
+.register-form h2{
+    font-size: 30px;
+    color: rgb(13, 13, 12);
+    text-align: center;
+    font-weight: bold;
+}
+.input_box {
+    position: relative;
+    margin-top: 40px;
+    width: 100%;
+    height: 40px;  
+}
+
+.register-form .input_box {
+    position: relative;
+    margin-top: 40px;
+    width: 50%;
+    height: 40px;   
+}
+.input_box input {
+    font-size: 16px;
+    height: 100%;
+    width: 80%;
+    border: none;
+    outline: none;
+    padding: 0 20px;
+    transition: all 0.2s ease;
+    padding-left: 25px;
+    border-bottom: 1.5px solid gray;
+    text-align: center;
+    
+}
+
+.input_box input:focus {
+    border-color:red;
+    text-align: center;
+}
+.input_box i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: rgb(81, 80, 80)
+}
+
+.form_container .loginButton {
+    background: blue;
+    color: #ffffff;
+    margin-top: 40px;
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 10px;
+    font-size: 25px;
+}
+.form_container .loginButton:hover {
+    background-color:orangered;
+	color: white;
+}
+
+.form_container .registerButton {
+    background: blue;
+    color: #ffffff;
+    margin-top: 30px;
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 10px;
+    font-size: 25px;
+}
+.form_container .registerButton:hover {
+    background-color:orangered;
+	color: white;
+} 
+.login_signup{
+    font-size: 18px;
+    text-align: center;
+    margin-top: 20px;
+
+}
+.form_container a{
+    text-decoration: none;
+    color: #2515d5;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.form_container a:hover{
+    text-decoration: none;
+	color: red;
+    font-size: 18px;
+    font-weight: bold;
+}
+.gender{
+    margin-left: 1.5rem;
+    margin-top:35px;
+}
+.gender p{
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.gender label{
+    margin-top: 15px;
+    margin-bottom: 20px;
+    margin-right: 2rem;
+    font-size: 16px;
+
+}
+@media only screen and ( max-width : 1000px)
+{
+    .register-form{
+    max-width: 350px;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    z-index:101;    
+    padding: 20px;
+    border-radius : 12px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1);
+    }
+    .form_register{
+        display:inline-block;  
+    }
+    .register-form .input_box{
+        width: 80%;
+    }
+    .input_box input {
+        width: 100%;
+    }
+    .login-form{
+        position: fixed;
+        max-width: 350px;
+        width: 100%;
+        transform: translate(-50%, -50%);
+        z-index:101;    
+        padding: 20px;
+        border-radius : 12px;
+        background-color: white;
+        box-shadow: rgba(0, 0, 0, 0.1);
+    }
+    .input_box {
+        width: 80%;
+    }
+    
+    .input_box i {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 20px;
+        color: rgb(81, 80, 80)
+    }
+}
+.invalid .input_box {
+    border-bottom-color: #f33a58;
+}
+
+.invalid .register-form .input_box {
+    border-color: #f33a58;
+}
+
+.invalid .form-message {
+    color: #f33a58;
+}
+
+.form-message {
+    font-size: 15px;
+    line-height: 30px;
+    position: absolute;
+}

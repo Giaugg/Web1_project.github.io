@@ -1,0 +1,63 @@
+/* Định dạng phần tử gốc */
+.dropdw {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+/* Định dạng các mục trong danh sách */
+.dropdw-items{
+    display: block;
+}
+.dropdw-items a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    width: 270px;
+    height: 60px;
+    font-size: 2rem;
+    text-align: left;
+    margin: 0;
+}
+
+.dropdw-items li {
+    margin: 0;
+    height: 60px;
+}
+
+.dropdw-items :first-child a {
+    border-radius: 5px 5px 0px 0px;
+}
+
+.dropdw-items :last-child a {
+    border-radius: 0 0 5px 5px;
+}
+
+/* Định dạng danh sách thả xuống */
+.dropdw-items {
+    display: none;
+    position: absolute;
+    width: 175px;
+    z-index: 10;
+    top: 50px;
+    left: -230px;
+    /* Điều chỉnh vị trí bên trái */
+    margin: 0;
+    list-style-type: none;
+}
+
+
+/* Định dạng mục danh sách khi di chuột vào */
+.dropdw-items li a:hover {
+    background-color: #b4b4b4;
+}
+
+/* Hiển thị danh sách khi hover vào biểu tượng */
+.dropdw:hover .dropdw-items {
+    display: block;
+}

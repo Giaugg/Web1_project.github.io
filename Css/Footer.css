@@ -1,0 +1,29 @@
+/* ///////////// FOOTER ////////////// */
+
+
+.footer{
+    height: 150px;
+    background-color: #BEFFF7;
+    font-size: 5rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 15px 5px 15px;
+}
+
+.my_infor{
+    border: solid 1px tomato;
+    list-style-position: inside;
+}
+
+.my_infor .head{
+    background-color: aquamarine;
+}
+
+.more_infor{
+    border: solid 1px tomato;
+    list-style-position: inside;
+
+}
+.more_infor .head{
+    background-color: aquamarine;
+}

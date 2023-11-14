@@ -1,0 +1,126 @@
+/* /////////// CONTENT ////////////// */
+
+.content{
+    background-color: #9EDDFF;
+    height: 100%;
+}
+
+.main-content{
+    width: 70%;
+    padding: 20px;
+    border: solid 2px #6499E9;
+    margin: auto;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+#flex-container{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+
+
+.flex-item {
+    border: solid 1px;
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+.flex-image-ctn{
+    height: 240px;
+    width: 190px;
+    overflow: hidden;
+
+}
+
+.flex-item{
+    height: 280px;
+    width: 200px;
+    margin: 5px 10px 5px 10px;
+    padding: 5px 3px 10px 3px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    /* font-size: 2rem; */
+}
+
+.flex-item:hover{
+    border-color: rgb(255, 34, 0);
+    color: rgb(242, 0, 0);
+}
+
+.flex-item:hover #flex-image{
+    transform: scale(1.2);
+}
+
+.flex-item:hover .add-to-cart-button{
+    opacity: 1;
+}
+.flex-item:hover .annut{
+    opacity: 1;
+}
+
+.add-to-cart-button :active{
+    background-color: #2515d5;
+    color: #2515d5;
+}
+
+.div-img{
+    overflow: hidden;
+    
+}
+
+#flex-image{
+    transition: transform 0.3s ease-in-out;
+    height: 240px;
+    width: 190px;
+}
+
+#name{
+    font-size: 1.1rem;
+}
+.price{
+    font-size: 1.2rem;
+}
+#item-ID{
+    display: none;
+}
+
+.button-flex{
+    position: absolute;
+    width: 99%;
+    top: 70%;
+    display: block;
+}
+.button-flex *{
+    padding: 17px;
+    
+}
+
+.annut{
+    background-color: #0551cc; /* Màu nền cho nút */
+    color:#f3f4f5; /* Màu chữ cho nút */
+    opacity: 0; 
+    transition: opacity 0.3s; /* Tạo hiệu ứng transition cho thuộc tính opacity */
+    border: solid 1px;
+    font-size: 1.1rem;
+    width: 50%;
+}
+
+
+.add-to-cart-button {
+    background-color: #0551cc; /* Màu nền cho nút */
+    color:#f3f4f5; /* Màu chữ cho nút */
+    opacity: 0; 
+    transition: opacity 0.3s; /* Tạo hiệu ứng transition cho thuộc tính opacity */
+    border: solid 1px;
+    font-size: 1.1rem;
+}
+
+.add-to-cart-button:hover {
+    background-color: rgb(249, 36, 36);
+    color: white;
+}
+.annut:hover {
+    background-color: rgb(249, 36, 36);
+    color: white;
+}

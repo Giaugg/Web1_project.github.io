@@ -1,0 +1,109 @@
+/* TIM KIEM*/
+.modal1{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: none;
+        align-items: center;
+        justify-content: center;
+}
+.modal-container1{
+    background: white;
+    display: block;
+    width: 800px;
+    
+    height: 600px;
+   
+    position: relative;
+
+        
+        overflow-y: scroll;
+}
+.modal-close1{
+    position: relative;
+    padding: 12px;
+    cursor: pointer;
+    color:black;
+    opacity: 0.5;
+    height: 50px;
+    width: 780px;
+    margin-bottom: 10px;
+}
+.annutclose1:hover{
+    opacity: 1;
+    color: red;
+}
+.annutclose1{
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+}
+.modal-container1 .search{
+    position: absolute;
+    right: 60px;
+    top:0;
+}
+.search{
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 600px;
+  height:  30px;
+  margin-top: 10px;
+    margin-bottom: 30px;
+    font-size: 18px;   
+    position: relative;  
+}
+.search input{
+		width: 550px;
+		border: none;
+		outline: none;
+}
+.chitiet{
+    display: flex;
+    
+    height: 200px;
+   cursor: pointer;
+    margin-top: 20px;
+}
+.chitiet img{
+    min-width: 200px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.chitiet .chitiet2{
+   height: 200px;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   flex-direction: column;
+   cursor: pointer;
+}
+.chitiet2{
+    font-size: 30px;
+}
+.sanphamItem{
+    margin-top:10px ;
+}
+.chitiet:hover{
+    background: #dadada
+}
+div .khung{
+    position:relative;
+ }
+
+ .khungchon{
+    position: absolute;
+    right: 0;
+    top:0;
+	
+ }
+ .search2{
+    display: none;
+    justify-content: space-between;
+	
+ }

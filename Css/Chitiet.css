@@ -1,0 +1,49 @@
+/* chi tiet */
+.chi-tiet-modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:rgba(0, 0, 0, 0.4);
+    display: none;
+    justify-content: center;
+    
+   
+}
+
+.chi-tiet-modal-container{
+    position: absolute;
+    top:10%;
+    background: white;
+    width: 900px;
+    min-height: 200px;
+    max-width: calc(100%);
+    position: relative;
+    display: flex;
+    
+}
+
+.modal-close{
+    position: absolute;
+    right: 0%;
+    padding: 15px;
+    color: dark;
+    background-color: #dadada;
+}
+
+.chi-tiet-header{
+    height: 30px;
+    width: 100%;
+    background-color: #BEFFF7;
+    font-size: 3rem;
+}
+
+ .modal-chi-tiet-image{
+    height: 400px;
+    width: 200px;
+}
+#image-chitiet{
+    height: 240px*3;
+    width: 190px*3;
+}

@@ -9,383 +9,25 @@
 }
 /* ///////////////////////////////// */
 
-/* ///////////// HEADER ////////////// */
 
-.header{
-    background-color: #6499E9;
-    height: 120px;
-    font-size: 3rem;
-    padding: 10px;
-}
+/* ///////////////////////////////// */
 
 
 
-.header_my{
-    display: flex;
-    justify-self: end;
-    margin-bottom: -50px;
-    margin-top: 40px;
-}
-.header_my *{
-    height: 40px;
-    width: 40px;
-    margin: 5px;
-}
-
-.header_top{
-    display: flex;
-    justify-content: space-between;
-}
-
-.main_header{
-    display: flex;
-    justify-content: space-between;
-    height: 50px;
-}
 
 
 
-.search-box{
-    display: flex;
-    font-size: 2.1rem;
-    margin-bottom: -50px;
-    margin-top: 40px;
-}
-
-.search-box input{
-    width: 500px;
-}
-.home{
-    margin-bottom: 30px;
-}
-#home-logo {
-    width: 350px;
-    margin-top: -13px;
-}
-.search-box .search-btn{
-    width: 120px;
-    background-color: #01579b;
-    color: #fff;
-    cursor: pointer;
-    padding: 6px 8px;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: 0 0.4rem 0.4rem 0;
-    transition: all 0.3s ease;
-}
-
-.search-box .search-btn:hover{
-    background-color: #6499E9;
-    color: aquamarine;
-}
-
-.more_menu{
-    display: block;
-}
-
-.subnav{
-    display: none;
-    margin: -70px;
-    background-color:#6499E9;
-    position: absolute;
-    min-height: 10px;
-    font-size: 3rem;
-    
-}
 /* ///////////////////////////////// */
 
 
 
 
-/* ///////////// SlIDER ////////////// */
-
-.slider{
-    height: 100%;
-}
-
-.gallery {
-    display: flex;
-    align-items: center;
-    column-gap: 20px;
-    overflow-x: scroll;
-    scroll-snap-type:mandatory;
-    margin: 10px 0 10px 0;
-}
-.gallery_item{
-    scroll-snap-align: center;
-    min-width: 75%;
-}
-.gallery_image{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
 /* ///////////////////////////////// */
 
 
-/* /////////// CONTENT ////////////// */
-
-.content{
-    background-color: #9EDDFF;
-    height: 100%;
-}
-
-.main-content{
-    width: 70%;
-    padding: 20px;
-    border: solid 2px #6499E9;
-    margin: auto;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-}
-
-#flex-container{
-    display: flex;
-    flex-wrap: wrap;
-    padding: 10px;
-}
-
-
-
-.flex-item {
-    border: solid 1px;
-    flex: 1;
-    text-align: center;
-    position: relative;
-}
-
-
-.flex-item{
-    height: 280px;
-    width: 200px;
-    margin: 5px 10px 5px 10px;
-    padding: 5px 3px 10px 3px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-    /* font-size: 2rem; */
-}
-
-.flex-item:hover{
-    border-color: rgb(255, 34, 0);
-    color: rgb(242, 0, 0);
-}
-
-.flex-item:hover #flex-image{
-    transform: scale(1.2);
-}
-
-.flex-item:hover .add-to-cart-button{
-    opacity: 1;
-}
-
-.add-to-cart-button :active{
-    background-color: #2515d5;
-    color: #2515d5;
-}
-
-.div-img{
-    overflow: hidden;
-    
-}
-
-#flex-image{
-    transition: transform 0.3s ease-in-out;
-    height: 240px;
-    width: 190px;
-}
-
-#name{
-    font-size: 1.1rem;
-}
-.price{
-    font-size: 1.2rem;
-}
-#item-ID{
-    display: none;
-}
-
-
-
-
-
-.add-to-cart-button {
-    position: absolute;
-    bottom: 5%;
-    left: 50%; 
-    transform: translate(-50%, -50%); 
-    background-color: #0551cc; /* Màu nền cho nút */
-    color:#f3f4f5; /* Màu chữ cho nút */
-    border: none; /* Loại bỏ viền */
-    padding: 10px 20px; /* Điều chỉnh khoảng cách và kích thước nút */
-    opacity: 0; 
-    transition: opacity 0.3s; /* Tạo hiệu ứng transition cho thuộc tính opacity */
-    border: solid 1px;
-    font-size: 1.1rem;
-    width: 99%;
-}
-
-.add-to-cart-button:hover {
-    background-color: rgb(249, 36, 36);
-    color: white;
-}
-
-/* ///////////////////////////////// */
-
-/* ///////////// FOOTER ////////////// */
-
-
-.footer{
-    height: 150px;
-    background-color: #BEFFF7;
-    font-size: 5rem;
-    display: flex;
-    justify-content: space-between;
-    padding: 5px 15px 5px 15px;
-}
-
-.my_infor{
-    border: solid 1px tomato;
-    list-style-position: inside;
-}
-
-.my_infor .head{
-    background-color: aquamarine;
-}
-
-.more_infor{
-    border: solid 1px tomato;
-    list-style-position: inside;
-
-}
-.more_infor .head{
-    background-color: aquamarine;
-}
 /* //////////////////////////// */
 
-/* ///////////// CART ///////////////// */
 
-#cart-user-modal{
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.4);
-    display: none;
-    justify-content: center;
-    padding-top: 10px;
-}
-.modal-container{
-    background-color: #ffffff;
-    /* padding: 5px; */
-    width: 900px;
-    max-height: 95%;
-    font-size: 3rem;
-    position: relative;
-    border: solid 2px ;
-}
-
-.modal-header{
-    height: 70px;
-    display: flex;
-    justify-content: center;
-    background-color: aquamarine;
-    align-items: center;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-    
-}
-#cart-logo{
-    height: 30px;
-    margin: 10px;
-}
-.close{
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 10px;
-}
-.close:hover{
-    background-color: #ebe7e7;
-}
-
-.modal-items{
-    padding: 10px;
-    overflow: auto;
-    height: 80%;
-
-}
-
-#item-list{
-    max-height: 100%;
-    min-height: 475px;
-    position: relative;
-    padding: 20px 10px 10px 10px;
-    border: solid 1px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-
-    
-}
-.item{
-    display: flex;
-    margin-bottom: 5px;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #fff;
-    padding-left: 10px ;
-    padding-right: 3px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-
-
-}
-
-.item:hover {
-    border: solid 1px ;
-    color: red;
-}
-.item img{
-    height: 100px;
-}
-.item input{
-    height: 30px;
-}
-.item *{
-    font-size: 1.3rem;
-}
-.item p{   
-    word-wrap: break-word; 
-    max-width: 100px;
-    width: 100px;
-    text-align: center;
-}
-
-.delete-item{
-    padding: 5px;
-    background-color:#f3f4f5;
-}
-.delete-item:hover button{
-    color: red;
-}
-
-.modal-footer{
-    position: absolute;
-    display: flex;
-    justify-content: space-around;
-    background-color: aqua;
-    width: 100%;
-    height: 40px;
-    align-items: center;
-}
-#total-item{
-    font-size: 1.5rem;
-}
-#total-cost{
-    font-size: 1.5rem;
-}
-
-#empty{
-    font-size: 1.5rem;
-    font-style: italic;
-    position: absolute;
-    left: 24%;
-}
 /* ////////////////////////////// */
 /* Login & Register */
 
@@ -630,7 +272,7 @@
     line-height: 30px;
     position: absolute;
 }
-
+/* //////////////////////////////////////// */
 /* chi tiet */
 .chi-tiet-modal{
     position: fixed;
@@ -640,15 +282,14 @@
     bottom: 0;
     background:rgba(0, 0, 0, 0.4);
     display: none;
-    align-items: center;
     justify-content: center;
     
    
 }
-.modal-open{
-    display: flex;
-}
+
 .chi-tiet-modal-container{
+    position: absolute;
+    top:10%;
     background: white;
     width: 900px;
     min-height: 200px;
@@ -657,6 +298,31 @@
     display: flex;
     
 }
+
+.modal-close{
+    position: absolute;
+    right: 0%;
+    padding: 15px;
+    color: dark;
+    background-color: #dadada;
+}
+
+.chi-tiet-header{
+    height: 30px;
+    width: 100%;
+    background-color: #BEFFF7;
+    font-size: 3rem;
+}
+
+ .modal-chi-tiet-image{
+    height: 400px;
+    width: 200px;
+}
+#image-chitiet{
+    height: 240px*3;
+    width: 190px*3;
+}
+/*
 .modal-close:hover{
     opacity: 1;
     color: red;
@@ -687,120 +353,7 @@ i{
 .chi-tiet-header .item img{
     width: 100% ;
     height: 100%;
-}
+} */
 
-.modal1{
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.4);
-    display: none;
-        align-items: center;
-        justify-content: center;
-}
-.modal-container1{
-    background: white;
-    display: block;
-    width: 800px;
-    
-    height: 600px;
-   
-    position: relative;
 
-        
-        overflow-y: scroll;
-}
-.modal-close1{
-	position: relative;
-    padding: 12px;
-    cursor: pointer;
-    color:black;
-    opacity: 0.5;
-    height: 50px;
-    width: 780px;
-    margin-bottom: 10px;
-}
-.annutclose1:hover{
-    opacity: 1;
-    color: red;
-}
-.annutclose1{
-    position: absolute;
-	right: 0;
-	top: 0;
-    cursor: pointer;
-}
-.modal-container1 .search{
-    position: absolute;
-    right: 60px;
-    top:0;
-}
-/* TIM KIEM*/
-.search{
-	border: 2px solid black;
-    border-radius: 10px;
-    width: 600px;
-  height:  30px;
-  margin-top: 10px;
-    margin-bottom: 30px;
-    font-size: 18px;   
-    position: relative;  
-}
-.search input{
-		width: 550px;
-		border: none;
-		outline: none;
-}
-.chitiet{
-    display: flex;
-    
-    height: 200px;
-   cursor: pointer;
-    margin-top: 20px;
-}
-.chitiet img{
-    min-width: 200px;
-    object-fit: cover;
-    margin-right: 10px;
-}
-
-.chitiet .chitiet2{
-   height: 200px;
-   display: flex;
-   justify-content: space-around;
-   align-items: center;
-   flex-direction: column;
-   cursor: pointer;
-}
-.chitiet2{
-    font-size: 30px;
-}
-.sanphamItem{
-    margin-top:10px ;
-}
-.chitiet:hover{
-    background: #dadada
-}
-div .khung{
-    position:relative;
- }
- .annut{
-    cursor: pointer;
-    position:absolute;
-    top:78px
-    
- }
- .khungchon{
-    position: absolute;
-    right: 0;
-    top:0;
-	
- }
- .search2{
-    display: none;
-    justify-content: space-between;
-	
- }
  
