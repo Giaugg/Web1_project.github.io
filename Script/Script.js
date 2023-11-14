@@ -72,11 +72,13 @@ function render(courses){
         localStorage.setItem("cart",JSON.stringify(cart));
     }
     function chitiet(id, ten, gia, hinh) {
-        console.log(hinh)
+      var modal1Element=document.querySelector('.search input')
+      var cuoiElement=document.querySelector('.cuoi');
+      var selectElement=document.querySelector('.brand')
+        var chitietmoda1lElement=document.querySelector('.modal1')
+        chitietmoda1lElement.style.display="none"
        hinh= convertImagePath(hinh)
      var   chitetElement1=document.querySelector('.chi-tiet-modal')
-        
-                    var bodyElement=document.querySelector('#body')
                   chitetElement1.innerHTML= 
         `
                 <div class="chi-tiet-modal-container">
@@ -103,15 +105,12 @@ function render(courses){
                  <div class="button">
                  <button id="handel-plus" ><i class="fa-solid fa-plus"></i></button>
              </div>
-                    
-           
              </div>
          </div>
          <div>
              <button class="giohangchitiet"><a href="http://127.0.0.1:5501/index.html"><i class="fa-sharp fa-solid fa-cart-plus"></i>THEM VAO GIO</a></button>
           </div>
              </div>
-             
          </div>
         </div>`
         var  minusElement1=document.querySelector('#handel-minus');
@@ -125,7 +124,6 @@ function render(courses){
           function themvaogiohang1(){
             console.log(inputElement1.value)
             var cart=JSON.parse(localStorage.getItem("cart"));
-        
              if(cart==null){
                 cart=[];
                 cart.push({id:id,name:ten,price:gia,imgage:hinh,quality:inputElement1.value})
@@ -136,9 +134,7 @@ function render(courses){
             if(item&&inputElement1.value>=1) item.quality=inputElement1.value;
               else cart.push({id:id,name:ten,price:gia,imgage:hinh,quality:inputElement1.value})
            }
-           
-        
-        
+
         localStorage.setItem("cart",JSON.stringify(cart));
           }
           giohangElement.addEventListener('click',themvaogiohang1)
@@ -147,6 +143,7 @@ function render(courses){
              annutCloseElement1.onclick=function(){
                
                 chitetElement1.style.display="none"
+               if(modal1Element.value||selectElement.value||cuoiElement.value) chitietmoda1lElement.style.display="flex"
              }
           function render2(amount)
           {
@@ -170,11 +167,7 @@ function render(courses){
       minusElement1.addEventListener('click',giatriminus)
 
                     chitetElement1.style.display="flex"
-      
-                   
-
-             
-           
+       
       
 }
 function convertImagePath(inputPath) {
@@ -191,4 +184,582 @@ function convertImagePath(inputPath) {
 
 Read_file_maindata();
 
+var readfile=function()
+{ fetch(api)
+    .then(function(data){
+        return data.json();
+    })
+    .then(function(data){
+        render2(data);
+    })
+}
+function render2(items){
+      var itemElement=document.querySelector('.sanphamItem')
+      
+     var html= items.map(function(item){
+              
+           return `<div class="chitiet"> 
+           <img src="${item.imgage}" alt="">
+           <div class="chitiet2">
+               <div>${item.name}</div>
+               <div>${item.price}</div>
+           </div>  
+           <div class="khung"><button class="annut" onclick="chitiet(${item.id},'${item.name}',${item.price},'${item.imgage}')" >sub</button></div>
+           </div>    
+        `
+       
+      })
+      itemElement.innerHTML=html.join('');
+      timkiem(items);
+     
+}
+function timkiem(items){
+  console.log(items)
+   var chitietmodalElement=document.querySelector('.modal1')
+  var closechitietElenment=document.querySelector('.annutclose1');
+  var searchElement=document.querySelector('.search-btn');
+  var sanphamElement=document.querySelector('.sanphamItem')
+    var chitetElement=document.querySelectorAll('.chitiet')
+    var nutchonElenment=document.querySelector('.nutchon')
+    var selectElement=document.querySelector('.brand')
+    var search2Element=document.querySelector('.search2')
+    var modal1Element=document.querySelector('.search input')
+    var dauElement=document.querySelector('.dau')
+    var cuoiElement=document.querySelector('.cuoi')
+    var array=Array.from(chitetElement);
+    selectElement.value='';
+    var x=0;
+    nutchonElenment.addEventListener('click',function(){
+      if(!x){
+        search2Element.style.display="flex";
+        x=1;
+      }
+     else  {
+      search2Element.style.display="none";  
+      x=0;
+     }  
+     selectElement.value='';
+    })
+   searchElement.addEventListener('click',function(){
+   chitietmodalElement .style.display="flex";
+   })
+  closechitietElenment.addEventListener('click',function(){
+   chitietmodalElement.style.display="none";
+   modal1Element.value='';
+   search2Element.style.display="none";
+   selectElement.value=''
+   
+   if(!modal1Element.value) {
+    sanphamElement.style.display="none";
+  
+  }
+  })
+    var select=0;
+  sanphamElement.style.display="none";
+    console.log(chitetElement)
+    modal1Element.addEventListener('input',function(){
+      var ten=modal1Element.value.toLowerCase();
+            if(!selectElement.value&&!cuoiElement.value&&!dauElement.value)
+            { if(!modal1Element.value) sanphamElement.style.display="none";
+            else sanphamElement.style.display="block"
+             
+              chitetElement.forEach(function(item){
+               
+                if(item.innerText.replace("sub","").toLowerCase().includes(ten)) item.style.display="flex";
+                else item.style.display="none";
+              })
+          
+            }
+            else if(selectElement.value&&cuoiElement.value&&dauElement.value){
+              var x=parseInt(dauElement.value);
+              var y=parseInt(cuoiElement.value);
+                       if(!modal1Element.value)
+                       {
+                        var a=[];
+                        var sanpham1=items.filter(function(item){
+                          return x<=item.price&&y>=item.price&&item.brand.toString()===selectElement.value;
+                         })
+                         console.log(sanpham1);
+                         sanpham1.forEach(function(item){
+                          var s=item.imgage
+                          s=s.toString().toLowerCase();
+                          for(var i=0;i<array.length;i++)
+                                        {  var j=array[i].innerText;
+                                          j=j.replace("sub","");
+                                           var z=array[i].outerHTML;
+                                           var c=0;
+                                         if(z.toLowerCase().includes(s)&&!a[i])
+                                         {  console.log(z)
+                                           c++;
+                                           array[i].style.display="flex";
+                                           a[i]=1;
+                                           if(c==sanpham1.length) break;
+                                       
+                                         }
+                                         else if(!a[i])
+                                         {  
+                                           array[i].style.display="none";
+                                           
+                                         }
+                
+                                        }
+                                      
+                         });
+                         sanphamElement.style.display="block";
+                       }
+                       else{
+                        var a=[];
+                        var sanpham1=items.filter(function(item){
+                          return x<=item.price&&y>=item.price&&item.brand.toString()===selectElement.value;
+                         })
+                         console.log(sanpham1);
+                         sanpham1.forEach(function(item){
+                          var s=item.imgage
+                          s=s.toString().toLowerCase();
+                          for(var i=0;i<array.length;i++)
+                                        {  var j=array[i].innerText;
+                                          j=j.replace("sub","");
+                                           var z=array[i].outerHTML;
+                                           var c=0;
+                                         if(z.toLowerCase().includes(s)&&!a[i]&&j.toLowerCase().includes(modal1Element.value))
+                                         {  console.log(z)
+                                           c++;
+                                           array[i].style.display="flex";
+                                           a[i]=1;
+                                           if(c==sanpham1.length) break;
+                                       
+                                         }
+                                         else if(!a[i])
+                                         {  
+                                           array[i].style.display="none";
+                                           
+                                         }
+                
+                                        }
+                                        sanphamElement.style.display="block";
+                                       
+                         });
+                        
+                       }
+
+            }
+            else if(selectElement.value)
+            { 
+              var x=selectElement.value;
+              var a=[];
+                  var sanpham=  items.filter(function(item){
+                          return x===item.brand.toString();
+                    })
+                    sanpham.forEach(function(item){
+                      var s=item.imgage
+                      s=s.toString().toLowerCase();
+  
+                      var c=0;
+                        if(!modal1Element.value)
+                        {
+                          for(var i=0;i<array.length;i++)
+                          {   var j=array[i];
+                             var z=j.outerHTML;
+                           if(z.toLowerCase().includes(s)&&!a[i])
+                           {  console.log(z);
+                             c++;
+                             array[i].style.display="flex";
+                             a[i]=1;
+                            
+                           }
+                           else if(!a[i])
+                           {  
+                             array[i].style.display="none";
+                             
+                           }
+                           
+  
+                          }
+                          sanphamElement.style.display="block";
+                        }
+                        else{
+                            var input1=modal1Element.value.toLowerCase();
+                            
+                            for(var i=0;i<array.length;i++)
+                          {   var j=array[i].innerText;
+                            j=j.replace("sub","");
+                             var z=array[i].outerHTML;
+                           if(z.toLowerCase().includes(s)&&!a[i]&&j.toLowerCase().includes(input1))
+                           {  console.log(z);
+                             c++;
+                             array[i].style.display="flex";
+                             a[i]=1;
+                           }
+                           else if(!a[i])
+                           {  
+                             array[i].style.display="none";
+                             
+                           }
+              
+                          }
+                          sanphamElement.style.display="block";
+                          
+                        }
+                    })    
+            }  
+            else if(dauElement.value&&cuoiElement.value)   
+            {     var x=parseInt(dauElement.value);
+              var y=parseInt(cuoiElement.value);
+                  if(!modal1Element.value)
+                  {
+                    var sanpham1=items.filter(function(item){
+         
+                      return x<=item.price&&y>=item.price;
+                     })
+                     sanpham1.forEach(function(item){
+                      var s=item.imgage
+                      s=s.toString().toLowerCase();
+                      for(var i=0;i<array.length;i++)
+                                    {   var j=array[i];
+                                       var z=j.outerHTML;
+                                       var c=0;
+                                     if(z.toLowerCase().includes(s)&&!a[i])
+                                     {  
+                                       c++;
+                                       array[i].style.display="flex";
+                                       a[i]=1;
+                                       if(c==sanpham1.length) break;
+                                   
+                                     }
+                                     else if(!a[i])
+                                     {  
+                                       array[i].style.display="none";
+                                       
+                                     }
+            
+                                    }
+                                   
+                     });
+                     sanphamElement.style.display="block";
+                  }
+                  else{
+                    console.log(111);
+                    var a=[];
+                    var sanpham1=items.filter(function(item){
+                     
+                      return x<=item.price&&y>=item.price;
+                     })
+                    sanpham1.forEach(function(item){
+                      var s=item.imgage
+                      s=s.toString().toLowerCase();
+                      for(var i=0;i<array.length;i++)
+                                    {  var j=array[i].innerText;
+                                      j=j.replace("sub","");
+                                       var z=array[i].outerHTML;
+                                       var c=0;
+                                     if(z.toLowerCase().includes(s)&&!a[i]&&j.toLowerCase().includes(modal1Element.value))
+                                     {  console.log(z)
+                                       c++;
+                                       array[i].style.display="flex";
+                                       a[i]=1;
+                                       if(c==sanpham1.length) break;
+                                   
+                                     }
+                                     else if(!a[i])
+                                     {  
+                                       array[i].style.display="none";
+                                       
+                                     }
+            
+                                    }
+                                   
+                     });
+                     sanphamElement.style.display="block";
+                  }
+            }     
+             })
+          
+      selectElement.addEventListener('change',function(){
+        select=1;
+     
+      
+        var x=parseInt(dauElement.value);
+        var y=parseInt(cuoiElement.value);
+  
+                      if(!modal1Element.value&&!dauElement.value&&!cuoiElement.value)
+                   {         var x=selectElement.value; 
+                    console.log(items);
+                    console.log( x);
+                    console.log(typeof x);
+                    var sanpham=  items.filter(function(item){
+                        return x===item.brand.toString();
+                  }) 
+                  console.log(sanpham);
+                  var a=[];
+                  sanpham.forEach(function(item){
+                    var s=item.imgage
+                    s=s.toString().toLowerCase();
+                    var c=0;
+                        for(var i=0;i<array.length;i++)
+                        {   var j=array[i];
+                           var z=j.outerHTML;
+                         if(z.toLowerCase().includes(s)&&!a[i])
+                         {  
+                           c++;
+                           array[i].style.display="flex";
+                           a[i]=1;
+                           if(c==sanpham.length) break;
+                         }
+                         else if(!a[i])
+                         {  
+                           array[i].style.display="none";
+                           
+                         }
+
+                        }
+                        sanphamElement.style.display="block";})
+                      }
+                    else  if(modal1Element.value&&dauElement.value&&cuoiElement.value)
+                      {     
+                        console.log("KHONG DUOC")
+                        var a=[];
+                        var sanpham1=items.filter(function(item){
+                          return x<=item.price&&y>=item.price&&item.brand.toString()===selectElement.value;
+                         })
+                         console.log(sanpham1);
+                         sanpham1.forEach(function(item){
+                          var s=item.imgage
+                          s=s.toString().toLowerCase();
+                          for(var i=0;i<array.length;i++)
+                                        {  var j=array[i].innerText;
+                                          j=j.replace("sub","");
+                                           var z=array[i].outerHTML;
+                                           var c=0;
+                                         if(z.toLowerCase().includes(s)&&!a[i]&&j.toLowerCase().includes(modal1Element.value))
+                                         {  console.log(z)
+                                           c++;
+                                           array[i].style.display="flex";
+                                           a[i]=1;
+                                           if(c==sanpham1.length) break;
+                                       
+                                         }
+                                         else if(!a[i])
+                                         {  
+                                           array[i].style.display="none";
+                                           
+                                         }
+                
+                                        }
+                                       
+                         });
+                         sanphamElement.style.display="block";
+                      }
+                      else if(modal1Element.value){
+                        var a=[];
+                        var sanpham=items.filter(function(item){
+                          return item.brand.toString()===selectElement.value;
+                         })
+                        sanpham.forEach(function(item){
+                          var s=item.imgage
+                          s=s.toString().toLowerCase();
+                          for(var i=0;i<array.length;i++)
+                                        {  var j=array[i].innerText;
+                                          j=j.replace("sub","");
+                                           var z=array[i].outerHTML;
+                                           var c=0;
+                                         if(z.toLowerCase().includes(s)&&!a[i]&&j.toLowerCase().includes(modal1Element.value))
+                                         {  console.log(z)
+                                           c++;
+                                           array[i].style.display="flex";
+                                           a[i]=1;
+                                           if(c==sanpham1.length) break;
+                                       
+                                         }
+                                         else if(!a[i])
+                                         {  
+                                           array[i].style.display="none";
+                                           
+                                         }
+                
+                                        }
+                                       
+                         });
+                         sanphamElement.style.display="block";
+                      }
+                      else if(dauElement.value&&cuoiElement.value)
+                      {    
+                        var a=[];
+                        var sanpham1=items.filter(function(item){
+                          return item.brand.toString()===selectElement.value&&x<=item.price&&y>=item.price;
+                         })
+                         console.log(sanpham1);
+                         sanpham1.forEach(function(item){
+                          var s=item.imgage;
+                          s=s.toString().toLowerCase();
+                          for(var i=0;i<array.length;i++)
+                                        {  var j=array[i].innerText;
+                                          j=j.replace("sub","");
+                                           var z=array[i].outerHTML;
+                                           var c=0;
+                                         if(z.toLowerCase().includes(s)&&!a[i])
+                                         {  console.log(z)
+                                           c++;
+                                           array[i].style.display="flex";
+                                           a[i]=1;  
+                                         }
+                                         else if(!a[i])
+                                         { 
+                                           array[i].style.display="none";
+                                           
+                                         }
+                
+                                        }
+                                        sanphamElement.style.display="block";
+                         });
+                      }
+                  })
+  
+     cuoiElement.addEventListener('keydown',function(){
+      var a=[];
+      var x=parseInt(dauElement.value);
+      var y=parseInt(cuoiElement.value);
+      console.log(x,y);
+      if(x&&y&&!modal1Element.value&&!selectElement.value)
+      {
+         var sanpham1=items.filter(function(item){
+         
+          return x<=item.price&&y>=item.price;
+         })
+         sanpham1.forEach(function(item){
+          var s=item.imgage
+          s=s.toString().toLowerCase();
+          for(var i=0;i<array.length;i++)
+                        {   var j=array[i];
+                           var z=j.outerHTML;
+                           var c=0;
+                         if(z.toLowerCase().includes(s)&&!a[i])
+                         {  
+                           c++;
+                           array[i].style.display="flex";
+                           a[i]=1;
+                           if(c==sanpham1.length) break;
+                       
+                         }
+                         else if(!a[i])
+                         {  
+                           array[i].style.display="none";
+                           
+                         }
+
+                        }
+                       
+         });
+         sanphamElement.style.display="block";
+      }
+      else if(x&&y&&modal1Element.value&&selectElement.value)
+      {
+            var a=[];
+            var sanpham1=items.filter(function(item){
+              return x<=item.price&&y>=item.price&&item.brand.toString()===selectElement.value;
+             })
+             sanpham1.forEach(function(item){
+              var s=item.imgage
+              s=s.toString().toLowerCase();
+              for(var i=0;i<array.length;i++)
+                            {  var j=array[i].innerText;
+                              j=j.replace("sub","");
+                               var z=array[i].outerHTML;
+                               var c=0;
+                             if(z.toLowerCase().includes(s)&&!a[i]&&j.toLowerCase().includes(modal1Element.value))
+                             {  console.log(z)
+                               c++;
+                               array[i].style.display="flex";
+                               a[i]=1;
+                               if(c==sanpham1.length) break;
+                           
+                             }
+                             else if(!a[i])
+                             {  
+                               array[i].style.display="none";
+                               
+                             }
+    
+                            }
+                           
+             });
+             sanphamElement.style.display="block";
+      }
+      else if(x&&y&&modal1Element.value)
+      {   console.log(111);
+        var a=[];
+        var sanpham1=items.filter(function(item){
+         
+          return x<=item.price&&y>=item.price;
+         })
+        sanpham1.forEach(function(item){
+          var s=item.imgage
+          s=s.toString().toLowerCase();
+          for(var i=0;i<array.length;i++)
+                        {  var j=array[i].innerText;
+                          j=j.replace("sub","");
+                           var z=array[i].outerHTML;
+                           var c=0;
+                         if(z.toLowerCase().includes(s)&&!a[i]&&j.toLowerCase().includes(modal1Element.value))
+                         {  console.log(z)
+                           c++;
+                           array[i].style.display="flex";
+                           a[i]=1;
+                           if(c==sanpham1.length) break;
+                       
+                         }
+                         else if(!a[i])
+                         {  
+                           array[i].style.display="none";
+                           
+                         }
+
+                        }
+                       
+         });
+         sanphamElement.style.display="block";
+      }
+      else if(x&&y&&selectElement.value)
+      {   
+        var a=[];
+        var sanpham1=items.filter(function(item){
+          return x<=item.price&&y>=item.price&&item.brand.toString()===selectElement.value;
+         })
+         console.log(sanpham1);
+         sanpham1.forEach(function(item){
+          var s=item.imgage;
+          s=s.toString().toLowerCase();
+          for(var i=0;i<array.length;i++)
+                        {  var j=array[i].innerText;
+                          j=j.replace("sub","");
+                           var z=array[i].outerHTML;
+                           var c=0;
+                         if(z.toLowerCase().includes(s)&&!a[i])
+                         {  console.log(z)
+                           c++;
+                           array[i].style.display="flex";
+                           a[i]=1;  
+                         }
+                         else if(!a[i])
+                         { 
+                           array[i].style.display="none";
+                           
+                         }
+
+                        }
+                        sanphamElement.style.display="block";
+         });
+       
+      }
+     })
+}
+var str = "Hello, world!\nThis is a string.";
+
+// Thay thế tất cả các dấu cách và xuống dòng bằng ký tự trống
+var newStr = str.replace(/\s/g, "");
+
+
+
+
+
+readfile();
 
