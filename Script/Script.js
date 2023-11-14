@@ -38,13 +38,13 @@ function render(courses){
     var itemContainer = document.getElementById("flex-container");
        
       var html=  courses.map(function(course){
-                //   console.log(course.image)
+                  console.log(course.imgage)
                  
             return `<div class="flex-item">
-            <img src="${course.image}" alt="" id="flex-image">
-      <button class="Add-to-cart-button" onclick="themvaogiohang(${course.id},'${course.name}',${course.price},'${course.image}')">add to cart</button>
+            <img src="${course.imgage}" alt="" id="flex-image">
+      <button class="add-to-cart-button" onclick="themvaogiohang(${course.id},'${course.name}',${course.price},'${course.imgage}')">add to cart</button>
       <p id="name">${course.name}
-      <div><button class="annut" onclick="chitiet(${course.id},'${course.name}',${course.price},'${course.image}')">sub</button></div>
+      <div><button class="annut" onclick="chitiet(${course.id},'${course.name}',${course.price},'${course.imgage}')">sub</button></div>
       </p>
       <p id="price">$${course.price}</p>
       </div>`
@@ -127,13 +127,13 @@ function render(courses){
             var cart=JSON.parse(localStorage.getItem("cart"));
              if(cart==null){
                 cart=[];
-                cart.push({id:id,name:ten,price:gia,image:hinh,quality:inputElement1.value})
+                cart.push({id:id,name:ten,price:gia,imgage:hinh,quality:inputElement1.value})
              }
            else{
             let item=cart.find(item=> item.id===id);
 
             if(item&&inputElement1.value>=1) item.quality=inputElement1.value;
-              else cart.push({id:id,name:ten,price:gia,image:hinh,quality:inputElement1.value})
+              else cart.push({id:id,name:ten,price:gia,imgage:hinh,quality:inputElement1.value})
            }
 
         localStorage.setItem("cart",JSON.stringify(cart));
@@ -200,12 +200,12 @@ function render2(items){
      var html= items.map(function(item){
               
            return `<div class="chitiet"> 
-           <img src="${item.image}" alt="">
+           <img src="${item.imgage}" alt="">
            <div class="chitiet2">
                <div>${item.name}</div>
                <div>${item.price}</div>
            </div>  
-           <div class="khung"><button class="annut" onclick="chitiet(${item.id},'${item.name}',${item.price},'${item.image}')" >sub</button></div>
+           <div class="khung"><button class="annut" onclick="chitiet(${item.id},'${item.name}',${item.price},'${item.imgage}')" >sub</button></div>
            </div>    
         `
        
@@ -283,7 +283,7 @@ function timkiem(items){
                          })
                          console.log(sanpham1);
                          sanpham1.forEach(function(item){
-                          var s=item.image
+                          var s=item.imgage
                           s=s.toString().toLowerCase();
                           for(var i=0;i<array.length;i++)
                                         {  var j=array[i].innerText;
@@ -316,7 +316,7 @@ function timkiem(items){
                          })
                          console.log(sanpham1);
                          sanpham1.forEach(function(item){
-                          var s=item.image
+                          var s=item.imgage
                           s=s.toString().toLowerCase();
                           for(var i=0;i<array.length;i++)
                                         {  var j=array[i].innerText;
@@ -353,7 +353,7 @@ function timkiem(items){
                           return x===item.brand.toString();
                     })
                     sanpham.forEach(function(item){
-                      var s=item.image
+                      var s=item.imgage
                       s=s.toString().toLowerCase();
   
                       var c=0;
@@ -414,7 +414,7 @@ function timkiem(items){
                       return x<=item.price&&y>=item.price;
                      })
                      sanpham1.forEach(function(item){
-                      var s=item.image
+                      var s=item.imgage
                       s=s.toString().toLowerCase();
                       for(var i=0;i<array.length;i++)
                                     {   var j=array[i];
@@ -447,7 +447,7 @@ function timkiem(items){
                       return x<=item.price&&y>=item.price;
                      })
                     sanpham1.forEach(function(item){
-                      var s=item.image
+                      var s=item.imgage
                       s=s.toString().toLowerCase();
                       for(var i=0;i<array.length;i++)
                                     {  var j=array[i].innerText;
@@ -494,7 +494,7 @@ function timkiem(items){
                   console.log(sanpham);
                   var a=[];
                   sanpham.forEach(function(item){
-                    var s=item.image
+                    var s=item.imgage
                     s=s.toString().toLowerCase();
                     var c=0;
                         for(var i=0;i<array.length;i++)
@@ -525,7 +525,7 @@ function timkiem(items){
                          })
                          console.log(sanpham1);
                          sanpham1.forEach(function(item){
-                          var s=item.image
+                          var s=item.imgage
                           s=s.toString().toLowerCase();
                           for(var i=0;i<array.length;i++)
                                         {  var j=array[i].innerText;
@@ -557,7 +557,7 @@ function timkiem(items){
                           return item.brand.toString()===selectElement.value;
                          })
                         sanpham.forEach(function(item){
-                          var s=item.image
+                          var s=item.imgage
                           s=s.toString().toLowerCase();
                           for(var i=0;i<array.length;i++)
                                         {  var j=array[i].innerText;
@@ -591,7 +591,7 @@ function timkiem(items){
                          })
                          console.log(sanpham1);
                          sanpham1.forEach(function(item){
-                          var s=item.image;
+                          var s=item.imgage;
                           s=s.toString().toLowerCase();
                           for(var i=0;i<array.length;i++)
                                         {  var j=array[i].innerText;
@@ -628,7 +628,7 @@ function timkiem(items){
           return x<=item.price&&y>=item.price;
          })
          sanpham1.forEach(function(item){
-          var s=item.image
+          var s=item.imgage
           s=s.toString().toLowerCase();
           for(var i=0;i<array.length;i++)
                         {   var j=array[i];
@@ -660,7 +660,7 @@ function timkiem(items){
               return x<=item.price&&y>=item.price&&item.brand.toString()===selectElement.value;
              })
              sanpham1.forEach(function(item){
-              var s=item.image
+              var s=item.imgage
               s=s.toString().toLowerCase();
               for(var i=0;i<array.length;i++)
                             {  var j=array[i].innerText;
@@ -694,7 +694,7 @@ function timkiem(items){
           return x<=item.price&&y>=item.price;
          })
         sanpham1.forEach(function(item){
-          var s=item.image
+          var s=item.imgage
           s=s.toString().toLowerCase();
           for(var i=0;i<array.length;i++)
                         {  var j=array[i].innerText;
@@ -728,7 +728,7 @@ function timkiem(items){
          })
          console.log(sanpham1);
          sanpham1.forEach(function(item){
-          var s=item.image;
+          var s=item.imgage;
           s=s.toString().toLowerCase();
           for(var i=0;i<array.length;i++)
                         {  var j=array[i].innerText;
