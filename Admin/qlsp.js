@@ -22,7 +22,7 @@ function renderItems(items) {
         divLeft.classList.add("left");
 
         const imageElement = document.createElement("img");
-        imageElement.src = item.image;
+        imageElement.src = item.imgage;
         divLeft.appendChild(imageElement);
 
         const divRight = document.createElement("div");
@@ -82,7 +82,7 @@ function showEditWindow(item) {
     editedNameInput.value = item.name;
     editedBrandInput.value = item.brand;
     editedPriceInput.value = item.price;
-    editImageInput.value = item.image;
+    editImageInput.value = item.imgage;
 
     // Hiển thị cửa sổ sửa đổi
     editWindow.style.display = "block";
@@ -103,7 +103,7 @@ function showEditWindow(item) {
             brand: newBrand,
             name: newName,
             price: newPrice,
-            image: newImage,
+            imgage: newImage,
         };
 
 
