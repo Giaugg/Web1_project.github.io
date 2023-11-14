@@ -1,27 +1,6 @@
 {
   "Item": [
     {
-      "id": 1,
-      "brand": "1",
-      "name": "Song Goku",
-      "price": "77000",
-      "image": "../Images/products/ID_Products001.jpg"
-    },
-    {
-      "id": 2,
-      "brand": 1,
-      "name": "Trunk ",
-      "price": 39000,
-      "image": "../Images/products/ID_Products002.jpg"
-    },
-    {
-      "id": 3,
-      "brand": 1,
-      "name": "Freiza ",
-      "price": 98000,
-      "image": "../Images/products/ID_Products003.jpg"
-    },
-    {
       "id": 4,
       "brand": 1,
       "name": "Song Goku ss4",
