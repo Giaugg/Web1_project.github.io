@@ -81,7 +81,7 @@
     border: 1px solid #ccc;
     display: flex;
     align-items: center;
-    width: 200px;
+    width: 240px;
     font-size: 1.5rem;
     text-align: left;
     margin-right: 5px;
@@ -103,7 +103,7 @@
     height: 186px;
     z-index: 10;
     top: 45px;
-    left: -210px;
+    left: -260px;
     /* Điều chỉnh vị trí bên trái */
     border-radius: 5px;
     list-style-type: none;
@@ -172,4 +172,18 @@
 
 .ignore_status {
     color: red;
+}
+
+#bhead{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#bhead button{
+    height: 30px;
+    width: 80px;
+    background-color: rgb(71, 200, 71);
+    margin-right: 100px;
 }
