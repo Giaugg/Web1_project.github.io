@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Management</title>
+    <link rel="stylesheet" href="qlsp.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="main_header">
+            <div class="home"> <a href="./index.html">
+                    <img id="home-logo" src="../Images/logo/home_logo1.png">
+                </a> </div>
+            <div class="search-box">
+                <input type="text" class="search-input" placeholder="Search The Orders ...">
+                <button class="search-btn" type="submit">Search</button>
+            </div>
+
+            <nav class="header_my">
+                <div><a href="#"><img src="../Images/Icon/cart-shopping-solid.svg" id="show-cart"></a></div>
+                <div><a href="#"><img src="../Images/Icon/user-solid.svg"></a></div>
+                <div class="dropdw">
+                    <a href="#" class="dropobj"><img src="../Images/Icon/bars-solid.svg"></a>
+                    <ul class="dropdw-items">
+                        <li><a href="./index.html"><img src="../Images/Icon/home.svg">Trang chủ</a></li>
+                        <li><a href="qlsp.html"><img
+                                    src="../Images/Icon/document_pen_sign_signature_write_icon.svg">Quản lý sản phẩm</a>
+                        </li>
+                        <li><a href="qldh.html"><img
+                                    src="../Images/Icon/document_pen_sign_signature_write_icon.svg">Quản lý đơn hàng</a>
+                        </li>
+                        <li><a href="#"><img src="../Images/Icon/document_pen_sign_signature_write_icon.svg">Thống
+                                kê</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div id="bhead">
+        <h1>Items List</h1>
+        <button class="add-button" onclick="showAddWindow()">Add</button>
+    </div>
+    <div class="content">
+    </div>
+    <!-- Thêm cửa sổ nhỏ cho việc sửa đổi -->
+    <div class="edit-window">
+        <!-- Nội dung cửa sổ nhỏ -->
+        <div class="edit-content">
+            <label for="editedName">Name: </label>
+            <input type="text" id="editedName">
+            <label for="editedBrand">Brand: </label>
+            <input type="text" id="editedBrand">
+            <label for="editedPrice">Price: </label>
+            <input type="text" id="editedPrice">
+            <label for="editedPrice">Image: </label>
+            <input type="text" id="editImage">
+            <button id="saveEdit">Save</button>
+        </div>
+    </div>
+    <!-- Thêm cửa sổ nhỏ cho việc thông báo xoá -->
+    <div class="confirmation-window">
+        <div class="confirmation-content">
+            <p>Bạn có chắc chắn?</p>
+            <button id="delete-confirm">Xoá</button>
+            <button id="cancel-delete">Cancel</button>
+        </div>
+    </div>
+    <!-- Cửa sổ thêm mới -->
+    <div class="edit-window" id="add-window">
+        <div class="edit-content">
+            <label for="newName">Name: </label>
+            <input type="text" id="newName">
+            <label for="newBrand">Brand: </label>
+            <input type="text" id="newBrand">
+            <label for="newPrice">Price: </label>
+            <input type="text" id="newPrice">
+            <label for="newImage">Image: </label>
+            <input type="text" id="newImage">
+            <button id="addNew" onclick="addNewItem()">Add</button>
+            <button id="cancelAdd" onclick="closeAddWindow()">Cancel</button>
+        </div>
+    </div>
+    <script src="qlsp.js"></script>
+</body>
+
+</html>

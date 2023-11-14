@@ -373,7 +373,7 @@
     border: 1px solid #ccc;
     display: flex;
     align-items: center;
-    width: 210px;
+    width: 270px;
     height: 60px;
     font-size: 2rem;
     text-align: left;
@@ -400,7 +400,7 @@
     width: 175px;
     z-index: 10;
     top: 50px;
-    left: -155px;
+    left: -230px;
     /* Điều chỉnh vị trí bên trái */
     margin: 0;
     list-style-type: none;
