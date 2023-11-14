@@ -43,9 +43,9 @@ function render(courses){
             return `<div class="flex-item">
             <div class="div-img"> 
             
-            <img src="${course.imgage}" alt="" id="flex-image">
+            <img src="${course.image}" alt="" id="flex-image">
             </div>
-            <button class="add-to-cart-button" onclick="themvaogiohang(${course.id},'${course.name}',${course.price},'${course.imgage}')">Add to cart</button>
+            <button class="add-to-cart-button" onclick="themvaogiohang(${course.id},'${course.name}',${course.price},'${course.image}')">Add to cart</button>
             <p id="name">${course.name}</p>
             <p class="price">$${course.price}</p>
             </div>`
@@ -58,12 +58,12 @@ function render(courses){
         if(cart==null){
             console.log(1);
             cart=[];
-            cart.push({id:id,name:ten,price:gia,imgage:hinh,quality:1});
+            cart.push({id:id,name:ten,price:gia,image:hinh,quality:1});
         }
         else{
             let item=cart.find(item=> item.id===id);
             if(item) item.quality++;
-            else  cart.push({id:id,name:ten,price:gia,imgage:hinh,quality:1});
+            else  cart.push({id:id,name:ten,price:gia,image:hinh,quality:1});
         }
         
         localStorage.setItem("cart",JSON.stringify(cart));
