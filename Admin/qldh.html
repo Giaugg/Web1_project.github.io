@@ -11,8 +11,8 @@
 <body>
     <div class="header">
         <div class="main_header">
-            <div class="home"> <a href=".\index.html">
-                    <img id="home-logo" src="..\images\logo\home_logo1.png">
+            <div class="home"> <a href="./index.html">
+                    <img id="home-logo" src="../Images/logo/home_logo1.png">
                 </a> </div>
             <div class="search-box">
                 <input type="text" class="search-input" placeholder="Search The Orders ...">
@@ -20,29 +20,33 @@
             </div>
 
             <nav class="header_my">
-                <div><a href="#"><img src="..\images\icon\cart-shopping-solid.svg" id="show-cart"></a></div>
-                <div><a href="#"><img src="..\images\icon\user-solid.svg"></a></div>
+                <div><a href="#"><img src="../Images/Icon/cart-shopping-solid.svg" id="show-cart"></a></div>
+                <div><a href="#"><img src="../Images/Icon/user-solid.svg"></a></div>
                 <div class="dropdw">
-                    <a href="#" class="dropobj"><img src="..\images\icon\bars-solid.svg"></a>
+                    <a href="#" class="dropobj"><img src="../Images/Icon/bars-solid.svg"></a>
                     <ul class="dropdw-items">
-                        <li><a href=".\index.html">Trang chủ</a></li>
-                        <li><a href="#">Quản lý sản phẩm</a></li>
-                        <li><a href=".\qldh.html">Quản lý đơn hàng</a></li>
-                        <li><a href="#">Quản lý nhân sự</a></li>
-                        <li><a href="#">Quản lý khách hàng</a></li>
+                        <li><a href="./index.html"><img src="../Images/Icon/home.svg">Trang chủ</a></li>
+                        <li><a href="qlsp.html"><img src="../Images/Icon/document_pen_sign_signature_write_icon.svg">Quản lý sản phẩm</a></li>
+                        <li><a href="qldh.html"><img src="../Images/Icon/document_pen_sign_signature_write_icon.svg">Quản lý đơn hàng</a></li>
+                        <li><a href="#"><img src="../Images/Icon/document_pen_sign_signature_write_icon.svg">Thống kê</a></li>
                     </ul>
                 </div>
             </nav>
         </div>
     </div>
-    <h1>Cart Items</h1>
+    <div id="bhead">
+        <h1>Cart Items</h1>
+        <button class="save-button">Save</button>
+    </div>
     <table id="cart-table">
         <thead>
             <tr>
                 <th>User ID</th>
                 <th>Product ID</th>
+                <th>Brand</th>
                 <th>Quantity</th>
                 <th>Total</th>
+                <th>Time Order</th>
                 <th>Status</th>
                 <th>Action</th>
             </tr>
@@ -51,6 +55,7 @@
             <!-- chèn các giá trị vào bảng tại vị trí này -->
         </tbody>
     </table>
+
     <script src="qldh.js"></script>
 </body>
 
