@@ -14,7 +14,7 @@
 .modal-open{
     display: flex;
 }
-.chi-tiet-modal-container{
+.chi-tiet-modal-container1{
     background: white;
     width: 900px;
     height: 600px;
@@ -35,19 +35,19 @@
     color:black;
     opacity: 0.5;
 }
-.chi-tiet-header{
+.chi-tiet-header1{
     margin: 30px 0;
     display: flex;
 	width: 800px;
 
 	justify-content: space-around;
 }
-.chi-tiet-header .header1{
+.chi-tiet-header1 .header1{
 	width: 200px;
 	
 
 }
-.chi-tiet-header .divchitiet{
+.chi-tiet-header1 .divchitiet{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -64,7 +64,7 @@ i{
     cursor: pointer;
     padding: 5px;
 }
-.chi-tiet-header .item img{
+.chi-tiet-header1 .item img{
 	object-fit: cover;
 	height: 100%;
 	width: 500px;

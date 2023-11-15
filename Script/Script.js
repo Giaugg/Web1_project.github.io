@@ -76,11 +76,11 @@ function chitiet(id, ten, gia, hinh) {
    var   chitetElement1=document.querySelector('.chi-tiet-modal')
                 chitetElement1.innerHTML= 
       `
-              <div class="chi-tiet-modal-container">
+              <div class="chi-tiet-modal-container1">
        <div class="modal-close" >
          <button class="annutclose">  <i class="fa-solid fa-xmark"></i></button>
        </div>
-       <div class="chi-tiet-header">
+       <div class="chi-tiet-header1">
            <div class="item">
                <img src=${hinh} alt="" >
            </div>
@@ -239,6 +239,8 @@ function timkiem(items) {
 		chitietmodalElement.style.display = "flex";
 	});
 	closechitietElenment.addEventListener("click", function () {
+		dauElement.value="";
+		cuoiElement.value="";
 		chitietmodalElement.style.display = "none";
 		modal1Element.value = "";
 		search2Element.style.display = "none";
