@@ -39,12 +39,11 @@ function render(courses) {
       <div class="flex-image-ctn"> 
         <img src="${course.image}" alt="" id="flex-image">
       </div>
-      <p id="name">${course.name}
+      <p class="name">${course.name} <\p>
       <div class="button-flex">
         <button class="annut" onclick="chitiet(${course.id},'${course.name}',${course.price},'${course.image}')">Chi Tiet</button>
-        <button class="add-to-cart-button" onclick="themvaogiohang(${course.id},'${course.name}',${course.price},'${course.image}')">add to cart</button>
+        <button class="add-to-cart-button" onclick="themvaogiohang(${course.id},'${course.name}',${course.price},'${course.image}')">Add to cart</button>
       </div>
-      </p>
       <p class="price">$${course.price}</p>
       </div>`;
 	});
@@ -68,40 +67,28 @@ function themvaogiohang(id, ten, gia, hinh) {
 }
 //chi tiet
 function chitiet(id, ten, gia, hinh) {
-	var modal1Element = document.querySelector(".search input");
-	var cuoiElement = document.querySelector(".cuoi");
-	var selectElement = document.querySelector(".brand");
-	var chitietmoda1lElement = document.querySelector(".modal1");
-	chitietmoda1lElement.style.display = "none";
 	hinh = convertImagePath(hinh);
 	var chitetElement1 = document.querySelector(".chi-tiet-modal");
 	chitetElement1.innerHTML = `
-                <div class="chi-tiet-modal-container">
-         <div class="modal-close" >
-          <img src="..\\Images\\icon\\close.svg" alt="" >
-         </div>
-         <div class="chi-tiet-header">
-            <div> header </div>
-             <div class="modal-chi-tiet-image">
-                 <img  id="image-chitiet"src=${hinh} alt="" >
-             </div>
-             <div class="header1" style="font-size: 100%;">
-         <div class="fornt-write"><h2>${ten}</h2></div>
-         <div>GIA:${gia}</div>
-         <div>
-             SIZE
-             <select name="" id=""></select>
-         </div>
-         <div>so luong
-             <div class="fornt-sl" >
-                     <div class="button">          
-                             <button id="handel-minus" ><i class="fa-solid fa-minus"></i></button>
-                 </div>
-                 <input type="text" id="input" style="width: 50px;" value="0">
-                 <div class="button">
-                 <button id="handel-plus" ><i class="fa-solid fa-plus"></i></button>
-             </div>
-             </div>
+        <div class="chi-tiet-modal-container">
+		<div class="chi-tiet-header">
+			<div> Chi Tiết Sản Phẩm </div>
+			<div class="modal-close" ><img src="..\\Images\\icon\\close.svg" alt="" ></div>
+		</div>
+		<div class="chitiet-container">
+            <div class="modal-chi-tiet-image"><img  id="image-chitiet"src=${hinh} alt="" ></div>
+			<div class="chitiet-right">
+         		<div> Tên SP: ${ten}</div>
+         		<div>Giá: ${gia}</div>
+         		<div> SIZE <select name="" id=""></select> </div>
+         		<div>so luong
+             		<div class="fornt-sl" >
+                     		<div class="button">  <button id="handel-minus" ><i class="fa-solid fa-minus"></i></button></div>
+                 			<input type="text" id="input-chitiet"  value="0">
+                 			<div class="button"><button id="handel-plus" ><i class="fa-solid fa-plus"></i></button></div>
+					</div>		
+            	</div>
+			 </div>
          </div>
          <div>
              <button class="giohangchitiet"><a href="http://127.0.0.1:5501/index.html"><i class="fa-sharp fa-solid fa-cart-plus"></i>THEM VAO GIO</a></button>
@@ -109,9 +96,10 @@ function chitiet(id, ten, gia, hinh) {
              </div>
          </div>
         </div>`;
+
 	var minusElement1 = document.querySelector("#handel-minus");
 	console.log(minusElement1);
-	var inputElement1 = document.querySelector(".fornt-sl #input");
+	var inputElement1 = document.querySelector(".fornt-sl #input-chitiet");
 	console.log(inputElement1);
 	var amount1 = inputElement1.value;
 
@@ -266,7 +254,12 @@ function timkiem(items) {
 			else sanphamElement.style.display = "block";
 
 			chitetElement.forEach(function (item) {
-				if (item.innerText.replace("Chi Tiet", "").toLowerCase().includes(ten))
+				if (
+					item.innerText
+						.replace("Chi Tiet", "")
+						.toLowerCase()
+						.includes(ten)
+				)
 					item.style.display = "flex";
 				else item.style.display = "none";
 			});
