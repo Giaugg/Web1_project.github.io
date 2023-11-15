@@ -1,21 +1,21 @@
 var main_data;
 var objects; // Khai báo biến objects ở ngoài để truy cập sau này
 var array = [];
+var add_admin_cart;
 
 document.addEventListener("DOMContentLoaded", function() {
     // Lấy các phần tử HTML
     const toggleSticketButton = document.getElementById("show-cart");
     const sticket = document.getElementById("cart-user-modal");
     const closeButtons = document.getElementById("close-logo");
-
-
+    
+    
     // Sự kiện khi nhấn nút "Hiển thị Sticket" hoặc dấu x
     toggleSticketButton.addEventListener("click", function() {
         sticket.style.display = "flex"; // Hiển thị Sticket
         Read_data_cart();
-        
     });
-
+    
     closeButtons.addEventListener("click", function() {
         sticket.style.display = "none"; // Ẩn Sticket
         const divElement = document.getElementById("item-list");
@@ -29,98 +29,99 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 var Read_data_cart = function(){
-    var cart = JSON.parse(localStorage.getItem("cart"));
-    // console.log(cart);
-    objects=cart;
+    objects = JSON.parse(localStorage.getItem("cart"));
     create_user_cart();
-    // console.log(objects)
 }
- 
+
 
 
 var create_user_cart = function(){
     const itemContainer = document.getElementById("item-list");
     if(objects.length===0) 
-        empty_cart();
-    else {
-
-        objects.forEach(function(objects,index) {
-            // Tạo một phần tử .item
-            const itemElement = document.createElement("div");
-            itemElement.classList.add("item");
-            const id = objects.id;
+    empty_cart();
+else {
+    
+    objects.forEach(function(objects,index) {
+        // Tạo một phần tử .item
+        const itemElement = document.createElement("div");
+        itemElement.classList.add("item");
+        const id = objects.id;
             const originalString = "ID_Products001.jpg";
             const modifiedString = originalString.replace(/001/g, id.toString().padStart(3, "0"));
-    
+            
             const charname = objects.name;
             const name = charname.replace(/%/g, ' ');
             // console.log(name);
-    
+            
             const total_price = parseInt(objects.price)*parseInt(objects.quality)
             // Tạo các phần tử con và đặt giá trị từ đối tượng sản phẩm
-    
+            
             // console.log(objects)
-    
+            
             itemElement.innerHTML = `
-                <input type="checkbox" >
-                <img src=".\\Images\\products\\${modifiedString}" alt="" class="item_img">
-                <div>
-                    <p> Tên sản phẩm </p>
-                    <p>${name}</p>
+            <input type="checkbox" >
+            <img src=".\\Images\\products\\${modifiedString}" alt="" class="item_img">
+            <div>
+            <p> Tên sản phẩm </p>
+            <p>${name}</p>
+            </div>
+            <div id="item-ID" > ${objects.id} </div>
+            <div>
+            <p> Giá sản phẩm </p>
+            <p id="price">${objects.price}</p>
+            </div>
+            <div>
+            <p>Số lượng</p>
+            <p id="n" class="price">${objects.quality}</p>
+            </div>
+            <div>
+            <p> Tổng tiền </p> 
+            <p id="total-price" class="price">${total_price}</p>
+            </div>
+            <div  class="delete-item"> 
+            <button>x</button>
                 </div>
-                <div id="item-ID" > ${objects.id} </div>
-                <div>
-                    <p> Giá sản phẩm </p>
-                    <p id="price">${objects.price}</p>
-                </div>
-                <div>
-                    <p>Số lượng</p>
-                    <p id="n" class="price">${objects.quality}</p>
-                </div>
-                <div>
-                    <p> Tổng tiền </p> 
-                    <p id="total-price" class="price">${total_price}</p>
-                </div>
-                <div  class="delete-item"> 
-                    <button>x</button>
-                </div>
-            `;
+                `;
+                
+                
+                // Thêm phần tử .item vào phần tử gốc
+                itemContainer.appendChild(itemElement);
+            });
+        }
+        delete_item();
+        calc_money();
+        add_admin_cart = document.querySelector("#Add-to-admin-cart");
+
+        add_admin_cart.addEventListener("click",pay);
+    }
     
-     
-            // Thêm phần tử .item vào phần tử gốc
-            itemContainer.appendChild(itemElement);
-        });
+    
+
+    var pay = function(){
+        console.log(array);
+        var cart_admin = JSON.parse(localStorage.getItem("cart-admin"));
+        if (cart_admin == null) {
+            cart_admin = array;
+            console.log(cart_admin)
+        } else {
+            cart_admin = cart_admin.concat(array);
+            array = [];
+        }
+        
+        localStorage.setItem("cart_admin", JSON.stringify(cart_admin));
+        
     }
-    delete_item();
-    calc_money();
-}
-
-
-
-
-function themvaogiohangadmin(id, ten, gia, hinh) {
-    var cart = JSON.parse(localStorage.getItem("cart-admin"));
-    if (cart == null) {
-        cart = [];
-        cart.push({ id: id, name: ten, price: gia, image: hinh, quality: 1 });
-    } else {
-        let item = cart.find((item) => item.id === id);
-        if (item) item.quality++;
-        else
-            cart.push({ id: id, name: ten, price: gia, image: hinh, quality: 1 });
+    
+    
+    
+    var delete_item = function(){
+        delete_HTML_item();
+        delete_data_item();
     }
-
-    localStorage.setItem("cart", JSON.stringify(cart));
-}
-
-var delete_item = function(){
-    delete_HTML_item();
-    delete_data_item();
-}
-
-var delete_HTML_item = function(){
-
-    const alldeletebutton = document.querySelectorAll(".delete-item")
+    
+    var delete_HTML_item = function(){
+        
+        const alldeletebutton = document.querySelectorAll(".delete-item")
 
     alldeletebutton.forEach(function(btn){
         btn.addEventListener('click', function(){
@@ -210,11 +211,12 @@ var admin_cart = function(item, check){
         array.push(item);
     } 
     else {
-        const newcart = array.filter(function(array){
-            return parseInt(array.id)!==parseInt(item.textContent);
+        array = array.filter(function(array){
+            // console.log(array === item)
+            return array!==item;
         })
     }
-    console.log(array);
+    // console.log(array);
 }
 
 
