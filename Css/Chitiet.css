@@ -44,6 +44,12 @@
     justify-content: center;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
+.chitiet-right{
+    position: absolute;
+    top: 7%;
+    left: 50%;
+    font-size: 2.4rem;
+}
 
  .modal-chi-tiet-image{
     position: absolute;
@@ -54,15 +60,9 @@
 
 }
 
-.chitiet-right{
-    position: absolute;
-    top: 7%;
-    left: 50%;
-    font-size: 2.4rem;
-}
 
 #image-chitiet{
-    
-    height: 240*1.3px;
-    width: 190*1.2px;
+    width: 100%;
+    max-height: 240*1.3px;
+    max-width: 190*1.2px;
 }

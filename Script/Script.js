@@ -33,7 +33,7 @@ function render(courses) {
 	var itemContainer = document.getElementById("flex-container");
 
 	var html = courses.map(function (course) {
-		console.log(course.image);
+		// console.log(course.image);
 
 		return `<div class="flex-item">
       <div class="flex-image-ctn"> 
@@ -174,7 +174,7 @@ function convertImagePath(inputPath) {
 // Sử dụng hàm với ví dụ
 const inputPath = "..ImagesproductsID_Products004.jpg";
 const convertedPath = convertImagePath(inputPath);
-console.log(convertedPath);
+// console.log(convertedPath);
 
 Read_file_maindata();
 
@@ -206,7 +206,7 @@ function render2(items) {
 }
 //TIM KIEM
 function timkiem(items) {
-	console.log(items);
+	// console.log(items);
 	var chitietmodalElement = document.querySelector(".modal1");
 	var closechitietElenment = document.querySelector(".annutclose1");
 	var searchElement = document.querySelector(".search-btn");
@@ -246,7 +246,7 @@ function timkiem(items) {
 	});
 	var select = 0;
 	sanphamElement.style.display = "none";
-	console.log(chitetElement);
+	// console.log(chitetElement);
 	modal1Element.addEventListener("input", function () {
 		var ten = modal1Element.value.toLowerCase();
 		if (!selectElement.value && !cuoiElement.value && !dauElement.value) {

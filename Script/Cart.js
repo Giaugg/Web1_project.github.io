@@ -1,5 +1,6 @@
 var main_data;
 var objects; // Khai báo biến objects ở ngoài để truy cập sau này
+var array = [];
 
 document.addEventListener("DOMContentLoaded", function() {
     // Lấy các phần tử HTML
@@ -32,7 +33,7 @@ var Read_data_cart = function(){
     // console.log(cart);
     objects=cart;
     create_user_cart();
-    console.log(objects)
+    // console.log(objects)
 }
  
 
@@ -92,10 +93,25 @@ var create_user_cart = function(){
     }
     delete_item();
     calc_money();
-
 }
 
-// Read_file_user();
+
+
+
+function themvaogiohangadmin(id, ten, gia, hinh) {
+    var cart = JSON.parse(localStorage.getItem("cart-admin"));
+    if (cart == null) {
+        cart = [];
+        cart.push({ id: id, name: ten, price: gia, image: hinh, quality: 1 });
+    } else {
+        let item = cart.find((item) => item.id === id);
+        if (item) item.quality++;
+        else
+            cart.push({ id: id, name: ten, price: gia, image: hinh, quality: 1 });
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+}
 
 var delete_item = function(){
     delete_HTML_item();
@@ -149,6 +165,8 @@ var calc_money = function(){
             let price = (div.querySelector('#total-price'))
             let num = (div.querySelector('#n'))
             calc(price, num, element);
+            //////////////////////////////
+            admin_cart(div, element);
         })
     
     })
@@ -185,8 +203,19 @@ var empty_cart = function(){
     itemContainer.appendChild(itemElementEmty);
     
     }
- 
 
+var admin_cart = function(item, check){
+    if(check.checked){
+        // alert(total.textContent)
+        array.push(item);
+    } 
+    else {
+        const newcart = array.filter(function(array){
+            return parseInt(array.id)!==parseInt(item.textContent);
+        })
+    }
+    console.log(array);
+}
 
 
 
