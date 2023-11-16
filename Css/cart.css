@@ -105,11 +105,12 @@
 .modal-footer{
     position: absolute;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     background-color: aqua;
     width: 100%;
     height: 40px;
     align-items: center;
+    padding-left: 10px;
 }
 #total-item{
     font-size: 1.5rem;
@@ -123,4 +124,9 @@
     font-style: italic;
     position: absolute;
     left: 24%;
+}
+
+#Add-to-admin-cart{
+    padding: 10px 70px 10px 10px;
+    background-color: rgb(246, 72, 19)
 }

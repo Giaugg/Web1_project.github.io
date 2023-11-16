@@ -1,7 +1,7 @@
 var main_data;
 var objects; // Khai báo biến objects ở ngoài để truy cập sau này
-var array = [];
-var add_admin_cart;
+var map = new Map();
+var admin_cart = [];
 
 document.addEventListener("DOMContentLoaded", function() {
     // Lấy các phần tử HTML
@@ -36,43 +36,76 @@ var Read_data_cart = function(){
 
 
 var create_user_cart = function(){
-    const itemContainer = document.getElementById("item-list");
-    if(objects.length===0) 
-    empty_cart();
-else {
+
     
-    objects.forEach(function(objects,index) {
+    objects.forEach(function(objects) {
         // Tạo một phần tử .item
-        const itemElement = document.createElement("div");
-        itemElement.classList.add("item");
-        const id = objects.id;
-            const originalString = "ID_Products001.jpg";
-            const modifiedString = originalString.replace(/001/g, id.toString().padStart(3, "0"));
+        create_user_cart_line(objects);
+    });
+    delete_item();
+    choose_item_to_add();
+    calc_money();
+    add = document.querySelector("#Add-to-admin-cart").addEventListener("click",function(){
+        add_to_admin_cart();
+        delete_choosen();
+        // alert("ĐƠN ĐẶT THÀNH CÔNG, SẢN PHẨM SẼ ĐƯỢC GIAO TRONG THỜI GIAN SỚM NHẤT. XIN CẢM ƠN!")
+    })
+    empty_cart();
+};
+    
+var choose_item_to_add = function(){
+
+        const allcheckbox = document.querySelectorAll('.item');
+        // console.log(allcheckbox)
+        allcheckbox.forEach(div => {
+            // console.log(div)
             
-            const charname = objects.name;
-            const name = charname.replace(/%/g, ' ');
+            div.addEventListener('click', function(){
+                let key = parseInt(parseInt(div.querySelector("#item-ID").textContent));
+                    map[key] = (map[key] || 0) + 1;  
+                console.log(map);
+                
+        })
+    
+    
+        // console.log(price)
+
+});
+};
+
+var create_user_cart_line = function(object){
+    const itemContainer = document.getElementById("item-list");
+
+    const itemElement = document.createElement("div");
+    itemElement.classList.add("item");
+    const id = object.id;
+        const originalString = "ID_Products001.jpg";
+        const modifiedString = originalString.replace(/001/g, id.toString().padStart(3, "0"));
+            
+        const charname = object.name;
+        var namesp = charname.replace(/%/g, ' ');
             // console.log(name);
             
-            const total_price = parseInt(objects.price)*parseInt(objects.quality)
+        const total_price = parseInt(object.price)*parseInt(object.quality)
             // Tạo các phần tử con và đặt giá trị từ đối tượng sản phẩm
             
             // console.log(objects)
             
-            itemElement.innerHTML = `
+        itemElement.innerHTML = `
             <input type="checkbox" >
             <img src=".\\Images\\products\\${modifiedString}" alt="" class="item_img">
             <div>
             <p> Tên sản phẩm </p>
-            <p>${name}</p>
+            <p>${namesp}</p>
             </div>
-            <div id="item-ID" > ${objects.id} </div>
+            <div id="item-ID" > ${object.id} </div>
             <div>
             <p> Giá sản phẩm </p>
-            <p id="price">${objects.price}</p>
+            <p id="price">${object.price}</p>
             </div>
             <div>
             <p>Số lượng</p>
-            <p id="n" class="price">${objects.quality}</p>
+            <p id="n" class="price">${object.quality}</p>
             </div>
             <div>
             <p> Tổng tiền </p> 
@@ -86,40 +119,67 @@ else {
                 
                 // Thêm phần tử .item vào phần tử gốc
                 itemContainer.appendChild(itemElement);
-            });
-        }
-        delete_item();
-        calc_money();
-        add_admin_cart = document.querySelector("#Add-to-admin-cart");
 
-        add_admin_cart.addEventListener("click",pay);
+
+ 
     }
-    
-    
 
-    var pay = function(){
-        console.log(array);
+var delete_choosen = function(){
+    delete_HTML_choosen();
+    delete_cart_choosen();
+
+}
+
+var delete_HTML_choosen = function(){
+    const allitemHTML = document.querySelectorAll(".item");
+    allitemHTML.forEach(div =>{
+        const element = div.querySelector('input[type="checkbox"]');
+        if(element.checked == true){
+            element.parentNode.remove();
+            empty_cart();
+        }
+        
+    })
+}
+    
+var delete_cart_choosen = function(){
+    let newobjects = []
+    objects.forEach(object =>{
+        if(map[parseInt(object.id)] == undefined)
+            newobjects.push(object);
+    })
+    console.log({newobjects});
+    localStorage.setItem("cart", JSON.stringify(newobjects));
+    newobjects = [];
+}
+
+
+    var add_to_admin_cart = function(){
+        objects.forEach(object => {
+            if(map[parseInt(object.id)] !== undefined && map[parseInt(object.id)] %2 !== 0 ) {
+                admin_cart.push(object);
+            console.log(admin_cart)
+            }
+        })
         var cart_admin = JSON.parse(localStorage.getItem("cart-admin"));
         if (cart_admin == null) {
-            cart_admin = array;
-            console.log(cart_admin)
+            cart_admin = admin_cart;
+            // console.log(cart_admin)
         } else {
-            cart_admin = cart_admin.concat(array);
-            array = [];
+            cart_admin = cart_admin.concat(admin_cart);
+            admin_cart = [];
         }
         
         localStorage.setItem("cart_admin", JSON.stringify(cart_admin));
-        
     }
-    
     
     
     var delete_item = function(){
-        delete_HTML_item();
+        delete_all_HTML_item();
         delete_data_item();
     }
     
-    var delete_HTML_item = function(){
+    var delete_all_HTML_item = function(){
         
         const alldeletebutton = document.querySelectorAll(".delete-item")
 
@@ -167,7 +227,6 @@ var calc_money = function(){
             let num = (div.querySelector('#n'))
             calc(price, num, element);
             //////////////////////////////
-            admin_cart(div, element);
         })
     
     })
@@ -197,27 +256,18 @@ var reset_price = function(){
 
 var empty_cart = function(){
     const itemContainer = document.getElementById("item-list");
-    var itemElementEmty = document.createElement("div");
-    itemElementEmty.innerHTML = `
-    <p id="empty"> Giỏ hàng trống xin vui lòng lựa chọn sản phẩm cần mua! </p> 
-    `
-    itemContainer.appendChild(itemElementEmty);
+    if(!itemContainer.hasChildNodes()){
+        var itemElementEmty = document.createElement("div");
+        itemElementEmty.innerHTML = `
+        <p id="empty"> Giỏ hàng trống xin vui lòng lựa chọn sản phẩm cần mua! </p> 
+        `
+        itemContainer.appendChild(itemElementEmty);
+
+    }
     
     }
 
-var admin_cart = function(item, check){
-    if(check.checked){
-        // alert(total.textContent)
-        array.push(item);
-    } 
-    else {
-        array = array.filter(function(array){
-            // console.log(array === item)
-            return array!==item;
-        })
-    }
-    // console.log(array);
-}
+
 
 
 
