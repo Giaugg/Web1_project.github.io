@@ -214,8 +214,9 @@ function render2(items) {
            <div class="chitiet2">
                <div>${item.name}</div>
                <div>${item.price}</div>
+			   <div class="khung"><button class="chitiettimkiem" onclick="chitiet(${item.id},'${item.name}',${item.price},'${item.image}')" >Chi Tiet</button></div>
            </div>  
-           <div class="khung"><button class="annut" onclick="chitiet(${item.id},'${item.name}',${item.price},'${item.image}')" >Chi Tiet</button></div>
+          
            </div>    
         `;
 	});
@@ -549,7 +550,7 @@ function timkiem(items) {
 						c++;
 						array[i].style.display = "flex";
 						a[i] = 1;
-						if (c == sanpham1.length) break;
+						
 					} else if (!a[i]) {
 						array[i].style.display = "none";
 					}
