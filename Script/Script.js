@@ -1,7 +1,13 @@
 var objects;
 var main_data;
+var TTDN;
+var accouts;
 
 var api = "http://localhost:3000/Item";
+var api_accout = "http://localhost:3000/accout";
+
+
+
 function scrollSnapAutoScroll() {
 	const container = document.querySelector(".gallery");
 	const scrollItems = document.querySelectorAll(".gallery_item");
@@ -26,6 +32,13 @@ var Read_file_maindata = function () {
 		.then((response) => response.json())
 		.then(function (data) {
 			render(data);
+		});
+};
+var Read_file_accout = function () {
+	fetch(api_accout)
+		.then((response) => response.json())
+		.then(function (accouts) {
+			console.log(accouts);
 		});
 };
 
@@ -181,6 +194,7 @@ const convertedPath = convertImagePath(inputPath);
 // console.log(convertedPath);
 
 Read_file_maindata();
+Read_file_accout();
 
 var readfile = function () {
 	fetch(api)
@@ -772,7 +786,7 @@ function Validator(options) {
 				var PhoneNumber = document.getElementById("phonenumber").value;
 				var Gender = document.getElementById("gender").value;
 
-				var account = JSON.parse(localStorage.getItem("USERS")) || [];
+				var account = JSON.parse(localStorage.getItem("USERS"));
 				var checkregister = account.find(function (user) {
 					return user.email == Email || user.username == Username;
 				});
@@ -790,7 +804,7 @@ function Validator(options) {
 					});
 
 					localStorage.setItem("USERS", JSON.stringify(account));
-					alert("Đăng kí thành công");
+					alert("Đăng kí thành công");	
 				}
 				document.getElementById("fullname").value = "";
 				document.getElementById("username").value = "";
@@ -840,6 +854,8 @@ function Validator(options) {
 				});
 
 				if (checklogin) {
+					TTDN = "user";
+					console.log(TTDN);
 					alert("Đăng nhập thành công");
 				} else {
 					alert("Email hoặc mật khẩu không đúng");
@@ -933,3 +949,7 @@ Validator.isGenderSelected = function (selector) {
 		},
 	};
 };
+
+
+/////////////////////////////////////////
+//  xu li trang thai dang nhap

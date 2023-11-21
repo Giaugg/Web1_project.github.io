@@ -157,6 +157,9 @@ var delete_cart_choosen = function(){
     var add_to_admin_cart = function(){
         objects.forEach(object => {
             if(map[parseInt(object.id)] !== undefined && map[parseInt(object.id)] %2 !== 0 ) {
+                var currentDate = new Date();
+                object.Date = currentDate;
+                object.status = 0;
                 admin_cart.push(object);
             console.log(admin_cart)
             }
