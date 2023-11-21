@@ -11,8 +11,6 @@ function fetchData() {
 
 function renderItems(items) {
     const content = document.querySelector(".content");
-    const editWindow = document.getElementById("edit-window");
-    const removeWindow = document.getElementById("remove-window");
 
     items.forEach(item => {
         const container = document.createElement("div");

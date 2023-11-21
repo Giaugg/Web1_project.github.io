@@ -103,11 +103,11 @@
 .dropdw-items {
     display: none;
     position: absolute;
-    width: 175px;
+    width: 300px;
     height: 186px;
     z-index: 10;
     top: 45px;
-    left: -260px;
+    left: -240px;
     /* Điều chỉnh vị trí bên trái */
     border-radius: 5px;
     list-style-type: none;
@@ -188,6 +188,7 @@ body {
     height: 110px;
     position: absolute;
     right: -70px; /* Đẩy nút ra ngoài màn hình */
+    top: 5px;
     transition: right 0.3s; /* Hiệu ứng chuyển động */
 }
 

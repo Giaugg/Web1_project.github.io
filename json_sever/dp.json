@@ -9,9 +9,9 @@
     },
     {
       "id": 2,
-      "brand": 1,
-      "name": "Trunk ",
-      "price": 39000,
+      "brand": "1",
+      "name": "Song Goku",
+      "price": "77000",
       "imgage": "../Images/products/ID_Products002.jpg"
     },
     {
