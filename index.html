@@ -38,7 +38,7 @@
                 <button class="search-btn" type="submit">Search</button>
             </div>
             
-            <div class="header_my">
+            <div class="header_my" id="header_my">
                 <a href="#"> 
                     <img src=".\images\icon\cart-shopping-solid.svg" id="show-cart">
                 </a>
@@ -239,7 +239,27 @@
             </div>
         </div>
     </div>
+<!-- ////////////////////////////////////// -->
+    <div id="truck-modal">
+        <div class="modal-container">
+            <img src=".\images\icon\close.svg" alt="" >
+        </div>
+        <header class="modal-header">
+            <img src=".\images\icon\truck.svg" alt="" id="cart-logo">
+            YOUR TRUCK
+        </header>
+        <div class="modal-item">
+            <div class="truck-item">
+                <div id=" item-list">
 
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!-- ////////////////////////////////////// -->
     <div class="chi-tiet-modal" >
         
         <div class="chi-tiet-modal-container">
@@ -286,6 +306,7 @@
    
     <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
+    <script src=".\Script\Script.js"></script>
     <script> 
         Validator({
         form1: '#register-form',
@@ -310,12 +331,9 @@
             ]
         });
     </script>
-    <script src=".\Script\Script.js">
-    
-    </script>
-
-
     <script src=".\Script\Cart.js"></script> 
+
+
     <link rel="stylesheet" href=".\Css\cart.css">
     <link rel="stylesheet" href=".\Css\Chitiet.css">
     <link rel="stylesheet" href=".\Css\Content.css">
