@@ -48,18 +48,22 @@ function render(courses) {
 	var html = courses.map(function (course) {
 		// console.log(course.image);
 
-		return `<div class="flex-item">
-      <div class="flex-image-ctn"> 
-        <img src="${course.image}" alt="" id="flex-image">
-      </div>
-      <p class="name">${course.name} <\p>
-      <div class="button-flex">
-        <button class="annut" onclick="chitiet(${course.id},'${course.name}',${course.price},'${course.image}')">Chi Tiet</button>
-        <button class="add-to-cart-button" onclick="themvaogiohang(${course.id},'${course.name}',${course.price},'${course.image}')">Add to cart</button>
-      </div>
-      <p class="price">$${course.price}</p>
-      </div>`;
-	});
+function render(courses){
+    var itemContainer = document.getElementById("flex-container");
+       
+      var html=  courses.map(function(course){
+                  console.log(course.imgage)
+                 
+            return `<div class="flex-item">
+            <img src="${course.imgage}" alt="" id="flex-image">
+      <button class="add-to-cart-button" onclick="themvaogiohang(${course.id},'${course.name}',${course.price},'${course.imgage}')">add to cart</button>
+      <p id="name">${course.name}
+      <div><button class="annut" onclick="chitiet(${course.id},'${course.name}',${course.price},'${course.imgage}')">sub</button></div>
+      </p>
+      <p id="price">$${course.price}</p>
+      </div>`
+    
+         })
 
 	itemContainer.innerHTML += html.join("");
 }
