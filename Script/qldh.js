@@ -14,7 +14,7 @@ function start() {
 
 
 function getdata(callback) {
-    fetch('http://localhost:3000/Items')
+    fetch('http://localhost:3000/Orders')
         .then(response => response.json())
         .then(callback);
 }
@@ -83,7 +83,7 @@ function renderData(Items) {
 
 function saveData(items) {
     items.map(function(item){
-        const url = `http://localhost:3000/Items/${item.id}`;
+        const url = `http://localhost:3000/Orders/${item.id}`;
 
         fetch(url, {
             method: 'PUT',  // Sử dụng phương thức PATCH để cập nhật chỉ một số thuộc tính

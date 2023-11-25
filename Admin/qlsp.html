@@ -5,7 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Management</title>
-    <link rel="stylesheet" href="qlsp.css">
+    <link rel="stylesheet" href="../Css/Dropdow.css">
+    <link rel="stylesheet" href="../Css/Footer.css">
+    <link rel="stylesheet" href="../Css/Header.css">
+    <link rel="stylesheet" href="../Css/Timkiem.css">
+    <link rel="stylesheet" href="../Css/qlsp.css">
 </head>
 
 <body>
@@ -15,7 +19,7 @@
                     <img id="home-logo" src="../Images/logo/home_logo1.png">
                 </a> </div>
             <div class="search-box">
-                <input type="text" class="search-input" placeholder="Search The Orders ...">
+                <input type="text" class="search-input" placeholder="Search The Products ...">
                 <button class="search-btn" type="submit">Search</button>
             </div>
 
@@ -46,18 +50,20 @@
     <div class="content">
     </div>
     <!-- Thêm cửa sổ nhỏ cho việc sửa đổi -->
-    <div class="edit-window">
-        <!-- Nội dung cửa sổ nhỏ -->
-        <div class="edit-content">
-            <label for="editedName">Name: </label>
-            <input type="text" id="editedName">
-            <label for="editedBrand">Brand: </label>
-            <input type="text" id="editedBrand">
-            <label for="editedPrice">Price: </label>
-            <input type="text" id="editedPrice">
-            <label for="editedPrice">Image: </label>
-            <input type="text" id="editImage">
-            <button id="saveEdit">Save</button>
+    <div class="wrap">
+        <div class="edit-window">
+            <!-- Nội dung cửa sổ nhỏ -->
+            <div class="edit-content">
+                <label for="editedName">Name: </label>
+                <input type="text" id="editedName">
+                <label for="editedBrand">Brand: </label>
+                <input type="text" id="editedBrand">
+                <label for="editedPrice">Price: </label>
+                <input type="text" id="editedPrice">
+                <label for="editedPrice">Image: </label>
+                <input type="text" id="editImage">
+                <button id="saveEdit">Save</button>
+            </div>
         </div>
     </div>
     <!-- Thêm cửa sổ nhỏ cho việc thông báo xoá -->
@@ -69,6 +75,7 @@
         </div>
     </div>
     <!-- Cửa sổ thêm mới -->
+
     <div class="edit-window" id="add-window">
         <div class="edit-content">
             <label for="newName">Name: </label>
@@ -83,7 +90,7 @@
             <button id="cancelAdd" onclick="closeAddWindow()">Cancel</button>
         </div>
     </div>
-    <script src="qlsp.js"></script>
+    <script src="../Script/qlsp.js"></script>
 </body>
 
 </html>
