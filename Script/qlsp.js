@@ -72,6 +72,7 @@ function renderItems(items) {
 
 // Hiển thị cửa sổ nhỏ với thông tin của item để sửa đổi
 function showEditWindow(item) {
+    const wrapWindow = document.getElementsByClassName("wrap")[0];
     const editWindow = document.getElementsByClassName("edit-window")[0];
     const editedNameInput = document.getElementById("editedName");
     const editedBrandInput = document.getElementById("editedBrand");
@@ -86,6 +87,11 @@ function showEditWindow(item) {
 
     // Hiển thị cửa sổ sửa đổi
     editWindow.style.display = "block";
+    wrapWindow.style.display = "block";
+    wrapWindow.addEventListener("click", function (){
+        wrapWindow.style.display = "none";
+        editWindow.style.display = "none";
+    })
 
     const saveEditButton = document.getElementById("saveEdit");
 
@@ -120,6 +126,7 @@ function showEditWindow(item) {
             console.log(`Dữ liệu đã được cập nhật cho item có id ${item.id}:`, data);
             // Đóng cửa sổ sửa đổi sau khi lưu thành công
             editWindow.style.display = "none";
+            wrapWindow.style.display = "none";
         })
         .catch(error => {
             console.error(`Lỗi khi cập nhật dữ liệu cho item có id ${item.id}:`, error);

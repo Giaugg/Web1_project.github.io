@@ -14,16 +14,16 @@
   "Item": [
     {
       "id": 4,
-      "brand": 1,
-      "name": "Song Goku ss4",
-      "price": 20000,
-      "image": "../Images/products/ID_Products004.jpg"
+      "brand": "1",
+      "name": "Song Goku ssj",
+      "price": "79000",
+      "image": "../Images/products/ID_Products007.jpg"
     },
     {
       "id": 5,
-      "brand": 1,
+      "brand": "1",
       "name": "Broly ",
-      "price": 72000,
+      "price": "72000",
       "image": "../Images/products/ID_Products005.jpg"
     },
     {
@@ -35,9 +35,9 @@
     },
     {
       "id": 7,
-      "brand": 1,
+      "brand": "1",
       "name": "Song Goku ssj",
-      "price": 79000,
+      "price": "79000",
       "image": "../Images/products/ID_Products007.jpg"
     },
     {
