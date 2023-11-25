@@ -12,8 +12,12 @@ document.addEventListener("DOMContentLoaded", function() {
     
     // Sự kiện khi nhấn nút "Hiển thị Sticket" hoặc dấu x
     toggleSticketButton.addEventListener("click", function() {
-        sticket.style.display = "flex"; // Hiển thị Sticket
-        Read_data_cart();
+        if(TTDN ==="user"){
+            sticket.style.display = "flex"; // Hiển thị Sticket
+            Read_data_cart();
+
+        }
+        else alert(" Đăng nhập để mua hàng!");
     });
     
     closeButtons.addEventListener("click", function() {

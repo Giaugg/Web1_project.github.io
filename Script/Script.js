@@ -1,6 +1,6 @@
 var objects;
 var main_data;
-var TTDN;
+var TTDN = "user";
 var accouts;
 
 var api = "http://localhost:3000/Item";
@@ -65,18 +65,25 @@ function render(courses) {
 }
 //gio hang
 function themvaogiohang(id, ten, gia, hinh) {
-	var cart = JSON.parse(localStorage.getItem("cart"));
-	if (cart == null) {
-		cart = [];
-		cart.push({ id: id, name: ten, price: gia, image: hinh, quality: 1 });
-	} else {
-		let item = cart.find((item) => item.id === id);
-		if (item) item.quality++;
-		else
+
+	if(TTDN === "user"){
+		var cart = JSON.parse(localStorage.getItem("cart"));
+		if (cart == null) {
+			cart = [];
 			cart.push({ id: id, name: ten, price: gia, image: hinh, quality: 1 });
+		} else {
+			let item = cart.find((item) => item.id === id);
+			if (item) item.quality++;
+			else
+				cart.push({ id: id, name: ten, price: gia, image: hinh, quality: 1 });
+		}
+	
+		localStorage.setItem("cart", JSON.stringify(cart));
+	}
+	else{
+		alert(" đăng nhập để mua hàng!")
 	}
 
-	localStorage.setItem("cart", JSON.stringify(cart));
 }
 //chi tiet
 function chitiet(id, ten, gia, hinh) {
@@ -855,7 +862,7 @@ function Validator(options) {
 
 				if (checklogin) {
 					TTDN = "user";
-					console.log(TTDN);
+					// console.log(tt)
 					alert("Đăng nhập thành công");
 				} else {
 					alert("Email hoặc mật khẩu không đúng");
