@@ -201,8 +201,7 @@ const inputPath = "..ImagesproductsID_Products004.jpg";
 const convertedPath = convertImagePath(inputPath);
 // console.log(convertedPath);
 
-Read_file_maindata();
-Read_file_accout();
+
 
 var readfile = function () {
 	fetch(api)
@@ -719,7 +718,9 @@ function timkiem(items) {
 		}
 	});
 }
-
+Read_file_maindata();
+Read_file_accout();
+readfile();
 
 
 /////////////////////////////////////////

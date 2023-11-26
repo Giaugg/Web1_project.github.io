@@ -130,7 +130,7 @@ var create_user_cart_line = function(object){
 
 var delete_choosen = function(){
     delete_HTML_choosen();
-    delete_cart_choosen();
+    // delete_cart_choosen();
 
 }
 
@@ -142,20 +142,20 @@ var delete_HTML_choosen = function(){
             element.parentNode.remove();
             empty_cart();
         }
-        
+        var deleteID = element.parentNode.querySelector('#item-ID');
+        console.log(deleteID)
+        let newobjects = []
+        objects.forEach(object =>{
+            if(object.id == deleteID.value)
+                newobjects.push(object);
+        })
+        console.log(newobjects);
+        localStorage.setItem("cart", JSON.stringify(newobjects));
+        newobjects = [];
     })
 }
     
-var delete_cart_choosen = function(){
-    let newobjects = []
-    objects.forEach(object =>{
-        if(map[parseInt(object.id)] == undefined)
-            newobjects.push(object);
-    })
-    console.log({newobjects});
-    localStorage.setItem("cart", JSON.stringify(newobjects));
-    newobjects = [];
-}
+
 
 
     var add_to_admin_cart = function(){
