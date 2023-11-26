@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rich Shop</title>
     <link rel="stylesheet" href=".\Css\styles.css">
-    <link rel="stylesheet" href=".\Css\https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
 </head>
     <div class="homeshow" id="homeshow"></div>
 <body>
@@ -135,12 +134,11 @@
             </div>
         </div>    
         <div class="gender" >
-            <p>Gender</p>
-            <input type="radio" name="gender" id="gender">
-            <label for="">Male</label>
-            <input type="radio" name="gender" id="gender">
-            <label for="">Female</label><br>
-            <span class="form-message"></span>
+            <label >Choose a gender:</label>
+            <select id="select">
+              <option value="0">Male</option>
+              <option value="1">Female</option>
+            </select>
         </div>
 
         <button class="registerButton" id="registerButton" >Register</button>
