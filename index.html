@@ -312,10 +312,36 @@
 
    
     <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////// -->
+    <script src=".\Script\Script.js">
+    
+    </script>
 
-    <script src=".\Script\Script.js"></script>
-    <script src=".\Script\login.js"></script>
-    <script src=".\Script\truck.js"></script>
+    <script> 
+        Validator({
+        form1: '#register-form',
+        rules: [
+            Validator.isRequired('#fullname'),
+            Validator.isRequired('#username'),
+            Validator.isEmail('#email'),
+            Validator.isPhoneNumber('#phonenumber'),
+            Validator.isMinlength('#password',8),
+            Validator.isConfirm('#confirm', function () {
+                return document.querySelector('#register-form #password').value
+            }),
+            Validator.isGenderSelected('#gender'),
+            
+        ]
+    });
+    Validator({
+        form2: '#login-form',
+        rules: [
+                Validator.isEmail('#username1'),
+                Validator.isMinlength('#password1',8),
+            ]
+        });
+    </script>
+   
+
     <script src=".\Script\Cart.js"></script> 
 
 
