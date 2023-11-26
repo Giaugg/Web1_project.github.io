@@ -1,0 +1,132 @@
+/* ///////////// truck ///////////////// */
+
+#truck-modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+    justify-content: center;
+    padding-top: 10px;
+}
+.modal-container{
+    background-color: #ffffff;
+    /* padding: 5px; */
+    width: 900px;
+    max-height: 95%;
+    font-size: 3rem;
+    position: relative;
+    border: solid 2px ;
+}
+
+.modal-header{
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    background-color: aquamarine;
+    align-items: center;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    
+}
+#truck-logo{
+    height: 30px;
+    margin: 10px;
+}
+.close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+}
+.close:hover{
+    background-color: #ebe7e7;
+}
+
+.truck-modal-items{
+    padding: 10px;
+    overflow: auto;
+    height: 80%;
+    background-color: red;
+}
+
+#item-list{
+    max-height: 100%;
+    min-height: 475px;
+    position: relative;
+    padding: 20px 10px 10px 10px;
+    border: solid 1px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+
+    
+}
+.item{
+    display: flex;
+    margin-bottom: 5px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding-left: 10px ;
+    padding-right: 3px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+
+
+}
+
+.item:hover {
+    border: solid 1px ;
+    color: red;
+}
+.item img{
+    height: 100px;
+}
+.item input{
+    height: 30px;
+}
+.item *{
+    font-size: 1.3rem;
+}
+.item p{   
+    word-wrap: break-word; 
+    max-width: 100px;
+    width: 100px;
+    text-align: center;
+}
+
+.delete-item{
+    padding: 5px;
+    background-color:#f3f4f5;
+}
+.delete-item:hover button{
+    color: red;
+}
+
+.modal-footer{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    background-color: aqua;
+    width: 100%;
+    height: 40px;
+    align-items: center;
+    padding-left: 10px;
+}
+#total-item{
+    font-size: 1.5rem;
+}
+#total-cost{
+    font-size: 1.5rem;
+}
+
+#empty{
+    font-size: 1.5rem;
+    font-style: italic;
+    position: absolute;
+    left: 24%;
+}
+
+#Add-to-admin-truck{
+    padding: 10px 70px 10px 10px;
+    background-color: rgb(246, 72, 19)
+}
