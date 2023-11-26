@@ -39,7 +39,7 @@ var Read_file_accout = function () {
 	fetch(api_accout)
 		.then((response) => response.json())
 		.then(function (accouts) {
-			console.log(accouts);
+			// console.log(accouts);
 		});
 };
 
