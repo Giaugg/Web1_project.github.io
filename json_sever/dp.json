@@ -1,13 +1,13 @@
 {
   "accout":[
     {
-        "username":"admin",
-        "password":"admin",
+        "username":"admin@gmail.com",
+        "password":"admin1234",
         "admin":true
     },
     {
-        "username":"user123",
-        "password":"admin",
+        "username":"user@gmail.com",
+        "password":"admin1234",
         "admin":false
     }
 ],

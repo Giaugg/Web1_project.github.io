@@ -12,8 +12,12 @@ document.addEventListener("DOMContentLoaded", function() {
     
     // Sự kiện khi nhấn nút "Hiển thị Sticket" hoặc dấu x
     toggleSticketButton.addEventListener("click", function() {
-        sticket.style.display = "flex"; // Hiển thị Sticket
-        Read_data_cart();
+        if(TTDN ==="user"){
+            sticket.style.display = "flex"; // Hiển thị Sticket
+            Read_data_cart();
+            // empty_cart();
+        }
+        else alert(" Đăng nhập để mua hàng!");
     });
     
     closeButtons.addEventListener("click", function() {
@@ -48,7 +52,7 @@ var create_user_cart = function(){
     add = document.querySelector("#Add-to-admin-cart").addEventListener("click",function(){
         add_to_admin_cart();
         delete_choosen();
-        // alert("ĐƠN ĐẶT THÀNH CÔNG, SẢN PHẨM SẼ ĐƯỢC GIAO TRONG THỜI GIAN SỚM NHẤT. XIN CẢM ƠN!")
+        // alert("ĐƠN ĐẶT THÀNH CÔNG, SẢN PHẨM SẼ ĐƯỢC XỬ LÍ TRONG THỜI GIAN SỚM NHẤT. XIN CẢM ƠN!")
     })
     empty_cart();
 };
@@ -160,20 +164,30 @@ var delete_cart_choosen = function(){
                 var currentDate = new Date();
                 object.Date = currentDate;
                 object.status = 0;
+                
                 admin_cart.push(object);
+                map[parseInt(object.id)] = undefined;
             console.log(admin_cart)
             }
         })
-        var cart_admin = JSON.parse(localStorage.getItem("cart-admin"));
-        if (cart_admin == null) {
-            cart_admin = admin_cart;
-            // console.log(cart_admin)
+        var truck = JSON.parse(localStorage.getItem("cart_admin"));
+        if (truck == null) {
+            truck = admin_cart;
+            // console.log(truck)
         } else {
-            cart_admin = cart_admin.concat(admin_cart);
-            admin_cart = [];
+            admin_cart.forEach(function(object){
+                let item = truck.find((item) => item.id == object.id);
+                // console.log(object, item);
+                if (item) item.quality+=object.quality;
+                else
+                    truck.push(object);
+
+            })
         }
         
-        localStorage.setItem("cart_admin", JSON.stringify(cart_admin));
+        localStorage.setItem("cart_admin", JSON.stringify(truck));
+        truck =[];
+        admin_cart =[];
     }
     
     
