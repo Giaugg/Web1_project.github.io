@@ -80,3 +80,19 @@
     font-size: 3rem;
     
 }
+
+#header_my{
+    position: relative;
+}
+
+
+#status{
+    /* background-color: #6499E9; */
+    width: 300px;
+    top: 45px;
+    list-style: none;
+    font-size: 2rem;
+    margin: 0 10px 0 10px;
+    position: absolute;
+    color: red;
+}

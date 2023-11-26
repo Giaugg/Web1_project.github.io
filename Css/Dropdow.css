@@ -1,9 +1,9 @@
-/* Định dạng phần tử gốc */
 .dropdw {
     position: relative;
     display: inline-block;
     margin: 0;
     padding: 0;
+    
 }
 
 /* Định dạng các mục trong danh sách */
@@ -23,6 +23,8 @@
     font-size: 2rem;
     text-align: left;
     margin: 0;
+    position: absolute;
+    right: -200px;
 }
 
 .dropdw-items li {
@@ -45,7 +47,6 @@
     width: 175px;
     z-index: 10;
     top: 50px;
-    left: -230px;
     /* Điều chỉnh vị trí bên trái */
     margin: 0;
     list-style-type: none;

@@ -42,9 +42,10 @@
                 <a href="#"> 
                     <img src=".\images\icon\cart-shopping-solid.svg" id="show-cart">
                 </a>
-                 <a href="#"> 
-                    <img src=".\images\icon\user-solid.svg" id="show-conntainer">
-                </a> 
+                    <ul><img src=".\images\icon\user-solid.svg" id="show-conntainer"> 
+                        <li id="status"> Ques</li>   
+                    </ul>
+
                 
                 <div class="more_menu"> 
                     <a href="#"> 
@@ -77,15 +78,15 @@
         <!-- Login form -->
             <div class="form_login">
                     <h2>Login</h2>
-                    <div class="input_box">
+                    <div class="input_box" id="inputUsername">
                         <i class="fa-regular fa-file-lines" ></i>
                             <input type="text" class="input-field" id="username1" placeholder="Enter your username"><br>        
-                            <span class="form-message"></span>               
+                            <span class="username-message"></span>               
                     </div> 
-                    <div class="input_box">
+                    <div class="input_box" id="inputPassword">
                         <i class="fa-solid fa-lock"></i>
                         <input type="password" class="input-field" id="password1" placeholder="Enter your password"><br>
-                        <span class="form-message"></span>
+                        <span class="password-message"></span>
                     </div>
 
                         <button class="loginButton" id="loginButtonn" >Login</button>
@@ -307,30 +308,8 @@
     <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
     <script src=".\Script\Script.js"></script>
-    <script> 
-        Validator({
-        form1: '#register-form',
-        rules: [
-            Validator.isRequired('#fullname'),
-            Validator.isRequired('#username'),
-            Validator.isEmail('#email'),
-            Validator.isPhoneNumber('#phonenumber'),
-            Validator.isMinlength('#password',8),
-            Validator.isConfirm('#confirm', function () {
-                return document.querySelector('#register-form #password').value
-            }),
-            Validator.isGenderSelected('#gender'),
-            
-        ]
-    });
-    Validator({
-        form2: '#login-form',
-        rules: [
-                Validator.isEmail('#username1'),
-                Validator.isMinlength('#password1',8),
-            ]
-        });
-    </script>
+    <script src=".\Script\login.js"></script>
+
     <script src=".\Script\Cart.js"></script> 
 
 
