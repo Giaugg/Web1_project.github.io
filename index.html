@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rich Shop</title>
     <link rel="stylesheet" href=".\Css\styles.css">
-    <link rel="stylesheet" href=".\Css\https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+    <link rel="stylesheet" href=".\Css\https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+    </style>
 </head>
-    <div class="homeshow" id="homeshow"></div>
+<div class="homeshow" id="homeshow"></div>
+
 <body>
 
     <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////// -->
@@ -31,25 +38,25 @@
         </div> -->
 
         <div class="main_header">
-            <div class="home"  > <a href="#" > 
-                <img id="home-logo" src=".\images\logo\home_logo1.png" >
-            </a> </div>
+            <div class="home"> <a href="#">
+                    <img id="home-logo" src=".\images\logo\home_logo1.png">
+                </a> </div>
             <div class="search-box">
                 <button class="search-btn" type="submit">Search</button>
             </div>
-            
+
             <div class="header_my" id="header_my">
-                <a href="#"> 
+                <a href="#">
                     <img src=".\images\icon\cart-shopping-solid.svg" id="show-cart">
                 </a>
-                 <a href="#"> 
+                <a href="#">
                     <img src=".\images\icon\user-solid.svg" id="show-conntainer">
-                </a> 
-                
-                <div class="more_menu"> 
-                    <a href="#"> 
-                        <img src=".\images\icon\bars-solid.svg" >
-                    </a> 
+                </a>
+
+                <div class="more_menu">
+                    <a href="#">
+                        <img src=".\images\icon\bars-solid.svg">
+                    </a>
                     <div class="subnav">
                         <div class="more-menu-item">
                             <div class="Brands">Brands</div>
@@ -68,85 +75,85 @@
     <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
 
-   <!-- Form_container -->
-<div class="form_container">
-    <form action="" class="login-form" id="login-form">
-        <div class="form_close" id="formclose1">
-            <i class="fa-solid fa-xmark" ></i>
-        </div>
-        <!-- Login form -->
+    <!-- Form_container -->
+    <div class="form_container">
+        <form action="" class="login-form" id="login-form">
+            <div class="form_close" id="formclose1">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <!-- Login form -->
             <div class="form_login">
-                    <h2>Login</h2>
-                    <div class="input_box">
-                        <i class="fa-regular fa-file-lines" ></i>
-                            <input type="text" class="input-field" id="username1" placeholder="Enter your username"><br>        
-                            <span class="form-message"></span>               
-                    </div> 
-                    <div class="input_box">
-                        <i class="fa-solid fa-lock"></i>
-                        <input type="password" class="input-field" id="password1" placeholder="Enter your password"><br>
-                        <span class="form-message"></span>
-                    </div>
+                <h2>Login</h2>
+                <div class="input_box">
+                    <i class="fa-regular fa-file-lines"></i>
+                    <input type="text" class="input-field" id="username1" placeholder="Enter your username"><br>
+                    <span class="form-message"></span>
+                </div>
+                <div class="input_box">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" class="input-field" id="password1" placeholder="Enter your password"><br>
+                    <span class="form-message"></span>
+                </div>
 
-                        <button class="loginButton" id="loginButtonn" >Login</button>
+                <button class="loginButton" id="loginButtonn">Login</button>
 
-                    <div class="login_signup"> Don't have an account? <a href="#" id="register-btn"> Register </a></div>
-            </div> 
-    </form>
-            
-    <form action="" class="register-form" id="register-form">
-        <div class="form_close" id="formclose2">
-            <i class="fa-solid fa-xmark" ></i>
-        </div>
-        
-        <!-- Register form -->
-        <h2>Registation</h2>
-        <div class="form_register"> 
-            <div class="input_box">
-                <i class="fa-regular fa-file-lines"></i>  
-                <input type="text" class="input-field" id="fullname" placeholder="Create your fullname"><br>   
-                <span class="form-message"></span>                 
-            </div> 
-            <div class="input_box">
-                <i class="fa-regular fa-file-lines"></i>
-                <input type="text" class="input-field" id="username"  placeholder="Create your username"><br>    
-                    <span class="form-message"></span>                   
-            </div> 
-            <div class="input_box">
-                <i class="fa-regular fa-envelope"></i>
-                <input type="email" class="input-field" id="email" placeholder="Create your email"><br>    
-                <span class="form-message"></span>                   
-            </div> 
-            <div class="input_box">
-                <i class="fa-solid fa-lock"></i>
-                <input type="password" class="input-field" id="password"  placeholder="Create your password"><br>
+                <div class="login_signup"> Don't have an account? <a href="#" id="register-btn"> Register </a></div>
+            </div>
+        </form>
+
+        <form action="" class="register-form" id="register-form">
+            <div class="form_close" id="formclose2">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+
+            <!-- Register form -->
+            <h2>Registation</h2>
+            <div class="form_register">
+                <div class="input_box">
+                    <i class="fa-regular fa-file-lines"></i>
+                    <input type="text" class="input-field" id="fullname" placeholder="Create your fullname"><br>
+                    <span class="form-message"></span>
+                </div>
+                <div class="input_box">
+                    <i class="fa-regular fa-file-lines"></i>
+                    <input type="text" class="input-field" id="username" placeholder="Create your username"><br>
+                    <span class="form-message"></span>
+                </div>
+                <div class="input_box">
+                    <i class="fa-regular fa-envelope"></i>
+                    <input type="email" class="input-field" id="email" placeholder="Create your email"><br>
+                    <span class="form-message"></span>
+                </div>
+                <div class="input_box">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" class="input-field" id="password" placeholder="Create your password"><br>
+                    <span class="form-message"></span>
+                </div>
+                <div class="input_box">
+                    <i class="fa-solid fa-phone"></i>
+                    <input type="tel" class="input-field" id="phonenumber" placeholder="Create your phone"><br>
+                    <span class="form-message"></span>
+                </div>
+                <div class="input_box">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" class="input-field" id="confirm" placeholder="Confirm your password"><br>
+                    <span class="form-message"></span>
+                </div>
+            </div>
+            <div class="gender">
+                <p>Gender</p>
+                <input type="radio" name="gender" id="gender">
+                <label for="">Male</label>
+                <input type="radio" name="gender" id="gender">
+                <label for="">Female</label><br>
                 <span class="form-message"></span>
             </div>
-            <div class="input_box">
-                <i class="fa-solid fa-phone"></i>
-                <input type="tel" class="input-field" id="phonenumber" placeholder="Create your phone"><br>    
-                <span class="form-message"></span>
-            </div>
-            <div class="input_box">
-                <i class="fa-solid fa-lock"></i>  
-                <input type="password" class="input-field" id="confirm"  placeholder="Confirm your password"><br>    
-                <span class="form-message"></span>                 
-            </div>
-        </div>    
-        <div class="gender" >
-            <p>Gender</p>
-            <input type="radio" name="gender" id="gender">
-            <label for="">Male</label>
-            <input type="radio" name="gender" id="gender">
-            <label for="">Female</label><br>
-            <span class="form-message"></span>
-        </div>
 
-        <button class="registerButton" id="registerButton" >Register</button>
+            <button class="registerButton" id="registerButton">Register</button>
 
             <div class="login_signup"> Already have an account? <a href="#" id="login-btn"> Login </a></div>
-    </form>
-</div>
+        </form>
+    </div>
 
     <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
@@ -165,59 +172,64 @@
             <div class="gallery_item">
                 <img src=".\Images\slice\slice_4.jpg" class="gallery_image">
             </div>
-            
+
         </div>
     </div>
     <div class="content">
+        <h1>FIGURE - MORE THAN JUST TOY</h1>
         <div class="main-content">
-            <div id="flex-container">
-                
-               
-            </div>
+            <div id="flex-container"></div>
         </div>
     </div>
+    <ul class="pagination"></ul>
 
     <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
 
     <div class="footer">
-        <div class="my_infor">
-            <div class="head">
-                Thông Tin Liên Hệ
+        <div class="f_container">
+            <div class="f_descri">
+                <b>Giới thiệu Japan Figure</b>
+                <div class="f_d_item">
+                    <div class="f_d_l">
+                        Giúp các bạn trẻ Việt Nam dễ dàng tiếp cận với mô hình figure Nhật Bản
+                    </div>
+                    <div class="f_d_r">
+                        <ul>
+                            <li>
+                                <b>Địa chỉ:</b> Quận 5, Tp. Hồ Chí Minh. <br>
+                                Rich Shop chưa có không gian trưng bày, bạn vui lòng hẹn trước khi đến
+                            </li>
+                            <li>
+                                <b>Điện thoại:</b> 1900 xxxx <br>
+                            </li>
+                            <li>
+                                <b>Email:</b> support@richshop.vn
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="chi-tiet">
-                <div>
-                    <li>Địa chỉ</li>
-                    <li>Điện thoại</li>
-                    <li>Email</li>
-                    <li>Thời Gian Làm Việc</li>
+            <div class="f_sp">
+                <b>Hỗ trợ khách hàng </b>
+                <div class="support">
+                    <img src="" alt="">
+                    <ul>
+                        <li>Giới thiệu</li>
+                        <li>Tìm kiếm</li>
+                    </ul>
                 </div>
             </div>
         </div>
-        <div class="more_infor">
-            <div class="head"> Thông Tin Cần Biết</div>
-            <div class="chi-tiet">
-                <div>
-                    <li>Bảng giá</li>
-                    <li>Chính sách bảo nật thông tin</li>
-                    <li>Giới thiệu Shop</li>
-                    <li>Hướng dẫn đặt mua</li>
-                    <li>Khuyến mãi giá ship</li>
-                </div>
-            </div>
-        </div>
-        <div class="home"> <a href="https://www.google.com/maps/place/100-146+Nguy%E1%BB%85n+Th%E1%BB%8B+Nh%E1%BB%8F,+Ph%C6%B0%E1%BB%9Dng+15,+Qu%E1%BA%ADn+11,+Th%C3%A0nh+ph%E1%BB%91+H%E1%BB%93+Ch%C3%AD+Minh,+Vi%E1%BB%87t+Nam/@10.7732824,106.6530657,18.95z/data=!4m9!1m2!2m1!1sgear+vn!3m5!1s0x31752ec083444d93:0x3498fce07806218!8m2!3d10.7733064!4d106.6529804!16s%2Fg%2F11c65ht5g5?entry=ttu"> 
-            <!-- <img class="img_slider" src=".\image\map.png" > -->
-    </a></div>
-
+        <div class="copy_right"> Copyright © 2023 Rich Shop</div>
     </div>
 
     <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
-    <div id="cart-user-modal" >
+    <div id="cart-user-modal">
         <div class="modal-container">
             <div class="close" id="close-logo">
-                <img src=".\images\icon\close.svg" alt="" >
+                <img src=".\images\icon\close.svg" alt="">
             </div>
             <header class="modal-header">
                 <img src=".\images\icon\shopping-cart.svg" alt="" id="cart-logo">
@@ -227,22 +239,22 @@
             <div class="modal-items">
                 <div class="cart-items">
                     <div id="item-list">
-                        
+
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <p >Total item: <span id="total-item">0</span></p>
-                <p >Total cost: <span id="total-cost">0</span></p>
-                <div id="Add-to-admin-cart"> <img  src=".\images\icon\truck.svg" alt=""> ORDER</div>
-                
+                <p>Total item: <span id="total-item">0</span></p>
+                <p>Total cost: <span id="total-cost">0</span></p>
+                <div id="Add-to-admin-cart"> <img src=".\images\icon\truck.svg" alt=""> ORDER</div>
+
             </div>
         </div>
     </div>
-<!-- ////////////////////////////////////// -->
+    <!-- ////////////////////////////////////// -->
     <div id="truck-modal">
         <div class="modal-container">
-            <img src=".\images\icon\close.svg" alt="" >
+            <img src=".\images\icon\close.svg" alt="">
         </div>
         <header class="modal-header">
             <img src=".\images\icon\truck.svg" alt="" id="cart-logo">
@@ -259,79 +271,80 @@
     </div>
 
 
-<!-- ////////////////////////////////////// -->
-    <div class="chi-tiet-modal" >
-        
+    <!-- ////////////////////////////////////// -->
+    <div class="chi-tiet-modal">
+
         <div class="chi-tiet-modal-container">
-         
+
         </div>
-     </div>
-     <div class="modal1" >
-        
+    </div>
+    <div class="modal1">
+
         <div class="modal-container1">
-         <div class="modal-close1" >
-           <button class="annutclose1">  <i class="fa-solid fa-xmark"></i></button>
-         </div>
-         <div class="search">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" id="searchItem" name="searchItem" placeholder="Tìm kiếm sản phẩm ..." style="text-align: left;">
-            <div class="khungchon"><button class="nutchon"><i class="fa-solid fa-caret-down"></i></button></div>
-             </div>
-             <div class="search2" style="font-size: 20px;">
+            <div class="modal-close1">
+                <button class="annutclose1"> <i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="searchItem" name="searchItem" placeholder="Tìm kiếm sản phẩm ..."
+                    style="text-align: left;">
+                <div class="khungchon"><button class="nutchon"><i class="fa-solid fa-caret-down"></i></button></div>
+            </div>
+            <div class="search2" style="font-size: 20px;">
                 <div>
-                  <label for="brand" style="font-size: 20px;">SELECT BRAND:</label>
-                <select name="brand" class="brand" style="height: 25px;">
-                  <option value="1" style="font-size: 20px;">1</option>
-                  <option value="2" style="font-size: 20px;">2</option>
-                  <option value="3" style="font-size: 20px;">3</option>
-                  <option value="4" style="font-size: 20px;">4</option>
-                  <option value="5" style="font-size: 20px;">5</option>
-                  <option value="6" style="font-size: 20px;">6</option>
-                </select>
+                    <label for="brand" style="font-size: 20px;">SELECT BRAND:</label>
+                    <select name="brand" class="brand" style="height: 25px;">
+                        <option value="1" style="font-size: 20px;">1</option>
+                        <option value="2" style="font-size: 20px;">2</option>
+                        <option value="3" style="font-size: 20px;">3</option>
+                        <option value="4" style="font-size: 20px;">4</option>
+                        <option value="5" style="font-size: 20px;">5</option>
+                        <option value="6" style="font-size: 20px;">6</option>
+                    </select>
                 </div>
-                <div style="font-size: 20px;"> 
-                  PRICE:<input type="text" style="height: 25px;" class="dau">FROM
-                  <input type="text"  style="height: 25px;" class="cuoi">
+                <div style="font-size: 20px;">
+                    PRICE:<input type="text" style="height: 25px;" class="dau">FROM
+                    <input type="text" style="height: 25px;" class="cuoi">
                 </div>
-               </div>
-             <div class="sanphamItem">
-                 
-             </div>
-             </div>
+            </div>
+            <div class="sanphamItem">
+
+            </div>
+        </div>
 
 
     </div>
 
 
-   
+
     <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
     <script src=".\Script\Script.js"></script>
-    <script> 
+    <script>
         Validator({
-        form1: '#register-form',
-        rules: [
-            Validator.isRequired('#fullname'),
-            Validator.isRequired('#username'),
-            Validator.isEmail('#email'),
-            Validator.isPhoneNumber('#phonenumber'),
-            Validator.isMinlength('#password',8),
-            Validator.isConfirm('#confirm', function () {
-                return document.querySelector('#register-form #password').value
-            }),
-            Validator.isGenderSelected('#gender'),
-            
-        ]
-    });
-    Validator({
-        form2: '#login-form',
-        rules: [
+            form1: '#register-form',
+            rules: [
+                Validator.isRequired('#fullname'),
+                Validator.isRequired('#username'),
+                Validator.isEmail('#email'),
+                Validator.isPhoneNumber('#phonenumber'),
+                Validator.isMinlength('#password', 8),
+                Validator.isConfirm('#confirm', function () {
+                    return document.querySelector('#register-form #password').value
+                }),
+                Validator.isGenderSelected('#gender'),
+
+            ]
+        });
+        Validator({
+            form2: '#login-form',
+            rules: [
                 Validator.isEmail('#username1'),
-                Validator.isMinlength('#password1',8),
+                Validator.isMinlength('#password1', 8),
             ]
         });
     </script>
-    <script src=".\Script\Cart.js"></script> 
+    <script src=".\Script\Cart.js"></script>
 
 
     <link rel="stylesheet" href=".\Css\cart.css">
@@ -341,11 +354,9 @@
     <link rel="stylesheet" href=".\Css\Footer.css">
     <link rel="stylesheet" href=".\Css\Header.css">
     <link rel="stylesheet" href=".\Css\Login.css">
-    <link rel="stylesheet" href=".\Css\qldh.css">
-    <link rel="stylesheet" href=".\Css\qlsp.css">
     <link rel="stylesheet" href=".\Css\Slider.css">
-    <link rel="stylesheet" href=".\Css\styles.css">
     <link rel="stylesheet" href=".\Css\Timkiem.css">
 </body>
+
 </html>
 <!-- @nmedia only screeb and (max-width: 750) -->
