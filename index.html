@@ -33,12 +33,12 @@
             <div class="home"  > <a href="#" > 
                 <img id="home-logo" src=".\images\logo\home_logo1.png" >
             </a> </div>
-            <div class="search-box">
-                <button class="search-btn" type="submit">Search</button>
-            </div>
+           
             
             <div class="header_my" id="header_my">
-
+                <div class="search-box">
+                    <button class="search-btn" type="submit" style="font-size: 100%;"><img src=".\images\icon\search.svg" alt="" class="imgsearch" height="100%" width="100%"></button>
+                </div>
                 <a> 
                     <img src=".\images\icon\truck.svg" id="show-truck">
 
@@ -78,13 +78,13 @@
 <div class="form_container">
     <form action="" class="login-form" id="login-form">
         <div class="form_close" id="formclose1">
-            <i class="fa-solid fa-xmark" ></i>
+            <img src=".\images\icon\close.svg" alt="">
         </div>
         <!-- Login form -->
             <div class="form_login">
                     <h2>Login</h2>
                     <div class="input_box" id="inputUsername">
-                        <i class="fa-regular fa-file-lines" ></i>
+                 
                             <input type="text" class="input-field" id="username1" placeholder="Enter your username"><br>        
                             <span class="username-message"></span>               
                     </div> 
@@ -277,7 +277,7 @@
         
         <div class="modal-container1">
          <div class="modal-close1" >
-           <button class="annutclose1">  <i class="fa-solid fa-xmark"></i></button>
+           <button class="annutclose1"> <img src=".\images\icon\close.svg" alt=""></i></button>
          </div>
          <div class="search">
             <i class="fa-solid fa-magnifying-glass"></i>
@@ -309,36 +309,11 @@
 
     </div>
 
-
-    <script> 
-        Validator({
-        form1: '#register-form',
-        rules: [
-            Validator.isRequired('#fullname'),
-            Validator.isRequired('#username'),
-            Validator.isEmail('#email'),
-            Validator.isPhoneNumber('#phonenumber'),
-            Validator.isMinlength('#password',8),
-            Validator.isConfirm('#confirm', function () {
-                return document.querySelector('#register-form #password').value
-            }),
-            Validator.isGenderSelected('#gender'),
-            
-        ]
-    });
-    Validator({
-        form2: '#login-form',
-        rules: [
-                Validator.isEmail('#username1'),
-                Validator.isMinlength('#password1',8),
-            ]
-        });
-    </script>
    
     <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////// -->
-    <script src=".\Script\Script.js">
-    
-    </script>
+    <script src=".\Script\Script.js"></script>
+    <script src=".\Script\truck.js"></script>
+    <script src=".\Script\login.js"></script>
 
    
 

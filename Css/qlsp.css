@@ -21,12 +21,7 @@
     height: 50px;
 }
 
-.search-box {
-    display: flex;
-    font-size: 2.1rem;
-    margin-bottom: -50px;
-    margin-top: 40px;
-}
+
 
 .search-box input {
     width: 500px;
@@ -41,34 +36,7 @@
     margin-top: -13px;
 }
 
-.search-box .search-btn {
-    width: 120px;
-    background-color: #01579b;
-    color: #fff;
-    cursor: pointer;
-    padding: 6px 8px;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: 0 0.4rem 0.4rem 0;
-    transition: all 0.3s ease;
-}
 
-.search-box .search-btn:hover {
-    background-color: #6499E9;
-    color: aquamarine;
-}
-
-.header_my {
-    display: flex;
-    justify-self: end;
-    margin-bottom: -50px;
-    margin-top: 40px;
-}
-
-.header_my * {
-    height: 40px;
-    width: 40px;
-    margin: 5px;
-}
 
 /* Định dạng phần tử gốc */
 .dropdw {

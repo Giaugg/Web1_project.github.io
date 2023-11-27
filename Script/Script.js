@@ -63,6 +63,7 @@ function render(courses) {
 	});
 
 	itemContainer.innerHTML += html.join("");
+	phanloai(courses);
 }
 //gio hang
 function themvaogiohang(id, ten, gia, hinh) {
@@ -99,7 +100,7 @@ function chitiet(id, ten, gia, hinh) {
       `
               <div class="chi-tiet-modal-container1">
        <div class="modal-close" >
-         <button class="annutclose">  <i class="fa-solid fa-xmark"></i></button>
+         <button class="annutclose"> <img src=".\\images\\icon\\close.svg" alt="">
        </div>
        <div class="chi-tiet-header1">
            <div class="item">
@@ -109,10 +110,6 @@ function chitiet(id, ten, gia, hinh) {
          <div class="header1" style="font-size: 50px;">
          <div class="fornt-write"><h1 style="font-size:60px;">${ten}</h1></div>
          <div>GIA:${gia}</div>
-         <div>
-             SIZE
-             <select name="" id=""></select>
-         </div>
          <div>so luong
              <div class="fornt-sl" >
                      <div class="button">          
@@ -200,7 +197,78 @@ function convertImagePath(inputPath) {
 const inputPath = "..ImagesproductsID_Products004.jpg";
 const convertedPath = convertImagePath(inputPath);
 // console.log(convertedPath);
-
+//phan loai
+function hienthibrand(x,items){
+	var arrayItems=document.querySelectorAll('.flex-item');
+	var array2=Array.from(arrayItems);
+	var sanpham = items.filter(function (item) {
+		return x === item.brand.toString();
+	});
+	var a = [];
+	sanpham.forEach(function (item) {
+		var s = item.image;
+		s = s.toString().toLowerCase();
+		var c = 0;
+		for (var i = 0; i < array2.length; i++) {
+			var j = array2[i];
+			var z = j.outerHTML;
+			if (z.toLowerCase().includes(s) && !a[i]) {
+				c++;
+				array2[i].style.display = "flex";
+				a[i] = 1;
+				if (c == sanpham.length) break;
+			} else if (!a[i]) {
+				array2[i].style.display = "none";
+			}
+		}
+		sanphamElement.style.display = "block";
+	});
+}
+function onclickname(name,items){
+     name.addEventListener('click',function(){
+		var x="";
+		     if(name.innerText.toLowerCase().includes("dragonball"))
+			 {
+				 x="1";
+			 }
+			 else  if(name.innerText.toLowerCase().includes("chainsawman"))
+			 {
+				x="2";
+			 }
+			 else  if(name.innerText.toLowerCase().includes("kimetsu"))
+			 {
+				 x="4";
+			 }
+			 else if(name.innerText.toLowerCase().includes("jack"))
+			 {
+				 x="3";
+			 }
+			 else if(name.innerText.toLowerCase().includes("naruto"))
+			 {
+				 x="5";
+			 }
+			 else if(name.innerText.toLowerCase().includes("naruto"))
+			 {
+				 x="6";
+			 }
+			 hienthibrand(x,items);
+	 })
+}
+ function phanloai(items){
+	   var dragonballElement=document.querySelector('#dragonball');
+	   var narutoElement=document.querySelector('#naruto');
+	   var spyfamilyElement=document.querySelector('#spyfamily');
+	   var kimetsuElement=document.querySelector('#kimetsu');
+	   var chainsawmanElement=document.querySelector('#chainsawman');
+	   var jackElement=document.querySelector("#jack");
+	   onclickname(dragonballElement,items);
+	   onclickname(narutoElement,items);
+	   onclickname(spyfamilyElement,items);
+	   onclickname(kimetsuElement,items);
+	   onclickname(chainsawmanElement,items);
+	   onclickname(jackElement,items);
+	     
+ }
 
 
 var readfile = function () {
@@ -500,7 +568,8 @@ function timkiem(items) {
 				}
 				sanphamElement.style.display = "block";
 			});
-		} else if (modal1Element.value && dauElement.value && cuoiElement.value) {
+		} 
+		else if (modal1Element.value && dauElement.value && cuoiElement.value) {
 			console.log("KHONG DUOC");
 			var a = [];
 			var sanpham1 = items.filter(function (item) {
@@ -725,3 +794,5 @@ readfile();
 
 /////////////////////////////////////////
 //  xu li trang thai dang nhap
+
+var a=document.querySelector('.more_menu');
