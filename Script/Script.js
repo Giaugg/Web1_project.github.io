@@ -113,21 +113,22 @@ function chitiet(id, ten, gia, hinh) {
          <div>so luong
              <div class="fornt-sl" >
                      <div class="button">          
-                             <button id="handel-minus" ><i class="fa-solid fa-minus"></i></button>
+                             <button id="handel-minus" ><img src=".\\images\\icon\\minus.svg" alt=""></button>
                  </div>
-                 <input type="text" id="input" style="width: 50px;" value="0">
+                 <input type="text" id="input" style="width: 50px;" value="1">
                  <div class="button">
-                 <button id="handel-plus" ><i class="fa-solid fa-plus"></i></button>
+                 <button id="handel-plus" ><img src=".\\images\\icon\\plus.svg" alt=""></button>
              </div>
              </div>
          </div>
-         <div>
-             <button class="giohangchitiet"><a href="http://127.0.0.1:5501/index.html"><i class="fa-sharp fa-solid fa-cart-plus"></i>THEM VAO GIO</a></button>
+         <div class="cartchitiet">
+             <button class="giohangchitiet"><img src=".\\images\\icon\\cart-shopping-solid.svg" alt=""> <h1>Thêm vào cart<\h1></button>
+			
           </div><div>
            </div>
        </div>
       </div>`
-      var  minusElement1=document.querySelector('#handel-minus');
+	  var  minusElement1=document.querySelector('#handel-minus');
       console.log(minusElement1)
        var inputElement1=document.querySelector('.fornt-sl #input')
        console.log(inputElement1)
@@ -150,6 +151,7 @@ function chitiet(id, ten, gia, hinh) {
          }
 
       localStorage.setItem("cart",JSON.stringify(cart));
+	  alert("Bạn đã thêm thành công sản phẩm vào giỏ hàng");
         }
         giohangElement.addEventListener('click',themvaogiohang1)
         
@@ -282,6 +284,7 @@ var readfile = function () {
 };
 function render2(items) {
 	var itemElement = document.querySelector(".sanphamItem");
+	
 
 	var html = items.map(function (item) {
 		return `<div class="chitiet"> 
@@ -295,7 +298,16 @@ function render2(items) {
            </div>    
         `;
 	});
-	itemElement.innerHTML = html.join("");
+	itemElement.innerHTML += html.join("");
+	var modalcontainer1Element=document.querySelector('.modal-container1');
+	var html1=`<div class="phantrang">
+	<div class="chontrang">
+		
+	</div>
+     </div>`
+	
+	modalcontainer1Element.innerHTML+=html1;
+	
 	timkiem(items);
 }
 //TIM KIEM
@@ -325,8 +337,11 @@ function timkiem(items) {
 		}
 		selectElement.value = "";
 	});
+	chitietmodalElement.style.display="none"
 	searchElement.addEventListener("click", function () {
+		
 		chitietmodalElement.style.display = "flex";
+		
 	});
 	closechitietElenment.addEventListener("click", function () {
 		dauElement.value="";
@@ -359,6 +374,7 @@ function timkiem(items) {
 					item.style.display = "flex";
 				else item.style.display = "none";
 			});
+			phantrangSreach();
 		} else if (selectElement.value && cuoiElement.value && dauElement.value) {
 			var x = parseInt(dauElement.value);
 			var y = parseInt(cuoiElement.value);
@@ -392,6 +408,7 @@ function timkiem(items) {
 					}
 				});
 				sanphamElement.style.display = "block";
+				phantrangSreach();
 			} else {
 				var a = [];
 				var sanpham1 = items.filter(function (item) {
@@ -426,6 +443,7 @@ function timkiem(items) {
 					}
 					sanphamElement.style.display = "block";
 				});
+				phantrangSreach();
 			}
 		} else if (selectElement.value) {
 			var x = selectElement.value;
@@ -452,6 +470,7 @@ function timkiem(items) {
 						}
 					}
 					sanphamElement.style.display = "block";
+					phantrangSreach();
 				} else {
 					var input1 = modal1Element.value.toLowerCase();
 
@@ -473,6 +492,7 @@ function timkiem(items) {
 						}
 					}
 					sanphamElement.style.display = "block";
+					phantrangSreach();
 				}
 			});
 		} else if (dauElement.value && cuoiElement.value) {
@@ -500,6 +520,7 @@ function timkiem(items) {
 					}
 				});
 				sanphamElement.style.display = "block";
+				phantrangSreach();
 			} else {
 				console.log(111);
 				var a = [];
@@ -530,6 +551,7 @@ function timkiem(items) {
 					}
 				});
 				sanphamElement.style.display = "block";
+				phantrangSreach();
 			}
 		}
 	});
@@ -567,7 +589,8 @@ function timkiem(items) {
 					}
 				}
 				sanphamElement.style.display = "block";
-			});
+			})
+			phantrangSreach();
 		} 
 		else if (modal1Element.value && dauElement.value && cuoiElement.value) {
 			console.log("KHONG DUOC");
@@ -604,6 +627,7 @@ function timkiem(items) {
 				}
 			});
 			sanphamElement.style.display = "block";
+			phantrangSreach();
 		} else if (modal1Element.value) {
 			var a = [];
 			var sanpham = items.filter(function (item) {
@@ -633,6 +657,7 @@ function timkiem(items) {
 				}
 			});
 			sanphamElement.style.display = "block";
+			phantrangSreach();
 		} else if (dauElement.value && cuoiElement.value) {
 			var a = [];
 			var sanpham1 = items.filter(function (item) {
@@ -662,6 +687,7 @@ function timkiem(items) {
 				}
 				sanphamElement.style.display = "block";
 			});
+			phantrangSreach();
 		}
 	});
 
@@ -692,6 +718,7 @@ function timkiem(items) {
 				}
 			});
 			sanphamElement.style.display = "block";
+			phantrangSreach();
 		} else if (x && y && modal1Element.value && selectElement.value) {
 			var a = [];
 			var sanpham1 = items.filter(function (item) {
@@ -725,6 +752,7 @@ function timkiem(items) {
 				}
 			});
 			sanphamElement.style.display = "block";
+			phantrangSreach();
 		} else if (x && y && modal1Element.value) {
 			console.log(111);
 			var a = [];
@@ -755,6 +783,7 @@ function timkiem(items) {
 				}
 			});
 			sanphamElement.style.display = "block";
+			phantrangSreach();
 		} else if (x && y && selectElement.value) {
 			var a = [];
 			var sanpham1 = items.filter(function (item) {
@@ -783,13 +812,72 @@ function timkiem(items) {
 					}
 				}
 				sanphamElement.style.display = "block";
+				
 			});
+			phantrangSreach();
 		}
 	});
+}
+//phan trang
+function displayResults(results, page,itemsPerPage,totalPages) {
+	const resultsContainer = document.querySelector('.sanphamItem');
+	const paginationContainer = document.querySelector('.chontrang');
+	const startIndex = (page - 1) * itemsPerPage;
+	const endIndex = startIndex + itemsPerPage;
+	const displayedResults = results.slice(startIndex, endIndex);
+	console.log(displayedResults);
+	
+	results.forEach(result => {
+		if(!displayedResults.find(item=>item===result)) result.style.display="none";
+		else result.style.display="flex";
+	});
+
+  
+	paginationContainer.innerHTML = '';
+	for (let i = 1; i <= totalPages; i++) {
+		const pageButton = document.createElement('button');
+		pageButton.textContent = i;
+		pageButton.addEventListener('click', () => displayResults(results, i,4,totalPages));
+		paginationContainer.appendChild(pageButton);
+	}
+}
+function phantrangSreach(){
+	var chitietmodalElement = document.querySelector(".modal1");
+	var chitetElement = document.querySelectorAll(".chitiet");
+	var sanphamElement = document.querySelector(".sanphamItem");
+	var chitetElement = document.querySelectorAll(".chitiet");	
+	var chontrangElement=document.querySelector('.chontrang');
+	var array = Array.from(chitetElement);
+	console.log(array);
+	var dem=0;
+	var sanpham=array.filter(function(item){
+		console.log(item.style.display);
+             if(item.style.display=="flex") dem++;
+			 return item.style.display=="flex";	 
+	})
+	console.log(sanpham);
+	console.log(dem);
+	if(dem>0)
+	{
+		var n=Math.ceil(dem/4);
+		displayResults(sanpham,1,4,n);
+// 		for(var i=1;i<=n;i++)
+// 		{   var j=0;
+//           chontrangElement.innerHTML+=`	<button class="chon">${i}</button>`;
+// 		  var dem2=0;
+// 		  chitetElement.forEach(function(item){
+// 			j++;
+// 			if(item.style.display=="flex") dem2++;
+//    })
+
+// 		}
+	}
+
 }
 Read_file_maindata();
 Read_file_accout();
 readfile();
+
 
 
 /////////////////////////////////////////
