@@ -43,27 +43,54 @@ var Read_file_accout = function () {
 		});
 };
 
+let items = [];
+let pageLimit = 12;
+let currentPage = 1;
+let totalPage = 0;
+let itemPerPage = [];
+
 function render(courses) {
-	var itemContainer = document.getElementById("flex-container");
+    items = courses;
+    itemPerPage = items.slice(pageLimit * (currentPage - 1), pageLimit * currentPage);
+    renderItems();
+	totalPage = Math.ceil(items.length / pageLimit);
+    renderPageNumber(totalPage);
+}
+function renderItems() {
+    let itemContainer = document.getElementById("flex-container");
+    let itemsHTML = "";
 
-	var html = courses.map(function (course) {
-		// console.log(course.image);
+    itemPerPage.forEach((course) => {
+        itemsHTML += `
+		<div class="flex-item">
+			<div class="flex-image-ctn"> 
+				<img src="${course.image}" alt="" id="flex-image">
+			</div>
+			<p class="name">${course.name} <\p>
+			<div class="button-flex">
+				<button class="annut" onclick="chitiet(${course.id},'${course.name}',${course.price},'${course.image}')">Chi Tiet</button>
+				<button class="add-to-cart-button" onclick="themvaogiohang(${course.id},'${course.name}',${course.price},'${course.image}')">Add to cart</button>
+			</div>
+			<p class="price">$${course.price}</p>
+		</div>`;
+    });
+    itemContainer.innerHTML = itemsHTML;
+}
+function renderPageNumber(totalPage) {
+    let paginationContainer = document.getElementById("pagination");
+    let pageNumbersHTML = "";
 
-		return `<div class="flex-item">
-      <div class="flex-image-ctn"> 
-        <img src="${course.image}" alt="" id="flex-image">
-      </div>
-      <p class="name">${course.name} <\p>
-      <div class="button-flex">
-        <button class="annut" onclick="chitiet(${course.id},'${course.name}',${course.price},'${course.image}')">Chi Tiet</button>
-        <button class="add-to-cart-button" onclick="themvaogiohang(${course.id},'${course.name}',${course.price},'${course.image}')">Add to cart</button>
-      </div>
-      <p class="price">$${course.price}</p>
-      </div>`;
-	});
-
-	itemContainer.innerHTML += html.join("");
-	phanloai(courses);
+    for (let i = 1; i <= totalPage; i++) {
+		let currentClass = i === currentPage ? "current" : "";
+        pageNumbersHTML += `<li class="${currentClass}" onclick="handlePageNumber(${i},${totalPage})">${i}</li>`;
+    }
+    paginationContainer.innerHTML = pageNumbersHTML;
+}
+function handlePageNumber(num, totalPage) {
+    currentPage = num;
+    itemPerPage = items.slice(pageLimit * (currentPage - 1), pageLimit * currentPage);
+	renderItems();
+	renderPageNumber(totalPage);
 }
 //gio hang
 function themvaogiohang(id, ten, gia, hinh) {
