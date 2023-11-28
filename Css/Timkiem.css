@@ -107,3 +107,19 @@ div .khung{
     justify-content: space-between;
 	
  }
+ .phantrang{
+   
+    width: 800px;
+   
+    position: fixed;
+    display: flex;
+   bottom:  0px;
+    justify-content: center;
+    
+   
+  
+ }
+ .chontrang{
+   
+    font-size: 50px;
+ }

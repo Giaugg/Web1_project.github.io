@@ -273,6 +273,15 @@
                 <div class="khungchon"><button class="nutchon"><i class="fa-solid fa-caret-down"></i></button></div>
             </div>
             <div class="search2" style="font-size: 20px;">
+         <div class="modal-close1" >
+           <button class="annutclose1"> <img src=".\images\icon\close.svg" alt=""></button>
+         </div>
+         <div class="search">
+            <img src=".\images\icon\search.svg" alt="">
+            <input type="text" id="searchItem" name="searchItem" placeholder="Tìm kiếm sản phẩm ..." style="text-align: left;">
+            <div class="khungchon"><button class="nutchon"><img  src=".\images\icon\angle-double-down.svg" alt=""></i></button></div>
+             </div>
+             <div class="search2" style="font-size: 20px;">
                 <div>
                     <label for="brand" style="font-size: 20px;">SELECT BRAND:</label>
                     <select name="brand" class="brand" style="height: 25px;">
@@ -288,41 +297,25 @@
                     PRICE:<input type="text" style="height: 25px;" class="dau">FROM
                     <input type="text" style="height: 25px;" class="cuoi">
                 </div>
-            </div>
-            <div class="sanphamItem">
-
-            </div>
-        </div>
+               </div>
+             <div class="sanphamItem">
+                 
+             </div>
+             </div>
 
 
     </div>
     <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////// -->
+   
     <script src=".\Script\Script.js"></script>
-    <script>
-        Validator({
-            form1: '#register-form',
-            rules: [
-                Validator.isRequired('#fullname'),
-                Validator.isRequired('#username'),
-                Validator.isEmail('#email'),
-                Validator.isPhoneNumber('#phonenumber'),
-                Validator.isMinlength('#password', 8),
-                Validator.isConfirm('#confirm', function () {
-                    return document.querySelector('#register-form #password').value
-                }),
-                Validator.isGenderSelected('#gender'),
+    <script src=".\Script\truck.js"></script>
+    <script src=".\Script\login.js"></script>
 
-            ]
-        });
-        Validator({
-            form2: '#login-form',
-            rules: [
-                Validator.isEmail('#username1'),
-                Validator.isMinlength('#password1', 8),
-            ]
-        });
-    </script>
-    <script src=".\Script\Cart.js"></script>
+   
+
+    <script src=".\Script\Cart.js"></script> 
+
+
     <link rel="stylesheet" href=".\Css\cart.css">
     <link rel="stylesheet" href=".\Css\Chitiet.css">
     <link rel="stylesheet" href=".\Css\Content.css">
