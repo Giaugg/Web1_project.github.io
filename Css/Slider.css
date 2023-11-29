@@ -2,23 +2,26 @@
 /* ///////////// SlIDER ////////////// */
 
 .slider{
-    height: 100%;
+    background-color: #c4ffc5;
 }
 
 .gallery {
     display: flex;
     align-items: center;
-    column-gap: 20px;
-    overflow-x: scroll;
+    column-gap: 0px;
+    overflow-x: hidden;
+    overflow-y: hidden;
     scroll-snap-type:mandatory;
-    margin: 10px 0 10px 0;
+    height: 600px;
+    width: 100%;
 }
 .gallery_item{
     scroll-snap-align: center;
-    min-width: 75%;
+    min-width: 100%;
+    height: 100%;
 }
 .gallery_image{
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit:cover;
 }

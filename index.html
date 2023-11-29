@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rich Shop</title>
+    <link rel="icon" href="./Images/logo/r-cart-logo.svg" type="image/x-icon">
     <link rel="stylesheet" href=".\Css\styles.css">
     <link rel="stylesheet" href=".\Css\https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     <style>
@@ -16,10 +17,7 @@
 <div class="homeshow" id="homeshow"></div>
 
 <body>
-
     <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////// -->
-
-
     <div class="header">
         <!-- <div class="header_top">
             <div class="header_infor">
@@ -32,49 +30,28 @@
                     <div class="youtube"  > <a href="#"> 
                         <img src=".\images\icon\youtube.svg" >
                     </a> </div>
-            </div>
-            
-            
+            </div>          
         </div> -->
-
         <div class="main_header">
-            <div class="home"> <a href="#">
-                    <img id="home-logo" src=".\images\logo\home_logo1.png">
-                </a> </div>
-            <div class="search-box">
-                <button class="search-btn" type="submit">Search</button>
+            <div class="home"> 
+                <a href="#"><img id="home-logo" src="./Images/logo/r-cart-logo.svg"></a> 
             </div>
-
             <div class="header_my" id="header_my">
-                <a href="#">
-                    <img src=".\images\icon\cart-shopping-solid.svg" id="show-cart">
-                </a>
-                <a href="#">
-                    <img src=".\images\icon\user-solid.svg" id="show-conntainer">
-                </a>
-
-                <div class="more_menu">
-                    <a href="#">
-                        <img src=".\images\icon\bars-solid.svg">
-                    </a>
-                    <div class="subnav">
-                        <div class="more-menu-item">
-                            <div class="Brands">Brands</div>
-                            <div class="Charactets">Charactets</div>
-                            <div class="Shop-services">Shop & Services</div>
-                            <div class="About"> About</div>
-
-                        </div>
+                <a href="#"><img src="./Images/Icon/search.svg" id="search-btn"></a>
+                <a href="#"><img src="./Images/Icon/cart-shopping-solid.svg" id="show-cart"></a>
+                <a href="#"><img src="./Images/Icon/user-solid.svg" id="show-conntainer"></a>
+                    <div class="dropdw">
+                        <a href="#" class="dropobj"><img src="../Images/Icon/bars-solid.svg"></a>
+                        <ul class="dropdw-items">
+                            <li><a href="#">Thương hiệu</a></li>
+                            <li><a href="#"><img src="./Images/Icon/truck.svg" alt="" class=""> Sản phẩm đã mua</a></li>
+                            <li><a href="#">Quản lý sản phẩm</a></li>
+                        </ul>
                     </div>
-
-                </div>
             </div>
         </div>
     </div>
-
     <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////// -->
-
-
     <!-- Form_container -->
     <div class="form_container">
         <form action="" class="login-form" id="login-form">
@@ -94,18 +71,14 @@
                     <input type="password" class="input-field" id="password1" placeholder="Enter your password"><br>
                     <span class="form-message"></span>
                 </div>
-
                 <button class="loginButton" id="loginButtonn">Login</button>
-
                 <div class="login_signup"> Don't have an account? <a href="#" id="register-btn"> Register </a></div>
             </div>
         </form>
-
         <form action="" class="register-form" id="register-form">
             <div class="form_close" id="formclose2">
                 <i class="fa-solid fa-xmark"></i>
             </div>
-
             <!-- Register form -->
             <h2>Registation</h2>
             <div class="form_register">
@@ -154,10 +127,7 @@
             <div class="login_signup"> Already have an account? <a href="#" id="login-btn"> Login </a></div>
         </form>
     </div>
-
     <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////// -->
-
-
     <div class="slider">
         <div class="gallery">
             <div class="gallery_item">
@@ -182,10 +152,7 @@
             <ul id="pagination"></ul>
         </div>
     </div>
-
     <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////// -->
-
-
     <div class="footer">
         <div class="f_container">
             <div class="f_descri">
@@ -223,9 +190,7 @@
         </div>
         <div class="copy_right"> Copyright © 2023 Rich Shop</div>
     </div>
-
     <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////// -->
-
     <div id="cart-user-modal">
         <div class="modal-container">
             <div class="close" id="close-logo">
@@ -239,7 +204,6 @@
             <div class="modal-items">
                 <div class="cart-items">
                     <div id="item-list">
-
                     </div>
                 </div>
             </div>
@@ -252,105 +216,47 @@
         </div>
     </div>
     <!-- ////////////////////////////////////// -->
-    <div id="truck-modal">
-        <div class="modal-container">
-            <img src=".\images\icon\close.svg" alt="">
-        </div>
-        <header class="modal-header">
-            <img src=".\images\icon\truck.svg" alt="" id="cart-logo">
-            YOUR TRUCK
-        </header>
-        <div class="modal-item">
-            <div class="truck-item">
-                <div id=" item-list">
-
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- ////////////////////////////////////// -->
     <div class="chi-tiet-modal">
-
         <div class="chi-tiet-modal-container">
-
         </div>
     </div>
     <div class="modal1">
-
         <div class="modal-container1">
-            <div class="modal-close1">
-                <button class="annutclose1"> <i class="fa-solid fa-xmark"></i></button>
-            </div>
+            <div class="modal-close1"><img src="./Images/Icon/x-mark.svg" alt="" class="annutclose1"></div>
             <div class="search">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" id="searchItem" name="searchItem" placeholder="Tìm kiếm sản phẩm ..."
-                    style="text-align: left;">
-                <div class="khungchon"><button class="nutchon"><i class="fa-solid fa-caret-down"></i></button></div>
+                <input type="text" id="searchItem" name="searchItem" placeholder="Tìm kiếm sản phẩm ..." style="text-align: left;">
+                <div class="khungchon"><img src="./Images/Icon/down-arrow.svg" alt="" class="nutchon"></div>
             </div>
-            <div class="search2" style="font-size: 20px;">
+            <div class="search2">
                 <div>
-                    <label for="brand" style="font-size: 20px;">SELECT BRAND:</label>
-                    <select name="brand" class="brand" style="height: 25px;">
-                        <option value="1" style="font-size: 20px;">1</option>
-                        <option value="2" style="font-size: 20px;">2</option>
-                        <option value="3" style="font-size: 20px;">3</option>
-                        <option value="4" style="font-size: 20px;">4</option>
-                        <option value="5" style="font-size: 20px;">5</option>
-                        <option value="6" style="font-size: 20px;">6</option>
+                    <label for="brand">SELECT BRAND:</label>
+                    <select name="brand" class="brand">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
                     </select>
                 </div>
-                <div style="font-size: 20px;">
-                    PRICE:<input type="text" style="height: 25px;" class="dau">FROM
-                    <input type="text" style="height: 25px;" class="cuoi">
+                <div>
+                    <label for="">PRICE FROM:</label>
+                    <input type="text" class="dau">
+                    <label for="">TO</label>
+                    <input type="text" class="cuoi">
                 </div>
             </div>
             <div class="sanphamItem">
-
             </div>
         </div>
-
-
     </div>
-
-
-
     <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////// -->
-
     <script src=".\Script\Script.js"></script>
-    <script>
-        Validator({
-            form1: '#register-form',
-            rules: [
-                Validator.isRequired('#fullname'),
-                Validator.isRequired('#username'),
-                Validator.isEmail('#email'),
-                Validator.isPhoneNumber('#phonenumber'),
-                Validator.isMinlength('#password', 8),
-                Validator.isConfirm('#confirm', function () {
-                    return document.querySelector('#register-form #password').value
-                }),
-                Validator.isGenderSelected('#gender'),
-
-            ]
-        });
-        Validator({
-            form2: '#login-form',
-            rules: [
-                Validator.isEmail('#username1'),
-                Validator.isMinlength('#password1', 8),
-            ]
-        });
-    </script>
     <script src=".\Script\Cart.js"></script>
-
-
     <link rel="stylesheet" href=".\Css\cart.css">
     <link rel="stylesheet" href=".\Css\Chitiet.css">
     <link rel="stylesheet" href=".\Css\Content.css">
-    <link rel="stylesheet" href=".\Css\Dropdow.css">
+    <link rel="stylesheet" href="./Css/Dropdow.css">
     <link rel="stylesheet" href=".\Css\Footer.css">
     <link rel="stylesheet" href=".\Css\Header.css">
     <link rel="stylesheet" href=".\Css\Login.css">

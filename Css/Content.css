@@ -1,10 +1,9 @@
 /* /////////// CONTENT ////////////// */
 
 .content{
-    background-color: #e7e7e7;
+    background-color: #c4ffc5;
     width: 100%;
-    height: 1500px;
-    /* position: relative; */
+    padding-bottom: 150px;
 }
 .content h1{
     font-size: 25px;
@@ -14,48 +13,44 @@
 
 .main-content{
     position: relative;
-    margin-left: calc( 50% - 380px);
-    width: 760px;
+    margin-left: calc( 50% - 500px);
+    width: 1000px;
     padding: 20px;
     padding-top: 20px;
-    border: solid 2px #888888;
-    box-shadow: 0px 0px 10px rgba(130, 130, 130, 0.5);
 }
 
 #flex-container{
     display: flex;
     flex-wrap: wrap;
-    padding: 10px;
+    padding: 5px;
 }
 
 
 
 .flex-item {
-    border: solid 1px;
     flex: 1;
     text-align: center;
     position: relative;
 }
 .flex-image-ctn{
+    border-radius: 10px;
     height: 240px;
-    width: 100%;
+    width: 190px;
     overflow: hidden;
 
 }
 
 .flex-item{
     height: 280px;
-    width: 200px;
-    margin: 5px 10px 5px 10px;
-    padding: 5px 3px 10px 3px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    background-color: rgb(229, 229, 229);
+    width: 170px;
+    margin: 10px 20px 10px 20px;
+    padding: 5px 5px 10px 5px;
+    border: 3px solid transparent;
+    border-image: linear-gradient(to bottom right, #5b8f5e 0%, #c4ffc5 40%, transparent 25%, transparent 100%) 1;
 }
 
 .flex-item:hover{
-    border-color: rgb(255, 255, 255);
     cursor: pointer;
-    background-color: #b4b4b4;
 }
 
 .flex-item:hover #flex-image{
@@ -149,9 +144,12 @@
 #pagination li{
     border: solid 1px black;
     padding: 15px;
+    height: 45px;
+    width: 45px;
     font-size: 15px;
+    text-align: center;
 }
 #pagination :hover, .current{
     cursor: pointer;
-    background-color: #888888;
+    background-color: #64a767;
 }

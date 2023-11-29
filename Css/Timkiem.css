@@ -1,5 +1,5 @@
 /* TIM KIEM*/
-.modal1{
+.modal1 {
     position: fixed;
     left: 0;
     right: 0;
@@ -7,103 +7,147 @@
     bottom: 0;
     background: rgba(0, 0, 0, 0.4);
     display: none;
-        align-items: center;
-        justify-content: center;
+    align-items: center;
+    justify-content: center;
 }
-.modal-container1{
-    background: white;
+
+.modal-container1 {
+    background-color: #f0f0f0;
     display: block;
     width: 800px;
-    
     height: 600px;
-   
     position: relative;
-
-        
-        overflow-y: scroll;
+    /* overflow-y: scroll; */
+    border-radius: 5px;
 }
-.modal-close1{
+
+.modal-close1 {
     position: relative;
     padding: 12px;
     cursor: pointer;
-    color:black;
+    color: black;
     opacity: 0.5;
     height: 50px;
     width: 780px;
-    margin-bottom: 10px;
 }
-.annutclose1:hover{
+
+.annutclose1:hover {
     opacity: 1;
     color: red;
 }
-.annutclose1{
+
+.annutclose1 {
     position: absolute;
-    right: 0;
-    top: 0;
+    right: -15px;
+    top: 5px;
     cursor: pointer;
+    width: 25px;
+    height: 25px;
 }
-.modal-container1 .search{
+
+.modal-container1 .search {
     position: absolute;
     right: 60px;
-    top:0;
 }
-.search{
+
+.search {
     border: 2px solid black;
     border-radius: 10px;
     width: 600px;
-  height:  30px;
-  margin-top: 10px;
-    margin-bottom: 30px;
-    font-size: 18px;   
-    position: relative;  
+    height: 50px;
+    top: 30px;
+    left: calc(50% - 300px);
+    font-size: 25px;
+    padding: 5px;
 }
-.search input{
-		width: 550px;
-		border: none;
-		outline: none;
+
+.search input {
+    width: 550px;
+    border: none;
+    outline: none;
+    background-color: #f0f0f0;
 }
-.chitiet{
+
+.chitiet {
     display: flex;
-    
-    height: 200px;
-   cursor: pointer;
-    margin-top: 20px;
+    height: 240px;
+    cursor: pointer;
+    padding: 20px 0 20px 10px;
+    border-top: solid 2px rgb(117, 117, 117);
 }
-.chitiet img{
+
+.chitiet img {
     min-width: 200px;
     object-fit: cover;
     margin-right: 10px;
+    border-radius: 5px;
 }
 
-.chitiet .chitiet2{
-   height: 200px;
-   display: flex;
-   justify-content: space-around;
-   align-items: center;
-   flex-direction: column;
-   cursor: pointer;
+.chitiet .chitiet2 {
+    height: 200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
 }
-.chitiet2{
+
+.chitiet2 {
     font-size: 30px;
 }
-.sanphamItem{
-    margin-top:10px ;
+
+.sanphamItem {
+    height: 455px;
+    overflow-y: scroll;
+    margin-top: 80px;
 }
-.chitiet:hover{
+
+.chitiet:hover {
     background: #dadada
 }
-div .khung{
-    position:relative;
- }
 
- .khungchon{
+div .khung {
+    position: relative;
+}
+
+.khungchon {
     position: absolute;
-    right: 0;
-    top:0;
-	
- }
- .search2{
-    display: none;
-    justify-content: space-between;
-	
- }
+    right: 5px;
+    top: 10px;
+    height: 20px;
+    width: 20px;
+}
+.nutchon{
+    height: 100%;
+    height: 100%;
+}
+
+.search2 {
+    display: flex;
+    position: absolute;
+    justify-content: space-around;
+    top: 90px;
+    width: 700px;
+    left: calc(50% - 350px);
+    vertical-align: middle;
+}
+.search2 div{
+    display: flex;
+    font-size: 25px;
+    white-space: 1px;
+}
+.search2 div:first-child{
+    width: 300px;
+}
+.search2 div:last-child{
+    width: 400px;
+}
+.search2 input{
+    height: 25px;
+    width: 100px;
+    margin: 0 10px;
+}
+.search2 label{
+    margin-right: 10px;
+    padding-top: 2px;
+}

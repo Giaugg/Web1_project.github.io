@@ -14,8 +14,8 @@
     text-decoration: none;
     color: #333;
     padding: 5px 10px;
-    background-color: #eee;
-    border: 1px solid #ccc;
+    background-color: #c4ffc5;
+    border: 1px solid #3d8641;
     display: flex;
     align-items: center;
     width: 270px;
@@ -44,8 +44,8 @@
     position: absolute;
     width: 175px;
     z-index: 10;
-    top: 50px;
-    left: -285px;
+    top: 46px;
+    left: -215px;
     /* Điều chỉnh vị trí bên trái */
     margin: 0;
     list-style-type: none;
@@ -54,7 +54,7 @@
 
 /* Định dạng mục danh sách khi di chuột vào */
 .dropdw-items li a:hover {
-    background-color: #b4b4b4;
+    background-color: #82c786;
 }
 
 /* Hiển thị danh sách khi hover vào biểu tượng */

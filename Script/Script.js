@@ -12,16 +12,18 @@ function scrollSnapAutoScroll() {
 	const container = document.querySelector(".gallery");
 	const scrollItems = document.querySelectorAll(".gallery_item");
 	let currentIndex = 0;
+	let scrollDuration = 2000;
 
 	function scrollToNextItem() {
 		currentIndex = (currentIndex + 1) % scrollItems.length;
 		container.scrollTo({
 			left: scrollItems[currentIndex].offsetLeft,
-			behavior: "smooth",
+			behavior: "instant",
+			duration: scrollDuration,
 		});
 	}
 
-	setInterval(scrollToNextItem, 3000); // Tự động cuộn mỗi 3 giây (3000ms)
+	setInterval(scrollToNextItem, 4000);
 }
 
 scrollSnapAutoScroll();
@@ -66,7 +68,7 @@ function renderItems() {
 			<div class="flex-image-ctn"> 
 				<img src="${course.image}" alt="" id="flex-image">
 			</div>
-			<p class="name">${course.name} <\p>
+			<p class="name">${course.name} </p>
 			<div class="button-flex">
 				<button class="annut" onclick="chitiet(${course.id},'${course.name}',${course.price},'${course.image}')">Chi Tiet</button>
 				<button class="add-to-cart-button" onclick="themvaogiohang(${course.id},'${course.name}',${course.price},'${course.image}')">Add to cart</button>
@@ -266,7 +268,7 @@ function timkiem(items) {
 	// console.log(items);
 	var chitietmodalElement = document.querySelector(".modal1");
 	var closechitietElenment = document.querySelector(".annutclose1");
-	var searchElement = document.querySelector(".search-btn");
+	var searchElement = document.querySelector("#search-btn");
 	var sanphamElement = document.querySelector(".sanphamItem");
 	var chitetElement = document.querySelectorAll(".chitiet");
 	var nutchonElenment = document.querySelector(".nutchon");
