@@ -27,8 +27,7 @@
     justify-content: center;
     background-color: aquamarine;
     align-items: center;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-    
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); 
 }
 #truck-logo{
     height: 30px;
@@ -58,8 +57,6 @@
     padding: 20px 10px 10px 10px;
     border: solid 1px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-
-    
 }
 .item{
     display: flex;
@@ -70,8 +67,6 @@
     padding-left: 10px ;
     padding-right: 3px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-
-
 }
 
 .item:hover {

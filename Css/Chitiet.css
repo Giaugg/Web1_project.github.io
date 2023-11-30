@@ -64,23 +64,6 @@ i{
     cursor: pointer;
     padding: 5px;
 }
-.cartchitiet{
-    margin-top: 32px;
-    display: flex;
-    height: 30px;
-    width: 100px;
-    font-size: 20px;
-    justify-content: center;
-    align-items: center;
-}
-.giohangchitiet{
-    width: 100px;
-}
-.cartchitiet .giohangchitiet img{
-   
-    height: 40px;
-
-}
 .chi-tiet-header1 .item img{
 	object-fit: cover;
 	height: 100%;
