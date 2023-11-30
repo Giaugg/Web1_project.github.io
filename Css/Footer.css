@@ -1,0 +1,77 @@
+.footer {
+    height: 300px;
+    width: 100%;
+    border: solid 1px;
+    background-color: rgb(42, 42, 42);
+}
+
+.f_container {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    padding-left: 50px;
+}
+
+.f_descri {
+    width: 850px;
+    margin: 20px 10px 0 10px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.f_d_item {
+    display: flex;
+    width: 100%;
+    margin: 10px;
+}
+.f_descri > b:first-of-type{
+    font-size: 38px;
+}
+
+.f_d_l, .f_d_r {
+    display: inline;
+    font-size: 20px;
+    color: #ccc;
+    text-align: justify;
+}
+.f_d_l{
+    width: 300px;
+}
+.f_d_r{
+    width: 500px;
+    padding-left: 80px;
+}
+.f_d_r b{
+    font-size: 20px;
+}
+
+.f_d_r ul {
+    list-style-type: none;
+    margin: 0;
+    padding-left: 20px;
+}
+
+.f_d_r li {
+    font-size: 20px;
+    color: #ccc;
+}
+
+.f_sp {
+    width: 350px;
+    margin: 20px 10px 0 30px;
+    color: #fff;
+}
+.f_sp > b:first-of-type{
+    font-size: 38px;
+}
+.f_sp ul{
+    padding-left: 40px;
+    font-size: 25px;
+    color: #ccc;
+}
+.copy_right{
+    font-size: 15px;
+    color: #ccc;
+    padding: 15px 100px;
+    border-top: solid 1px rgb(113, 113, 113);
+}

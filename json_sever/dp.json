@@ -1,0 +1,476 @@
+{
+  
+  "accout": [
+    {
+      "username": "admin@gmail.com",
+      "password": "admin1234",
+      "admin": true
+    },
+    {
+      "username": "user@gmail.com",
+      "password": "admin1234",
+      "admin": false
+    }
+  ],
+  "Item": [
+    {
+      "id": 4,
+      "brand": "1",
+      "name": "Song Goku ssj",
+      "price": "79000",
+      "image": "../Images/products/ID_Products007.jpg"
+    },
+    {
+      "id": 5,
+      "brand": "1",
+      "name": "Broly ",
+      "price": "72000",
+      "image": "../Images/products/ID_Products005.jpg"
+    },
+    {
+      "id": 6,
+      "brand": 1,
+      "name": "Magic Gohan",
+      "price": 15000,
+      "image": "../Images/products/ID_Products006.jpg"
+    },
+    {
+      "id": 7,
+      "brand": "1",
+      "name": "Song Goku ssj",
+      "price": "79000",
+      "image": "../Images/products/ID_Products007.jpg"
+    },
+    {
+      "id": 8,
+      "brand": 1,
+      "name": "Picolo Giant",
+      "price": 54000,
+      "image": "../Images/products/ID_Products008.jpg"
+    },
+    {
+      "id": 9,
+      "brand": 1,
+      "name": "Shaco Ha",
+      "price": 80000,
+      "image": "../Images/products/ID_Products009.jpg"
+    },
+    {
+      "id": 10,
+      "brand": 1,
+      "name": "Song Goku ssk",
+      "price": 88000,
+      "image": "../Images/products/ID_Products010.jpg"
+    },
+    {
+      "id": 11,
+      "brand": 1,
+      "name": "Vegeta ssj",
+      "price": 12000,
+      "image": "../Images/products/ID_Products011.jpg"
+    },
+    {
+      "id": 12,
+      "brand": 2,
+      "name": "Aki Hayakawa",
+      "price": 45000,
+      "image": "../Images/products/ID_Products012.jpg"
+    },
+    {
+      "id": 13,
+      "brand": 2,
+      "name": "Denji",
+      "price": 22000,
+      "image": "../Images/products/ID_Products013.jpg"
+    },
+    {
+      "id": 14,
+      "brand": 2,
+      "name": "Himeno",
+      "price": 98000,
+      "image": "../Images/products/ID_Products014.jpg"
+    },
+    {
+      "id": 15,
+      "brand": 2,
+      "name": "Kobeni Higashiyama",
+      "price": 90000,
+      "image": "../Images/products/ID_Products015.jpg"
+    },
+    {
+      "id": 16,
+      "brand": 2,
+      "name": "Makima ",
+      "price": 77000,
+      "image": "../Images/products/ID_Products016.jpg"
+    },
+    {
+      "id": 17,
+      "brand": 2,
+      "name": "Power",
+      "price": 81000,
+      "image": "../Images/products/ID_Products017.jpg"
+    },
+    {
+      "id": 18,
+      "brand": 3,
+      "name": "Yukimi",
+      "price": 49000,
+      "image": "../Images/products/ID_Products018.jpg"
+    },
+    {
+      "id": 19,
+      "brand": 3,
+      "name": "Jack",
+      "price": 82000,
+      "image": "../Images/products/ID_Products019.jpg"
+    },
+    {
+      "id": 20,
+      "brand": 4,
+      "name": "Kanroji Mitsuri",
+      "price": 65000,
+      "image": "../Images/products/ID_Products020.jpg"
+    },
+    {
+      "id": 21,
+      "brand": 4,
+      "name": "Makomo",
+      "price": 31000,
+      "image": "../Images/products/ID_Products021.jpg"
+    },
+    {
+      "id": 22,
+      "brand": 4,
+      "name": "Sabito",
+      "price": 59000,
+      "image": "../Images/products/ID_Products022.jpg"
+    },
+    {
+      "id": 23,
+      "brand": 4,
+      "name": "Kochou Shinobu",
+      "price": 91000,
+      "image": "../Images/products/ID_Products023.jpg"
+    },
+    {
+      "id": 24,
+      "brand": 4,
+      "name": "Tomioka Giyuu",
+      "price": 72000,
+      "image": "../Images/products/ID_Products024.jpg"
+    },
+    {
+      "id": 25,
+      "brand": 4,
+      "name": "Kamado Tanjirou",
+      "price": 59000,
+      "image": "../Images/products/ID_Products025.jpg"
+    },
+    {
+      "id": 26,
+      "brand": 4,
+      "name": "Rengoku Kyoujurou",
+      "price": 66000,
+      "image": "../Images/products/ID_Products026.jpg"
+    },
+    {
+      "id": 27,
+      "brand": 4,
+      "name": "Himejima Gyoumei",
+      "price": 69000,
+      "image": "../Images/products/ID_Products027.jpg"
+    },
+    {
+      "id": 28,
+      "brand": 4,
+      "name": "Akaza",
+      "price": 53000,
+      "image": "../Images/products/ID_Products028.jpg"
+    },
+    {
+      "id": 29,
+      "brand": 4,
+      "name": "Kamado Nezuko",
+      "price": 32000,
+      "image": "../Images/products/ID_Products029.jpg"
+    },
+    {
+      "id": 30,
+      "brand": 5,
+      "name": "Uchiha Madara",
+      "price": 35000,
+      "image": "../Images/products/ID_Products030.jpg"
+    },
+    {
+      "id": 31,
+      "brand": 5,
+      "name": "Uchiha Sasuke",
+      "price": 61000,
+      "image": "../Images/products/ID_Products031.jpg"
+    },
+    {
+      "id": 32,
+      "brand": 5,
+      "name": "Uzumaki Naruto",
+      "price": 65000,
+      "image": "../Images/products/ID_Products032.jpg"
+    },
+    {
+      "id": 33,
+      "brand": 5,
+      "name": "Sakura",
+      "price": 90000,
+      "image": "../Images/products/ID_Products033.jpg"
+    },
+    {
+      "id": 34,
+      "brand": 5,
+      "name": "Ino",
+      "price": 65000,
+      "image": "../Images/products/ID_Products034.jpg"
+    },
+    {
+      "id": 35,
+      "brand": 5,
+      "name": "Orochimaru",
+      "price": 87000,
+      "image": "../Images/products/ID_Products035.jpg"
+    },
+    {
+      "id": 36,
+      "brand": 5,
+      "name": "Naruto Senin",
+      "price": 83000,
+      "image": "../Images/products/ID_Products036.jpg"
+    },
+    {
+      "id": 37,
+      "brand": 5,
+      "name": "Garraa",
+      "price": 97000,
+      "image": "../Images/products/ID_Products037.jpg"
+    },
+    {
+      "id": 38,
+      "brand": 5,
+      "name": "Shikamaru",
+      "price": 63000,
+      "image": "../Images/products/ID_Products038.jpg"
+    },
+    {
+      "id": 39,
+      "brand": 5,
+      "name": "Hinata",
+      "price": 93000,
+      "image": "../Images/products/ID_Products039.jpg"
+    },
+    {
+      "id": 40,
+      "brand": 5,
+      "name": "Temari",
+      "price": 72000,
+      "image": "../Images/products/ID_Products040.jpg"
+    },
+    {
+      "id": 41,
+      "brand": 5,
+      "name": "Sakura",
+      "price": 25000,
+      "image": "../Images/products/ID_Products041.jpg"
+    },
+    {
+      "id": 42,
+      "brand": 5,
+      "name": "Temari ssj",
+      "price": 17000,
+      "image": "../Images/products/ID_Products042.jpg"
+    },
+    {
+      "id": 43,
+      "brand": 5,
+      "name": "Tenten ssj",
+      "price": 40000,
+      "image": "../Images/products/ID_Products043.jpg"
+    },
+    {
+      "id": 44,
+      "brand": 5,
+      "name": "Tsunade",
+      "price": 59000,
+      "image": "../Images/products/ID_Products044.jpg"
+    },
+    {
+      "id": 45,
+      "brand": 5,
+      "name": "Garraa S",
+      "price": 57000,
+      "image": "../Images/products/ID_Products045.jpg"
+    },
+    {
+      "id": 46,
+      "brand": 5,
+      "name": "dara",
+      "price": 19000,
+      "image": "../Images/products/ID_Products046.jpg"
+    },
+    {
+      "id": 47,
+      "brand": 5,
+      "name": "Uchiha Obito",
+      "price": 58000,
+      "image": "../Images/products/ID_Products047.jpg"
+    },
+    {
+      "id": 48,
+      "brand": 5,
+      "name": "Sasori",
+      "price": 20000,
+      "image": "../Images/products/ID_Products048.jpg"
+    },
+    {
+      "id": 49,
+      "brand": 6,
+      "name": "Yor",
+      "price": 92000,
+      "image": "../Images/products/ID_Products049.jpg"
+    },
+    {
+      "id": 50,
+      "brand": 6,
+      "name": "Loir",
+      "price": 50000,
+      "image": "../Images/products/ID_Products050.jpg"
+    },
+    {
+      "id": 51,
+      "brand": 6,
+      "name": "Aya",
+      "price": 96000,
+      "image": "../Images/products/ID_Products051.jpg"
+    },
+    {
+      "id": 52,
+      "brand": 6,
+      "name": "Loir s",
+      "price": 87000,
+      "image": "../Images/products/ID_Products052.jpg"
+    },
+    {
+      "id": 53,
+      "brand": 6,
+      "name": "Aya Wi",
+      "price": 11000,
+      "image": "../Images/products/ID_Products053.jpg"
+    },
+    {
+      "id": 54,
+      "brand": 6,
+      "name": "Aya & Bond",
+      "price": 81000,
+      "image": "../Images/products/ID_Products054.jpg"
+    }
+  ],
+  "Orders": [
+    {
+      "id": "A01-1",
+      "user_id": "A01",
+      "prod_id": 1,
+      "brand": 1,
+      "price": 77000,
+      "quantity": 3,
+      "timeOrder": "30/11/2020-14h50m23s",
+      "status": 1
+    },
+    {
+      "id": "A01-2",
+      "user_id": "A01",
+      "prod_id": 2,
+      "brand": 1,
+      "price": 39000,
+      "quantity": 3,
+      "timeOrder": "30/11/2020-14h50m23s",
+      "status": 2
+    },
+    {
+      "id": "A01-3",
+      "user_id": "A01",
+      "prod_id": 3,
+      "brand": 1,
+      "price": 98000,
+      "quantity": 3,
+      "timeOrder": "30/11/2020-14h50m23s",
+      "status": 1
+    },
+    {
+      "id": "A01-4",
+      "user_id": "A01",
+      "prod_id": 4,
+      "brand": 1,
+      "price": 20000,
+      "quantity": 3,
+      "timeOrder": "30/11/2020-14h50m23s",
+      "status": 1
+    },
+    {
+      "status": 1,
+      "id": "A01-5",
+      "user_id": "A01",
+      "prod_id": 5,
+      "brand": 1,
+      "price": 72000,
+      "quantity": 3,
+      "timeOrder": "30/11/2020-14h50m23s"
+    },
+    {
+      "status": 1,
+      "id": "A01-6",
+      "user_id": "A01",
+      "prod_id": 6,
+      "brand": 1,
+      "price": 15000,
+      "quantity": 3,
+      "timeOrder": "30/11/2020-14h50m23s"
+    },
+    {
+      "status": 0,
+      "id": "A01-7",
+      "user_id": "A01",
+      "prod_id": 7,
+      "brand": 1,
+      "price": 79000,
+      "quantity": 3,
+      "timeOrder": "30/11/2020-14h50m23s"
+    },
+    {
+      "status": 2,
+      "id": "A01-8",
+      "user_id": "A01",
+      "prod_id": 8,
+      "brand": 1,
+      "price": 54000,
+      "quantity": 3,
+      "timeOrder": "30/11/2020-14h50m23s"
+    },
+    {
+      "status": 0,
+      "id": "A01-9",
+      "user_id": "A01",
+      "prod_id": 9,
+      "brand": 1,
+      "price": 80000,
+      "quantity": 3,
+      "timeOrder": "30/11/2020-14h50m23s"
+    },
+    {
+      "status": 1,
+      "id": "A01-10",
+      "user_id": "A01",
+      "prod_id": 10,
+      "brand": 1,
+      "price": 88000,
+      "quantity": 3,
+      "timeOrder": "30/11/2020-14h50m23s"
+    }
+  ]
+}

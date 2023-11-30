@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Management</title>
+    <link rel="stylesheet" href="../Css/Dropdow.css">
+    <link rel="stylesheet" href="../Css/Footer.css">
+    <link rel="stylesheet" href="../Css/Header.css">
+    <link rel="stylesheet" href="../Css/Timkiem.css">
+    <link rel="stylesheet" href="../Css/qlsp.css">
+    <!-- <link rel="stylesheet" href="../Css/Styles.css"> -->
+    <link href="https://fonts.cdnfonts.com/css/toothless" rel="stylesheet">
+    <link rel="icon" href="../Images/logo/r-cart-logo.svg" type="image/x-icon">
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <!-- <div class="header_top">
+            <div class="header_infor">
+                    <div class="facebook"  > <a href="#"> 
+                        <img src="../images/icon/facebook.svg" >
+                    </a></div>
+                    <div class="instagram"  > <a href="#"> 
+                        <img src="../images/icon/instagram.svg" >
+                    </a> </div>
+                    <div class="youtube"  > <a href="#"> 
+                        <img src="../images/icon/youtube.svg" >
+                    </a> </div>
+            </div>          
+        </div> -->
+        <div class="main_header">
+            <div class="logo"> 
+                <img id="home-logo" src="../Images/logo/r-cart-logo.svg">
+                <div class="logo_name"><p>RICH<br>store</p></div>
+                <div class="logo_slogan"><p>not<br>just<br>toys</p></div>
+            </div>
+            <div class="header_my" id="header_my">
+                <a href="#"><img src="../Images/Icon/search.svg" id="search-btn"></a>
+                <a href="#"><img src="../Images/Icon/cart-shopping-solid.svg" id="show-cart"></a>
+                <a href="#"><img src="../Images/Icon/user-solid.svg" id="show-conntainer"></a>
+            </div>
+        </div>
+    </div>
+    <!-- sider -->
+    <div class="sider">
+        <div class="sider_logo">
+            <img id="home-logo" src="../Images/logo/r-cart-logo.svg">
+            <div class="logo_name"><p>RICH<br>store</p></div>
+        </div>
+        <ul class="sider_items">
+            <il class="sider_item"><a href="./index.html"><img src="../Images/Icon/home.svg" alt=""> Trang chủ</il></a>
+            <il class="sider_item"><a href="./qlsp.html"><img src="../Images/Icon/product-manage.svg" alt="">Quản lý sản phẩm</il></a>
+            <il class="sider_item"><a href="./qldh.html"><img src="../Images/Icon/order-manage.svg" alt="">Quản lý đơn hàng</il></a>
+            <il class="sider_item"><a href="#"><img src="../Images/Icon/information.svg" alt="">Quản lý người dùng</il></a>
+        </ul>
+    </div>
+    <div id="bhead">
+        <p>Items List</p>
+        <button class="add-button" onclick="showAddWindow()">Thêm</button>
+    </div>
+    <div class="content">
+    </div>
+    <!-- Thêm cửa sổ nhỏ cho việc sửa đổi -->
+    <div class="wrap">
+        <div class="edit-window">
+            <!-- Nội dung cửa sổ nhỏ -->
+            <div class="edit-content">
+                <label for="editedName">Name: </label>
+                <input type="text" id="editedName">
+                <label for="editedBrand">Brand: </label>
+                <input type="text" id="editedBrand">
+                <label for="editedPrice">Price: </label>
+                <input type="text" id="editedPrice">
+                <label for="editedPrice">Image: </label>
+                <input type="text" id="editImage">
+                <button id="saveEdit">Save</button>
+            </div>
+        </div>
+    </div>
+    <!-- Thêm cửa sổ nhỏ cho việc thông báo xoá -->
+    <div class="confirmation-window">
+        <div class="confirmation-content">
+            <p>Bạn có chắc chắn?</p>
+            <button id="delete-confirm">Xoá</button>
+            <button id="cancel-delete">Cancel</button>
+        </div>
+    </div>
+    <!-- Cửa sổ thêm mới -->
+
+    <div class="edit-window" id="add-window">
+        <div class="edit-content">
+            <label for="newName">Name: </label>
+            <input type="text" id="newName">
+            <label for="newBrand">Brand: </label>
+            <input type="text" id="newBrand">
+            <label for="newPrice">Price: </label>
+            <input type="text" id="newPrice">
+            <label for="newImage">Image: </label>
+            <input type="text" id="newImage">
+            <button id="addNew" onclick="addNewItem()">Add</button>
+            <button id="cancelAdd" onclick="closeAddWindow()">Cancel</button>
+        </div>
+    </div>
+    <script src="../Script/qlsp.js"></script>
+</body>
+
+</html>
