@@ -94,12 +94,7 @@ var create_truck_line = function(object){
             <div>
                 <td>${object.status === 1 ? 'Được Chấp nhận' : object.status === 2 ? 'Bị Từ chối' : 'Chưa xử lý'}</td>
             </div>
-                `;
-                
-                
+                `; 
                 // Thêm phần tử .item vào phần tử gốc
                 itemContainer.appendChild(itemElement);
-
-
- 
     }
