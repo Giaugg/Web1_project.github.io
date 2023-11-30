@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rich Shop</title>
-    <link rel="stylesheet" href=".\Css\styles.css">
-    <link rel="stylesheet" href=".\Css\https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link href="https://fonts.cdnfonts.com/css/toothless" rel="stylesheet">
+    <link rel="icon" href="./Images/logo/r-cart-logo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="./Css/styles.css">
     <style>
         * {
             box-sizing: border-box;
@@ -21,52 +22,51 @@
         <!-- <div class="header_top">
             <div class="header_infor">
                     <div class="facebook"  > <a href="#"> 
-                        <img src=".\images\icon\facebook.svg" >
+                        <img src="./images/icon/facebook.svg" >
                     </a></div>
                     <div class="instagram"  > <a href="#"> 
-                        <img src=".\images\icon\instagram.svg" >
+                        <img src="./images/icon/instagram.svg" >
                     </a> </div>
                     <div class="youtube"  > <a href="#"> 
-                        <img src=".\images\icon\youtube.svg" >
+                        <img src="./images/icon/youtube.svg" >
                     </a> </div>
-            </div>
-            
-            
+            </div>          
         </div> -->
-
         <div class="main_header">
-            <div class="home"> <a href="#">
-                    <img id="home-logo" src=".\images\logo\home_logo1.png">
-                </a> </div>
-            <div class="search-box">
-                <button class="search-btn" type="submit">Search</button>
+            <div class="logo"> 
+                <img id="home-logo" src="./Images/logo/r-cart-logo.svg">
+                <div class="logo_name"><p>RICH<br>store</p></div>
+                <div class="logo_slogan"><p>not<br>just<br>toys</p></div>
             </div>
-
             <div class="header_my" id="header_my">
-                <a href="#">
-                    <img src=".\images\icon\cart-shopping-solid.svg" id="show-cart">
-                </a>
-                <a href="#">
-                    <img src=".\images\icon\user-solid.svg" id="show-conntainer">
-                </a>
-
-                <div class="more_menu">
-                    <a href="#">
-                        <img src=".\images\icon\bars-solid.svg">
-                    </a>
-                    <div class="subnav">
-                        <div class="more-menu-item">
-                            <div class="Brands">Brands</div>
-                            <div class="Charactets">Charactets</div>
-                            <div class="Shop-services">Shop & Services</div>
-                            <div class="About"> About</div>
-
-                        </div>
-                    </div>
-
-                </div>
+                <a href="#"><img src="./Images/Icon/search.svg" id="search-btn"></a>
+                <a href="#"><img src="./Images/Icon/cart-shopping-solid.svg" id="show-cart"></a>
+                <a href="#"><img src="./Images/Icon/user-solid.svg" id="show-conntainer"></a>
             </div>
         </div>
+    </div>
+    <!-- sider -->
+    <div class="sider">
+        <div class="sider_logo">
+            <img id="home-logo" src="./Images/logo/r-cart-logo.svg">
+            <div class="logo_name"><p>RICH<br>store</p></div>
+        </div>
+        <ul class="sider_items">
+            <li class="sider_item"><a href="index.html"><img src="./Images/Icon/home.svg" alt=""> Trang chủ</li></a>
+            <li class="sider_item" id="brand"><a href="#"><img src="./Images/Icon/brand.svg" alt="">Thương hiệu</li></a>
+            <ul class="sub_menu">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+            </ul>
+            <li class="sider_item" id="show-truck"><a href="#"><img src="./Images/Icon/checkout.svg" alt="">Sản phẩm đã mua</li></a>
+            <li class="sider_item"><a href="#"><img src="./Images/Icon/information.svg" alt="">Thông tin</li></a>
+            <li class="sider_item"><a href="#"><img src="./Images/Icon/customer-support.svg" alt="">Liên hệ</li></a>
+            <li class="sider_item"><a href="#" class="logout"><img src="./Images/Icon/logout.svg" alt="">Đăng xuất</li></a>
+        </ul>
     </div>
     <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////// -->
     <!-- Form_container -->
@@ -88,18 +88,14 @@
                     <input type="password" class="input-field" id="password1" placeholder="Enter your password"><br>
                     <span class="form-message"></span>
                 </div>
-
                 <button class="loginButton" id="loginButtonn">Login</button>
-
                 <div class="login_signup"> Don't have an account? <a href="#" id="register-btn"> Register </a></div>
             </div>
         </form>
-
         <form action="" class="register-form" id="register-form">
             <div class="form_close" id="formclose2">
                 <i class="fa-solid fa-xmark"></i>
             </div>
-
             <!-- Register form -->
             <h2>Registation</h2>
             <div class="form_register">
@@ -152,22 +148,21 @@
     <div class="slider">
         <div class="gallery">
             <div class="gallery_item">
-                <img src=".\Images\slice\slice_1.jpg" class="gallery_image">
+                <img src="./Images/slice/slice_1.jpg" class="gallery_image">
             </div>
             <div class="gallery_item">
-                <img src=".\Images\slice\slice_2.jpg" class="gallery_image">
+                <img src="./Images/slice/slice_2.jpg" class="gallery_image">
             </div>
             <div class="gallery_item">
-                <img src=".\Images\slice\slice_3.jpg" class="gallery_image">
+                <img src="./Images/slice/slice_3.jpg" class="gallery_image">
             </div>
             <div class="gallery_item">
-                <img src=".\Images\slice\slice_4.jpg" class="gallery_image">
+                <img src="./Images/slice/slice_4.jpg" class="gallery_image">
             </div>
 
         </div>
     </div>
     <div class="content">
-        <h1>FIGURE - MORE THAN JUST TOY</h1>
         <div class="main-content">
             <div id="flex-container"></div>
             <ul id="pagination"></ul>
@@ -215,43 +210,24 @@
     <div id="cart-user-modal">
         <div class="modal-container">
             <div class="close" id="close-logo">
-                <img src=".\images\icon\close.svg" alt="">
+                <img src="./images/icon/close.svg" alt="">
             </div>
             <header class="modal-header">
-                <img src=".\images\icon\shopping-cart.svg" alt="" id="cart-logo">
+                <img src="./images/icon/shopping-cart.svg" alt="" id="cart-logo">
                 YOUR CART
             </header>
 
             <div class="modal-items">
                 <div class="cart-items">
                     <div id="item-list">
-
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
                 <p>Total item: <span id="total-item">0</span></p>
                 <p>Total cost: <span id="total-cost">0</span></p>
-                <div id="Add-to-admin-cart"> <img src=".\images\icon\truck.svg" alt=""> ORDER</div>
+                <div id="Add-to-admin-cart"> <img src="./images/icon/truck.svg" alt=""> ORDER</div>
 
-            </div>
-        </div>
-    </div>
-    <!-- ////////////////////////////////////// -->
-    <div id="truck-modal">
-        <div class="modal-container">
-            <img src=".\images\icon\close.svg" alt="">
-        </div>
-        <header class="modal-header">
-            <img src=".\images\icon\truck.svg" alt="" id="cart-logo">
-            YOUR TRUCK
-        </header>
-        <div class="modal-item">
-            <div class="truck-item">
-                <div id=" item-list">
-
-
-                </div>
             </div>
         </div>
     </div>
@@ -261,70 +237,69 @@
         </div>
     </div>
     <div class="modal1">
-
         <div class="modal-container1">
-            <div class="modal-close1">
-                <button class="annutclose1"> <i class="fa-solid fa-xmark"></i></button>
-            </div>
+            <div class="modal-close1"><img src="./Images/Icon/x-mark.svg" alt="" class="annutclose1"></div>
             <div class="search">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" id="searchItem" name="searchItem" placeholder="Tìm kiếm sản phẩm ..."
-                    style="text-align: left;">
-                <div class="khungchon"><button class="nutchon"><i class="fa-solid fa-caret-down"></i></button></div>
+                <input type="text" id="searchItem" name="searchItem" placeholder="Tìm kiếm sản phẩm ..." style="text-align: left;">
+                <div class="khungchon">
+                    <img src="./Images/Icon/down-arrow.svg" alt="" class="nutchon" id="s-1">
+                    <img src="./Images/Icon/up-arrow.svg" alt="" class="nutchon" id="s-2">
+                </div>
             </div>
-            <div class="search2" style="font-size: 20px;">
-         <div class="modal-close1" >
-           <button class="annutclose1"> <img src=".\images\icon\close.svg" alt=""></button>
-         </div>
-         <div class="search">
-            <img src=".\images\icon\search.svg" alt="">
-            <input type="text" id="searchItem" name="searchItem" placeholder="Tìm kiếm sản phẩm ..." style="text-align: left;">
-            <div class="khungchon"><button class="nutchon"><img  src=".\images\icon\angle-double-down.svg" alt=""></i></button></div>
-             </div>
-             <div class="search2" style="font-size: 20px;">
+            <div class="search2">
                 <div>
-                    <label for="brand" style="font-size: 20px;">SELECT BRAND:</label>
-                    <select name="brand" class="brand" style="height: 25px;">
-                        <option value="1" style="font-size: 20px;">1</option>
-                        <option value="2" style="font-size: 20px;">2</option>
-                        <option value="3" style="font-size: 20px;">3</option>
-                        <option value="4" style="font-size: 20px;">4</option>
-                        <option value="5" style="font-size: 20px;">5</option>
-                        <option value="6" style="font-size: 20px;">6</option>
+                    <label for="brand">SELECT BRAND:</label>
+                    <select name="brand" class="brand">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
                     </select>
                 </div>
-                <div style="font-size: 20px;">
-                    PRICE:<input type="text" style="height: 25px;" class="dau">FROM
-                    <input type="text" style="height: 25px;" class="cuoi">
+                <div>
+                    <label for="">PRICE FROM:</label>
+                    <input type="text" class="dau">
+                    <label for="">TO</label>
+                    <input type="text" class="cuoi">
                 </div>
-               </div>
-             <div class="sanphamItem">
-                 
-             </div>
-             </div>
-
-
+            </div>
+            <div class="sanphamItem">
+            </div>
+        </div>
     </div>
+    <!-- ////////////////////////////////////// -->
+    <div id="truck-modal">
+        <div class="modal-container">
+            <img src="./images/icon/close.svg" alt="">
+        </div>
+        <header class="modal-header">
+            <img src="./images/icon/truck.svg" alt="" id="cart-logo">
+            YOUR TRUCK
+        </header>
+        <div class="modal-item">
+            <div class="truck-item">
+                <div id=" item-list"></div>
+            </div>
+        </div>
+    </div>
+
     <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////// -->
-   
-    <script src=".\Script\Script.js"></script>
-    <script src=".\Script\truck.js"></script>
-    <script src=".\Script\login.js"></script>
-
-   
-
-    <script src=".\Script\Cart.js"></script> 
-
-
-    <link rel="stylesheet" href=".\Css\cart.css">
-    <link rel="stylesheet" href=".\Css\Chitiet.css">
-    <link rel="stylesheet" href=".\Css\Content.css">
-    <link rel="stylesheet" href=".\Css\Dropdow.css">
-    <link rel="stylesheet" href=".\Css\Footer.css">
-    <link rel="stylesheet" href=".\Css\Header.css">
-    <link rel="stylesheet" href=".\Css\Login.css">
-    <link rel="stylesheet" href=".\Css\Slider.css">
-    <link rel="stylesheet" href=".\Css\Timkiem.css">
+    <script src="./Script/Script.js"></script>
+    <script src="./Script/Cart.js"></script>
+    <script src="./Script/truck.js"></script>
+    <script src="./Script/login.js"></script>
+    <link rel="stylesheet" href="./Css/cart.css">
+    <link rel="stylesheet" href="./Css/Chitiet.css">
+    <link rel="stylesheet" href="./Css/Content.css">
+    <link rel="stylesheet" href="./Css/Dropdow.css">
+    <link rel="stylesheet" href="./Css/Footer.css">
+    <link rel="stylesheet" href="./Css/Header.css">
+    <link rel="stylesheet" href="./Css/Login.css">
+    <link rel="stylesheet" href="./Css/Slider.css">
+    <link rel="stylesheet" href="./Css/Timkiem.css">
+    <link rel="stylesheet" href="./Css/truck.css">
 </body>
 
 </html>
