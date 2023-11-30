@@ -83,7 +83,7 @@ var Login = function () {
 		var userPassword = document.getElementById("password1").value;
 
 		var checklogin = accounts.find(function (user) {
-			return user.username === userEmail && user.password === userPassword;
+			return user.email === userEmail && user.password === userPassword;
 		});
 		// console.log(checklogin.admin);
 		if (checklogin && isValidEmail(userEmail)) {
