@@ -5,45 +5,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart Table</title>
-    <!-- <link rel="stylesheet" href="qldh.css"> -->
-    <link rel="stylesheet" href="..\Css\qldh.css">
+    <link rel="stylesheet" href="../Css/Dropdow.css">
+    <link rel="stylesheet" href="../Css/Footer.css">
+    <link rel="stylesheet" href="../Css/Header.css">
+    <link rel="stylesheet" href="../Css/qldh.css">
+    <link rel="stylesheet" href="../Css/Timkiem.css">
+    <link href="https://fonts.cdnfonts.com/css/toothless" rel="stylesheet">
+    <link rel="icon" href="../Images/logo/r-cart-logo.svg" type="image/x-icon">
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
 </head>
 
 <body>
     <div class="header">
+        <!-- <div class="header_top">
+            <div class="header_infor">
+                    <div class="facebook"  > <a href="#"> 
+                        <img src="../images/icon/facebook.svg" >
+                    </a></div>
+                    <div class="instagram"  > <a href="#"> 
+                        <img src="../images/icon/instagram.svg" >
+                    </a> </div>
+                    <div class="youtube"  > <a href="#"> 
+                        <img src="../images/icon/youtube.svg" >
+                    </a> </div>
+            </div>          
+        </div> -->
         <div class="main_header">
-            <div class="home"> <a href="./index.html">
-                    <img id="home-logo" src="../Images/logo/home_logo1.png">
-                </a> </div>
-            <div class="search-box">
-                <input type="text" class="search-input" placeholder="Search The Orders ...">
-                <button class="search-btn" type="submit">Search</button>
+            <div class="logo"> 
+                <img id="home-logo" src="../Images/logo/r-cart-logo.svg">
+                <div class="logo_name"><p>RICH<br>store</p></div>
+                <div class="logo_slogan"><p>not<br>just<br>toys</p></div>
             </div>
-
-            <nav class="header_my">
-                <div><a href="#"><img src="../Images/Icon/cart-shopping-solid.svg" id="show-cart"></a></div>
-                <div><a href="#"><img src="../Images/Icon/user-solid.svg"></a></div>
-                <div class="dropdw">
-                    <a href="#" class="dropobj"><img src="../Images/Icon/bars-solid.svg"></a>
-                    <ul class="dropdw-items">
-                        <li><a href="./index.html"><img src="../Images/Icon/home.svg">Trang chủ</a></li>
-                        <li><a href="qlsp.html"><img src="../Images/Icon/document_pen_sign_signature_write_icon.svg">Quản lý sản phẩm</a></li>
-                        <li><a href="qldh.html"><img src="../Images/Icon/document_pen_sign_signature_write_icon.svg">Quản lý đơn hàng</a></li>
-                        <li><a href="#"><img src="../Images/Icon/document_pen_sign_signature_write_icon.svg">Thống kê</a></li>
-                    </ul>
-                </div>
-            </nav>
+            <div class="header_my" id="header_my">
+                <a href="#"><img src="../Images/Icon/search.svg" id="search-btn"></a>
+                <a href="#"><img src="../Images/Icon/cart-shopping-solid.svg" id="show-cart"></a>
+                <a href="#"><img src="../Images/Icon/user-solid.svg" id="show-conntainer"></a>
+            </div>
         </div>
+    </div>
+    <!-- sider -->
+    <div class="sider">
+        <div class="sider_logo">
+            <img id="home-logo" src="../Images/logo/r-cart-logo.svg">
+            <div class="logo_name"><p>RICH<br>store</p></div>
+        </div>
+        <ul class="sider_items">
+            <il class="sider_item"><a href="./index.html"><img src="../Images/Icon/home.svg" alt=""> Trang chủ</il></a>
+            <il class="sider_item"><a href="./qlsp.html"><img src="../Images/Icon/product-manage.svg" alt="">Quản lý sản phẩm</il></a>
+            <il class="sider_item"><a href="./qldh.html"><img src="../Images/Icon/order-manage.svg" alt="">Quản lý đơn hàng</il></a>
+            <il class="sider_item"><a href="#"><img src="../Images/Icon/information.svg" alt="">Quản lý người dùng</il></a>
+        </ul>
     </div>
     <div id="bhead">
         <h1>Cart Items</h1>
         <button class="save-button">Save</button>
     </div>
     <table id="cart-table">
-        <thead id="itemlist">
+        <thead>
             <tr>
                 <th>User ID</th>
                 <th>Product ID</th>
+                <th>Brand</th>
                 <th>Quantity</th>
                 <th>Total</th>
                 <th>Time Order</th>
@@ -56,7 +84,7 @@
         </tbody>
     </table>
 
-    <script src="..\Script\qldh.js"></script>
+    <script src="../Script/qldh.js"></script>
 </body>
 
 </html>
