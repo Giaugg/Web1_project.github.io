@@ -1,6 +1,9 @@
 var str = "Hello, world!\nThis is a string.";
 var api_accout = "http://localhost:3000/accout";
 var accounts;
+var isLoggedIn = false;
+var userID;
+console.log(userID);
 
 var Read_file_accout = function () {
 	fetch(api_accout)
@@ -62,19 +65,39 @@ loginBtn.addEventListener("click", function () {
 	loginForm.style.display = "block";
 	home.style.display = "block";
 });
-
+showContainer.addEventListener("click", function () {
+    if (isLoggedIn) {
+        // If logged in, show user info window
+        showUserInfoWindow();
+    } else {
+        // If not logged in, show login form
+        loginForm.style.display = "block";
+        home.style.display = "block";
+    }
+});
+function showUserInfoWindow() {
+	const inforWindow = document.getElementById("userInformation");
+	inforWindow.style.display = "block";
+    var user = accounts.find(function (user) {
+		return user.id === userID;
+    });
+	var idInput = document.getElementById("userId");
+	var nameInput = document.getElementById("userName");
+	var addressInput = document.getElementById("userAddress");
+	idInput.value = user.id;
+	nameInput.value = user.name;
+	addressInput.value = user.address;
+    var logoutButton = document.getElementById("logout");
+    logoutButton.addEventListener("click", function () {
+        logout();
+    });
+	var closeInforWindow = document.getElementById("closeInfor");
+	closeInforWindow.addEventListener("click", function (){
+		inforWindow.style.display = "none";
+	})
+}
 var Login = function () {
-	// console.log("login");
-    
 	accounts = JSON.parse(localStorage.getItem("accouts"));
-	showContainer.addEventListener("click", function () {
-		var TTDN = document.getElementById("status");
-		// console.log(TTDN.textContent);
-	
-			loginForm.style.display = "block";
-			home.style.display = "block";
-		
-	});
 
 	loginbutton.addEventListener("click", function (event) {
 		event.preventDefault();
@@ -96,9 +119,11 @@ var Login = function () {
 				var TTDN = document.getElementById("status");
 				TTDN.textContent = checklogin.username;
 				alert("Đăng nhập thành công");
+				isLoggedIn = true;
 				loginForm.style.display = "none";
 				home.style.display = "none";
-
+				userID = checklogin.id;
+				console.log(userID);
 			}
 			// console.log(tt)
 		
@@ -168,5 +193,5 @@ var Register = function () {
 };
 //log out
 function logout(){
-	
+	isLoggedIn = false;
 }

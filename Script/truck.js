@@ -4,13 +4,7 @@ var header_my = document.getElementById("header_my");
 
 var objects;    
 
-// var truck = document.createElement("a");
-// truck.classList.add("truck");
-// truck.innerHTML = `
-//     <img src=".\\images\\icon\\truck.svg" id="show-truck">
-// `
 
-// header_my.appendChild(truck);
 
 document.addEventListener("DOMContentLoaded", function() {
     // Lấy các phần tử HTML

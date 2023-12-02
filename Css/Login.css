@@ -241,3 +241,25 @@
     line-height: 30px;
     position: absolute;
 }
+#userInformation{
+    height: 500px;
+    width: 500px;
+    position: fixed;
+    top: 100px;
+    left:calc(50% - 250px);
+    z-index: 2;
+    background-color: white;
+    display: none;
+}
+#userInformation #closeInfor{
+    height: 20px;
+    width: 20px;
+    border: solid 1px;
+}
+#userInformation label{
+    font-size: 20px;
+}
+#userInformation input{
+    border: 0;
+
+}

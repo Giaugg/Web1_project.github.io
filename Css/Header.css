@@ -71,17 +71,6 @@
     height: 120%;
     margin: -15px 0 0 -25px;
 }
-#status{
-    /* background-color: #6499E9; */
-    width: 300px;
-    top: 45px;
-    list-style: none;
-    font-size: 2rem;
-    margin: 0 10px 0 10px;
-    position: absolute;
-    color: red;
-}
-
 
 .search-box .search-btn:hover {
     background-color: #6499E9;

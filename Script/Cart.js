@@ -14,8 +14,8 @@ document.addEventListener("DOMContentLoaded", function() {
     toggleSticketButton.addEventListener("click", function() {
       
             sticket.style.display = "flex"; // Hiển thị Sticket
-            Read_data_cart();
             // empty_cart();
+            Read_data_cart();
       
     });
     
@@ -49,6 +49,7 @@ var create_user_cart = function(){
     choose_item_to_add();
     calc_money();
     add = document.querySelector("#Add-to-admin-cart").addEventListener("click",function(){
+        console.log(1)
         add_to_admin_cart();
         delete_choosen();
         // alert("ĐƠN ĐẶT THÀNH CÔNG, SẢN PHẨM SẼ ĐƯỢC XỬ LÍ TRONG THỜI GIAN SỚM NHẤT. XIN CẢM ƠN!")
