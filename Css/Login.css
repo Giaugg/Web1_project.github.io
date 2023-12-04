@@ -55,6 +55,7 @@
     font-size: 40px;
     opacity: 0.7;
     cursor: pointer;
+    transform: rotate(45deg);
 }
 
 .form_close:hover{
@@ -62,7 +63,6 @@
     top: 10px;
     right: 20px;
     color: rgb(232, 16, 16);
-    font-size: 50px;
     opacity: 0.7;
     cursor: pointer;
 }
@@ -102,7 +102,7 @@
     padding-left: 25px;
     border-bottom: 1.5px solid gray;
     text-align: center;
-    
+    margin-left: 10%;
 }
 
 .input_box input:focus {
@@ -240,4 +240,72 @@
     font-size: 15px;
     line-height: 30px;
     position: absolute;
+}
+#userInformation{
+    height: 220px;
+    width: 500px;
+    position: fixed;
+    top: calc(100vh - 450px);
+    left:calc(50% - 250px);
+    z-index: 2;
+    background-color: white;
+    display: none;
+    justify-content: center;
+    background-color: rgba(120, 187, 123, 0.95);
+    box-shadow: 0 0 20px 20px rgba(120, 187, 123, 0.95);
+}
+#userInformation #closeInfor{
+    font-size: 40px;
+    margin-left: calc(100% - 30px);
+    color: rgb(122, 60, 13);
+    cursor: pointer;
+    transform: rotate(45deg);
+}
+#userInformation #closeInfor:active{
+    color: #f8ad58;
+}
+#userInformation label{
+    font-size: 30px;
+    margin: 10px;
+}
+#userInformation input{
+    font-size: 25px;
+    border: 0;
+    height: 30px;
+    width: 300px;
+    margin: 10px 0;
+    text-align: left;
+    padding-bottom: 2px;
+    background-color: rgba(120, 187, 123, 0);
+    color: black;
+}
+#userInformation button{
+    width: 120px;
+    height: 30px;
+    margin-left: calc(100% - 300px);
+    border: solid 1px;
+    cursor: pointer;
+    background-color: #d6a370;
+    font-size: 15px;
+    position: relative;
+    border: 0;
+    box-shadow: 0 0 10px 5px #d6a370;
+}
+#userInformation button p{
+    display: inline;
+    position: absolute;
+    left: 45px;
+    top: 5px;
+}
+#userInformation button img{
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    left: 15px;
+    top: 5px;
+    display: inline;
+}
+#userInformation button:active{
+    background-color: #994D1C;
+    box-shadow: 0 0 10px 10px #994D1C;
 }

@@ -15,7 +15,7 @@
     background-color: #ffffff;
     /* padding: 5px; */
     width: 900px;
-    max-height: 95%;
+    height: 500px;
     font-size: 3rem;
     position: relative;
     border: solid 2px ;
@@ -43,11 +43,14 @@
     background-color: #ebe7e7;
 }
 
-.truck-modal-items{
+.truck-modal-item{
     padding: 10px;
-    overflow: auto;
-    height: 80%;
+    height: 400px;
     background-color: red;
+}
+#truck-item-list{
+    height: 400px;
+    overflow-y: scroll;
 }
 
 #item-list{
