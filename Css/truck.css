@@ -15,7 +15,7 @@
     background-color: #ffffff;
     /* padding: 5px; */
     width: 900px;
-    height: 500px;
+    height: 600px;
     font-size: 3rem;
     position: relative;
     border: solid 2px ;
@@ -45,11 +45,11 @@
 
 .truck-modal-item{
     padding: 10px;
-    height: 400px;
-    background-color: red;
+    height: 600px;
+    /* background-color: red; */
 }
 #truck-item-list{
-    height: 400px;
+    height: 580px;
     overflow-y: scroll;
 }
 
