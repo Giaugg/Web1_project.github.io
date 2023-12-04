@@ -2,14 +2,11 @@
 
 #truck-modal{
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.4);
+    top: calc(50% - 250px);
+    left: calc(50% - 450px);
     display: none;
     justify-content: center;
-    padding-top: 10px;
+    border: solid 2px;
 }
 .modal-container{
     background-color: #ffffff;
@@ -33,14 +30,12 @@
     height: 30px;
     margin: 10px;
 }
-.close{
+#truck-modal .close{
     position: absolute;
     top: 0;
     right: 0;
     padding: 10px;
-}
-.close:hover{
-    background-color: #ebe7e7;
+    cursor: pointer;
 }
 
 .truck-modal-item{
@@ -53,7 +48,7 @@
     overflow-y: scroll;
 }
 
-#item-list{
+#truck-modal #item-list{
     max-height: 100%;
     min-height: 475px;
     position: relative;
@@ -61,31 +56,32 @@
     border: solid 1px;
     box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.5);
 }
-#truck-modal > .item{
+#truck-modal  .item{
     display: flex;
     margin-bottom: 5px;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     background-color: #fff;
     padding-left: 10px ;
     padding-right: 3px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 10px 5px rgba(114, 114, 114, 0.5);
+    border: solid 1px;
 }
 
-.item:hover {
+#truck-modal  .item:hover {
     border: solid 1px ;
     color: red;
 }
-.item img{
+#truck-modal  .item img{
     height: 100px;
 }
-.item input{
+#truck-modal  .item input{
     height: 30px;
 }
-.item *{
+#truck-modal  .item *{
     font-size: 1.3rem;
 }
-.item p{   
+#truck-modal  .item p{   
     word-wrap: break-word; 
     max-width: 100px;
     width: 100px;
@@ -100,7 +96,7 @@
     color: red;
 }
 
-.modal-footer{
+#truck-modal .modal-footer{
     position: absolute;
     display: flex;
     justify-content: space-between;
@@ -110,11 +106,8 @@
     align-items: center;
     padding-left: 10px;
 }
-#total-item{
-    font-size: 1.5rem;
-}
-#total-cost{
-    font-size: 1.5rem;
+#truck-modal .modal-footer p span{
+    font-size: 30px;
 }
 
 #empty{
