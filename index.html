@@ -11,6 +11,8 @@
     <style>
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
     </style>
 </head>
@@ -76,9 +78,7 @@
     <!-- Form_container -->
     <div class="form_container">
         <form action="" class="login-form" id="login-form">
-            <div class="form_close" id="formclose1">
-                <img src=".\images\icon\close.svg" alt="">
-            </div>
+            <div class="form_close" id="formclose1">+</div>
             <!-- Login form -->
             <div class="form_login">
                 <h2>Login</h2>
@@ -149,13 +149,13 @@
         </form>
         <div id="userInformation">
             <div id="closeInfor">+</div>
+            <img src="./Images/Icon/user-solid.svg" alt="">
             <label for="userId">Id: </label>
             <input type="text" id="userId" disabled><br>
             <label for="userName">Name: </label>
             <input type="text" id="userName" disabled><br>
             <label for="userAddress">Address: </label>
             <input type="text" id="userAddress" disabled><br>
-            <button type="button" id="logout"><img src="./Images/Icon/logout.svg" alt=""><p>Logout</p></button>
         </div>
     </div>
     <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////// -->

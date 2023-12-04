@@ -70,7 +70,7 @@ var Read_file_maindata = function () {
 	fetch(api)
 		.then((response) => response.json())
 		.then(function (data) {
-			items2=data;
+			items2 = data;
 			console.log(items2)
 			render(data);
 		});
@@ -83,64 +83,62 @@ var Read_file_accout = function () {
 		});
 };
 //kiem tra dang nhap hay chua
-function ktradangnhap(accouts){
+function ktradangnhap(accouts) {
 	var TTDN1 = document.getElementById("status");
 
-	var s=`src=".\\images\\icon\\close.svg"`;
+	var s = `src=".\\images\\icon\\close.svg"`;
 	console.log(s);
-	  var a=accouts.find(function(accout){
-		     return accout.name.includes(TTDN1.textContent);
-	  })
-	                     var target=0;
-						 var target1=0;
-						 
-	           
-			var bodyElement=document.querySelector('body');
-		var closeElement=document.querySelector('#formclose1')
-		
-		
-			bodyElement.addEventListener('click',function(event){
-				if(!a)
-				{
-					console.log("2 lan");
-					 
-				  
-					  
-						  
-					  if(target1==0)
-					  {   
-						  alert("Bạn chưa đăng nhập");
-						  ++target1;
-					  }
-				 if(event.target.outerHTML.includes(s))  alert("Bạn chưa đăng nhập không thể thoát");
-				  const loginForm = document.getElementById("login-form");
-				  const home = document.getElementById("homeshow");
-				  loginForm.style.display = "block";
-				  home.style.display = "block";
-				  
-				  var TTDN1 = document.getElementById("status");
-				  a=accouts.find(function(accout){
-					  return accout.name.includes(TTDN1.textContent);
-			   })
-				if(a) {
-					console.log(a);
-				  loginForm.style.display = "none";
-				  home.style.display = "none";
-					 }
-					
-					
-				}
-			   
-			   
-				  
-				  
-				  
-			  })
-		
-	
-		
-	  
-   }
+	var a = accouts.find(function (accout) {
+		return accout.name.includes(TTDN1.textContent);
+	})
+	var target = 0;
+	var target1 = 0;
+
+
+	var bodyElement = document.querySelector('body');
+	var closeElement = document.querySelector('#formclose1')
+
+
+	bodyElement.addEventListener('click', function (event) {
+		if (!a) {
+			console.log("2 lan");
+
+
+
+
+			if (target1 == 0) {
+				alert("Bạn chưa đăng nhập");
+				++target1;
+			}
+			if (event.target.outerHTML.includes(s)) alert("Bạn chưa đăng nhập không thể thoát");
+			const loginForm = document.getElementById("login-form");
+			const home = document.getElementById("homeshow");
+			loginForm.style.display = "block";
+			home.style.display = "block";
+
+			var TTDN1 = document.getElementById("status");
+			a = accouts.find(function (accout) {
+				return accout.name.includes(TTDN1.textContent);
+			})
+			if (a) {
+				console.log(a);
+				loginForm.style.display = "none";
+				home.style.display = "none";
+			}
+
+
+		}
+
+
+
+
+
+	})
+
+
+
+
+}
 
 
 let items = [];
@@ -153,7 +151,7 @@ function render(courses) {
 	items = courses;
 	itemPerPage = items.slice(pageLimit * (currentPage - 1), pageLimit * currentPage);
 	renderItems();
-	
+
 	totalPage = Math.ceil(items.length / pageLimit);
 	renderPageNumber(totalPage);
 }
@@ -180,78 +178,70 @@ function renderItems() {
 	itemContainer.innerHTML = itemsHTML;
 }
 //phan loai
-function hienthibrand(x){
-	
-	if(x==="all")
-	{
+function hienthibrand(x) {
+
+	if (x === "all") {
 		console.log("co");
 		render(items2)
 	}
-	else{
+	else {
 		var sanpham = items2.filter(function (item) {
 			return x === item.brand.toString();
 		});
 		render(sanpham);
 	}
 }
-var k=0;
-function onclickname(name){
-     name.addEventListener('click',function(){
-	     console.log(name.innerText.includes("ALL"));
-		var x="";
-		     if(name.innerText.toLowerCase().includes("dragonball"))
-			 {
-				 x="1";
-			 }
-			 else  if(name.innerText.toLowerCase().includes("chainsawman"))
-			 {
-				x="2";
-			 }
-			 else  if(name.innerText.toLowerCase().includes("kimetsu"))
-			 {
-				 x="4";
-			 }
-			 else if(name.innerText.toLowerCase().includes("jack"))
-			 {
-				 x="3";
-			 }
-			 else if(name.innerText.toLowerCase().includes("naruto"))
-			 {
-				 x="5";
-			 }
-			 else if(name.innerText.toLowerCase().includes("spyfamily"))
-			 {
-				 x="6";
-			 }
-			
-			else if(name.innerText.includes("ALL")) 
-			{ 
-				x="all";
-			}
-			hienthibrand(x);
-			
-			 
-	 })
+var k = 0;
+function onclickname(name) {
+	name.addEventListener('click', function () {
+		console.log(name.innerText.includes("ALL"));
+		var x = "";
+		if (name.innerText.toLowerCase().includes("dragonball")) {
+			x = "1";
+		}
+		else if (name.innerText.toLowerCase().includes("chainsawman")) {
+			x = "2";
+		}
+		else if (name.innerText.toLowerCase().includes("kimetsu")) {
+			x = "4";
+		}
+		else if (name.innerText.toLowerCase().includes("jack")) {
+			x = "3";
+		}
+		else if (name.innerText.toLowerCase().includes("naruto")) {
+			x = "5";
+		}
+		else if (name.innerText.toLowerCase().includes("spyfamily")) {
+			x = "6";
+		}
+
+		else if (name.innerText.includes("ALL")) {
+			x = "all";
+		}
+		hienthibrand(x);
+
+
+	})
 }
- function phanloai(){
-	
-	   var dragonballElement=document.querySelector('#dragonball');
-	   var narutoElement=document.querySelector('#naruto');
-	   var spyfamilyElement=document.querySelector('#spyfamily');
-	   var kimetsuElement=document.querySelector('#kimetsu');
-	   var chainsawmanElement=document.querySelector('#chainsawman');
-	   var jackElement=document.querySelector("#jack");
-	   var allbrandElement=document.querySelector("#all");
-	   onclickname(dragonballElement);
-	   onclickname(narutoElement);
-	   onclickname(spyfamilyElement);
-	   onclickname(kimetsuElement);
-	   onclickname(chainsawmanElement);
-	   onclickname(jackElement);
-	   onclickname(allbrandElement);
-	     
- }
- phanloai();
+function phanloai() {
+
+	var dragonballElement = document.querySelector('#dragonball');
+	var narutoElement = document.querySelector('#naruto');
+	var spyfamilyElement = document.querySelector('#spyfamily');
+	var kimetsuElement = document.querySelector('#kimetsu');
+	var chainsawmanElement = document.querySelector('#chainsawman');
+	var jackElement = document.querySelector("#jack");
+	var allbrandElement = document.querySelector("#all");
+	onclickname(dragonballElement);
+	onclickname(narutoElement);
+	onclickname(spyfamilyElement);
+	onclickname(kimetsuElement);
+	onclickname(chainsawmanElement);
+	onclickname(jackElement);
+	onclickname(allbrandElement);
+
+}
+phanloai();
 
 function renderPageNumber(totalPage) {
 	let paginationContainer = document.getElementById("pagination");
@@ -295,107 +285,101 @@ function themvaogiohang(id, ten, gia, hinh) {
 
 //chi tiet
 function chitiet(id, ten, gia, hinh) {
-    var modal1Element=document.querySelector('.search input')
-    var cuoiElement=document.querySelector('.cuoi');
-    var selectElement=document.querySelector('.brand')
-      var chitietmoda1lElement=document.querySelector('.modal1')
-      chitietmoda1lElement.style.display="none"
-     hinh= convertImagePath(hinh)
-   var   chitetElement1=document.querySelector('.chi-tiet-modal')
-                chitetElement1.innerHTML= 
-      `
-              <div class="chi-tiet-modal-container1">
-       <div class="modal-close" >
-         <button class="annutclose"> <img src=".\\images\\icon\\close.svg" alt="">
-       </div>
-       <div class="chi-tiet-header1">
-           <div class="item">
-               <img src=${hinh} alt="" >
-           </div>
-         <div class="divchitiet">
-         <div class="header1" style="font-size: 50px;">
-         <div class="fornt-write"><h1 style="font-size:60px;">${ten}</h1></div>
-         <div>Giá:${gia}</div>
-         <div>Số lượng:
-             <div class="fornt-sl" >
-                     <div class="button">          
-                             <button id="handel-minus" ><img src=".\\images\\icon\\minus.svg" alt=""></button>
-                 </div>
-                 <input type="text" id="input" style="width: 50px;" value="1">
-                 <div class="button">
-                 <button id="handel-plus" ><img src=".\\images\\icon\\plus.svg" alt=""></button>
-             </div>
-             </div>
-         </div>
-         <div class="cartchitiet">
-             <button class="giohangchitiet"><img src=".\\images\\icon\\cart-shopping-solid.svg" alt=""> <h1>Thêm vào cart<\h1></button>
-			
-          </div><div>themvaogiohang1
-           </div>
-       </div>
-      </div>`
-	  var  minusElement1=document.querySelector('#handel-minus');
-      console.log(minusElement1)
-       var inputElement1=document.querySelector('.fornt-sl #input')
-       console.log(inputElement1)
-	   var amount1=inputElement1.value
-       
-        var annutCloseElement1=document.querySelector('.annutclose');
-        var giohangElement=document.querySelector('.giohangchitiet');
-        function themvaogiohang1(){
-        //   console.log(inputElement1.value)
-          var cart=JSON.parse(localStorage.getItem("cart"));
-           if(cart==null){
-              cart=[];
-              cart.push({id:id,name:ten,price:gia,imgage:hinh,quality:inputElement1.value})
-           }
-         else{
-          let item=cart.find(item=> item.id===id);
+	var modal1Element = document.querySelector('.search input')
+	var cuoiElement = document.querySelector('.cuoi');
+	var selectElement = document.querySelector('.brand')
+	var chitietmoda1lElement = document.querySelector('.modal1')
+	chitietmoda1lElement.style.display = "none"
+	hinh = convertImagePath(hinh)
+	var chitetElement1 = document.querySelector('.chi-tiet-modal')
+	chitetElement1.innerHTML =
+		`
+        <div class="chi-tiet-modal-container1">
+        	<div class="modal-close" >
+        		<button class="annutclose"> <img src=".\\images\\icon\\close.svg" alt="">
+        	</div>
+        	<div class="chi-tiet-header1">
+            	<div class="item">
+               		<img src=${hinh} alt="" >
+            	</div>
+        		<div class="divchitiet">
+        			<div class="header1" style="font-size: 50px;">
+        				<div class="fornt-write"><h1 style="font-size:60px;">${ten}</h1></div>
+        				<div>Giá:${gia}</div>
+        			<div>
+            			<div class="fornt-sl" > Số lượng:         
+                    		<button id="handel-minus" ><img src=".\\images\\icon\\minus.svg" alt=""></button>
+                			<input type="text" id="input" value="1">
+                			<button id="handel-plus" ><img src=".\\images\\icon\\plus.svg" alt=""></button>
+            			</div>
+        			</div>
+        			<div class="cartchitiet">
+        				<button class="giohangchitiet"><img src=".\\images\\icon\\cart-shopping-solid.svg" alt=""> <h1>Thêm vào cart</h1></button>
+        			</div>
+       			</div>
+			</div>
+      	</div>`
+	var minusElement1 = document.querySelector('#handel-minus');
+	console.log(minusElement1)
+	var inputElement1 = document.querySelector('.fornt-sl #input')
+	console.log(inputElement1)
+	var amount1 = inputElement1.value
 
-          if(item&&inputElement1.value>=1) item.quality=inputElement1.value;
-            else cart.push({id:id,name:ten,price:gia,imgage:hinh,quality:inputElement1.value})
-         }
+	var annutCloseElement1 = document.querySelector('.annutclose');
+	var giohangElement = document.querySelector('.giohangchitiet');
+	function themvaogiohang1() {
+		//   console.log(inputElement1.value)
+		var cart = JSON.parse(localStorage.getItem("cart"));
+		if (cart == null) {
+			cart = [];
+			cart.push({ id: id, name: ten, price: gia, imgage: hinh, quality: inputElement1.value })
+		}
+		else {
+			let item = cart.find(item => item.id === id);
 
-      localStorage.setItem("cart",JSON.stringify(cart));
-	  alert("Bạn đã thêm thành công sản phẩm vào giỏ hàng");
-        }
-        giohangElement.addEventListener('click',themvaogiohang1)
-        
-           
-           annutCloseElement1.onclick=function(){
-             
-              chitetElement1.style.display="none"
-             if(modal1Element.value||selectElement.value||cuoiElement.value) chitietmoda1lElement.style.display="flex"
-           }
-        function render3(amount)
-        {
-          inputElement1.value=amount;
-        }
-        function giatriminus(){
-          if(amount1>1)  amount1--;
-		  else alert("Số lượng sản phẩm tối thiểu là 1")
-  
-               render3(amount1)
-        }
-        inputElement1.addEventListener('blur',function(){
-			amount1=inputElement1.value
-		  if(!parseInt(amount1)||parseInt(amount1)<1) {
+			if (item && inputElement1.value >= 1) item.quality = inputElement1.value;
+			else cart.push({ id: id, name: ten, price: gia, imgage: hinh, quality: inputElement1.value })
+		}
+
+		localStorage.setItem("cart", JSON.stringify(cart));
+		alert("Bạn đã thêm thành công sản phẩm vào giỏ hàng");
+	}
+	giohangElement.addEventListener('click', themvaogiohang1)
+
+
+	annutCloseElement1.onclick = function () {
+
+		chitetElement1.style.display = "none"
+		if (modal1Element.value || selectElement.value || cuoiElement.value) chitietmoda1lElement.style.display = "flex"
+	}
+	function render3(amount) {
+		inputElement1.value = amount;
+	}
+	function giatriminus() {
+		if (amount1 > 1) amount1--;
+		else alert("Số lượng sản phẩm tối thiểu là 1")
+
+		render3(amount1)
+	}
+	inputElement1.addEventListener('blur', function () {
+		amount1 = inputElement1.value
+		if (!parseInt(amount1) || parseInt(amount1) < 1) {
 			alert("Bạn đã nhập sai dữ liệu bạn hãy nhập lại")
-			amount1=inputElement1.value="1";
-		  }
-		  else  amount1=inputElement1.value
-        })
-        function giatriplus(){
-               amount1++;
-               render3(amount1)
-        }
-        var plusElement1 = document.querySelector('#handel-plus');
-    plusElement1.addEventListener('click', giatriplus);
-    minusElement1.addEventListener('click',giatriminus)
+			amount1 = inputElement1.value = "1";
+		}
+		else amount1 = inputElement1.value
+	})
+	function giatriplus() {
+		amount1++;
+		render3(amount1)
+	}
+	var plusElement1 = document.querySelector('#handel-plus');
+	plusElement1.addEventListener('click', giatriplus);
+	minusElement1.addEventListener('click', giatriminus)
 
-                  chitetElement1.style.display="flex"
-     
-    
+	chitetElement1.style.display = "flex"
+
+
 }
 function convertImagePath(inputPath) {
 	// Sử dụng phương thức replace để thay thế chuỗi "..Images" thành "..\Images\products\"
@@ -425,7 +409,7 @@ var readfile = function () {
 };
 function render2(items) {
 	var itemElement = document.querySelector(".sanphamItem");
-	
+
 
 	var html = items.map(function (item) {
 		return `<div class="chitiet"> 
@@ -440,15 +424,15 @@ function render2(items) {
         `;
 	});
 	itemElement.innerHTML += html.join("");
-	var modalcontainer1Element=document.querySelector('.modal-container1');
-	var html1=`<div class="phantrang">
+	var modalcontainer1Element = document.querySelector('.modal-container1');
+	var html1 = `<div class="phantrang">
 	<div class="chontrang">
 		
 	</div>
      </div>`
-	
-	modalcontainer1Element.innerHTML+=html1;
-	
+
+	modalcontainer1Element.innerHTML += html1;
+
 	timkiem(items);
 }
 //TIM KIEM
@@ -737,7 +721,7 @@ function timkiem(items) {
 				sanphamElement.style.display = "block";
 			})
 			phantrangSreach();
-		} 
+		}
 		else if (modal1Element.value && dauElement.value && cuoiElement.value) {
 			console.log("KHONG DUOC");
 			var a = [];
@@ -796,7 +780,7 @@ function timkiem(items) {
 						c++;
 						array[i].style.display = "flex";
 						a[i] = 1;
-						
+
 					} else if (!a[i]) {
 						array[i].style.display = "none";
 					}
@@ -958,65 +942,64 @@ function timkiem(items) {
 					}
 				}
 				sanphamElement.style.display = "block";
-				
+
 			});
 			phantrangSreach();
 		}
 	});
 }
 //phan trang
-function displayResults(results, page,itemsPerPage,totalPages) {
+function displayResults(results, page, itemsPerPage, totalPages) {
 	const resultsContainer = document.querySelector('.sanphamItem');
 	const paginationContainer = document.querySelector('.chontrang');
 	const startIndex = (page - 1) * itemsPerPage;
 	const endIndex = startIndex + itemsPerPage;
 	const displayedResults = results.slice(startIndex, endIndex);
 	console.log(displayedResults);
-	
+
 	results.forEach(result => {
-		if(!displayedResults.find(item=>item===result)) result.style.display="none";
-		else result.style.display="flex";
+		if (!displayedResults.find(item => item === result)) result.style.display = "none";
+		else result.style.display = "flex";
 	});
 
-  
+
 	paginationContainer.innerHTML = '';
 	for (let i = 1; i <= totalPages; i++) {
 		const pageButton = document.createElement('button');
 		pageButton.textContent = i;
-		pageButton.addEventListener('click', () => displayResults(results, i,4,totalPages));
+		pageButton.addEventListener('click', () => displayResults(results, i, 4, totalPages));
 		paginationContainer.appendChild(pageButton);
 	}
 }
-function phantrangSreach(){
+function phantrangSreach() {
 	var chitietmodalElement = document.querySelector(".modal1");
 	var chitetElement = document.querySelectorAll(".chitiet");
 	var sanphamElement = document.querySelector(".sanphamItem");
-	var chitetElement = document.querySelectorAll(".chitiet");	
-	var chontrangElement=document.querySelector('.chontrang');
+	var chitetElement = document.querySelectorAll(".chitiet");
+	var chontrangElement = document.querySelector('.chontrang');
 	var array = Array.from(chitetElement);
 	console.log(array);
-	var dem=0;
-	var sanpham=array.filter(function(item){
+	var dem = 0;
+	var sanpham = array.filter(function (item) {
 		console.log(item.style.display);
-             if(item.style.display=="flex") dem++;
-			 return item.style.display=="flex";	 
+		if (item.style.display == "flex") dem++;
+		return item.style.display == "flex";
 	})
 	console.log(sanpham);
 	console.log(dem);
-	if(dem>0)
-	{
-		var n=Math.ceil(dem/4);
-		displayResults(sanpham,1,4,n);
-// 		for(var i=1;i<=n;i++)
-// 		{   var j=0;
-//           chontrangElement.innerHTML+=`	<button class="chon">${i}</button>`;
-// 		  var dem2=0;
-// 		  chitetElement.forEach(function(item){
-// 			j++;
-// 			if(item.style.display=="flex") dem2++;
-//    })
+	if (dem > 0) {
+		var n = Math.ceil(dem / 4);
+		displayResults(sanpham, 1, 4, n);
+		// 		for(var i=1;i<=n;i++)
+		// 		{   var j=0;
+		//           chontrangElement.innerHTML+=`	<button class="chon">${i}</button>`;
+		// 		  var dem2=0;
+		// 		  chitetElement.forEach(function(item){
+		// 			j++;
+		// 			if(item.style.display=="flex") dem2++;
+		//    })
 
-// 		}
+		// 		}
 	}
 
 }
@@ -1028,4 +1011,4 @@ readfile();
 /////////////////////////////////////////
 //  xu li trang thai dang nhap
 
-var a=document.querySelector('.more_menu');
+var a = document.querySelector('.more_menu');
