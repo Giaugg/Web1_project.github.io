@@ -11,7 +11,7 @@ const siderDiv = document.querySelector('.sider');
 const brand = document.querySelector('#brand');
 const sub_menu = document.querySelector('.sub_menu');
 
-
+var items2;
 logoDiv.addEventListener('mouseover', () => {
 	siderDiv.style.display = 'flex';
 });
@@ -70,6 +70,8 @@ var Read_file_maindata = function () {
 	fetch(api)
 		.then((response) => response.json())
 		.then(function (data) {
+			items2=data;
+			console.log(items2)
 			render(data);
 		});
 };
@@ -77,7 +79,7 @@ var Read_file_accout = function () {
 	fetch(api_accout)
 		.then((response) => response.json())
 		.then(function (accouts) {
-		//	ktradangnhap(accouts);
+			ktradangnhap(accouts);
 		});
 };
 //kiem tra dang nhap hay chua
@@ -87,7 +89,7 @@ function ktradangnhap(accouts){
 	var s=`src=".\\images\\icon\\close.svg"`;
 	console.log(s);
 	  var a=accouts.find(function(accout){
-		     return accout.username.includes(TTDN1.textContent);
+		     return accout.name.includes(TTDN1.textContent);
 	  })
 	                     var target=0;
 						 var target1=0;
@@ -95,37 +97,47 @@ function ktradangnhap(accouts){
 	           
 			var bodyElement=document.querySelector('body');
 		var closeElement=document.querySelector('#formclose1')
-		bodyElement.addEventListener('click',function(event){
 		
-		       
-			if(!a)  {
-				
-                    
-				if(target1==0)
-				{   
-					alert("Bạn chưa đăng nhập")
-					++target1;
+		
+			bodyElement.addEventListener('click',function(event){
+				if(!a)
+				{
+					console.log("2 lan");
+					 
+				  
+					  
+						  
+					  if(target1==0)
+					  {   
+						  alert("Bạn chưa đăng nhập");
+						  ++target1;
+					  }
+				 if(event.target.outerHTML.includes(s))  alert("Bạn chưa đăng nhập không thể thoát");
+				  const loginForm = document.getElementById("login-form");
+				  const home = document.getElementById("homeshow");
+				  loginForm.style.display = "block";
+				  home.style.display = "block";
+				  
+				  var TTDN1 = document.getElementById("status");
+				  a=accouts.find(function(accout){
+					  return accout.name.includes(TTDN1.textContent);
+			   })
+				if(a) {
+					console.log(a);
+				  loginForm.style.display = "none";
+				  home.style.display = "none";
+					 }
+					
+					
 				}
-		   if(event.target.outerHTML.includes(s))  alert("Bạn chưa đăng nhập không thể thoát")
-			const loginForm = document.getElementById("login-form");
-			const home = document.getElementById("homeshow");
-			loginForm.style.display = "block";
-			home.style.display = "block";
-			
-			var TTDN1 = document.getElementById("status");
-			a=accouts.find(function(accout){
-				return accout.username.includes(TTDN1.textContent);
-		 })
-		  if(a) {
-			loginForm.style.display = "none";
-		    home.style.display = "none";
-		       }
-		 }
-		 
-			
-			
-			
-		})
+			   
+			   
+				  
+				  
+				  
+			  })
+		
+	
 		
 	  
    }
@@ -141,6 +153,7 @@ function render(courses) {
 	items = courses;
 	itemPerPage = items.slice(pageLimit * (currentPage - 1), pageLimit * currentPage);
 	renderItems();
+	
 	totalPage = Math.ceil(items.length / pageLimit);
 	renderPageNumber(totalPage);
 }
@@ -167,34 +180,24 @@ function renderItems() {
 	itemContainer.innerHTML = itemsHTML;
 }
 //phan loai
-function hienthibrand(x,items){
-	var arrayItems=document.querySelectorAll('.flex-item');
-	var array2=Array.from(arrayItems);
-	var sanpham = items.filter(function (item) {
-		return x === item.brand.toString();
-	});
-	var a = [];
-	sanpham.forEach(function (item) {
-		var s = item.image;
-		s = s.toString().toLowerCase();
-		var c = 0;
-		for (var i = 0; i < array2.length; i++) {
-			var j = array2[i];
-			var z = j.outerHTML;
-			if (z.toLowerCase().includes(s) && !a[i]) {
-				c++;
-				array2[i].style.display = "flex";
-				a[i] = 1;
-				if (c == sanpham.length) break;
-			} else if (!a[i]) {
-				array2[i].style.display = "none";
-			}
-		}
-		sanphamElement.style.display = "block";
-	});
+function hienthibrand(x){
+	
+	if(x==="all")
+	{
+		console.log("co");
+		render(items2)
+	}
+	else{
+		var sanpham = items2.filter(function (item) {
+			return x === item.brand.toString();
+		});
+		render(sanpham);
+	}
 }
-function onclickname(name,items){
+var k=0;
+function onclickname(name){
      name.addEventListener('click',function(){
+	     console.log(name.innerText.includes("ALL"));
 		var x="";
 		     if(name.innerText.toLowerCase().includes("dragonball"))
 			 {
@@ -216,28 +219,39 @@ function onclickname(name,items){
 			 {
 				 x="5";
 			 }
-			 else if(name.innerText.toLowerCase().includes("naruto"))
+			 else if(name.innerText.toLowerCase().includes("spyfamily"))
 			 {
 				 x="6";
 			 }
-			 hienthibrand(x,items);
+			
+			else if(name.innerText.includes("ALL")) 
+			{ 
+				x="all";
+			}
+			hienthibrand(x);
+			
+			 
 	 })
 }
- function phanloai(items){
+ function phanloai(){
+	
 	   var dragonballElement=document.querySelector('#dragonball');
 	   var narutoElement=document.querySelector('#naruto');
 	   var spyfamilyElement=document.querySelector('#spyfamily');
 	   var kimetsuElement=document.querySelector('#kimetsu');
 	   var chainsawmanElement=document.querySelector('#chainsawman');
 	   var jackElement=document.querySelector("#jack");
-	   onclickname(dragonballElement,items);
-	   onclickname(narutoElement,items);
-	   onclickname(spyfamilyElement,items);
-	   onclickname(kimetsuElement,items);
-	   onclickname(chainsawmanElement,items);
-	   onclickname(jackElement,items);
+	   var allbrandElement=document.querySelector("#all");
+	   onclickname(dragonballElement);
+	   onclickname(narutoElement);
+	   onclickname(spyfamilyElement);
+	   onclickname(kimetsuElement);
+	   onclickname(chainsawmanElement);
+	   onclickname(jackElement);
+	   onclickname(allbrandElement);
 	     
  }
+ phanloai();
 
 function renderPageNumber(totalPage) {
 	let paginationContainer = document.getElementById("pagination");
@@ -316,7 +330,7 @@ function chitiet(id, ten, gia, hinh) {
          <div class="cartchitiet">
              <button class="giohangchitiet"><img src=".\\images\\icon\\cart-shopping-solid.svg" alt=""> <h1>Thêm vào cart<\h1></button>
 			
-          </div><div>
+          </div><div>themvaogiohang1
            </div>
        </div>
       </div>`
@@ -329,7 +343,7 @@ function chitiet(id, ten, gia, hinh) {
         var annutCloseElement1=document.querySelector('.annutclose');
         var giohangElement=document.querySelector('.giohangchitiet');
         function themvaogiohang1(){
-          console.log(inputElement1.value)
+        //   console.log(inputElement1.value)
           var cart=JSON.parse(localStorage.getItem("cart"));
            if(cart==null){
               cart=[];
@@ -353,7 +367,7 @@ function chitiet(id, ten, gia, hinh) {
               chitetElement1.style.display="none"
              if(modal1Element.value||selectElement.value||cuoiElement.value) chitietmoda1lElement.style.display="flex"
            }
-        function render2(amount)
+        function render3(amount)
         {
           inputElement1.value=amount;
         }
@@ -361,7 +375,7 @@ function chitiet(id, ten, gia, hinh) {
           if(amount1>1)  amount1--;
 		  else alert("Số lượng sản phẩm tối thiểu là 1")
   
-               render2(amount1)
+               render3(amount1)
         }
         inputElement1.addEventListener('blur',function(){
 			amount1=inputElement1.value
@@ -373,7 +387,7 @@ function chitiet(id, ten, gia, hinh) {
         })
         function giatriplus(){
                amount1++;
-               render2(amount1)
+               render3(amount1)
         }
         var plusElement1 = document.querySelector('#handel-plus');
     plusElement1.addEventListener('click', giatriplus);
@@ -1006,8 +1020,7 @@ function phantrangSreach(){
 	}
 
 }
-Read_file_maindata();
-Read_file_accout();
+
 readfile();
 
 
