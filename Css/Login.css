@@ -13,6 +13,7 @@
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.1);
     display: none ;
+    font-family: "Poppins", sans-serif;
 }
 
 .register-form{
@@ -56,15 +57,11 @@
     opacity: 0.7;
     cursor: pointer;
     transform: rotate(45deg);
+    cursor: pointer;
 }
 
-.form_close:hover{
-    position: absolute;
-    top: 10px;
-    right: 20px;
+.form_close:active{
     color: rgb(232, 16, 16);
-    opacity: 0.7;
-    cursor: pointer;
 }
 .login-form h2{
     font-size: 30px;
@@ -243,16 +240,16 @@
 }
 #userInformation{
     height: 220px;
-    width: 500px;
+    width: 400px;
     position: fixed;
     top: calc(100vh - 450px);
-    left:calc(50% - 250px);
+    left:calc(50% - 200px);
     z-index: 2;
     background-color: white;
     display: none;
     justify-content: center;
-    background-color: rgba(120, 187, 123, 0.95);
-    box-shadow: 0 0 20px 20px rgba(120, 187, 123, 0.95);
+    background-color: rgba(120, 187, 123, 0.99);
+    border: solid 3px rgba(72, 113, 74, 1);
 }
 #userInformation #closeInfor{
     font-size: 40px;
@@ -264,6 +261,13 @@
 #userInformation #closeInfor:active{
     color: #f8ad58;
 }
+#userInformation img{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
 #userInformation label{
     font-size: 30px;
     margin: 10px;
@@ -272,7 +276,7 @@
     font-size: 25px;
     border: 0;
     height: 30px;
-    width: 300px;
+    width: 220px;
     margin: 10px 0;
     text-align: left;
     padding-bottom: 2px;

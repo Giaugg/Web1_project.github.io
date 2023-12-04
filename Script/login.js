@@ -87,10 +87,6 @@ function showUserInfoWindow() {
 	idInput.value = user.id;
 	nameInput.value = user.name;
 	addressInput.value = user.address;
-    var logoutButton = document.getElementById("logout");
-    logoutButton.addEventListener("click", function () {
-        logout();
-    });
 	var closeInforWindow = document.getElementById("closeInfor");
 	closeInforWindow.addEventListener("click", function (){
 		inforWindow.style.display = "none";
