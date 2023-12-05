@@ -70,35 +70,24 @@ function createUser(e){
 	var password = document.getElementById('passwordSignUp');
 	var password2 = document.getElementById('passwordSignUp2');
 	var flag = true;
-	if(!fullname.value){
+	if(!isValidFullName(fullname.value)){
 		document.getElementById('fullnameerror').style.display = 'block';
 		flag = false;
 	}else{
 		document.getElementById('fullnameerror').style.display = 'none';
 	}
-	if(!email.value){
+	if(!isValidEmail(email.value)){
 		document.getElementById('emailerror').style.display = 'block';
 		flag = false;
 	}else{
 		document.getElementById('emailerror').style.display = 'none';
 	}
-	if(!phone.value){
+	if(!isValidPhone(phone.value)){
 		document.getElementById('phoneerror').style.display = 'block';
 		flag = false;
 	}else{
-		if(isNaN(Number(phone.value))){
-			document.getElementById('phoneerror').style.display = 'block';
-			document.getElementById('phoneerror').innerHTML = 'invalid phone number';
-			flag = false;
-		}else{
-			if(Number(phone.value)<100000000 || Number(phone.value)>999999999){
-				document.getElementById('phoneerror').style.display = 'block';
-				document.getElementById('phoneerror').innerHTML = 'Phone number is incorrect';
-				flag = false;
-			}else{
-				document.getElementById('phoneerror').style.display = 'none';
-			}
-		}
+		document.getElementById('phoneerror').innerHTML = 'invalid phone number';
+
 	}
 	if(!username.value){
 		document.getElementById('usererror').style.display = 'block';
@@ -269,3 +258,19 @@ function customAlert(message,type) {
   
    
 // }
+function isValidFullName(fullname) {
+    return fullname.trim() !== '';
+}
+
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+function isValidPhone(phone) {
+    return /^\d{10,}$/.test(phone);
+}
+
+function isValidUsername(username) {
+    return username.trim() !== '' && username.length >= 6;
+}
