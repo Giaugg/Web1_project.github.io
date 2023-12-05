@@ -1,109 +1,125 @@
-const cartTable = document.getElementById("cart-table");
+var objects; 
 let modifiedItems = [];
 document.addEventListener("DOMContentLoaded", function () {
     start();
 });
 function start() {
-    getdata(renderData);
-    console.log(modifiedItems);
+    Read_data_cart();
+    // console.log(modifiedItems);
     const saveButton = document.getElementsByClassName("save-button")[0];
     saveButton.addEventListener('click', function () {
-        saveData(modifiedItems);
+        saveData();
+        console.log(objects);
     });
 }
 
 
-function getdata(callback) {
-    fetch('http://localhost:3000/Orders')
-        .then(response => response.json())
-        .then(callback);
+var Read_data_cart = function(){
+    objects = JSON.parse(localStorage.getItem("cart_admin"));
+    // console.log(objects);
+    create_admin_cart();
 }
 
-function renderData(Items) {
-    var list_tbody = cartTable.querySelector('tbody');
-    Items.map(function (item) {
-        const total = parseFloat(item.price) * parseFloat(item.quantity);
-        const row = document.createElement('tr');
-        row.innerHTML = `
-                    <td>${item.user_id}</td>
-                    <td>${item.prod_id}</td>
-                    <td>${item.brand}</td>
-                    <td>${item.quantity}</td>
-                    <td>${total}</td>
-                    <td>${item.timeOrder}</td>
-                    <td>${item.status === 1 ? 'Chấp nhận' : item.status === 2 ? 'Từ chối' : 'Chưa xử lý'}</td>
-                    <td>
-                        <button class="accept-button">Chấp nhận</button>
-                        <button class="ignore-button">Từ chối</button>
-                    </td>
+
+
+var create_admin_cart = function(){
+
+    
+    objects.forEach(function(objects) {
+        // Tạo một phần tử .item
+        create_admin_cart_line(objects);
+    });
+
+};
+    
+
+
+var create_admin_cart_line = function(object){
+    // console.log(object);
+    const itemContainer = document.getElementById("itemlist");
+
+    const itemElement = document.createElement("tr");
+    itemElement.classList.add("item");
+    const id = object.id;
+        const originalString = "ID_Products001.jpg";
+        const modifiedString = originalString.replace(/001/g, id.toString().padStart(3, "0"));
+            
+        const charname = object.name;
+        var namesp = charname.replace(/%/g, ' ');
+            // console.log(name);
+            
+        const total_price = parseInt(object.price)*parseInt(object.quality)
+            // Tạo các phần tử con và đặt giá trị từ đối tượng sản phẩm
+            
+            // console.log(objects)
+            
+        itemElement.innerHTML = `
+            <td>001</td>
+            <td class="id">${object.id}</td>
+            <td>${object.quality}</td>
+            <td>${total_price}</td>
+            <td>${object.Date}</td>
+            <td>${object.status === 1 ? 'Chấp nhận' : object.status === 2 ? 'Từ chối' : 'Chưa xử lý'}</td>
+            <td>
+                <button class="accept-button"   > xử lí</button>
+                <button class="ignore-button"  > hủy </button>
+
+            </td>
                 `;
+                
+                // Thêm phần tử .item vào phần tử gốc
+            // console.log(itemContainer);
+            itemContainer.appendChild(itemElement);
 
-        list_tbody.appendChild(row);
+const acceptButton = itemElement.querySelector('.accept-button');
+// console.log(acceptButton);
+const ignoreButton = itemElement.querySelector('.ignore-button');
+const statusCell = itemElement.querySelector('td:nth-child(7)');
 
-        // cài đặt tính năng cho nút accept và nút ignore
-        const acceptButton = row.querySelector('.accept-button');
-        const ignoreButton = row.querySelector('.ignore-button');
-        const statusCell = row.querySelector('td:nth-child(7)');
+const iditem = itemElement.querySelector('.id');
 
-        if (item.status === 1) {
-            acceptButton.disabled = true;
-            ignoreButton.disabled = true;
-            statusCell.classList.add('accept_status');
-        }
-        else if(item.status === 2){
-            acceptButton.disabled = true;
-            ignoreButton.disabled = true;
-            statusCell.classList.add('ignore_status');
-        }
-
-        acceptButton.addEventListener('click', function () {
-            statusCell.textContent = 'Chấp nhận';
-            statusCell.classList.add('accept_status'); // thêm class tạo hiệu ứng sau khi ấn
-            acceptButton.disabled = true; // chỉ ấn được một lần
-            ignoreButton.disabled = true;
-            item.status = 1;
-            if (!modifiedItems.includes(item)) {
-                modifiedItems.push(item);
-            }
-        });
-        ignoreButton.addEventListener('click', function () {
-            statusCell.textContent = 'Từ chối';
-            statusCell.classList.add('ignore_status');
-            acceptButton.disabled = true;
-            ignoreButton.disabled = true;
-            item.status = 2;
-            if (!modifiedItems.includes(item)) {
-                modifiedItems.push(item);
-            }
-        });
-    })
-
+if (object.status === 1) {
+    acceptButton.disabled = true;
+    ignoreButton.disabled = true;
+    statusCell.classList.add('accept_status');
+}
+else if(object.status === 2){
+    acceptButton.disabled = true;
+    ignoreButton.disabled = true;
+    statusCell.classList.add('ignore_status');
 }
 
+acceptButton.addEventListener('click', function () {
+    statusCell.textContent = 'Chấp nhận';
+    statusCell.classList.add('accept_status'); // thêm class tạo hiệu ứng sau khi ấn
+    acceptButton.disabled = true; // chỉ ấn được một lần
+    ignoreButton.disabled = true;
+    object.status = 1;
+    console.log(objects);
+    if (!modifiedItems.includes(object)) {
+        modifiedItems.push(object);
+    }
+});
+ignoreButton.addEventListener('click', function () {
+    statusCell.textContent = 'Từ chối';
+    statusCell.classList.add('ignore_status');
+    acceptButton.disabled = true;
+    ignoreButton.disabled = true;
+    object.status = 2;
+    if (!modifiedItems.includes(object)) {
+        modifiedItems.push(object);
+    }
+});
+ 
+    }
 
-function saveData(items) {
-    items.map(function(item){
-        const url = `http://localhost:3000/Orders/${item.id}`;
 
-        fetch(url, {
-            method: 'PUT',  // Sử dụng phương thức PATCH để cập nhật chỉ một số thuộc tính
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(item),
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log(`Dữ liệu đã được cập nhật cho item có id ${item.id}:`, data);
-        })
-        .catch(error => {
-            console.error(`Lỗi khi cập nhật dữ liệu cho item có id ${item.id}:`, error);
-        });
-        console.log(item.id, item.status);
-    });
+function saveData() {
 
+    localStorage.setItem("cart_admin",JSON.stringify(objects)); 
+    console.log("thanhcong")
     // Sau khi lưu, đặt lại danh sách modifiedItems
-    modifiedItems = [];
+    // modifiedItems = [];
 }
 const logoDiv = document.querySelector('.logo');
 const siderDiv = document.querySelector('.sider');

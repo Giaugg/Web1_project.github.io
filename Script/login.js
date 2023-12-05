@@ -158,8 +158,8 @@ function login(e){
 				
 				isLoggedIn = true;
 			found = true;
+			alert("đăng nhập thành công");
 			if(username === 'admin' ){ 
-				console.log(1)
 				window.location.assign("../Admin/index.html");
 			}
 			break;

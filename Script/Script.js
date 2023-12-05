@@ -261,8 +261,10 @@ function handlePageNumber(num, totalPage) {
 }
 //gio hang
 function themvaogiohang(id, ten, gia, hinh) {
-
-	if (TTDN === "user") {
+	var logged = [];
+	logged = JSON.parse(localStorage.getItem("userlogin"));
+	
+	if (logged.length !== 0 ) {
 		var cart = JSON.parse(localStorage.getItem("cart"));
 		if (cart == null) {
 			cart = [];
