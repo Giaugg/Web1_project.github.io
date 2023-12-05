@@ -1,12 +1,10 @@
-var TTDN_user = document.getElementById("user");// true, flase;
-var header_my = document.getElementById("header_my");
+
+
 var objects;    
-// var truck = document.createElement("a");
-// truck.classList.add("truck");
-// truck.innerHTML = `
-//     <img src=".\\images\\icon\\truck.svg" id="show-truck">
-// `
-// header_my.appendChild(truck);
+var logged = [];
+
+
+
 document.addEventListener("DOMContentLoaded", function() {
     // Lấy các phần tử HTML
     const toggleSticketButton = document.getElementById("show-truck");
@@ -16,9 +14,16 @@ document.addEventListener("DOMContentLoaded", function() {
     
     // Sự kiện khi nhấn nút "Hiển thị Sticket" hoặc dấu x
     toggleSticketButton.addEventListener("click", function() {
+
+        logged = JSON.parse(localStorage.getItem("userlogin"));
+        if(logged.length === 0){
+            alert("đăng nhập để xem các sp đã đặt")
+        }else{
             sticket.style.display = "flex"; // Hiển thị Sticket
-            console.log(1)
             Read_data_truck();
+
+        }
+
     });
     
     closeButtons.addEventListener("click", function() {
@@ -29,20 +34,28 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
 var Read_data_truck = function(){
     objects = JSON.parse(localStorage.getItem("cart_admin"));
     create_truck();
 }
+
+
+
 var create_truck = function(){
+
     
     objects.forEach(function(objects) {
         // Tạo một phần tử .item
         create_truck_line(objects);
     });
+
     // empty_cart();
 };
+
 var create_truck_line = function(object){
     const itemContainer = document.getElementById("truck-item-list");
+
     const itemElement = document.createElement("div");
     itemElement.classList.add("item");
     const id = object.id;
@@ -85,5 +98,7 @@ var create_truck_line = function(object){
                 
                 // Thêm phần tử .item vào phần tử gốc
                 itemContainer.appendChild(itemElement);
+
+
  
     }

@@ -75,89 +75,86 @@
         </ul>
     </div>
     <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////// -->
-    <!-- Form_container -->
-    <div class="form_container">
-        <form action="" class="login-form" id="login-form">
-            <div class="form_close" id="formclose1">+</div>
-            <!-- Login form -->
-            <div class="form_login">
+    <!-- USER -->
+    <div id="user" class="modal">
+        <!-- Login form -->
+        <div id="login">
+            <form id="loginform">
+                <button type="button" class="close" onclick="closeform()">+</button>
                 <h2>Login</h2>
-                <div class="input_box">
-                    <i class="fa-regular fa-file-lines"></i>
-                    <input type="text" class="input-field" id="username1" placeholder="Enter your username"><br>
-                    <span class="form-message"></span>
+                <div class="logininfo">
+                    <div class="input_box">
+                        <i class="fa-regular fa-file-lines"></i>
+                        <input type="text" class="input-field" id="usernameLogin" placeholder="Enter your username"><br>
+                        <div id="usernameerror">You have not entered your username</div>
+                    </div>
+                    <div class="input_box">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" class="input-field" id="passwordLogin" placeholder="Enter your password"><br>
+                        <div id="passwordloginerror">You have not entered a password</div>
+                    </div>
                 </div>
-                <div class="input_box">
-                    <i class="fa-solid fa-lock"></i>
-                    <input type="password" class="input-field" id="password1" placeholder="Enter your password"><br>
-                    <span class="form-message"></span>
-                </div>
-                <button class="loginButton" id="loginButtonn">Login</button>
-                <div class="login_signup"> Don't have an account? <a href="#" id="register-btn"> Register </a></div>
-            </div>
-        </form>
-        <form action="" class="register-form" id="register-form">
-            <div class="form_close" id="formclose2">+
-                <i class="fa-solid fa-xmark"></i>
-            </div>
-            <!-- Register form -->
-            <h2>Registation</h2>
-            <div class="form_register">
-                <div class="input_box">
-                    <i class="fa-regular fa-file-lines"></i>
-                    <input type="text" class="input-field" id="fullname" placeholder="Create your fullname"><br>
-                    <span class="form-message"></span>
-                </div>
-                <div class="input_box">
-                    <i class="fa-regular fa-file-lines"></i>
-                    <input type="text" class="input-field" id="username" placeholder="Create your username"><br>
-                    <span class="form-message"></span>
-                </div>
-                <div class="input_box">
-                    <i class="fa-regular fa-envelope"></i>
-                    <input type="email" class="input-field" id="email" placeholder="Create your email"><br>
-                    <span class="form-message"></span>
-                </div>
-                <div class="input_box">
-                    <i class="fa-solid fa-lock"></i>
-                    <input type="password" class="input-field" id="password" placeholder="Create your password"><br>
-                    <span class="form-message"></span>
-                </div>
-                <div class="input_box">
-                    <i class="fa-solid fa-phone"></i>
-                    <input type="tel" class="input-field" id="phonenumber" placeholder="Create your phone"><br>
-                    <span class="form-message"></span>
-                </div>
-                <div class="input_box">
-                    <i class="fa-solid fa-lock"></i>
-                    <input type="password" class="input-field" id="confirm" placeholder="Confirm your password"><br>
-                    <span class="form-message"></span>
-                </div>
-            </div>
-            <div class="gender">
-                <p>Gender</p>
-                <input type="radio" name="gender" id="gender">
-                <label for="">Male</label>
-                <input type="radio" name="gender" id="gender">
-                <label for="">Female</label><br>
-                <span class="form-message"></span>
-            </div>
-
-            <button class="registerButton" id="registerButton">Register</button>
-
-            <div class="login_signup"> Already have an account? <a href="#" id="login-btn"> Login </a></div>
-        </form>
-        <div id="userInformation">
-            <div id="closeInfor">+</div>
-            <img src="./Images/Icon/user-solid.svg" alt="">
-            <label for="userId">Id: </label>
-            <input type="text" id="userId" disabled><br>
-            <label for="userName">Name: </label>
-            <input type="text" id="userName" disabled><br>
-            <label for="userAddress">Address: </label>
-            <input type="text" id="userAddress" disabled><br>
+                <button type="submit" id="btnlogin">Login</button>
+                    <div class="login_signup"> Don't have an account?<a href="#" id="register-btn" onclick="showSignUp()" > Register </a></div>
+            </form>
         </div>
+         <!-- Register form -->
+        <div id="signup">
+            <form id="signupform">
+                <button type="button" class="close" onclick="closeform()">+</button>
+            <h2>Registation</h2>
+            <div class="signupinfo">
+                <div class="col">
+                    <div class="input_box">
+                        <i class="fa-regular fa-file-lines"></i>
+                        <input type="text" class="input-field" id="fullname" placeholder="Create your fullname"><br>
+                        <div id="fullnameerror">You have not entered your full name</div>
+                    </div>
+                    <div class="input_box">
+                        <i class="fa-regular fa-file-lines"></i>
+                        <input type="text" class="input-field" id="usernameSignUp" placeholder="Create your username"><br>
+                        <div id="usererror">You have not entered your username</div>
+                    </div>
+                    <div class="input_box">
+                        <i class="fa-regular fa-envelope"></i>
+                        <input type="email" class="input-field" id="email" placeholder="Create your email"><br>
+                        <div id="emailerror">You have not entered your email</div>
+                    </div>   
+                </div>
+                <div class="col">
+                    <div class="input_box">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" class="input-field" id="passwordSignUp" placeholder="Create your password"><br>
+                        <div id="passworderror">You have not entered your password</div>
+                    </div>
+                    <div class="input_box">
+                        <i class="fa-solid fa-phone"></i>
+                        <input type="tel" class="input-field" id="phone" placeholder="Create your phone"><br>
+                        <div id="phoneerror">You have not entered your phonenumber</div>
+                    </div>
+                        <div class="input_box">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" class="input-field" id="passwordSignUp2" placeholder="Confirm your password"><br>
+                        <div id="password2error">Passwords do not match</div>
+                    </div>
+                </div>
+        </div>
+        <button type="submit" id="btnsignup">Register</button>
+
+            <div class="login_signup"> Already have an account? <a href="#" id="login-btn" onclick="showLogin()"> Login </a></div>
+        </form>
+
+       
     </div>
+</div>
+<div id="userInformation">
+    <div id="closeInfor">+</div>
+    <label for="userName">Name: </label>
+    <input type="text" id="userName" disabled><br>
+    <label for="sdt">sdt: </label>
+    <input type="text" id="sdt" disabled><br>
+</div>
+<div id="customalert"></div>
     <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////// -->
     <div class="slider">
         <div class="gallery">

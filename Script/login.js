@@ -1,193 +1,217 @@
-var str = "Hello, world!\nThis is a string.";
-var api_accout = "http://localhost:3000/accout";
-var accounts;
-var isLoggedIn = false;
-var userID;
-console.log(userID);
-
-var Read_file_accout = function () {
-	fetch(api_accout)
-		.then((response) => response.json())
-		.then(function (data) {
-			// console.log(data);
-			accounts = data;
-			localStorage.setItem("accouts", JSON.stringify(accounts));
-
-			Login();
-			Register();
-			console.log("done");
-		});
-};
-
-Read_file_accout();
-function isValidEmail(email) {
-	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-	return emailRegex.test(email);
+var isLoggedIn  = false;
+localStorage.setItem('userlogin',JSON.stringify([]));
+var user = [];
+function createAdmin(){
+	if(localStorage.getItem('user')===null){
+		var userArray = [];
+		var user = {username: 'admin', password: '12345678', fullname: 'Trần Bảo Hân',email: 'baohan.tbh0406@gmail.com', phone: '0392306809' , datesignup: '06-04-2023'};
+		userArray.push(user);
+		localStorage.setItem('user',JSON.stringify(userArray));
+	}
 }
-// Thay thế tất cả các dấu cách và xuống dòng bằng ký tự trống
-// Login();
+document.addEventListener("DOMContentLoaded", function() {
+	createAdmin();	
+	const showContainer = document.getElementById("show-conntainer");
+	showContainer.addEventListener("click", function () {
+	  if (isLoggedIn) {
+		  // If logged in, show user info window
+		  showUserInfoWindow();
+	  } else {
+		  // If not logged in, show login form
+		  showform();
+	  }
+	});
+})
 
-const registerForm = document.getElementById("register-form");
-const loginForm = document.getElementById("login-form");
 
-const showContainer = document.getElementById("show-conntainer");
 
-const closeButtons1 = document.getElementById("formclose1");
-const closeButtons2 = document.getElementById("formclose2");
+function showform(){
+	var userform = document.getElementById('user');
+	userform.style.display = 'block';
+	document.getElementById('signup').style.display = 'none';
+	document.getElementById('login').style.display = 'block';
+}
+function closeform(){
+	var userform = document.getElementById('user');
+	userform.style.display = 'none';
+}
+function showSignUp(){
+	document.getElementById('login').style.display = 'none';
+	document.getElementById('signup').style.display = 'block';
+	
+}
+function showLogin(){
+	document.getElementById('signup').style.display = 'none';
+	document.getElementById('login').style.display = 'block';
+}
+document.getElementById('signupform').addEventListener('submit', createUser);
+document.getElementById('loginform').addEventListener('submit', login);
+function createUser(e){
+	e.preventDefault();
+	var fullname = document.getElementById('fullname');
+	var email = document.getElementById('email');
+	var phone = document.getElementById('phone');
+	var username = document.getElementById('usernameSignUp');
+	var password = document.getElementById('passwordSignUp');
+	var password2 = document.getElementById('passwordSignUp2');
+	var flag = true;
+	if(!fullname.value){
+		document.getElementById('fullnameerror').style.display = 'block';
+		flag = false;
+	}else{
+		document.getElementById('fullnameerror').style.display = 'none';
+	}
+	if(!email.value){
+		document.getElementById('emailerror').style.display = 'block';
+		flag = false;
+	}else{
+		document.getElementById('emailerror').style.display = 'none';
+	}
+	if(!phone.value){
+		document.getElementById('phoneerror').style.display = 'block';
+		flag = false;
+	}else{
+		if(isNaN(Number(phone.value))){
+			document.getElementById('phoneerror').style.display = 'block';
+			document.getElementById('phoneerror').innerHTML = 'invalid phone number';
+			flag = false;
+		}else{
+			if(Number(phone.value)<100000000 || Number(phone.value)>999999999){
+				document.getElementById('phoneerror').style.display = 'block';
+				document.getElementById('phoneerror').innerHTML = 'Phone number is incorrect';
+				flag = false;
+			}else{
+				document.getElementById('phoneerror').style.display = 'none';
+			}
+		}
+	}
+	if(!username.value){
+		document.getElementById('usererror').style.display = 'block';
+		flag = false;
+	}else{
+		document.getElementById('usererror').style.display = 'none';
+	}
+	if(!password.value){
+		document.getElementById('passworderror').style.display = 'block';
+		flag = false;
+	}else{
+		if(password.value.length<8){
+			document.getElementById('passworderror').style.display = 'block';
+			document.getElementById('passworderror').innerHTML = 'Password must be over 8 characters';
+			flag = false;
+		}else {
+			document.getElementById('passworderror').style.display = 'none';
+		}
+	}
+	if(password2.value != password.value){
+		document.getElementById('password2error').style.display = 'block';
+		flag = false;
+	}else{
+		document.getElementById('password2error').style.display = 'none';
+	}
+	if(flag==false){
+		return false;
+	}
+	var d = new Date();
+	var datesignup = d.getDate()+'-'+(d.getMonth()+1)+'-'+d.getFullYear();
+	var user = {username: username.value, password: password.value, fullname: fullname.value, email: email.value, phone: phone.value , datesignup: datesignup};
+	var userArray = JSON.parse(localStorage.getItem('user'));
+	for(var i=0;i<userArray.length;i++){
+		if(user.username==userArray[i].username){
+			document.getElementById('usererror').style.display = 'block';
+			document.getElementById('usererror').innerHTML = 'The login name is already used';
+			username.focus();
+			return false;
+		}
+	}
+	userArray.push(user);
+	localStorage.setItem('user',JSON.stringify(userArray));
+	customAlert('You have successfully registered!','success');
+	showLogin();
+}
+function login(e){
+	e.preventDefault();
+	var username = document.getElementById('usernameLogin').value;
+	var password = document.getElementById('passwordLogin').value;
+	var flag=true;
+	if(!username){
+		document.getElementById('usernameerror').style.display = 'block';
+		flag = false;
+	}else {
+		document.getElementById('usernameerror').style.display = 'none';
+	}
+	if(!password){
+		document.getElementById('passwordloginerror').style.display = 'block';
+		flag = false;
+	}else {
+		document.getElementById('passwordloginerror').style.display = 'none';
+	}
+	if(flag==false){
+		return false;
+	}
+	var userArray = JSON.parse(localStorage.getItem('user'));
+	for(var i=0;i<userArray.length;i++){
+		if(username==userArray[i].username){
+			if(password==userArray[i].password){
+				closeform();
+				localStorage.setItem('userlogin',JSON.stringify(userArray[i]));
+				
+				isLoggedIn = true;
+			found = true;
+			if(username === 'admin' ){ 
+				console.log(1)
+				window.location.assign("../Admin/index.html");
+			}
+			break;
+				// return true;
+			}
+		}
+	}
+	
+	document.getElementById('passwordloginerror').style.display = 'block';
+	document.getElementById('passwordloginerror').innerHTML = 'Wrong login information';
+	return found;
+	// return true;
+}
 
-const registerBtn = document.getElementById("register-btn");
-const loginBtn = document.getElementById("login-btn");
 
-const home = document.getElementById("homeshow");
 
-var loginbutton = document.getElementById("loginButtonn");
-// console.log(loginbutton)
-var registerbutton = document.getElementById("registerButton");
-registerBtn.addEventListener("click", function () {});
-// // Form Login & Register
-var checkbalid = false;
-closeButtons1.addEventListener("click", function () {
-	loginForm.style.display = "none";
-	home.style.display = "none";
-});
-closeButtons2.addEventListener("click", function () {
-	registerForm.style.display = "none";
-	home.style.display = "none";
-});
-registerBtn.addEventListener("click", function () {
-	registerForm.style.display = "block";
-	loginForm.style.display = "none";
-	home.style.display = "block";
-});
-loginBtn.addEventListener("click", function () {
-	registerForm.style.display = "none";
-	loginForm.style.display = "block";
-	home.style.display = "block";
-});
-showContainer.addEventListener("click", function () {
-    if (isLoggedIn) {
-        // If logged in, show user info window
-        showUserInfoWindow();
-    } else {
-        // If not logged in, show login form
-        loginForm.style.display = "block";
-        home.style.display = "block";
-    }
-});
-function showUserInfoWindow() {
+
+
+  function showUserInfoWindow() {
 	const inforWindow = document.getElementById("userInformation");
 	inforWindow.style.display = "block";
-    var user = accounts.find(function (user) {
-		return user.id === userID;
-    });
-	var idInput = document.getElementById("userId");
+	console.log(inforWindow);
+
+	var userin = JSON.parse(localStorage.getItem("userlogin"));
+	console.log(userin);
+
 	var nameInput = document.getElementById("userName");
-	var addressInput = document.getElementById("userAddress");
-	idInput.value = user.id;
-	nameInput.value = user.name;
-	addressInput.value = user.address;
+	var sdtInput = document.getElementById("sdt");
+	nameInput.value = userin.fullname;
+	sdtInput.value = userin.phone;
+
 	var closeInforWindow = document.getElementById("closeInfor");
 	closeInforWindow.addEventListener("click", function (){
 		inforWindow.style.display = "none";
 	})
 }
-var Login = function () {
-	accounts = JSON.parse(localStorage.getItem("accouts"));
 
-	loginbutton.addEventListener("click", function (event) {
-		event.preventDefault();
-		var checkvalid = false;
-		var userEmail = document.getElementById("username1").value;
-		var userPassword = document.getElementById("password1").value;
+  
 
-		var checklogin = accounts.find(function (user) {
-			return user.email === userEmail && user.password === userPassword;
-		});
-		// console.log(checklogin.admin);
-		if (checklogin && isValidEmail(userEmail)) {
-			if (checklogin.admin == true) {
-				var TTDN = document.getElementById("status");
-				TTDN.textContent = "Admin";
-				window.location.assign("../Admin/index.html");
-				alert("Đăng nhập thành công");
-			} else {
-				var TTDN = document.getElementById("status");
-				TTDN.textContent = checklogin.username;
-				alert("Đăng nhập thành công");
-				isLoggedIn = true;
-				loginForm.style.display = "none";
-				home.style.display = "none";
-				userID = checklogin.id;
-				console.log(userID);
-			}
-			// console.log(tt)
-		
-		} else {
-			alert("Email hoặc mật khẩu không đúng");
-		}
-	});
-};
 
-var Register = function () {
-	accounts = JSON.parse(localStorage.getItem("accouts"));
 
-	var registerBtn = document.getElementById("registerButton");
-
-	registerBtn.addEventListener("click", function () {
-		var fullname = document.getElementById("fullname").value;
-		var username = document.getElementById("username").value;
-		var email = document.getElementById("email").value;
-		var phonenumber = document.getElementById("phonenumber").value;
-		var password = document.getElementById("password").value;
-		var confirm = document.getElementById("confirm").value;
-		var selectElement = document.getElementById("select").value;
-		console.log(fullname);
-		if (fullname.trim() === "") {
-			alert("Full Name cannot be empty.");
-			return;
-		}
-
-		if (username.trim() === "") {
-			alert("Username cannot be empty.");
-			return;
-		}
-
-		if (!isValidEmail(email)) {
-			alert("Invalid email format.");
-			return;
-		}
-
-		if (!isValidPhoneNumber(phonenumber)) {
-			alert("Phone Number must have 10 digits.");
-			return;
-		}
-
-		if (password.length < 8) {
-			alert("Password must be at least 8 characters.");
-			return;
-		}
-
-		if (password !== confirm) {
-			alert("Passwords do not match.");
-			return;
-		}
-
-		alert("Form is valid. Submitting...");
-
-		accounts.push({ username: email, password: password, admin: false });
-		console.log(accounts);
-		localStorage.setItem("accouts", JSON.stringify(accounts));
-		
-	});
-
-	function isValidPhoneNumber(phonenumber) {
-		// Sử dụng regex để kiểm tra phonenumber có đủ 10 số không
-		var phoneRegex = /^\d{10}$/;
-		return phoneRegex.test(phonenumber);
+/*END USER*/
+/*CUSTOM ALERT BOX*/
+function customAlert(message,type) {
+	if (type=='success') {
+		document.getElementById("customalert").style.backgroundColor = '#4CAF50';
 	}
-};
-//log out
-function logout(){
-	isLoggedIn = false;
+	if (type=='warning') {
+		document.getElementById("customalert").style.backgroundColor = '#f44336';
+	}
+	document.getElementById("customalert").innerHTML = message;
+    var x = document.getElementById("customalert");
+    x.className = "show";
+    setTimeout(function(){ x.className = x.classList.remove("show"); }, 3500);
 }

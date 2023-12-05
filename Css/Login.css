@@ -1,22 +1,127 @@
 /* Login & Register */
 
-.login-form{
-    position: fixed;
-    max-width: 350px;
+
+/* Login & Register */
+.modal{
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0,0,0,0.6);
+	position: fixed;
+	top:0;
+	left: 0;
+	display: none;
+	z-index: 10;
+	overflow-y: auto;
+}
+
+#login{
+    position: relative;
+    max-width: 400px;
     width: 100%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index:100;    
     padding: 20px;
+    animation: topdown 0.3s;
     border-radius : 12px;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.1);
     display: none ;
-    font-family: "Poppins", sans-serif;
+    
+}
+#login .close{
+	position: absolute;
+	right: 15px;
+	top: 0px;
+	font-size: 35pt;
+	transform: rotate(45deg);
+	background-color: transparent;
+	cursor: pointer;
+	outline: none;
+    border: none;
+}
+#login .close:hover{
+	color: #ff4700;
+    font-size: 40pt;
 }
 
-.register-form{
+#login h2{
+    font-family: "Poppins", sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(13, 13, 12);
+    text-align: center;
+}
+#login .logininfo{
+	justify-content: center;
+}
+
+#login div[id*="error"]{
+	width: 100%;
+	color: #fa110d;
+	margin: 5px auto 0;
+	padding: 5px;
+	display: none;
+	cursor: default;
+}
+#login .input_box {
+    position: relative;
+    margin-top: 40px;
+    width: 100%;
+    height: 40px;  
+}
+
+#login input {
+    font-size: 16px;
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 0 20px;
+    transition: all 0.2s ease;
+    padding-left: 25px;
+    border-bottom: 1.5px solid gray;
+    text-align: center;
+    
+}
+#login input:focus {
+    border-color:red;
+    text-align: center;
+}
+#login i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: rgb(81, 80, 80)
+}
+
+#login #btnlogin {
+    background: blue;
+    color: #ffffff;
+    margin-top: 60px;
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 10px;
+    font-size: 25px;
+}
+#login #btnlogin:hover {
+    background-color:orangered;
+	color: white;
+}
+#login a{
+	text-decoration: none;
+	color: rgb(60, 0, 255);
+	font-weight: bold;
+    font-size: 18px;
+}
+#login a:hover{
+	color: #ff4700;
+}
+
+
+#signup{
     position: fixed;
     max-width: 700px;
     width: 100%;
@@ -30,68 +135,51 @@
     box-shadow: rgba(0, 0, 0, 0.1);
     display: none ;
 }
-.homeshow {
-    opacity: 1;
-    transition: all 0.5s ease-out;
-    background-color: rgba(0, 0, 0, 0.6);
-    height:100%;
-    width: 100%;
-    position: fixed;
-    z-index: 100;
-    background-size: cover;
-    display: none;
+
+#signup .close{
+	position: absolute;
+	right: 15px;
+	top: 0px;
+	font-size: 35pt;
+	transform: rotate(45deg);
+	background-color: transparent;
+	cursor: pointer;
+	outline: none;
+    border: none;
 }
-.form_register {
-    display: flex;
-    width: 100%;
-    margin: auto;
-    flex-wrap: wrap;
+#signup .close:hover{
+	color: #ff4700;
+    font-size: 40pt;
 }
 
-.form_close{
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    color: rgb(31, 30, 30);
-    font-size: 40px;
-    opacity: 0.7;
-    cursor: pointer;
-    transform: rotate(45deg);
-    cursor: pointer;
+#signup .signupinfo{
+	display: flex;
+	flex-wrap: wrap;
+}
+#signup .col{
+	width: 50%;
+    margin-left: 0;
 }
 
-.form_close:active{
-    color: rgb(232, 16, 16);
-}
-.login-form h2{
-    font-size: 30px;
-    font-weight: bold;
-    color: rgb(13, 13, 12);
-    text-align: center;
-}
-.register-form h2{
+#signup h2{
+    font-family: "Poppins", sans-serif;
     font-size: 30px;
     color: rgb(13, 13, 12);
     text-align: center;
     font-weight: bold;
 }
-.input_box {
-    position: relative;
-    margin-top: 40px;
-    width: 100%;
-    height: 40px;  
-}
 
-.register-form .input_box {
+#signup .input_box {
     position: relative;
     margin-top: 40px;
-    width: 50%;
-    height: 40px;   
+    width: 350px;
+    height: 45px;  
+    padding:  0 50px; 
 }
-.input_box input {
+#signup input {
     font-size: 16px;
     height: 100%;
-    width: 80%;
+    width: 100%;
     border: none;
     outline: none;
     padding: 0 20px;
@@ -99,14 +187,14 @@
     padding-left: 25px;
     border-bottom: 1.5px solid gray;
     text-align: center;
-    margin-left: 10%;
+    
 }
 
-.input_box input:focus {
+#signup input:focus {
     border-color:red;
     text-align: center;
 }
-.input_box i {
+#signup i {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -114,7 +202,7 @@
     color: rgb(81, 80, 80)
 }
 
-.form_container .loginButton {
+#signup #btnsignup{
     background: blue;
     color: #ffffff;
     margin-top: 40px;
@@ -123,63 +211,79 @@
     border-radius: 10px;
     font-size: 25px;
 }
-.form_container .loginButton:hover {
+#signup #btnsignup:hover {
     background-color:orangered;
 	color: white;
 }
 
-.form_container .registerButton {
-    background: blue;
-    color: #ffffff;
-    margin-top: 30px;
-    width: 100%;
-    padding: 10px 0;
-    border-radius: 10px;
-    font-size: 25px;
-}
-.form_container .registerButton:hover {
-    background-color:orangered;
-	color: white;
-} 
 .login_signup{
     font-size: 18px;
     text-align: center;
     margin-top: 20px;
 
 }
-.form_container a{
+#signup a{
     text-decoration: none;
     color: #2515d5;
     font-size: 18px;
     font-weight: bold;
 }
 
-.form_container a:hover{
+#signup a:hover{
     text-decoration: none;
 	color: red;
     font-size: 18px;
     font-weight: bold;
 }
-.gender{
-    margin-left: 1.5rem;
-    margin-top:35px;
+#signup div[id*="error"]{
+	width: 100%;
+	color: #f1110d;
+	margin: 5px auto 0;
+	padding: 5px;
+	display: none;
+	cursor: default;
 }
-.gender p{
+.login_signup {
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+}
+/* #userFullName {
+    cursor: pointer; 
+    font-size: 12px;  
+    font-weight: bold; 
+    color: #333; 
+    margin-bottom: 10px; 
+    
+  } */
+.header_my ul.right{
+    font-size: 25px;
+    display: flex;
     font-weight: bold;
-    font-size: 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-right: 10px;
 }
-.gender label{
-    margin-top: 15px;
-    margin-bottom: 20px;
-    margin-right: 2rem;
-    font-size: 16px;
 
+/*customalert*/
+#customalert {
+    visibility: hidden;
+    min-width: 250px;
+    color: #fff;
+    font-size: 14pt;
+    text-align: center;
+    border-radius: 2px;
+    padding: 20px;
+    position: fixed;
+    z-index: 100;
+    left: 50%;
+    top: 30px;
+    transform: translateX(-50%);
+}
+#customalert.show {
+    visibility: visible;
+ 	animation: fadein 0.5s, fadeout 0.5s 3s;
 }
 @media only screen and ( max-width : 1000px)
 {
-    .register-form{
+    .signup{
     max-width: 350px;
     width: 100%;
     transform: translate(-50%, -50%);
@@ -189,16 +293,16 @@
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.1);
     }
-    .form_register{
+    .signupinfo{
         display:inline-block;  
     }
-    .register-form .input_box{
+    .signup .input_box{
         width: 80%;
     }
     .input_box input {
         width: 100%;
     }
-    .login-form{
+    .login{
         position: fixed;
         max-width: 350px;
         width: 100%;
@@ -233,11 +337,87 @@
     color: #f33a58;
 }
 
-.form-message {
+#signup div[id*="error"]{
     font-size: 15px;
     line-height: 30px;
     position: absolute;
 }
+#login div[id*="error"]{
+    font-size: 15px;
+    line-height: 30px;
+    position: absolute;
+}
+#userInformation{
+    height: 220px;
+    width: 500px;
+    position: fixed;
+    top: calc(100vh - 450px);
+    left:calc(50% - 250px);
+    z-index: 2;
+    background-color: white;
+    display: none;
+    justify-content: center;
+    background-color: rgba(120, 187, 123, 0.95);
+    /* background-color: red; */
+    box-shadow: 0 0 20px 20px rgba(120, 187, 123, 0.95);
+}
+#userInformation #closeInfor{
+    font-size: 40px;
+    margin-left: calc(100% - 30px);
+    color: rgb(122, 60, 13);
+    cursor: pointer;
+    transform: rotate(45deg);
+}
+#userInformation #closeInfor:active{
+    color: #f8ad58;
+}
+#userInformation label{
+    font-size: 30px;
+    margin: 10px;
+}
+#userInformation input{
+    font-size: 25px;
+    border: 0;
+    height: 30px;
+    width: 300px;
+    margin: 10px 0;
+    text-align: left;
+    padding-bottom: 2px;
+    background-color: rgba(120, 187, 123, 0);
+    color: black;
+}
+#userInformation button{
+    width: 120px;
+    height: 30px;
+    margin-left: calc(100% - 300px);
+    border: solid 1px;
+    cursor: pointer;
+    background-color: #d6a370;
+    font-size: 15px;
+    position: relative;
+    border: 0;
+    box-shadow: 0 0 10px 5px #d6a370;
+}
+#userInformation button p{
+    display: inline;
+    position: absolute;
+    left: 45px;
+    top: 5px;
+}
+#userInformation button img{
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    left: 15px;
+    top: 5px;
+    display: inline;
+}
+#userInformation button:active{
+    background-color: #994D1C;
+    box-shadow: 0 0 10px 10px #994D1C;
+}
+
+
 #userInformation{
     height: 220px;
     width: 400px;
