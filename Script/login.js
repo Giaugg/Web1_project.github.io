@@ -6,6 +6,21 @@ function createAdmin(){
 		var userArray = [];
 		var user = {username: 'admin', password: '12345678', fullname: 'Trần Bảo Hân',email: 'baohan.tbh0406@gmail.com', phone: '0392306809' , datesignup: '06-04-2023'};
 		userArray.push(user);
+		var newAccout = {
+			"password": user.password,
+			"email": user.email,
+			 "name":user.fullname,
+			 "address":"Quang ngai",
+			 "admin":true,
+		};
+	
+	fetch('http://localhost:3000/accout', {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json',
+		},
+		body: JSON.stringify(newAccout),
+	})
 		localStorage.setItem('user',JSON.stringify(userArray));
 	}
 }
@@ -124,6 +139,21 @@ function createUser(e){
 			return false;
 		}
 	}
+var newAccout = {
+		"password": user.password,
+		"email": user.email,
+		 "name":user.fullname,
+		 "address":"Quang ngai",
+		 "admin":false,
+	};
+	fetch('http://localhost:3000/accout', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(newAccout),
+			})
+	   
 	userArray.push(user);
 	localStorage.setItem('user',JSON.stringify(userArray));
 	customAlert('You have successfully registered!','success');
@@ -215,3 +245,27 @@ function customAlert(message,type) {
     x.className = "show";
     setTimeout(function(){ x.className = x.classList.remove("show"); }, 3500);
 }
+
+//  function addNewaccout() {
+   
+// 	var userArray = JSON.parse(localStorage.getItem('user'));
+// 	for(var i=0;i<userArray.length;i++)
+// 	{      var newAccout={};
+// 		if(!userArray[i].email.includes("baohan.tbh0406@gmail.com"))
+// 		    {
+// 				 newAccout = {
+// 					"password": userArray[i].password,
+// 					"email": userArray[i].email,
+// 					 "name":userArray[i].fullname,
+// 					 "address":"Quang ngai",
+// 					 "admin":false,
+// 				};
+// 			}
+			
+				
+// 	}
+   
+
+  
+   
+// }

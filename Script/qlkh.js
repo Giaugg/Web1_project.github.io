@@ -40,12 +40,23 @@ function renderData(Items) {
             // cài đặt tính năng cho nút delete
             const deleteButton = row.querySelector('.delete-button');
             deleteButton.addEventListener('click', function () {
+                deleteloacl(item);
                 delete_item(item);                
             });
         }
     })
 }
 
+function deleteloacl(item){
+    var user = JSON.parse(localStorage.getItem("user"));
+
+            const newuser = user.filter(function(user){
+                return (user.email)!==(item.email);
+            })
+            console.log(newuser);
+    localStorage.setItem("user",JSON.stringify(newuser)); 
+
+}
 
 function delete_item(item) {
         const url = `http://localhost:3000/accout/${item.id}`;

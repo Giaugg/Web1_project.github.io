@@ -1,84 +1,20 @@
 {
   "accout": [
     {
-      "id": "admin123",
-      "password": "admin",
-      "email": "admin@gmail.com",
-      "name": "Trịnh Văn User",
-      "address": "18 Phan Chu Trinh",
-      "admin": true
+      "password": "12345678",
+      "email": "baohan.tbh0406@gmail.com",
+      "name": "Trần Bảo Hân",
+      "address": "Quang ngai",
+      "admin": true,
+      "id": 1
     },
     {
-      "id": "12",
-      "password": "admin",
-      "email": "user@gmail.com",
-      "name": "Nguyễn Thị User",
-      "address": "17 Phan Chu Trinh",
-      "admin": false
-    },
-    {
-      "id": "13",
-      "password": "admin",
-      "email": "user@gmail.com",
-      "name": "Nguyễn Thị User",
-      "address": "17 Phan Chu Trinh",
-      "admin": false
-    },
-    {
-      "id": "14",
-      "password": "admin",
-      "email": "user@gmail.com",
-      "name": "Nguyễn Thị User",
-      "address": "17 Phan Chu Trinh",
-      "admin": false
-    },
-    {
-      "id": "16",
-      "password": "admin",
-      "email": "user@gmail.com",
-      "name": "Nguyễn Thị User",
-      "address": "17 Phan Chu Trinh",
-      "admin": false
-    },
-    {
-      "id": "18",
-      "password": "admin",
-      "email": "user@gmail.com",
-      "name": "Nguyễn Thị User",
-      "address": "17 Phan Chu Trinh",
-      "admin": false
-    },
-    {
-      "id": "19",
-      "password": "admin",
-      "email": "user@gmail.com",
-      "name": "Nguyễn Thị User",
-      "address": "17 Phan Chu Trinh",
-      "admin": false
-    },
-    {
-      "id": "10",
-      "password": "admin",
-      "email": "user@gmail.com",
-      "name": "Nguyễn Thị User",
-      "address": "17 Phan Chu Trinh",
-      "admin": false
-    },
-    {
-      "id": "21",
-      "password": "admin",
-      "email": "user@gmail.com",
-      "name": "Nguyễn Thị User",
-      "address": "17 Phan Chu Trinh",
-      "admin": false
-    },
-    {
-      "id": "31",
-      "password": "admin",
-      "email": "user@gmail.com",
-      "name": "Nguyễn Thị User",
-      "address": "17 Phan Chu Trinh",
-      "admin": false
+      "password": "12345678",
+      "email": "giaule0111@gmail.com",
+      "name": "le huu giau",
+      "address": "Quang ngai",
+      "admin": false,
+      "id": 3
     }
   ],
   "Item": [

@@ -240,23 +240,31 @@ var delete_data_item = function(){
     })
 }
 
-var calc_money = function(){
-
+var calc_money = function() {
     const allcheckbox = document.querySelectorAll('.item');
-    // console.log(allcheckbox)
+
     allcheckbox.forEach(div => {
-        // console.log(div)
-        div.addEventListener('click', function(){
-            const element = div.querySelector('input[type="checkbox"]'); // Lấy phần tử input có type là "text"
-            element.checked = !element.checked;
-            
-            let price = (div.querySelector('#total-price'))
-            let num = (div.querySelector('#n'))
-            calc(price, num, element);
-            //////////////////////////////
-        })
-    
-    })
+        div.addEventListener('click', function(event) {
+
+            const isCheckbox = event.target.tagName.toLowerCase() === 'input' && event.target.type === 'checkbox';
+
+            // Kiểm tra xem phần tử được nhấn có class là "delete-item" không
+            const isDeleteButton = event.target.closest('.delete-item') !== null;
+            const element = div.querySelector('input[type="checkbox"]');
+            if(!isCheckbox){
+
+                element.checked = !element.checked;
+                
+            }
+            if (!isDeleteButton) {
+                // Nếu không phải là nút delete, thực hiện logic của bạn
+                
+                let price = div.querySelector('#total-price');
+                let num = div.querySelector('#n');
+                calc(price, num, element);
+            }
+        });
+    });
 }
 
 var calc = function(price, num, check){
