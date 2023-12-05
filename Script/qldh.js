@@ -52,14 +52,22 @@ var create_admin_cart_line = function(object){
             // Tạo các phần tử con và đặt giá trị từ đối tượng sản phẩm
             
             // console.log(objects)
+            var dateObject = new Date(object.Date);
+// Lấy ngày, tháng, năm từ đối tượng Date
+var year = dateObject.getFullYear();
+var month = dateObject.getMonth() + 1; // Tháng bắt đầu từ 0, nên cộng thêm 1
+var day = dateObject.getDate();
+
+// In kết quả
+var dayobject = day + "/" + month + "/" + year;
             
         itemElement.innerHTML = `
-            <td>001</td>
+            <td>${object.userID}</td>
             <td class="id">${object.id}</td>
             <td>${object.quality}</td>
             <td>${total_price}</td>
-            <td>${object.Date}</td>
-            <td>${object.status === 1 ? 'Chấp nhận' : object.status === 2 ? 'Từ chối' : 'Chưa xử lý'}</td>
+            <td>${dayobject}</td>
+            <td id="status">${object.status === 1 ? 'Chấp nhận' : object.status === 2 ? 'Từ chối' : 'Chưa xử lý'}</td>
             <td>
                 <button class="accept-button"   > xử lí</button>
                 <button class="ignore-button"  > hủy </button>
@@ -74,9 +82,8 @@ var create_admin_cart_line = function(object){
 const acceptButton = itemElement.querySelector('.accept-button');
 // console.log(acceptButton);
 const ignoreButton = itemElement.querySelector('.ignore-button');
-const statusCell = itemElement.querySelector('td:nth-child(7)');
+const statusCell = itemElement.querySelector('td:nth-child(6)');
 
-const iditem = itemElement.querySelector('.id');
 
 if (object.status === 1) {
     acceptButton.disabled = true;
@@ -95,7 +102,8 @@ acceptButton.addEventListener('click', function () {
     acceptButton.disabled = true; // chỉ ấn được một lần
     ignoreButton.disabled = true;
     object.status = 1;
-    console.log(objects);
+    // console.log(objects);
+    console.log(acceptButton.parentElement)
     if (!modifiedItems.includes(object)) {
         modifiedItems.push(object);
     }

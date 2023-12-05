@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", function() {
         if(logged.length === 0){
             alert(" đăng nhập để mua hàng")
         }else{
-
             sticket.style.display = "flex"; // Hiển thị Sticket
             // empty_cart();
             Read_data_cart();
@@ -172,6 +171,9 @@ var delete_HTML_choosen = function(){
                 var currentDate = new Date();
                 object.Date = currentDate;
                 object.status = 0;
+                var username = logged.username;
+                
+                object.userID = username;
                 
                 admin_cart.push(object);
                 map[parseInt(object.id)] = undefined;
@@ -186,7 +188,7 @@ var delete_HTML_choosen = function(){
             admin_cart.forEach(function(object){
                 let item = truck.find((item) => item.id == object.id);
                 // console.log(object, item);
-                if (item) item.quality+=object.quality;
+                if (item&& item.status === object.status) item.quality+=object.quality;
                 else
                     truck.push(object);
 
