@@ -196,26 +196,26 @@ function onclickname(namebranch) {
 	namebranch.addEventListener('click', function () {
 		console.log(namebranch.innerText.includes("ALL"));
 		var x = "";
-		if (namebranch.innerText.toLowerCase().includes("dragonball")) {
+		if (namebranch.innerText.toLowerCase().includes("dragon")) {
 			x = "1";
 		}
-		else if (namebranch.innerText.toLowerCase().includes("chainsawman")) {
+		else if (namebranch.innerText.toLowerCase().includes("chainsaw")) {
 			x = "2";
 		}
 		else if (namebranch.innerText.toLowerCase().includes("kimetsu")) {
 			x = "4";
 		}
-		else if (namebranch.innerText.toLowerCase().includes("jack")) {
+		else if (namebranch.innerText.toLowerCase().includes("jigokuraku")) {
 			x = "3";
 		}
 		else if (namebranch.innerText.toLowerCase().includes("naruto")) {
 			x = "5";
 		}
-		else if (namebranch.innerText.toLowerCase().includes("spyfamily")) {
+		else if (namebranch.innerText.toLowerCase().includes("spy")) {
 			x = "6";
 		}
 
-		else if (namebranch.innerText.includes("ALL")) {
+		else if (namebranch.innerText.includes("All")) {
 			x = "all";
 		}
 		hienthibrand(x);
