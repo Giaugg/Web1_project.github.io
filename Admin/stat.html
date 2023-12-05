@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Users</title>
+    <title>Statistics</title>
     <link rel="stylesheet" href="../Css/Dropdow.css">
     <link rel="stylesheet" href="../Css/Footer.css">
     <link rel="stylesheet" href="../Css/Header.css">
@@ -63,17 +63,41 @@
         </ul>
     </div>
     <div id="bhead">
-        <p>Quản lý người dùng</p>
+        <h1>Statistics</h1>
     </div>
+    <table id="classify-brand">
+        <tr>
+            <td>
+                <label for="brand">Loại: </label>
+                <select name="brand" id="brand">
+                    <option value="all">All</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select>
+            </td>
+            <td>
+                Thời gian:
+                <input type="date" name="date-start" id="date-start">
+                <input type="date" name="date-end" id="date-end">
+            </td>
+            <td>
+                <input type="button" value="submit" id="submit">
+            </td>
+        </tr>
+    </table>
     <table id="cart-table">
         <thead>
             <tr>
-                <th>User ID</th>
-                <th>User Name</th>
-                <th>Email</th>
-                <th>Password</th>
-                <th>Address</th>
-                <th>Xoá</th>
+                <th>Invoice ID</th>
+                <th>Product ID</th>
+                <th>Brand</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>Time Order</th>
             </tr>
         </thead>
         <tbody>
@@ -81,7 +105,7 @@
         </tbody>
     </table>
 
-    <script src="../Script/qlkh.js"></script>
+    <script src="../Script/stat.js"></script>
 </body>
 
 </html>
