@@ -504,14 +504,18 @@ function timkiem(items) {
 						.toLowerCase()
 						.includes(ten)
 				)
-					item.style.display = "flex";
+					{
+						item.style.display = "flex";
+						phantrangSreach();
+					}
 				else item.style.display = "none";
 			});
-			phantrangSreach();
+		
 		} else if (selectElement.value && cuoiElement.value && dauElement.value) {
+			
 			var x = parseInt(dauElement.value);
 			var y = parseInt(cuoiElement.value);
-			if (!modal1Element.value) {
+			
 				var a = [];
 				var sanpham1 = items.filter(function (item) {
 					return (
@@ -521,37 +525,13 @@ function timkiem(items) {
 					);
 				});
 				console.log(sanpham1);
-				sanpham1.forEach(function (item) {
-					var s = item.image;
-					s = s.toString().toLowerCase();
-					for (var i = 0; i < array.length; i++) {
-						var j = array[i].innerText;
-						j = j.replace("Chi Tiet", "");
-						var z = array[i].outerHTML;
-						var c = 0;
-						if (z.toLowerCase().includes(s) && !a[i]) {
-							console.log(z);
-							c++;
-							array[i].style.display = "flex";
-							a[i] = 1;
-							if (c == sanpham1.length) break;
-						} else if (!a[i]) {
-							array[i].style.display = "none";
-						}
-					}
-				});
-				sanphamElement.style.display = "block";
-				phantrangSreach();
-			} else {
-				var a = [];
-				var sanpham1 = items.filter(function (item) {
-					return (
-						x <= item.price &&
-						y >= item.price &&
-						item.brand.toString() === selectElement.value
-					);
-				});
-				console.log(sanpham1);
+				if(sanpham1.length==0)
+				{
+					for(var i=0;i<array.length;i++) 	array[i].style.display = "none";
+					alert("Sản phẩm bạn vừa yêu cầu không có trong cửa hàng chúng tôi")
+				}
+				else{
+					console.log(sanpham1);
 				sanpham1.forEach(function (item) {
 					var s = item.image;
 					s = s.toString().toLowerCase();
@@ -577,7 +557,8 @@ function timkiem(items) {
 					sanphamElement.style.display = "block";
 				});
 				phantrangSreach();
-			}
+				}
+			
 		} else if (selectElement.value) {
 			var x = selectElement.value;
 			var a = [];
@@ -589,22 +570,7 @@ function timkiem(items) {
 				s = s.toString().toLowerCase();
 
 				var c = 0;
-				if (!modal1Element.value) {
-					for (var i = 0; i < array.length; i++) {
-						var j = array[i];
-						var z = j.outerHTML;
-						if (z.toLowerCase().includes(s) && !a[i]) {
-							console.log(z);
-							c++;
-							array[i].style.display = "flex";
-							a[i] = 1;
-						} else if (!a[i]) {
-							array[i].style.display = "none";
-						}
-					}
-					sanphamElement.style.display = "block";
-					phantrangSreach();
-				} else {
+				
 					var input1 = modal1Element.value.toLowerCase();
 
 					for (var i = 0; i < array.length; i++) {
@@ -626,40 +592,110 @@ function timkiem(items) {
 					}
 					sanphamElement.style.display = "block";
 					phantrangSreach();
-				}
+				
 			});
 		} else if (dauElement.value && cuoiElement.value) {
 			var x = parseInt(dauElement.value);
 			var y = parseInt(cuoiElement.value);
-			if (!modal1Element.value) {
-				var sanpham1 = items.filter(function (item) {
-					return x <= item.price && y >= item.price;
-				});
-				sanpham1.forEach(function (item) {
-					var s = item.image;
-					s = s.toString().toLowerCase();
-					for (var i = 0; i < array.length; i++) {
-						var j = array[i];
-						var z = j.outerHTML;
-						var c = 0;
-						if (z.toLowerCase().includes(s) && !a[i]) {
-							c++;
-							array[i].style.display = "flex";
-							a[i] = 1;
-							if (c == sanpham1.length) break;
-						} else if (!a[i]) {
-							array[i].style.display = "none";
-						}
-					}
-				});
-				sanphamElement.style.display = "block";
-				phantrangSreach();
-			} else {
+			 
 				console.log(111);
 				var a = [];
 				var sanpham1 = items.filter(function (item) {
 					return x <= item.price && y >= item.price;
 				});
+				if(sanpham1.length==0)
+				{
+					for(var i=0;i<array.length;i++) 	array[i].style.display = "none";
+				
+				}
+				else{
+					sanpham1.forEach(function (item) {
+						var s = item.image;
+						s = s.toString().toLowerCase();
+						for (var i = 0; i < array.length; i++) {
+							var j = array[i].innerText;
+							j = j.replace("Chi Tiet", "");
+							var z = array[i].outerHTML;
+							var c = 0;
+							if (
+								z.toLowerCase().includes(s) &&
+								!a[i] &&
+								j.toLowerCase().includes(modal1Element.value)
+							) {
+								console.log(z);
+								c++;
+								array[i].style.display = "flex";
+								a[i] = 1;
+								if (c == sanpham1.length) break;
+							} else if (!a[i]) {
+								array[i].style.display = "none";
+							}
+						}
+					});
+					sanphamElement.style.display = "block";
+					phantrangSreach();
+				}
+			
+		}
+		var check=array.find((item)=>item.style.display=="flex");
+		if(!check) 	alert("Sản phẩm bạn vừa yêu cầu không có trong cửa hàng chúng tôi");
+	});
+
+	selectElement.addEventListener("change", function () {
+		select = 1;
+
+		var x = parseInt(dauElement.value);
+		var y = parseInt(cuoiElement.value);
+
+		if (!modal1Element.value && !dauElement.value && !cuoiElement.value) {
+			var x = selectElement.value;
+			var sanpham = items.filter(function (item) {
+				return x === item.brand.toString();
+			});
+			if(sanpham.length==0)
+				{
+					for(var i=0;i<array.length;i++) 	array[i].style.display = "none";
+					alert("Sản phẩm bạn vừa yêu cầu không có trong cửa hàng chúng tôi")
+				}
+			else{
+				var a = [];
+			sanpham.forEach(function (item) {
+				var s = item.image;
+				s = s.toString().toLowerCase();
+				var c = 0;
+				for (var i = 0; i < array.length; i++) {
+					var j = array[i];
+					var z = j.outerHTML;
+					if (z.toLowerCase().includes(s) && !a[i]) {
+						c++;
+						array[i].style.display = "flex";
+						a[i] = 1;
+						if (c == sanpham.length) break;
+					} else if (!a[i]) {
+						array[i].style.display = "none";
+					}
+				}
+				sanphamElement.style.display = "block";
+			})
+			phantrangSreach();
+			}
+		} 
+		else if (modal1Element.value && dauElement.value && cuoiElement.value) {
+		
+			var a = [];
+			var sanpham1 = items.filter(function (item) {
+				return (
+					x <= item.price &&
+					y >= item.price &&
+					item.brand.toString() === selectElement.value
+				);
+			});
+			if(sanpham1.length==0)
+				{
+					for(var i=0;i<array.length;i++) 	array[i].style.display = "none";
+					alert("Sản phẩm bạn vừa yêu cầu không có trong cửa hàng chúng tôi")
+				}
+			else{
 				sanpham1.forEach(function (item) {
 					var s = item.image;
 					s = s.toString().toLowerCase();
@@ -686,81 +722,6 @@ function timkiem(items) {
 				sanphamElement.style.display = "block";
 				phantrangSreach();
 			}
-		}
-	});
-
-	selectElement.addEventListener("change", function () {
-		select = 1;
-
-		var x = parseInt(dauElement.value);
-		var y = parseInt(cuoiElement.value);
-
-		if (!modal1Element.value && !dauElement.value && !cuoiElement.value) {
-			var x = selectElement.value;
-			console.log(items);
-			console.log(x);
-			console.log(typeof x);
-			var sanpham = items.filter(function (item) {
-				return x === item.brand.toString();
-			});
-			console.log(sanpham);
-			var a = [];
-			sanpham.forEach(function (item) {
-				var s = item.image;
-				s = s.toString().toLowerCase();
-				var c = 0;
-				for (var i = 0; i < array.length; i++) {
-					var j = array[i];
-					var z = j.outerHTML;
-					if (z.toLowerCase().includes(s) && !a[i]) {
-						c++;
-						array[i].style.display = "flex";
-						a[i] = 1;
-						if (c == sanpham.length) break;
-					} else if (!a[i]) {
-						array[i].style.display = "none";
-					}
-				}
-				sanphamElement.style.display = "block";
-			})
-			phantrangSreach();
-		}
-		else if (modal1Element.value && dauElement.value && cuoiElement.value) {
-			console.log("KHONG DUOC");
-			var a = [];
-			var sanpham1 = items.filter(function (item) {
-				return (
-					x <= item.price &&
-					y >= item.price &&
-					item.brand.toString() === selectElement.value
-				);
-			});
-			console.log(sanpham1);
-			sanpham1.forEach(function (item) {
-				var s = item.image;
-				s = s.toString().toLowerCase();
-				for (var i = 0; i < array.length; i++) {
-					var j = array[i].innerText;
-					j = j.replace("Chi Tiet", "");
-					var z = array[i].outerHTML;
-					var c = 0;
-					if (
-						z.toLowerCase().includes(s) &&
-						!a[i] &&
-						j.toLowerCase().includes(modal1Element.value)
-					) {
-						console.log(z);
-						c++;
-						array[i].style.display = "flex";
-						a[i] = 1;
-						if (c == sanpham1.length) break;
-					} else if (!a[i]) {
-						array[i].style.display = "none";
-					}
-				}
-			});
-			sanphamElement.style.display = "block";
-			phantrangSreach();
 		} else if (modal1Element.value) {
 			var a = [];
 			var sanpham = items.filter(function (item) {
@@ -783,7 +744,7 @@ function timkiem(items) {
 						c++;
 						array[i].style.display = "flex";
 						a[i] = 1;
-
+						
 					} else if (!a[i]) {
 						array[i].style.display = "none";
 					}
@@ -800,32 +761,40 @@ function timkiem(items) {
 					y >= item.price
 				);
 			});
-			console.log(sanpham1);
-			sanpham1.forEach(function (item) {
-				var s = item.image;
-				s = s.toString().toLowerCase();
-				for (var i = 0; i < array.length; i++) {
-					var j = array[i].innerText;
-					j = j.replace("Chi Tiet", "");
-					var z = array[i].outerHTML;
-					var c = 0;
-					if (z.toLowerCase().includes(s) && !a[i]) {
-						console.log(z);
-						c++;
-						array[i].style.display = "flex";
-						a[i] = 1;
-					} else if (!a[i]) {
-						array[i].style.display = "none";
+			if(sanpham1.length==0)
+			{
+				for(var i=0;i<array.length;i++) 	array[i].style.display = "none";
+				alert("Sản phẩm bạn vừa yêu cầu không có trong cửa hàng chúng tôi")
+			}
+			else{
+				sanpham1.forEach(function (item) {
+					var s = item.image;
+					s = s.toString().toLowerCase();
+					for (var i = 0; i < array.length; i++) {
+						var j = array[i].innerText;
+						j = j.replace("Chi Tiet", "");
+						var z = array[i].outerHTML;
+						var c = 0;
+						if (z.toLowerCase().includes(s) && !a[i]) {
+							console.log(z);
+							c++;
+							array[i].style.display = "flex";
+							a[i] = 1;
+						} else if (!a[i]) {
+							array[i].style.display = "none";
+						}
 					}
-				}
-				sanphamElement.style.display = "block";
-			});
-			phantrangSreach();
+					sanphamElement.style.display = "block";
+				});
+				phantrangSreach();
+			}
 		}
 	});
 
-	cuoiElement.addEventListener("keydown", function () {
-		var a = [];
+	cuoiElement.addEventListener("keydown", function (event) {
+		if(event.key==='Enter')
+		{
+			var a = [];
 		var x = parseInt(dauElement.value);
 		var y = parseInt(cuoiElement.value);
 		console.log(x, y);
@@ -833,27 +802,37 @@ function timkiem(items) {
 			var sanpham1 = items.filter(function (item) {
 				return x <= item.price && y >= item.price;
 			});
-			sanpham1.forEach(function (item) {
-				var s = item.image;
-				s = s.toString().toLowerCase();
-				for (var i = 0; i < array.length; i++) {
-					var j = array[i];
-					var z = j.outerHTML;
-					var c = 0;
-					if (z.toLowerCase().includes(s) && !a[i]) {
-						c++;
-						array[i].style.display = "flex";
-						a[i] = 1;
-						if (c == sanpham1.length) break;
-					} else if (!a[i]) {
-						array[i].style.display = "none";
+			if(sanpham1.length==0)
+			{
+				for(var i=0;i<array.length;i++) 	array[i].style.display = "none";
+				alert("Sản phẩm bạn vừa yêu cầu không có trong cửa hàng chúng tôi")
+			}
+			else{
+				sanpham1.forEach(function (item) {
+					var s = item.image;
+					
+					s = s.toString().toLowerCase();
+					for (var i = 0; i < array.length; i++) {
+						var j = array[i];
+						var z = j.outerHTML;
+						var c = 0;
+						if (z.toLowerCase().includes(s) && !a[i]) {
+							c++;
+							console.log(array[i]);
+							array[i].style.display = "flex";
+							a[i] = 1;
+						
+						} else if (!a[i]) {
+							array[i].style.display = "none";
+						}
 					}
-				}
-			});
+				});
+			}
 			sanphamElement.style.display = "block";
 			phantrangSreach();
 		} else if (x && y && modal1Element.value && selectElement.value) {
 			var a = [];
+			
 			var sanpham1 = items.filter(function (item) {
 				return (
 					x <= item.price &&
@@ -861,62 +840,76 @@ function timkiem(items) {
 					item.brand.toString() === selectElement.value
 				);
 			});
-			sanpham1.forEach(function (item) {
-				var s = item.image;
-				s = s.toString().toLowerCase();
-				for (var i = 0; i < array.length; i++) {
-					var j = array[i].innerText;
-					j = j.replace("Chi Tiet", "");
-					var z = array[i].outerHTML;
-					var c = 0;
-					if (
-						z.toLowerCase().includes(s) &&
-						!a[i] &&
-						j.toLowerCase().includes(modal1Element.value)
-					) {
-						console.log(z);
-						c++;
-						array[i].style.display = "flex";
-						a[i] = 1;
-						if (c == sanpham1.length) break;
-					} else if (!a[i]) {
-						array[i].style.display = "none";
+			if(sanpham1.length==0)
+			{
+				for(var i=0;i<array.length;i++) 	array[i].style.display = "none";
+				alert("Sản phẩm bạn vừa yêu cầu không có trong cửa hàng chúng tôi")
+			}
+			else{
+				sanpham1.forEach(function (item) {
+					var s = item.image;
+					s = s.toString().toLowerCase();
+					for (var i = 0; i < array.length; i++) {
+						var j = array[i].innerText;
+						j = j.replace("Chi Tiet", "");
+						var z = array[i].outerHTML;
+						var c = 0;
+						if (
+							z.toLowerCase().includes(s) &&
+							!a[i] &&
+							j.toLowerCase().includes(modal1Element.value)
+						) {
+							console.log(z);
+							c++;
+							array[i].style.display = "flex";
+							a[i] = 1;
+						
+						} else if (!a[i]) {
+							array[i].style.display = "none";
+						}
 					}
-				}
-			});
-			sanphamElement.style.display = "block";
-			phantrangSreach();
+				});
+				sanphamElement.style.display = "block";
+				phantrangSreach();
+			}
 		} else if (x && y && modal1Element.value) {
 			console.log(111);
 			var a = [];
 			var sanpham1 = items.filter(function (item) {
 				return x <= item.price && y >= item.price;
 			});
-			sanpham1.forEach(function (item) {
-				var s = item.image;
-				s = s.toString().toLowerCase();
-				for (var i = 0; i < array.length; i++) {
-					var j = array[i].innerText;
-					j = j.replace("Chi Tiet", "");
-					var z = array[i].outerHTML;
-					var c = 0;
-					if (
-						z.toLowerCase().includes(s) &&
-						!a[i] &&
-						j.toLowerCase().includes(modal1Element.value)
-					) {
-						console.log(z);
-						c++;
-						array[i].style.display = "flex";
-						a[i] = 1;
-						if (c == sanpham1.length) break;
-					} else if (!a[i]) {
-						array[i].style.display = "none";
+			if(sanpham1.length==0)
+			{
+				for(var i=0;i<array.length;i++) 	array[i].style.display = "none";
+				alert("Sản phẩm bạn vừa yêu cầu không có trong cửa hàng chúng tôi")
+			}
+			else{
+				sanpham1.forEach(function (item) {
+					var s = item.image;
+					s = s.toString().toLowerCase();
+					for (var i = 0; i < array.length; i++) {
+						var j = array[i].innerText;
+						j = j.replace("Chi Tiet", "");
+						var z = array[i].outerHTML;
+						var c = 0;
+						if (
+							z.toLowerCase().includes(s) &&
+							!a[i] &&
+							j.toLowerCase().includes(modal1Element.value)
+						) {
+							console.log(z);
+							c++;
+							array[i].style.display = "flex";
+							a[i] = 1;
+						
+						} else if (!a[i]) {
+							array[i].style.display = "none";
+						}
 					}
-				}
-			});
-			sanphamElement.style.display = "block";
-			phantrangSreach();
+				});
+				sanphamElement.style.display = "block";
+				phantrangSreach();
+			}
 		} else if (x && y && selectElement.value) {
 			var a = [];
 			var sanpham1 = items.filter(function (item) {
@@ -926,32 +919,38 @@ function timkiem(items) {
 					item.brand.toString() === selectElement.value
 				);
 			});
-			console.log(sanpham1);
-			sanpham1.forEach(function (item) {
-				var s = item.image;
-				s = s.toString().toLowerCase();
-				for (var i = 0; i < array.length; i++) {
-					var j = array[i].innerText;
-					j = j.replace("Chi Tiet", "");
-					var z = array[i].outerHTML;
-					var c = 0;
-					if (z.toLowerCase().includes(s) && !a[i]) {
-						console.log(z);
-						c++;
-						array[i].style.display = "flex";
-						a[i] = 1;
-					} else if (!a[i]) {
-						array[i].style.display = "none";
+			if(sanpham1.length==0)
+			{
+				for(var i=0;i<array.length;i++) 	array[i].style.display = "none";
+				alert("Sản phẩm bạn vừa yêu cầu không có trong cửa hàng chúng tôi")
+			}
+			else{
+				sanpham1.forEach(function (item) {
+					var s = item.image;
+					s = s.toString().toLowerCase();
+					for (var i = 0; i < array.length; i++) {
+						var j = array[i].innerText;
+						j = j.replace("Chi Tiet", "");
+						var z = array[i].outerHTML;
+						var c = 0;
+						if (z.toLowerCase().includes(s) && !a[i]) {
+							console.log(z);
+							c++;
+							array[i].style.display = "flex";
+							a[i] = 1;
+						} else if (!a[i]) {
+							array[i].style.display = "none";
+						}
 					}
-				}
-				sanphamElement.style.display = "block";
-
-			});
-			phantrangSreach();
+					sanphamElement.style.display = "block";
+					
+				});
+				phantrangSreach();
+			}
+		}
 		}
 	});
 }
-//phan trang
 function displayResults(results, page, itemsPerPage, totalPages) {
 	const resultsContainer = document.querySelector('.sanphamItem');
 	const paginationContainer = document.querySelector('.chontrang');
