@@ -2,10 +2,14 @@
 
 #cart-user-modal{
     position: fixed;
-    top: calc(50% - 250px);
-    left: calc(50% - 450px);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
     display: none;
     justify-content: center;
+    padding-top: 10px;
 }
 .modal-container{
     background-color: #ffffff;
@@ -30,63 +34,66 @@
     height: 30px;
     margin: 10px;
 }
-#cart-user-modal  .close{
+.close{
     position: absolute;
     top: 0;
     right: 0;
     padding: 10px;
-    cursor: pointer;
+}
+.close:hover{
+    background-color: #ebe7e7;
 }
 
 .modal-items{
     padding: 10px;
     overflow: auto;
-    height:387px;
+    height: 80%;
 
 }
 
-#cart-user-modal #item-list{
+#item-list{
+    max-height: 100%;
+    min-height: 475px;
     position: relative;
+    padding: 20px 10px 10px 10px;
     border: solid 1px;
-    box-shadow: 0px 0px 10px 2px rgba(92, 92, 92, 0.5);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 
     
 }
-#cart-user-modal .item{
+.modal-containe.item{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     background-color: #fff;
-    box-shadow: 0px 0px 10px 2px rgba(104, 104, 104, 0.5);
-    margin: 10px 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+
+
 }
 
-#cart-user-modal  .item:hover {
+.item:hover {
     border: solid 1px ;
     color: red;
 }
-#cart-user-modal  .item img{
+.item img{
     height: 100px;
 }
-#cart-user-modal  .item input{
-    height: 20px;
-    width: 20px;
+.item input{
+    height: 30px;
 }
-#cart-user-modal  .item *{
+.item *{
     font-size: 1.3rem;
 }
-#cart-user-modal  .item p{   
+.item p{   
     word-wrap: break-word; 
     max-width: 100px;
     width: 100px;
     text-align: center;
-
 }
 
-.delete-item button{
+.delete-item{
+    padding: 5px;
     background-color:#f3f4f5;
-    width: 20px;
-    height: 20px;
 }
 .delete-item:hover button{
     color: red;
@@ -102,8 +109,11 @@
     align-items: center;
     padding-left: 10px;
 }
-.modal-footer p span{
-    font-size: 30px;
+#total-item{
+    font-size: 1.5rem;
+}
+#total-cost{
+    font-size: 1.5rem;
 }
 
 #empty{
@@ -114,10 +124,6 @@
 }
 
 #Add-to-admin-cart{
-    background-color: rgb(249, 109, 67);
-    cursor: pointer;
-    width: 150px;
-    height: 100%;
-    padding:3px 20px;
-    font-size: 30px;
+    padding: 10px 70px 10px 10px;
+    background-color: rgb(246, 72, 19)
 }

@@ -2,6 +2,7 @@ var main_data;
 var objects; // Khai báo biến objects ở ngoài để truy cập sau này
 var map = new Map();
 var admin_cart = [];
+
 document.addEventListener("DOMContentLoaded", function() {
     // Lấy các phần tử HTML
     const toggleSticketButton = document.getElementById("show-cart");
@@ -27,11 +28,18 @@ document.addEventListener("DOMContentLoaded", function() {
         reset_price();
     });
 });
+
+
+
 var Read_data_cart = function(){
     objects = JSON.parse(localStorage.getItem("cart"));
     create_user_cart();
 }
+
+
+
 var create_user_cart = function(){
+
     
     objects.forEach(function(objects) {
         // Tạo một phần tử .item
@@ -49,6 +57,7 @@ var create_user_cart = function(){
 };
     
 var choose_item_to_add = function(){
+
         const allcheckbox = document.querySelectorAll('.item');
         // console.log(allcheckbox)
         allcheckbox.forEach(div => {
@@ -63,10 +72,13 @@ var choose_item_to_add = function(){
     
     
         // console.log(price)
+
 });
 };
+
 var create_user_cart_line = function(object){
     const itemContainer = document.getElementById("item-list");
+
     const itemElement = document.createElement("div");
     itemElement.classList.add("item");
     const id = object.id;
@@ -110,12 +122,17 @@ var create_user_cart_line = function(object){
                 
                 // Thêm phần tử .item vào phần tử gốc
                 itemContainer.appendChild(itemElement);
+
+
  
     }
+
 var delete_choosen = function(){
     delete_HTML_choosen();
     // delete_cart_choosen();
+
 }
+
 var delete_HTML_choosen = function(){
     const allitemHTML = document.querySelectorAll(".item");
     allitemHTML.forEach(div =>{
@@ -135,8 +152,13 @@ var delete_HTML_choosen = function(){
         localStorage.setItem("cart", JSON.stringify(newobjects));
         newobjects = [];
     })
+    
+
 }
     
+
+
+
     var add_to_admin_cart = function(){
         objects.forEach(object => {
             if(map[parseInt(object.id)] !== undefined && map[parseInt(object.id)] %2 !== 0 ) {
@@ -157,9 +179,10 @@ var delete_HTML_choosen = function(){
             admin_cart.forEach(function(object){
                 let item = truck.find((item) => item.id == object.id);
                 // console.log(object, item);
-                if (item) item.quality+=object.quality;
+                if (item) item.quality= parseInt(object.quality)+parseInt(item.quality);
                 else
                     truck.push(object);
+
             })
         }
         
@@ -177,49 +200,71 @@ var delete_HTML_choosen = function(){
     var delete_all_HTML_item = function(){
         
         const alldeletebutton = document.querySelectorAll(".delete-item")
+
     alldeletebutton.forEach(function(btn){
         btn.addEventListener('click', function(){
             btn.parentElement.remove();
         })
     })
+    
 }
+
 var delete_data_item = function(){
     const alldeleteitem = document.querySelectorAll(".item")
     alldeleteitem.forEach(item =>{
         btn = document.querySelector(".delete-item")
         // console.log(btn);
         btn.addEventListener('click', function(){
+
             var cart = JSON.parse(localStorage.getItem("cart"));
+
             const target = item.querySelector('#item-ID');
+
             const newcart = cart.filter(function(cart){
                 return parseInt(cart.id)!==parseInt(target.textContent);
             })
+
             if(newcart.length===0) empty_cart();
+
             // console.log(target.textContent, newcart);
             localStorage.setItem("cart",JSON.stringify(newcart)); 
         })
     })
 }
-var calc_money = function(){
+
+var calc_money = function() {
     const allcheckbox = document.querySelectorAll('.item');
-    // console.log(allcheckbox)
+
     allcheckbox.forEach(div => {
-        // console.log(div)
-        div.addEventListener('click', function(){
-            const element = div.querySelector('input[type="checkbox"]'); // Lấy phần tử input có type là "text"
-            element.checked = !element.checked;
-            
-            let price = (div.querySelector('#total-price'))
-            let num = (div.querySelector('#n'))
-            calc(price, num, element);
-            //////////////////////////////
-        })
-    
-    })
+        div.addEventListener('click', function(event) {
+
+            const isCheckbox = event.target.tagName.toLowerCase() === 'input' && event.target.type === 'checkbox';
+
+            // Kiểm tra xem phần tử được nhấn có class là "delete-item" không
+            const isDeleteButton = event.target.closest('.delete-item') !== null;
+            const element = div.querySelector('input[type="checkbox"]');
+            if(!isCheckbox){
+
+                element.checked = !element.checked;
+                
+            }
+            if (!isDeleteButton) {
+                // Nếu không phải là nút delete, thực hiện logic của bạn
+                
+                let price = div.querySelector('#total-price');
+                let num = div.querySelector('#n');
+                calc(price, num, element);
+            }
+        });
+    });
 }
+
+
+
 var calc = function(price, num, check){
     var total = document.getElementById('total-item');
     var total_cost = document.getElementById('total-cost')
+
     // console.log(price)
     if(check.checked){
         // alert(total.textContent)
@@ -237,6 +282,7 @@ var reset_price = function(){
     total.textContent = 0;
     total_cost.textContent = 0;
 }
+
 var empty_cart = function(){
     const itemContainer = document.getElementById("item-list");
     if(!itemContainer.hasChildNodes()){
@@ -245,6 +291,13 @@ var empty_cart = function(){
         <p id="empty"> Giỏ hàng trống xin vui lòng lựa chọn sản phẩm cần mua! </p> 
         `
         itemContainer.appendChild(itemElementEmty);
+
     }
     
     }
+
+
+
+
+
+

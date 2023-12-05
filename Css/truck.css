@@ -4,15 +4,23 @@
     position: fixed;
     top: calc(50% - 250px);
     left: calc(50% - 450px);
+    top: calc(50% - 250px);
+    left: calc(50% - 450px);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
     display: none;
     justify-content: center;
+    border: solid 2px;
     border: solid 2px;
 }
 .modal-container{
     background-color: #ffffff;
     /* padding: 5px; */
     width: 900px;
-    height: 500px;
+    height: 600px;
     font-size: 3rem;
     position: relative;
     border: solid 2px ;
@@ -30,20 +38,27 @@
     height: 30px;
     margin: 10px;
 }
-#truck-modal .close{
+.close{
     position: absolute;
     top: 0;
     right: 0;
     padding: 10px;
-    cursor: pointer;
+}
+.close:hover{
+    background-color: #ebe7e7;
 }
 
+.truck-modal-item{
+    padding: 10px;
+    height: 400px;
+    background-color: red;
+}
 #truck-item-list{
-    height: 427px;
+    height: 400px;
     overflow-y: scroll;
 }
 
-#truck-modal #item-list{
+#item-list{
     max-height: 100%;
     min-height: 475px;
     position: relative;
@@ -51,32 +66,31 @@
     border: solid 1px;
     box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.5);
 }
-#truck-modal  .item{
+#truck-modal > .item{
     display: flex;
     margin-bottom: 5px;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     background-color: #fff;
     padding-left: 10px ;
     padding-right: 3px;
-    box-shadow: 0px 0px 10px 5px rgba(114, 114, 114, 0.5);
-    border: solid 1px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-#truck-modal  .item:hover {
+.item:hover {
     border: solid 1px ;
     color: red;
 }
-#truck-modal  .item img{
+.item img{
     height: 100px;
 }
-#truck-modal  .item input{
+.item input{
     height: 30px;
 }
-#truck-modal  .item *{
+.item *{
     font-size: 1.3rem;
 }
-#truck-modal  .item p{   
+.item p{   
     word-wrap: break-word; 
     max-width: 100px;
     width: 100px;
@@ -91,7 +105,7 @@
     color: red;
 }
 
-#truck-modal .modal-footer{
+.modal-footer{
     position: absolute;
     display: flex;
     justify-content: space-between;
@@ -101,8 +115,11 @@
     align-items: center;
     padding-left: 10px;
 }
-#truck-modal .modal-footer p span{
-    font-size: 30px;
+#total-item{
+    font-size: 1.5rem;
+}
+#total-cost{
+    font-size: 1.5rem;
 }
 
 #empty{
