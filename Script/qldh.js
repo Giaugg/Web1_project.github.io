@@ -11,6 +11,10 @@ function start() {
         saveData();
         console.log(objects);
     });
+    const submitButton = document.getElementById("submit");
+    submitButton.addEventListener("click", function () {
+        filterAndRenderData();
+    })
 }
 
 
@@ -42,10 +46,8 @@ var create_admin_cart_line = function(object){
     itemElement.classList.add("item");
     const id = object.id;
         const originalString = "ID_Products001.jpg";
-        const modifiedString = originalString.replace(/001/g, id.toString().padStart(3, "0"));
             
         const charname = object.name;
-        var namesp = charname.replace(/%/g, ' ');
             // console.log(name);
             
         const total_price = parseInt(object.price)*parseInt(object.quality)
@@ -147,3 +149,28 @@ siderDiv.addEventListener('mouseover', () => {
 siderDiv.addEventListener('mouseout', () => {
   siderDiv.style.display = 'none';
 });
+
+function filterAndRenderData() {
+    const itemContainer = document.getElementById("itemlist");
+
+    itemContainer.innerHTML="";
+    
+    const dateStart = document.getElementById("date-start").value;
+    const dateEnd = document.getElementById("date-end").value;
+    const filteredItems = objects.filter(function (item) {
+        const itemTimeOrder = item.Date.split("T")[0];
+        console.log(itemTimeOrder);
+        console.log(new Date(itemTimeOrder));
+        console.log(new Date(dateStart));
+        return (
+            (dateStart === "" || dateEnd === "" ||
+                (new Date(itemTimeOrder) >= new Date(dateStart) &&
+                    new Date(itemTimeOrder) <= new Date(dateEnd))
+            )
+        );
+    });
+    console.log(filteredItems);
+    // renderData(filteredItems);
+    create_admin_cart(filteredItems);
+
+}
