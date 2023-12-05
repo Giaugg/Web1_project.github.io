@@ -751,6 +751,8 @@ function timkiem(items) {
 				}
 			});
 			sanphamElement.style.display = "block";
+				var check=array.find((item)=>item.style.display=="flex");
+		if(!check) 	alert("Sản phẩm bạn vừa yêu cầu không có trong cửa hàng chúng tôi");
 			phantrangSreach();
 		} else if (dauElement.value && cuoiElement.value) {
 			var a = [];
