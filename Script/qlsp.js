@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     fetchData();
 });
-
+var imageNew="";
 function fetchData() {
     fetch('http://localhost:3000/Item')
         .then(response => response.json())
@@ -77,13 +77,16 @@ function showEditWindow(item) {
     const editedNameInput = document.getElementById("editedName");
     const editedBrandInput = document.getElementById("editedBrand");
     const editedPriceInput = document.getElementById("editedPrice");
-    const editImageInput = document.getElementById("editImage");
+   
+
+    var selectFileElement=document.querySelector("#upload");
+    console.log(selectFileElement.value)
 
     // Hiển thị thông tin cần sửa đổi trong cửa sổ sửa đổi
     editedNameInput.value = item.name;
     editedBrandInput.value = item.brand;
     editedPriceInput.value = item.price;
-    editImageInput.value = item.image;
+ 
 
     // Hiển thị cửa sổ sửa đổi
     editWindow.style.display = "block";
@@ -91,7 +94,13 @@ function showEditWindow(item) {
     wrapWindow.addEventListener("click", function (){
         wrapWindow.style.display = "none";
         editWindow.style.display = "none";
+        document.getElementById('showImage').innerHTML="";
+        var selectFileElement=document.querySelector("#upload");
+         selectFileElement.value="";
+       
     })
+    selectFileElement.addEventListener('change',editImages)
+
 
     const saveEditButton = document.getElementById("saveEdit");
 
@@ -101,18 +110,31 @@ function showEditWindow(item) {
         const newName = editedNameInput.value;
         const newBrand = editedBrandInput.value;
         const newPrice = editedPriceInput.value;
-        const newImage = editImageInput.value;
-
+        var updatedItem;
         // Tạo đối tượng mới với thông tin đã sửa đổi
-        const updatedItem = {
+       if(imageNew)
+       {
+        updatedItem = {
             id: item.id,
             brand: newBrand,
             name: newName,
             price: newPrice,
-            image: newImage,
+            image:imageNew,
+          
         };
+       }
+       else{
+        updatedItem = {
+            id: item.id,
+            brand: newBrand,
+            name: newName,
+            price: newPrice,
+            image:item.image,
+          
+        };
+       }
 
-
+          imageNew="";
         // Gửi yêu cầu PUT để cập nhật dữ liệu trên JSON Server
         fetch(`http://localhost:3000/Item/${item.id}`, {
             method: 'PUT',
@@ -172,25 +194,31 @@ function deleteItem(item) {
 function showAddWindow() {
     const addWindow = document.getElementById("add-window");
     addWindow.style.display = "block";
+    var selectFileElement=document.querySelector("#upload2");
+    selectFileElement.addEventListener('change',editImages2)
+
 }
 
 function closeAddWindow() {
     const addWindow = document.getElementById("add-window");
     addWindow.style.display = "none";
+    document.getElementById('showImage2').innerHTML="";
+    var selectFileElement=document.querySelector("#upload2");
+     selectFileElement.value="";
 }
 
 function addNewItem() {
     const newName = document.getElementById("newName").value;
     const newBrand = document.getElementById("newBrand").value;
     const newPrice = document.getElementById("newPrice").value;
-    const newImage = document.getElementById("newImage").value;
-
+  
     const newItem = {
         name: newName,
         brand: newBrand,
         price: newPrice,
-        image: newImage,
+        image: imageNew,
     };
+    imageNew="";
 
     fetch('http://localhost:3000/Item', {
         method: 'POST',
@@ -227,3 +255,62 @@ siderDiv.addEventListener('mouseover', () => {
 siderDiv.addEventListener('mouseout', () => {
   siderDiv.style.display = 'none';
 });
+function editImages()
+{ 
+   
+  var fileInput=document.getElementById('upload').files;
+  console.log(fileInput)
+
+   if(fileInput.length>0)
+{ 
+var fileToLoad=fileInput[0];
+var fileReader=new FileReader();
+fileReader.onload=function(e){
+    console.log(e.target);
+    var srcData=e.target.result;
+    console.log(srcData);
+      var newImage=document.createElement('img');
+       newImage.src=srcData;
+       imageNew=srcData;
+
+        document.getElementById('showImage').innerHTML=newImage.outerHTML;}
+        var selectFileElement=document.querySelector("#upload");
+        console.log(selectFileElement.value)
+      
+    fileReader.readAsDataURL(fileToLoad);
+  
+}
+
+
+
+}
+
+function editImages2()
+{ 
+   
+  var fileInput=document.getElementById('upload2').files;
+  console.log(fileInput)
+
+   if(fileInput.length>0)
+{ 
+var fileToLoad=fileInput[0];
+var fileReader=new FileReader();
+fileReader.onload=function(e){
+    console.log(e.target);
+    var srcData=e.target.result;
+    console.log(srcData);
+      var newImage=document.createElement('img');
+       newImage.src=srcData;
+       imageNew=srcData;
+
+        document.getElementById('showImage2').innerHTML=newImage.outerHTML;}
+        var selectFileElement=document.querySelector("#upload2");
+        console.log(selectFileElement.value)
+      
+    fileReader.readAsDataURL(fileToLoad);
+  
+}
+
+
+
+}
