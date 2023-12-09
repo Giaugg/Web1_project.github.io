@@ -104,7 +104,7 @@ var create_user_cart_line = function(object){
             
         itemElement.innerHTML = `
             <input type="checkbox" >
-            <img src=".\\Images\\products\\${modifiedString}" alt="" class="item_img">
+            <img src="${object.imgage}" alt="" class="item_img">
             <div>
             <p> Tên sản phẩm </p>
             <p>${namesp}</p>
