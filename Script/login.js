@@ -37,8 +37,44 @@ document.addEventListener("DOMContentLoaded", function() {
 	  }
 	});
 })
+// Hide and Show password
 
+function togglePasswordVisibility(passwordFields, eyeIcon) {
+    passwordFields.forEach(function (passwordField) {
+        if (passwordField.type === "password") {
+            passwordField.type = "text";
+            eyeIcon.classList.replace("fa-eye-slash", "fa-eye");
+        } else {
+            passwordField.type = "password";
+            eyeIcon.classList.replace("fa-eye", "fa-eye-slash");
+        }
+    });
+}
 
+document.addEventListener("DOMContentLoaded", function () {
+    var passwordFields1 = document.querySelectorAll(".input-field1");
+    var eyeIcon1 = document.getElementById("pw_hide");
+
+    var passwordFields2 = document.querySelectorAll(".input-field2");
+    var eyeIcon2 = document.getElementById("pw_hide2");
+
+    var passwordFields3 = document.querySelectorAll(".input-field3");
+    var eyeIcon3 = document.getElementById("pw_hide3");
+
+    eyeIcon1.addEventListener("click", function () {
+        togglePasswordVisibility(passwordFields1, eyeIcon1);
+    });
+
+    eyeIcon2.addEventListener("click", function () {
+        togglePasswordVisibility(passwordFields2, eyeIcon2);
+    });
+
+    eyeIcon3.addEventListener("click", function () {
+        togglePasswordVisibility(passwordFields3, eyeIcon3);
+    });
+});
+
+// ///////////////////////////////////
 
 function showform(){
 	var userform = document.getElementById('user');
@@ -70,24 +106,44 @@ function createUser(e){
 	var password = document.getElementById('passwordSignUp');
 	var password2 = document.getElementById('passwordSignUp2');
 	var flag = true;
-	if(!isValidFullName(fullname.value)){
+	if(!fullname.value){
 		document.getElementById('fullnameerror').style.display = 'block';
 		flag = false;
 	}else{
 		document.getElementById('fullnameerror').style.display = 'none';
 	}
-	if(!isValidEmail(email.value)){
+	if(!email.value){
 		document.getElementById('emailerror').style.display = 'block';
 		flag = false;
 	}else{
 		document.getElementById('emailerror').style.display = 'none';
+		 var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;  // Biểu thức chính quy để kiểm tra địa chỉ email hợp lệ.
+    
+    if (!emailPattern.test(email.value) || !email.value.endsWith('@gmail.com')) {
+        // Kiểm tra xem địa chỉ email có hợp lệ hay không.
+        // Nếu không hợp lệ hoặc ko kết thúc bằng "@gmail.com", hiển thị thông báo lỗi.
+        document.getElementById('emailerror').style.display = 'block';
+		document.getElementById('emailerror').innerHTML = 'invalid email';
+        flag = false;
 	}
-	if(!isValidPhone(phone.value)){
+}
+	if(!phone.value){
 		document.getElementById('phoneerror').style.display = 'block';
 		flag = false;
 	}else{
-		document.getElementById('phoneerror').innerHTML = 'invalid phone number';
-
+		if(isNaN(Number(phone.value))){
+			document.getElementById('phoneerror').style.display = 'block';
+			document.getElementById('phoneerror').innerHTML = 'invalid phone number';
+			flag = false;
+		}else{
+			if(Number(phone.value)<100000000 || Number(phone.value)>999999999){
+				document.getElementById('phoneerror').style.display = 'block';
+				document.getElementById('phoneerror').innerHTML = 'Phone number is incorrect';
+				flag = false;
+			}else{
+				document.getElementById('phoneerror').style.display = 'none';
+			}
+		}
 	}
 	if(!username.value){
 		document.getElementById('usererror').style.display = 'block';
@@ -175,26 +231,22 @@ function login(e){
 				closeform();
 				localStorage.setItem('userlogin',JSON.stringify(userArray[i]));
 				
+				updateUIAfterLogin(userArray[i].fullname);
+				
 				isLoggedIn = true;
-			found = true;
 			alert("đăng nhập thành công");
 			if(username === 'admin' ){ 
 				window.location.assign("../Admin/index.html");
 			}
 			break;
-				// return true;
 			}
 		}
 	}
 	
 	document.getElementById('passwordloginerror').style.display = 'block';
 	document.getElementById('passwordloginerror').innerHTML = 'Wrong login information';
-	return found;
-	// return true;
+
 }
-
-
-
 
 
   function showUserInfoWindow() {
@@ -216,8 +268,27 @@ function login(e){
 	})
 }
 
-  
+function updateUIAfterLogin(fullname) {
+// Ẩn form đăng nhập
+	var loginForm = document.getElementById('loginform');
+  if (loginForm) {
+    loginForm.style.display = 'none';
+  }
+// Cập nhật thông tin người dùng đã đăng nhập
+	var usernameElement = document.querySelector('.main_header #header_my ul.right ');
+	if (usernameElement) {
+	  usernameElement.innerHTML = fullname;
+	  usernameElement.addEventListener( 'click', showUserInfoWindow)
+	}
+	var showContainer1 = document.getElementById('right');
+    if (showContainer1) {
+        // Ví dụ: Cập nhật chiều rộng thành 80% của màn hình
+        showContainer1.style.width = '100%';
+		showContainer1.style.fontFamily = '"Poppins", sans-serif';
+		showContainer1.style.marginTop= '8px';
 
+    }
+  }
 
 
 /*END USER*/
@@ -235,42 +306,3 @@ function customAlert(message,type) {
     setTimeout(function(){ x.className = x.classList.remove("show"); }, 3500);
 }
 
-//  function addNewaccout() {
-   
-// 	var userArray = JSON.parse(localStorage.getItem('user'));
-// 	for(var i=0;i<userArray.length;i++)
-// 	{      var newAccout={};
-// 		if(!userArray[i].email.includes("baohan.tbh0406@gmail.com"))
-// 		    {
-// 				 newAccout = {
-// 					"password": userArray[i].password,
-// 					"email": userArray[i].email,
-// 					 "name":userArray[i].fullname,
-// 					 "address":"Quang ngai",
-// 					 "admin":false,
-// 				};
-// 			}
-			
-				
-// 	}
-   
-
-  
-   
-// }
-function isValidFullName(fullname) {
-    return fullname.trim() !== '';
-}
-
-function isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-}
-
-function isValidPhone(phone) {
-    return /^\d{10,}$/.test(phone);
-}
-
-function isValidUsername(username) {
-    return username.trim() !== '' && username.length >= 6;
-}
