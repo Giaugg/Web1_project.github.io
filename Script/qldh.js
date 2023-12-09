@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 function start() {
     Read_data_cart();
+    
     // console.log(modifiedItems);
     const saveButton = document.getElementsByClassName("save-button")[0];
     saveButton.addEventListener('click', function () {
@@ -15,6 +16,7 @@ function start() {
     submitButton.addEventListener("click", function () {
         filterAndRenderData();
     })
+ 
 }
 
 
@@ -31,6 +33,7 @@ var create_admin_cart = function(){
     
     objects.forEach(function(objects) {
         // Tạo một phần tử .item
+      
         create_admin_cart_line(objects);
     });
 
@@ -39,11 +42,13 @@ var create_admin_cart = function(){
 
 
 var create_admin_cart_line = function(object){
-    // console.log(object);
+     console.log(object);
+  console.log(object.imgage)
     const itemContainer = document.getElementById("itemlist");
 
     const itemElement = document.createElement("tr");
     itemElement.classList.add("item");
+  
     const id = object.id;
         const originalString = "ID_Products001.jpg";
             
@@ -80,7 +85,9 @@ var dayobject = day + "/" + month + "/" + year;
                 // Thêm phần tử .item vào phần tử gốc
             // console.log(itemContainer);
             itemContainer.appendChild(itemElement);
-
+            var statusElement=document.querySelector('#status');
+            var status=statusElement.textContent;
+            itemElement.addEventListener('click', function() { chitiet(object.imgage,object.userID,object.quality,object.price,object.Date,object.status); });
 const acceptButton = itemElement.querySelector('.accept-button');
 // console.log(acceptButton);
 const ignoreButton = itemElement.querySelector('.ignore-button');
@@ -98,7 +105,8 @@ else if(object.status === 2){
     statusCell.classList.add('ignore_status');
 }
 
-acceptButton.addEventListener('click', function () {
+acceptButton.addEventListener('click', function (e) {
+    e.stopPropagation();
     statusCell.textContent = 'Chấp nhận';
     statusCell.classList.add('accept_status'); // thêm class tạo hiệu ứng sau khi ấn
     acceptButton.disabled = true; // chỉ ấn được một lần
@@ -110,7 +118,8 @@ acceptButton.addEventListener('click', function () {
         modifiedItems.push(object);
     }
 });
-ignoreButton.addEventListener('click', function () {
+ignoreButton.addEventListener('click', function (e) {
+    e.stopPropagation();
     statusCell.textContent = 'Từ chối';
     statusCell.classList.add('ignore_status');
     acceptButton.disabled = true;
@@ -173,4 +182,38 @@ function filterAndRenderData() {
     // renderData(filteredItems);
     create_admin_cart(filteredItems);
 
+}
+function chitiet(hinh,userID,soluong,gia,timeOder,status){
+ 
+ 
+      var total=gia*soluong;
+	var chitetElement1 = document.querySelector('.chi-tiet-modal')
+	chitetElement1.innerHTML =
+    `
+    <div class="chi-tiet-modal-container1">
+        <div class="modal-close" >
+            <button class="annutclose"> <img src=".\\Images\\icon\\close.svg" alt="">
+        </div>
+        <div class="chi-tiet-header1">
+            <div class="item">
+                   <img src=${hinh} alt="" >
+            </div>
+            <div class="divchitiet">
+                <div class="header1" style="font-size: 50px;">
+                  <div>Userid:${userID}</div>
+                    <div class="fornt-write">Số lượng:${soluong}</div>
+                    <div>Giá:${total}</div>
+                    <div>TimeOder: ${timeOder}</div>
+                    <div id="trangthai">Trạng thái:${status === 1 ? 'Chấp nhận' : status === 2 ? 'Từ chối' : 'Chưa xử lý'}</div>
+                <div>
+                   
+                </div>
+               </div>
+        </div>
+      </div>`
+      var annutCloseElement1 = document.querySelector('.modal-close');   
+          chitetElement1.style.display = "flex";
+          annutCloseElement1.addEventListener('click',function(){
+            chitetElement1.style.display="none";
+          })
 }
