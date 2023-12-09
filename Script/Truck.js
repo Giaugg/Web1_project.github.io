@@ -72,7 +72,7 @@ var create_truck_line = function(object){
             // console.log(objects)
             
         itemElement.innerHTML = `
-            <img src=".\\Images\\products\\${modifiedString}" alt="" class="item_img">
+            <img src="${object.imgage}" alt="" class="item_img">
             <div>
             <p> Tên sản phẩm </p>
             <p>${namesp}</p>
