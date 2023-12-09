@@ -261,7 +261,15 @@
     font-weight: bold;
     margin-right: 10px;
 }
-
+#pw_hide {
+    right: 0;
+}
+#pw_hide2 {
+    right: 0;
+}
+#pw_hide3 {
+    right: 0;
+}
 /*customalert*/
 #customalert {
     visibility: hidden;
