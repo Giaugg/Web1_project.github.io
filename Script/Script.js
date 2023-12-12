@@ -168,8 +168,8 @@ function renderItems() {
 			</div>
 			<p class="name">${course.name} </p>
 			<div class="button-flex">
-				<button class="annut" onclick="chitiet(${course.id},'${course.name}',${course.price},'${course.image}')">Chi Tiet</button>
-				<button class="add-to-cart-button" onclick="themvaogiohang(${course.id},'${course.name}',${course.price},'${course.image}')">Add to cart</button>
+				<button class="annut" onclick="chitiet(${course.id},'${course.name}',${course.price},'${course.image}','${course.brand}')">Chi Tiet</button>
+				<button class="add-to-cart-button" onclick="themvaogiohang(${course.id},'${course.name}',${course.price},'${course.image}','${course.brand}')">Add to cart</button>
 			</div>
 			<p class="price">$${course.price}</p>
 		</div>`;
@@ -260,7 +260,7 @@ function handlePageNumber(num, totalPage) {
 	renderPageNumber(totalPage);
 }
 //gio hang
-function themvaogiohang(id, ten, gia, hinh) {
+function themvaogiohang(id, ten, gia, hinh, brand) {
 	var logged = [];
 	logged = JSON.parse(localStorage.getItem("userlogin"));
 	
@@ -268,12 +268,12 @@ function themvaogiohang(id, ten, gia, hinh) {
 		var cart = JSON.parse(localStorage.getItem("cart"));
 		if (cart == null) {
 			cart = [];
-			cart.push({ id: id, name: ten, price: gia, imgage: hinh, quality: 1 });
+			cart.push({ id: id, name: ten, price: gia, imgage: hinh, quality: 1, brand: brand });
 		} else {
 			let item = cart.find((item) => item.id === id);
 			if (item) item.quality++;
 			else
-				cart.push({ id: id, name: ten, price: gia, imgage: hinh, quality: 1 });
+				cart.push({ id: id, name: ten, price: gia, imgage: hinh, quality: 1, brand: brand });
 		}
 
 		localStorage.setItem("cart", JSON.stringify(cart));
@@ -285,7 +285,7 @@ function themvaogiohang(id, ten, gia, hinh) {
 }
 
 //chi tiet
-function chitiet(id, ten, gia, hinh) {
+function chitiet(id, ten, gia, hinh, brand) {
 	var modal1Element = document.querySelector('.search input')
 	var cuoiElement = document.querySelector('.cuoi');
 	var selectElement = document.querySelector('.brand')
@@ -333,13 +333,13 @@ function chitiet(id, ten, gia, hinh) {
 		var cart = JSON.parse(localStorage.getItem("cart"));
 		if (cart == null) {
 			cart = [];
-			cart.push({ id: id, name: ten, price: gia, imgage: hinh, quality: inputElement1.value })
+			cart.push({ id: id, name: ten, price: gia, imgage: hinh, quality: inputElement1.value, brand : brand })
 		}
 		else {
 			let item = cart.find(item => item.id === id);
 
 			if (item && inputElement1.value >= 1) item.quality = inputElement1.value;
-			else cart.push({ id: id, name: ten, price: gia, imgage: hinh, quality: inputElement1.value })
+			else cart.push({ id: id, name: ten, price: gia, imgage: hinh, quality: inputElement1.value, brand:brand})
 		}
 
 		localStorage.setItem("cart", JSON.stringify(cart));
