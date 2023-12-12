@@ -79,7 +79,7 @@ var Read_file_accout = function () {
 	fetch(api_accout)
 		.then((response) => response.json())
 		.then(function (accouts) {
-			ktradangnhap(accouts);
+			// ktradangnhap(accouts);
 		});
 };
 //kiem tra dang nhap hay chua
@@ -330,6 +330,9 @@ function chitiet(id, ten, gia, hinh, brand) {
 	var giohangElement = document.querySelector('.giohangchitiet');
 	function themvaogiohang1() {
 		//   console.log(inputElement1.value)
+		logged = JSON.parse(localStorage.getItem("userlogin"));
+	
+		if (logged.length !== 0 ) {
 		var cart = JSON.parse(localStorage.getItem("cart"));
 		if (cart == null) {
 			cart = [];
@@ -344,6 +347,8 @@ function chitiet(id, ten, gia, hinh, brand) {
 
 		localStorage.setItem("cart", JSON.stringify(cart));
 		alert("Bạn đã thêm thành công sản phẩm vào giỏ hàng");
+		}
+		else alert("đăng nhập để mua hàng")
 	}
 	giohangElement.addEventListener('click', themvaogiohang1)
 

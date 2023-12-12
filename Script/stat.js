@@ -75,8 +75,6 @@ var create_stat_line = function (object) {
                 <td>${dayobject}</td>
                     `;
 
-		// Thêm phần tử .item vào phần tử gốc
-		// console.log(itemContainer);
 		itemContainer.appendChild(itemElement);
 		
 	}

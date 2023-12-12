@@ -87,7 +87,7 @@ var dayobject = day + "/" + month + "/" + year;
             itemContainer.appendChild(itemElement);
             var statusElement=document.querySelector('#status');
             var status=statusElement.textContent;
-            itemElement.addEventListener('click', function() { chitiet(object.imgage,object.userID,object.quality,object.price,object.Date,object.status); });
+            itemElement.addEventListener('click', function() { chitiet(object.imgage,object.userID,object.quality,object.price,dayobject,object.status); });
 const acceptButton = itemElement.querySelector('.accept-button');
 // console.log(acceptButton);
 const ignoreButton = itemElement.querySelector('.ignore-button');
@@ -200,7 +200,7 @@ function chitiet(hinh,userID,soluong,gia,timeOder,status){
             </div>
             <div class="divchitiet">
                 <div class="header1" style="font-size: 50px;">
-                  <div>Userid:${userID}</div>
+                
                     <div class="fornt-write">Số lượng:${soluong}</div>
                     <div>Giá:${total}</div>
                     <div>TimeOder: ${timeOder}</div>
