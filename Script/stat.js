@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	start();
 });
 let items;
+var totalquantity, totalprice;
 function start() {
 	Read_data_cart();
 
@@ -17,35 +18,45 @@ function start() {
 var Read_data_cart = function () {
 	objects = JSON.parse(localStorage.getItem("cart_admin"));
 	// console.log(objects);
-	create_admin_cart();
+	create_stat(objects);
     items = objects;
+
 };
 
-var create_admin_cart = function () {
+var create_stat = function (objects) {
 		const itemContainer = document.getElementById("itemlist1");
-        // itemContainer.innerHTML = "";
+        itemContainer.innerHTML = `
+        `;
+        totalprice =0;
+        totalquantity =0;
+    if(objects.length !== 0)
 	objects.forEach(function (objects) {
-		// Tạo một phần tử .item
 
-		create_admin_cart_line(objects);
-        
+		create_stat_line(objects);
+        document.getElementById('thongkequantity').textContent = totalquantity
+        document.getElementById('thongkeprice').textContent = totalprice
 	});
+    else{
+        document.getElementById('thongkequantity').textContent = 0
+        document.getElementById('thongkeprice').textContent =0 
+        
+    }
 };
 
-var create_admin_cart_line = function (object) {
-	console.log(object);
-	if (object.status == 1) {
+var create_stat_line = function (object) {
+	if (object.status === 1) {
+        totalquantity += object.quality;
+        console.log({totalprice})
+
+        totalprice = totalprice + object.price*object.quality;
+        console.log({totalprice})
 		const itemContainer = document.getElementById("itemlist1");
 
 		const itemElement = document.createElement("tr");
 		itemElement.classList.add("item");
 
-		// console.log(name);
-
 		const total_price = parseInt(object.price) * parseInt(object.quality);
-		// Tạo các phần tử con và đặt giá trị từ đối tượng sản phẩm
 
-		// console.log(objects)
 		var dateObject = new Date(object.Date);
 		// Lấy ngày, tháng, năm từ đối tượng Date
 		var year = dateObject.getFullYear();
@@ -74,16 +85,18 @@ var create_admin_cart_line = function (object) {
 
 function filterAndRenderData() {
 	const selectedBrand = document.getElementById("brand").value;
+    console.log({selectedBrand})
 	const dateStart = document.getElementById("date-start").value;
 	const dateEnd = document.getElementById("date-end").value;
 	const filteredItems = items.filter(function (item) {
-		const itemBrand = item.brand.toString();
-		const time = item.Date.split("-")[0];
-		const times = time.split("/");
-		const itemTimeOrder = times[1] + "/" + times[0] + "/" + times[2];
-		console.log(itemTimeOrder);
-		console.log(new Date(itemTimeOrder));
-		console.log(new Date(dateStart));
+		const itemBrand = item.brand;
+        // console.log(itemBrand)
+		const time = item.Date.split("T")[0];
+		const times = time.split("-");
+		const itemTimeOrder = times[1] + "/" + times[2] + "/" + times[0];
+		// console.log(itemTimeOrder);
+		// console.log(new Date(itemTimeOrder));
+		// console.log(new Date(dateStart));
 		return (
 			(selectedBrand === "all" || itemBrand === selectedBrand) &&
 			(dateStart === "" ||
@@ -93,8 +106,8 @@ function filterAndRenderData() {
 		);
 	});
 
-	// renderData(filteredItems);
-    create_admin_cart(filteredItems);
+	// console.log(filteredItems)
+    create_stat(filteredItems);
 }
 
 const logoDiv = document.querySelector(".logo");
@@ -115,12 +128,4 @@ siderDiv.addEventListener("mouseover", () => {
 siderDiv.addEventListener("mouseout", () => {
 	siderDiv.style.display = "none";
 });
-// const totalsRow = document.createElement("tr");
-// totalsRow.innerHTML = `
-//     <td colspan="3"><strong>Total:</strong> </td>
-//     <td>${totalQuantity}</td>
-//     <td>${totalPrice}</td>
-//     <td></td>
-// `;  
-// console.log(3)
-// list_tbody.appendChild(totalsRow);
+

@@ -91,7 +91,7 @@
         </tr>
     </table>
     <table id="cart-table">
-        <thead id="itemlist1">
+        <thead>
             <tr>
                 <!-- <th>Invoice ID</th> -->
                 <th>Product ID</th>
@@ -102,9 +102,14 @@
                 <th>Time Order</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id="itemlist1">
             <!-- chèn các giá trị vào bảng tại vị trí này -->
         </tbody>
+
+        <td colspan="3"><strong>Total:</strong> </td>
+        <td colspan="1" id="thongkequantity">0</td>
+        <td colspan="1" id="thongkeprice">0</td>
+        
     </table>
 
     <script src="../Script/stat.js"></script>
