@@ -83,7 +83,7 @@ var create_stat_line = function (object) {
 
 function filterAndRenderData() {
 	const selectedBrand = document.getElementById("brand").value;
-    console.log({selectedBrand})
+    // console.log({selectedBrand})
 	const dateStart = document.getElementById("date-start").value;
 	const dateEnd = document.getElementById("date-end").value;
 	const filteredItems = items.filter(function (item) {
@@ -92,9 +92,7 @@ function filterAndRenderData() {
 		const time = item.Date.split("T")[0];
 		const times = time.split("-");
 		const itemTimeOrder = times[1] + "/" + times[2] + "/" + times[0];
-		// console.log(itemTimeOrder);
-		// console.log(new Date(itemTimeOrder));
-		// console.log(new Date(dateStart));
+
 		return (
 			(selectedBrand === "all" || itemBrand === selectedBrand) &&
 			(dateStart === "" ||

@@ -15,6 +15,22 @@
       "address": "Quang ngai",
       "admin": false,
       "id": 2
+    },
+    {
+      "password": "12345678",
+      "email": "abc@gmail.com",
+      "name": "abc",
+      "address": "Quang ngai",
+      "admin": false,
+      "id": 3
+    },
+    {
+      "password": "12345678",
+      "email": "acb@gmail.com",
+      "name": "acb",
+      "address": "Quang ngai",
+      "admin": false,
+      "id": 4
     }
   ],
   "Item": [

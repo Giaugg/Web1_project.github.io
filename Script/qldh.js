@@ -192,7 +192,7 @@ function chitiet(hinh,userID,soluong,gia,timeOder,status){
     `
     <div class="chi-tiet-modal-container1">
         <div class="modal-close" >
-            <button class="annutclose"> <img src=".\\Images\\icon\\close.svg" alt="">
+        <button class="annutclose"> x </button>
         </div>
         <div class="chi-tiet-header1">
             <div class="item">

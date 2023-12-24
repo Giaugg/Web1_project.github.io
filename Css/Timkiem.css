@@ -99,7 +99,7 @@
 .sanphamItem {
     height: 455px;
     overflow-y: scroll;
-    margin-top: 80px;
+    margin-top: 30px;
 }
 
 .chitiet:hover {
@@ -122,15 +122,16 @@ div .khung {
 
 .search2 {
     display: none;
-    position: absolute;
     justify-content: space-around;
-    top: 90px;
+  margin-top: 40px;
     width: 700px;
-    left: calc(50% - 350px);
-    vertical-align: middle;
+    margin-bottom: 10px;
+
+
 }
 .search2 div{
     display: flex;
+    justify-content: space-evenly;
     font-size: 25px;
     white-space: 1px;
 }

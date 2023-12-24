@@ -462,8 +462,11 @@ function timkiem(items) {
 	var dauElement = document.querySelector(".dau");
 	var cuoiElement = document.querySelector(".cuoi");
 	var array = Array.from(chitetElement);
+	var selectPageElement=document.querySelector('.chontrang');
 	selectElement.value = "";
+	2
 	var x = 0;
+  
 	nutchonElenment.forEach((search_img) => {
 		search_img.addEventListener("click", function () {
 			if (!x) {
@@ -478,6 +481,8 @@ function timkiem(items) {
 				x = 0;
 			}
 			selectElement.value = "";
+			dauElement.value="";
+			cuoiElement.value="";
 		});
 	});
 	searchElement.addEventListener("click", function () {
@@ -494,6 +499,9 @@ function timkiem(items) {
 		if (!modal1Element.value) {
 			sanphamElement.style.display = "none";
 		}
+		
+            selectPageElement.style.display="none"
+		
 	});
 	var select = 0;
 	sanphamElement.style.display = "none";
@@ -513,10 +521,10 @@ function timkiem(items) {
 				)
 					{
 						item.style.display = "flex";
-						phantrangSreach();
 					}
-				else item.style.display = "none";
-			});
+					else item.style.display = "none";
+				});
+				phantrangSreach();
 		
 		} else if (selectElement.value && cuoiElement.value && dauElement.value) {
 			
@@ -646,6 +654,21 @@ function timkiem(items) {
 		}
 		var check=array.find((item)=>item.style.display=="flex");
 		if(!check) 	alert("Sản phẩm bạn vừa yêu cầu không có trong cửa hàng chúng tôi");
+		
+		
+  if(!dauElement.value&&!cuoiElement.value&&!modal1Element.value&&!selectElement.value)
+		{
+            selectPageElement.style.display="none"
+		}
+		else {
+			var check1=array.find(function(item){
+				return item.style.display=="flex";
+	  })
+	  console.log(array.find(function(item){
+		return item.style.display=="flex"}));
+	  if(!check1) selectPageElement.style.display="none"
+	  else selectPageElement.style.display="flex"
+		}
 	});
 
 	selectElement.addEventListener("change", function () {
@@ -798,6 +821,13 @@ function timkiem(items) {
 				phantrangSreach();
 			}
 		}
+		
+		var check1=array.find(function(item){
+                  return item.style.display=="flex";
+		})
+		if(!check1) selectPageElement.style.display="none"
+		else selectPageElement.style.display="flex"
+		
 	});
 
 	cuoiElement.addEventListener("keydown", function (event) {
@@ -958,6 +988,16 @@ function timkiem(items) {
 			}
 		}
 		}
+		if(!dauElement.value&&!cuoiElement.value&&!modal1Element.value&&!selectElement.value)
+		{
+            selectPageElement.style.display="none"
+		}
+		else selectPageElement.style.display="flex"
+		var check1=array.find(function(item){
+			return item.style.display=="flex";
+  })
+  if(!check1) selectPageElement.style.display="none"
+  else selectPageElement.style.display="flex"
 	});
 }
 function displayResults(results, page, itemsPerPage, totalPages) {
@@ -998,7 +1038,7 @@ function phantrangSreach() {
 	})
 	console.log(sanpham);
 	console.log(dem);
-	if (dem > 0) {
+	if (dem > 0	) {
 		var n = Math.ceil(dem / 4);
 		displayResults(sanpham, 1, 4, n);
 		// 		for(var i=1;i<=n;i++)
@@ -1024,3 +1064,9 @@ readfile();
 //  xu li trang thai dang nhap
 
 var a = document.querySelector('.more_menu');
+
+
+document.getElementById('logout').addEventListener('click', function(){
+localStorage.setItem('userlogin',JSON.stringify([]));
+
+})

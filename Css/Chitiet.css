@@ -25,19 +25,35 @@
 
 }
 
-.modal-close:hover {
-    opacity: 1;
-    color: red;
+
+
+
+.annutclose{
+    height: 100%;
+    width: 100%;
+    padding: 0;
 }
+
+.annutclose:hover{
+    background-color: antiquewhite;
+
+}
+
+#closeimg{
+    height: 100px;
+    width: 100px;
+}
+
 
 .modal-close {
     position: absolute;
     right: 0;
     top: 0;
-    padding: 12px;
     cursor: pointer;
     color: black;
-    opacity: 0.5;
+    opacity: 01;
+    height: 30px;
+    width: 30px;
 }
 .chi-tiet-modal .item{
     margin: 10px;
@@ -124,5 +140,6 @@ i {
 .chontrang button {
     margin-right: 4px;
     cursor: pointer;
+    padding: 12px;
 
 }

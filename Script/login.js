@@ -1,5 +1,3 @@
-var isLoggedIn  = false;
-localStorage.setItem('userlogin',JSON.stringify([]));
 var user = [];
 function createAdmin(){
 	if(localStorage.getItem('user')===null){
@@ -28,7 +26,9 @@ document.addEventListener("DOMContentLoaded", function() {
 	createAdmin();	
 	const showContainer = document.getElementById("show-conntainer");
 	showContainer.addEventListener("click", function () {
-	  if (isLoggedIn) {
+var logged = JSON.parse(localStorage.getItem("userlogin"));
+
+	  if (logged.length !==0 ) {
 		  // If logged in, show user info window
 		  showUserInfoWindow();
 	  } else {
@@ -233,7 +233,6 @@ function login(e){
 				
 				updateUIAfterLogin(userArray[i].fullname);
 				
-				isLoggedIn = true;
 			alert("đăng nhập thành công");
 			if(username === 'admin' ){ 
 				window.location.assign("../Admin/index.html");
@@ -268,27 +267,27 @@ function login(e){
 	})
 }
 
-function updateUIAfterLogin(fullname) {
-// Ẩn form đăng nhập
-	var loginForm = document.getElementById('loginform');
-  if (loginForm) {
-    loginForm.style.display = 'none';
-  }
-// Cập nhật thông tin người dùng đã đăng nhập
-	var usernameElement = document.querySelector('.main_header #header_my ul.right ');
-	if (usernameElement) {
-	  usernameElement.innerHTML = fullname;
-	  usernameElement.addEventListener( 'click', showUserInfoWindow)
-	}
-	var showContainer1 = document.getElementById('right');
-    if (showContainer1) {
-        // Ví dụ: Cập nhật chiều rộng thành 80% của màn hình
-        showContainer1.style.width = '100%';
-		showContainer1.style.fontFamily = '"Poppins", sans-serif';
-		showContainer1.style.marginTop= '8px';
+// function updateUIAfterLogin(fullname) {
+// // Ẩn form đăng nhập
+// 	var loginForm = document.getElementById('loginform');
+//   if (loginForm) {
+//     loginForm.style.display = 'none';
+//   }
+// // Cập nhật thông tin người dùng đã đăng nhập
+// 	var usernameElement = document.querySelector('.main_header #header_my ul.right ');
+// 	if (usernameElement) {
+// 	  usernameElement.innerHTML = fullname;
+// 	  usernameElement.addEventListener( 'click', showUserInfoWindow)
+// 	}
+// 	var showContainer1 = document.getElementById('right');
+//     if (showContainer1) {
+//         // Ví dụ: Cập nhật chiều rộng thành 80% của màn hình
+//         showContainer1.style.width = '100%';
+// 		showContainer1.style.fontFamily = '"Poppins", sans-serif';
+// 		showContainer1.style.marginTop= '8px';
 
-    }
-  }
+//     }
+//   }
 
 
 /*END USER*/
